@@ -17,7 +17,7 @@ class ListItems extends Component {
             html : this.props.title,
             open : false
         }
-        
+
     }
 
     deleteThis = e => {
@@ -42,50 +42,52 @@ class ListItems extends Component {
         const newTagName = e.target.name.trim();
         this.props.clickTag ( newTagName );
     };
-    
+
 
     render(){
         return (
             <li className="item" key={this.state.id}>
                 <div className="row">
-                    <div className="col-12 sticky-top d-flex space-between">
-                        <ContentEditable 
-                            className="mb-3 item-title mr-auto bg-dark px-3"
-                            name="title" 
-                            onChange={this.handleChange} 
-                            innerRef={this.contentEditable}
-                            disabled={false} 
-                            html={this.state.title}
-                            value={this.state.title}
-                        />
-                        <button className={`action-icon action-icon__${this.state.open === true ? "open" : "close"}`}  id={this.state.id} onClick={e => this.toggleOpen(e)}>
-                        </button>
-                        <button className="action-icon action-icon__trash" id={this.state.id} onClick={e => this.deleteThis(e)}>
-                        </button> 
-                        <button className="action-icon action-icon__edit" id={this.state.id} onClick={e => this.updateId(e)}>
-                        </button>
-                    </div>
-
-                    <div className="col-12">
-
-                        <div className="content line-break" name="content">
-                            {this.state.open === true ? this.state.content : ""}
-                        </div>
-                        <ul className="taglist">
-                            {this.state.tags.map(tag => (
-                                <li className="taglist tag d-inline" key={tag.index} name="tags">
-                                    <button className="tagbutton mb-2 mr-2 px-3" name={tag.trim()} onClick={(e) => this.TagCallback(e)}>
-                                    {tag.trim()}
+                    <div className="col-12 sticky-top d-flex">
+                                <button className={`action-icon action-icon__${this.state.open === true ? "open" : "close"}`}  id={this.state.id} onClick={e => this.toggleOpen(e)}>
+                                </button>
+                                    <ContentEditable 
+                                        className="mb-3 item-title mr-auto bg-dark px-3"
+                                        name="title" 
+                                        onChange={this.handleChange} 
+                                        innerRef={this.contentEditable}
+                                        disabled={false} 
+                                        html={this.state.title}
+                                        value={this.state.title}
+                                    />
+                                    <button className="action-icon action-icon__trash" id={this.state.id} onClick={e => this.deleteThis(e)}>
+                                    </button> 
+                                    <button className="mr-2 action-icon action-icon__edit" id={this.state.id} onClick={e => this.updateId(e)}>
                                     </button>
-                                </li>
-                            ))} 
-                        </ul>
-                        <div>
-                            {this.state.comment}
-                        </div>
-                        <span className="id"> id: {this.state.id} </span>
                     </div>
-                </div>
+                    <div className="col-12 col-lg-8">
+
+                            <div className="content line-break pl-5" name="content">
+                                {this.state.open === true ? this.state.content : ""}
+                            </div>
+
+                    </div>
+                    <div className="col-12 col-lg-4 ">
+                            <ul className="taglist px-3 sticky-top">
+                                {this.state.tags.map(tag => (
+                                    <li className="taglist tag d-inline" key={tag.index} name="tags">
+                                        <button className="tagbutton mb-2 mr-2 px-3" name={tag.trim()} onClick={(e) => this.TagCallback(e)}>
+                                        {tag.trim()}
+                                        </button>
+                                    </li>
+                                ))} 
+                            </ul>
+                            <div>
+                                {this.state.comment}
+                            </div>
+                            <span className="id"> id: {this.state.id} </span>
+                        </div>
+                    </div>
             </li>
         );
     }

@@ -165,7 +165,7 @@ class App extends Component {
             <h5 className="w-50 app-title p-2">Code Library</h5>
             </div>
 
-            <div className="col-3">
+            <div className="col-2">
             <div className="group sticky-top">
 
             <div className="c_tagdisplay">
@@ -193,9 +193,9 @@ class App extends Component {
             </div>
             </div>
 
-            <div className="col-6">
+            <div className="col-7">
 
-            <div className="c_listitems mt-3">
+            <div className="c_listitems mt-2">
             <ul>
             {data.length <= 0
                 ? "NO DB ENTRIES YET"
