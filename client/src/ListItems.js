@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import ContentEditable from 'react-contenteditable'
 
-// const ListItems = ({id, title, content, comment, tags, onClickProp, idToUpdate}) => {
 class ListItems extends Component {
+
     constructor(props) {
         super(props);        
         this.contentEditable = React.createRef();

@@ -26,7 +26,6 @@ const Create = ({title, code, comment, tags, addTitle, addContent, addComment, a
         onClickCreate();
     }
 
-    console.log(code);
     return(
         <div>
         <h5 className="label">Add content</h5>

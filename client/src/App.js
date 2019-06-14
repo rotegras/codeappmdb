@@ -37,7 +37,6 @@ class App extends Component {
             tagsupdate: [],
             tagsList: [],
             updateToApply: {},
-            // tagId: "",
             tagName: "",
             searchingTag:'',
             filteredTags:[]
@@ -140,9 +139,9 @@ class App extends Component {
                         console.log(response);
                         console.log(response.data);
                     })
-                    .catch((error)=>{
-                        console.log(error);
-                    });
+                        .catch((error)=>{
+                            console.log(error);
+                        });
                 })
             }
         });
@@ -157,104 +156,95 @@ class App extends Component {
         this.filtercode(this.state.data, this.state.tagName);
 
         const { data } = this.state;
+
         return (
             <div className="container-fluid">
 
-        <div className="row">
-             
+            <div className="row">
+
             <div className="col-12">
-                <h5 className="w-50 app-title p-2">Code Library</h5>
+            <h5 className="w-50 app-title p-2">Code Library</h5>
             </div>
 
-            
+            <div className="col-3 sticky-top">
 
-                <div className="col-3 sticky-top">
+            <div className="c_tagdisplay">
+            <h5 className="label mt-3">Selected Tag</h5>
+            <TagDisplay
+            title={this.state.tagName}
+            /> 
+            </div>
 
-                <div className="c_tagdisplay">
-                    <h5 className="label mt-3">Selected Tag</h5>
-                    <TagDisplay
-                        title={this.state.tagName}
-                    /> 
-                </div>
+            <div className="c_searchtag mt-3">
+            <SearchTag
+            keyDown={this.updatetag}
+            input={this.state.searchingTag}
+            reset={this.resetInput} 
+            />      
+            </div>
 
-                <div className="c_searchtag mt-3">
-                      <SearchTag
-                         keyDown={this.updatetag}
-                         input={this.state.searchingTag}
-                         reset={this.resetInput} 
-                      />      
-                </div>
-
-                <div className="c_filteredtags">
-                    <h5 className="label mt-5">Matching Tags</h5>
-                    <ul className="taglist">
-                        {this.state.filteredTags.map(tag => {
-                        return(
-                            <FilteredTags
-                                key={tag}
-                                id={tag}
-                                name={tag} 
-                                clickTag={this.updateActiveTag}
-                            />
-                        ) 
-                    })} 
-                    </ul>
-                </div>
+            <div className="c_filteredtags">
+            <h5 className="label mt-5">Matching Tags</h5>
+                <FilteredTags
+                    tags={this.state.filteredTags}
+                    clickTag={this.updateActiveTag}
+                />
+            </div>
             </div>
 
             <div className="col-6">
-    
-                <div className="c_listitems mt-3">
-                    <ul>
-                    {data.length <= 0
-                        ? "NO DB ENTRIES YET"
-                        : codeFiltered.map(dat => (
-                        <ListItems
-                            key={dat.id}
-                            id={dat.id}
-                            title={dat.name}
-                            content={dat.code}
-                            comment={dat.comment}
-                            tags={dat.tags}
-                            onClickProp={this.deleteThis}
-                            idToUpdate={this.updateId}
-                        />
-                    ))}
-                    </ul>
-                </div>
-                </div>
+
+            <div className="c_listitems mt-3">
+            <ul>
+            {data.length <= 0
+                ? "NO DB ENTRIES YET"
+                : codeFiltered.map(dat => (
+                    <ListItems
+                    key={dat.id}
+                    id={dat.id}
+                    title={dat.name}
+                    content={dat.code}
+                    comment={dat.comment}
+                    tags={dat.tags}
+                    onClickProp={this.deleteThis}
+                    idToUpdate={this.updateId}
+                    />
+                ))}
+            </ul>
+            </div>
+            </div>
             <div className="col-3">
 
-                <div className="c_create"> 
-                    <Create
-                        title={this.state.title}
-                        code={this.state.code}
-                        comment={this.state.comment}
-                        tags={this.state.tags}                
-                        addTitle={this.addTitle}
-                        addContent={this.addContent}
-                        addComment={this.addComment}
-                        addTags={this.addTags}
-                        onClickCreate={this.createNew}
-                    />
-                </div>
+            <div className="c_create"> 
+            <Create
+            title={this.state.title}
+            code={this.state.code}
+            comment={this.state.comment}
+            tags={this.state.tags}                
+            addTitle={this.addTitle}
+            addContent={this.addContent}
+            addComment={this.addComment}
+            addTags={this.addTags}
+            onClickCreate={this.createNew}
+            />
+            </div>
 
-                <div className="c_update  mt-5"> 
-                    <Update
-                        id={this.state.idToUpdate}
-                        data={this.state.objectToUpdate}
-                        title={this.state.titleupdate}
-                        content={this.state.codeupdate}
-                        comment={this.state.commentupdate}
-                        tags={this.state.tagsupdate}
-                        idToUpdate={this.state.idToUpdate}
-                        changeId={this.updateId}
-                        modifyName={this.modifyName}
-                        modifyComment={this.modifyComment}
-                        modifyTags={this.modifyTags}
-                        onClickModify={this.modifyEntry}
-                />
-            
+            <div className="c_update  mt-5"> 
+            <Update
+            id={this.state.idToUpdate}
+            data={this.state.objectToUpdate}
+            title={this.state.titleupdate}
+            content={this.state.codeupdate}
+            comment={this.state.commentupdate}
+            tags={this.state.tagsupdate}
+            idToUpdate={this.state.idToUpdate}
+            changeId={this.updateId}
+            modifyName={this.modifyName}
+            modifyComment={this.modifyComment}
+            modifyTags={this.modifyTags}
+            onClickModify={this.modifyEntry}
+            />
+
             </div>
             </div>
             </div>
@@ -300,7 +290,7 @@ class App extends Component {
             this.deleteFromDB(this.state.idToDelete)
         })       
     }
-    
+
     //update
     updateId = id => {
         this.setState({
@@ -309,7 +299,7 @@ class App extends Component {
             this.updateUpdate(id);
         })
     }
-    
+
     updateUpdate = id => {
         const dataFilter1 = this.state.data.filter(item => item.id == this.state.idToUpdate);
         const dataFilter=dataFilter1[0];
@@ -354,18 +344,18 @@ class App extends Component {
             data: update(this.state.data, {[$order]: {[name]: {$set: [value]}}})
         }, () => 
 
-        this.filtercode(this.state.data, this.state.tagName)
+            this.filtercode(this.state.data, this.state.tagName)
             , () => console.log([$order], this.state.data[$order].title))
         console.clear();
         console.log($order, this.state.data[$order].tags);
-        
+
     }
 
     modifyTags = (value) => {
         const tagsArray = value.split(','); 
         // const tagsArray = value.split(',').map(item => { return item.trim() }); 
         this.setState({
-             tagsupdate: tagsArray 
+            tagsupdate: tagsArray 
         })
     }
 
@@ -380,25 +370,25 @@ class App extends Component {
         }, () => {
             this.updateDB(this.state.idToUpdate, this.state.updateToApply);
             this.setState({
-                    titleupdate: "",
-                    codeupdate: "",
-                    commentupdate: "",
-                    tagsupdate: ""
-                })
+                titleupdate: "",
+                codeupdate: "",
+                commentupdate: "",
+                tagsupdate: ""
+            })
         })
     }
 
 
     // tag management functions 
-    
+
     // update active tag on input text 
     // in SearchTag component
     updatetag = ( text ) => {
         this.setState({
             searchingTag: text
         }, () => {
-                this.filtertagsonsearch(this.state.searchingTag);
-            }
+            this.filtertagsonsearch(this.state.searchingTag);
+        }
         )
     };
 
@@ -406,7 +396,7 @@ class App extends Component {
     filtertagsonsearch = ( search ) => {
 
         const tagsobj = this.state.data; 
-       
+
         let filtered = [];
 
         const filter = tagsobj.map(item => {
@@ -424,7 +414,7 @@ class App extends Component {
         }) 
     }
 
-    
+
     // reset inputs on search
     resetInput = () => {
         this.setState({
@@ -436,7 +426,7 @@ class App extends Component {
 
     // search filter
     filtercode = (dataToFilter, fltr) => {
-       
+
         // reset codeFiltered every time
         // the function is called
         codeFiltered = [];
@@ -449,12 +439,11 @@ class App extends Component {
             }); 
         })
     }
-    
+
     // callback from FilteredTags Component  with clicked tag
     updateActiveTag = ( newTagName ) => {
         this.setState({
-            tagName: newTagName,
-            // searchingTag: '',
+            tagName: newTagName
         })
     }
 

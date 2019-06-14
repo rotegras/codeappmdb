@@ -193,6 +193,7 @@ class App extends Component {
                 </div>
 
                 <div className="c_filteredtags">
+
                     <h5 className="label mt-3">Matching Tags</h5>
                         {this.state.filteredTags.map(tag => {
                         return(
