@@ -1,0 +1,164 @@
+html
+{
+    overflow-y: scroll;
+    /* filter: invert(100%); */
+}
+
+body
+{
+    color: #fff;
+    background: #111;
+}
+
+textarea,
+input
+{
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+
+    color: white;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    background: #111;
+}
+
+
+button
+{
+    width: 100%;
+    margin: 0 0 10px;
+    padding: 5px 10px;
+
+    transition: all .3s ease-in-out;
+
+    color: #ebebeb;
+    border: 0 solid #ebebeb;
+    border-radius: 5px;
+}
+
+button:hover
+{
+    cursor: pointer;
+
+    opacity: .5;
+}
+
+.tagbutton
+{
+    border: 1px solid #eee;
+}
+
+.label
+{
+    display: flex;
+    /* border: 1px solid #999; */
+    float: none;
+
+    min-width: 100%;
+    padding: 3px;
+    padding: 5px 10px;
+
+    text-transform: uppercase;
+
+    background: #000;
+}
+
+ul
+{
+    padding: 0;
+}
+
+li.item
+{
+    margin-bottom: 10px;
+    padding: 10px;
+
+    list-style: none;
+
+    background: #333;
+}
+
+.id
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    transform: translateX(-100%);
+
+    color: #999;
+}
+
+.line-break
+{
+    margin-bottom: .5rem;
+
+    white-space: pre-wrap;      /* current browsers */
+}
+
+.taglist
+{
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+
+    margin: 0 -5px;
+}
+
+.tag
+{
+    margin: 0 5px;
+}
+
+.action-icon
+{
+    float: right;
+
+    width: 36px;
+    height: 36px;
+    margin-left: 15px;
+
+    color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px 24px;
+}
+
+.action-icon__trash
+{
+    background-image: url(./Trash-icon.svg);
+}
+
+.action-icon__edit
+{
+    background-image: url(./Edit-icon.svg);
+}
+
+.action-icon__open
+{
+    background-image: url(./Caret-square-down.svg);
+    transform: rotate(180deg);
+}
+
+.action-icon__close 
+{
+    background-image: url(./Caret-square-down.svg);
+}
+
+.app-title
+{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.sidebar.sticky-top
+{
+    top: 0;
+}
+
+.item-title {
+    font-weight: 700;
+}

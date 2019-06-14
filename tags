@@ -1,0 +1,321 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+.label	client/src/app.css	/^.label {$/;"	c
+ADD	client/src/App.orig.js	/^            ADD$/;"	r
+ADD	client/src/Create.js	/^        ADD$/;"	r
+DELETE	client/src/App.orig.js	/^            DELETE$/;"	r
+DELETE	client/src/Delete.js	/^                DELETE$/;"	r
+DELETE	client/src/ListItems.js	/^                      DELETE$/;"	r
+MODIFY	client/src/SelectToUpdate.js	/^            MODIFY $/;"	r
+UPDATE	client/src/App.orig.js	/^            UPDATE$/;"	r
+UPDATE	client/src/Update.js	/^            UPDATE$/;"	r
+active	client/src/App.js	/^                            active={this.state.tagName}$/;"	r
+active	client/src/work/App.js	/^                                    active={this.state.tagName}$/;"	r
+addContent	client/src/App.js	/^                        addContent={this.addContent}$/;"	r
+addContent	client/src/App.js	/^    addContent = code => {$/;"	r
+addTags	client/src/App.js	/^                        addTags={this.addTags}$/;"	r
+addTags	client/src/App.js	/^    addTags = tags => {$/;"	r
+addTitle	client/src/App.js	/^                        addTitle={this.addTitle}$/;"	r
+addTitle	client/src/App.js	/^    addTitle = data => {$/;"	r
+body	client/src/app.css	/^body {$/;"	t
+body	client/src/work/App.js	/^                        body={code.content.rendered} $/;"	r
+button	client/src/app.css	/^button {$/;"	t
+changeId	client/src/App.js	/^                        changeId={this.updateId}$/;"	r
+checkValidServiceWorker	client/src/serviceWorker.js	/^function checkValidServiceWorker(swUrl, config) {$/;"	r
+clickTag	client/src/App.js	/^                            clickTag={this.updateActiveTag}$/;"	r
+clickTag	client/src/FilteredTags.js	/^const FilteredTags = ({name, clickTag, id, active }) => {$/;"	r
+clickTag	client/src/TagSelector.js	/^  clickTag: PropTypes.func.isRequired,$/;"	r
+clickTag	client/src/TagSelector.js	/^const TagSelector = ({name, clickTag, id, active }) => {$/;"	r
+clickTag	client/src/work/App.js	/^                                    clickTag={this.updateActiveTag}$/;"	r
+clickTag	client/src/work/FilteredTags.js	/^const FilteredTags = ({name, clickTag, id, active }) => {$/;"	r
+clickTag	client/src/work/TagSelector.js	/^  clickTag: PropTypes.func.isRequired,$/;"	r
+clickTag	client/src/work/TagSelector.js	/^const TagSelector = ({name, clickTag, id, active }) => {$/;"	r
+code	backend/data.js	/^    code: String,$/;"	r
+code	backend/server.js	/^  data.code = code;$/;"	r
+code	client/src/App.js	/^                        code={this.state.code}$/;"	r
+code	client/src/App.js	/^                code: codedata.data$/;"	r
+code	client/src/App.js	/^                code: this.state.codeupdate,$/;"	r
+code	client/src/App.js	/^            code: ""$/;"	r
+code	client/src/App.js	/^            code: "",$/;"	r
+code	client/src/App.js	/^            code: code,$/;"	r
+code	client/src/App.js	/^    putDataToDB = ( title, code, tags ) => {$/;"	r
+code	client/src/Create.js	/^        let code = e.target.value;$/;"	r
+code	client/src/Create.js	/^const Create = ({title, code, tags, addTitle, addContent, addTags, onClickCreate}) => {$/;"	r
+code	client/src/work/App.js	/^                code: codedata.data$/;"	r
+code	client/src/work/App.js	/^            code:[],$/;"	r
+codeFiltered	client/src/App.js	/^        codeFiltered = [];$/;"	r
+codeFiltered	client/src/App.js	/^let codeFiltered = [];$/;"	r
+codeFiltered	client/src/work/App.js	/^        codeFiltered = [];$/;"	r
+codeFiltered	client/src/work/App.js	/^let codeFiltered = [];$/;"	r
+codeupdate	client/src/App.js	/^             codeupdate: value $/;"	r
+codeupdate	client/src/App.js	/^            codeupdate: "",$/;"	r
+codeupdate	client/src/App.js	/^            codeupdate: dataFilter.code,$/;"	r
+content	client/src/App.js	/^                                content={dat.code}$/;"	r
+content	client/src/App.js	/^                        content={this.state.codeupdate}$/;"	r
+content	client/src/App.js	/^                content: this.state.codeupdate,$/;"	r
+createNew	client/src/App.js	/^    createNew = () => {$/;"	r
+created	client/src/work/App.js	/^                        created={code.date}$/;"	r
+currentIds	client/src/App.js	/^        let currentIds = this.state.data.map(data => data.id);$/;"	r
+currentIds	client/src/App.orig.js	/^    let currentIds = this.state.data.map(data => data.id);$/;"	r
+data	backend/server.js	/^    return res.json({ success: true, data: data });$/;"	r
+data	backend/server.js	/^  \/\/ Data.findOneAndUpdate(id, data, err => {$/;"	r
+data	backend/server.js	/^  let data = new Data();$/;"	r
+data	client/src/App.js	/^                        data: {$/;"	r
+data	client/src/App.js	/^                        data={this.state.objectToUpdate}$/;"	r
+data	client/src/App.js	/^            data: [],$/;"	r
+data	client/src/App.orig.js	/^      data: {$/;"	r
+data	client/src/App.orig.js	/^    data: [],$/;"	r
+data	client/src/Create.js	/^        let data = e.target.value;$/;"	r
+db	backend/server.js	/^let db = mongoose.connection;$/;"	r
+dbRoute	backend/server.js	/^  dbRoute,$/;"	r
+deleteFromDB	client/src/App.js	/^    deleteFromDB = idTodelete => {$/;"	r
+deleteFromDB	client/src/App.orig.js	/^  deleteFromDB = idTodelete => {$/;"	r
+deleteId	client/src/App.js	/^    deleteId = () => {$/;"	r
+deleteThis	client/src/App.js	/^    deleteThis = data => {$/;"	r
+err	backend/server.js	/^  Data.findOneAndDelete(id, err => {$/;"	r
+err	backend/server.js	/^  Data.findOneAndUpdate(id, update, err => {$/;"	r
+err	backend/server.js	/^  \/\/ Data.findOneAndUpdate(id, `{$set: ${update}}`, err => {$/;"	r
+err	backend/server.js	/^  \/\/ Data.findOneAndUpdate(id, data, err => {$/;"	r
+err	backend/server.js	/^  \/\/ Data.findOneAndUpdate(id, {$set: data}, err => {$/;"	r
+error	backend/server.js	/^      error: "INVALID INPUTS"$/;"	r
+error	backend/server.js	/^    if (err) return res.json({ success: false, error: err });$/;"	r
+exports	backend/data.js	/^module.exports = mongoose.model("Data", DataSchema);$/;"	r
+filtercode	client/src/App.js	/^        this.filtercode = this.filtercode.bind(this);$/;"	r
+filtercode	client/src/App.js	/^    filtercode = (data, fltr) => {$/;"	r
+filtercode	client/src/work/App.js	/^        this.filtercode = this.filtercode.bind(this);$/;"	r
+filtercode	client/src/work/App.js	/^    filtercode = (data, fltr) => {$/;"	r
+filteredTags	client/src/App.js	/^            filteredTags: [] $/;"	r
+filteredTags	client/src/App.js	/^            filteredTags: filter $/;"	r
+filteredTags	client/src/work/App.js	/^            filteredTags: [] $/;"	r
+filteredTags	client/src/work/App.js	/^            filteredTags: filter $/;"	r
+filteredTags	client/src/work/App.js	/^            filteredTags:[]$/;"	r
+filtertagsonsearch	client/src/App.js	/^        this.filtertagsonsearch = this.filtertagsonsearch.bind(this);$/;"	r
+filtertagsonsearch	client/src/App.js	/^    filtertagsonsearch = ( search ) => {$/;"	r
+filtertagsonsearch	client/src/work/App.js	/^        this.filtertagsonsearch = this.filtertagsonsearch.bind(this);$/;"	r
+filtertagsonsearch	client/src/work/App.js	/^    filtertagsonsearch = ( search ) => {$/;"	r
+getDataFromDb	client/src/App.js	/^    getDataFromDb = () => {$/;"	r
+getDataFromDb	client/src/App.orig.js	/^  getDataFromDb = () => {$/;"	r
+getNodes	client/src/App.js	/^        this.getNodes = this.getNodes.bind(this);$/;"	r
+getNodes	client/src/work/App.js	/^        this.getNodes = this.getNodes.bind(this);$/;"	r
+getTags	client/src/App.js	/^        this.getTags = this.getTags.bind(this);$/;"	r
+getTags	client/src/work/App.js	/^        this.getTags = this.getTags.bind(this);$/;"	r
+here	client/src/App.js	/^    \/\/ just a note, here, in the front end, we use the id key of our data object $/;"	r
+here	client/src/App.orig.js	/^  \/\/ just a note, here, in the front end, we use the id key of our data object $/;"	r
+hostname	client/src/serviceWorker.js	/^    window.location.hostname === '[::1]' ||$/;"	r
+hostname	client/src/serviceWorker.js	/^  window.location.hostname === 'localhost' ||$/;"	r
+html	client/src/app.css	/^html {$/;"	t
+id	backend/data.js	/^    id: Number,$/;"	r
+id	backend/server.js	/^  data.id = id;$/;"	r
+id	client/src/App.js	/^                                id={dat.id}                       $/;"	r
+id	client/src/App.js	/^                                id={dat.id}$/;"	r
+id	client/src/App.js	/^                            id: { _id: this.state.objectToDelete }$/;"	r
+id	client/src/App.js	/^                            id={tag.id}$/;"	r
+id	client/src/App.js	/^                        id: { _id: dat._id },$/;"	r
+id	client/src/App.js	/^                    id={this.state.tagId}$/;"	r
+id	client/src/App.js	/^            id: 0,$/;"	r
+id	client/src/App.js	/^            id: idToBeAdded,$/;"	r
+id	client/src/App.orig.js	/^        id: objIdToDelete$/;"	r
+id	client/src/App.orig.js	/^      id: idToBeAdded,$/;"	r
+id	client/src/App.orig.js	/^      id: objIdToUpdate,$/;"	r
+id	client/src/App.orig.js	/^    id: 0,$/;"	r
+id	client/src/Delete.js	/^        let id = e.target.value;$/;"	r
+id	client/src/ListItems.js	/^        let id = this.target.id;$/;"	r
+id	client/src/SelectToUpdate.js	/^        let id = e.target.value;$/;"	r
+id	client/src/TagSelector.js	/^  id: PropTypes.number.isRequired,$/;"	r
+id	client/src/work/App.js	/^                                    id={tag.id}$/;"	r
+id	client/src/work/App.js	/^                            id={this.state.tagId}$/;"	r
+id	client/src/work/TagSelector.js	/^  id: PropTypes.number.isRequired,$/;"	r
+idToBeAdded	client/src/App.js	/^        let idToBeAdded = 0;$/;"	r
+idToBeAdded	client/src/App.orig.js	/^    let idToBeAdded = 0;$/;"	r
+idToDelete	client/src/App.js	/^            idToDelete: "",$/;"	r
+idToDelete	client/src/App.js	/^            idToDelete: id })$/;"	r
+idToDelete	client/src/App.js	/^    idToDelete = id => {$/;"	r
+idToDelete	client/src/App.orig.js	/^    idToDelete: null,$/;"	r
+idToUpdate	client/src/App.js	/^                                idToUpdate={this.updateId}$/;"	r
+idToUpdate	client/src/App.js	/^                        idToUpdate={this.state.idToUpdate}$/;"	r
+idToUpdate	client/src/App.js	/^                    idToUpdate: dat._id$/;"	r
+idToUpdate	client/src/App.js	/^                console.log('idToUpdate', idToUpdate, dat._id);$/;"	r
+idToUpdate	client/src/App.js	/^            idToUpdate: "",$/;"	r
+idToUpdate	client/src/App.js	/^            idToUpdate: id $/;"	r
+idToUpdate	client/src/App.js	/^            idToUpdate: id, $/;"	r
+idToUpdate	client/src/App.orig.js	/^    idToUpdate: null,$/;"	r
+index	backend/data.js	/^    tags: { type: [String], index: true } \/\/ field level$/;"	r
+input	client/src/App.js	/^                         input={this.state.searchingTag}$/;"	r
+input	client/src/SearchTag.js	/^const SearchTag = ({keyDown, input, reset}) => {$/;"	r
+input	client/src/app.css	/^input {$/;"	t
+input	client/src/work/App.js	/^                                 input={this.state.searchingTag}$/;"	r
+input	client/src/work/SearchTag.js	/^const SearchTag = ({keyDown, input, reset}) => {$/;"	r
+interval	client/src/App.js	/^            let interval = setInterval(this.getDataFromDb, 300);$/;"	r
+interval	client/src/App.orig.js	/^      let interval = setInterval(this.getDataFromDb, 1000);$/;"	r
+intervalIsSet	client/src/App.js	/^            intervalIsSet: false,$/;"	r
+intervalIsSet	client/src/App.orig.js	/^    intervalIsSet: false,$/;"	r
+key	client/src/App.js	/^                                key={dat.code}$/;"	r
+key	client/src/App.js	/^                            key={tag.index}$/;"	r
+key	client/src/App.js	/^                    key={this.state.tagId.toString}$/;"	r
+key	client/src/work/App.js	/^                                    key={tag.index}$/;"	r
+key	client/src/work/App.js	/^                            key={this.state.tagId.toString}$/;"	r
+key	client/src/work/App.js	/^                        key={code.title.rendered} $/;"	r
+keyDown	client/src/App.js	/^                         keyDown={this.updatetag}$/;"	r
+keyDown	client/src/SearchTag.js	/^  keyDown: PropTypes.func.isRequired,$/;"	r
+keyDown	client/src/work/App.js	/^                                 keyDown={this.updatetag}$/;"	r
+keyDown	client/src/work/SearchTag.js	/^  keyDown: PropTypes.func.isRequired,$/;"	r
+message	client/src/App.orig.js	/^      message: message$/;"	r
+message	client/src/App.orig.js	/^    message: null,$/;"	r
+modified	client/src/work/App.js	/^                        modified={code.modified}$/;"	r
+modifyCode	client/src/App.js	/^                        modifyCode={this.modifyCode}$/;"	r
+modifyCode	client/src/App.js	/^    modifyCode = (value) => {$/;"	r
+modifyEntry	client/src/App.js	/^    modifyEntry = e => {$/;"	r
+modifyTags	client/src/App.js	/^                        modifyTags={this.modifyTags}$/;"	r
+modifyTags	client/src/App.js	/^    modifyTags = (value) => {$/;"	r
+modifyTitle	client/src/App.js	/^                        modifyTitle={this.modifyTitle}$/;"	r
+modifyTitle	client/src/App.js	/^    modifyTitle = (value) => {$/;"	r
+modifyValue	client/src/App.js	/^                        modifyValue={this.modifyValue}$/;"	r
+modifyValue	client/src/App.js	/^    modifyValue = (value) => {$/;"	r
+name	backend/data.js	/^    name: String,$/;"	r
+name	backend/server.js	/^  \/\/ const { id, name, content, tags } = req.body;$/;"	r
+name	backend/server.js	/^  console.log(id, name, code, tags, "ok");$/;"	r
+name	backend/server.js	/^  const { id, name, code, tags } = req.body;$/;"	r
+name	backend/server.js	/^  data.name = name;$/;"	r
+name	client/src/App.js	/^                            name={tag.name} $/;"	r
+name	client/src/App.js	/^                name: this.state.titleupdate,$/;"	r
+name	client/src/App.js	/^            let name = tagItem.name;$/;"	r
+name	client/src/App.js	/^            name: title,$/;"	r
+name	client/src/TagSelector.js	/^  name: PropTypes.string.isRequired,$/;"	r
+name	client/src/work/App.js	/^                                    name={tag.name} $/;"	r
+name	client/src/work/App.js	/^            let name = tagItem.name;$/;"	r
+name	client/src/work/TagSelector.js	/^  name: PropTypes.string.isRequired,$/;"	r
+objIdToDelete	client/src/App.orig.js	/^        objIdToDelete = dat._id;$/;"	r
+objIdToDelete	client/src/App.orig.js	/^    let objIdToDelete = null;$/;"	r
+objIdToUpdate	client/src/App.orig.js	/^        objIdToUpdate = dat._id;$/;"	r
+objIdToUpdate	client/src/App.orig.js	/^    let objIdToUpdate = null;$/;"	r
+objectToDelete	client/src/App.js	/^                    objectToDelete: dat._id$/;"	r
+objectToDelete	client/src/App.js	/^            objectToDelete: "",$/;"	r
+objectToUpdate	client/src/App.js	/^            objectToUpdate: "",$/;"	r
+objectToUpdate	client/src/App.js	/^            objectToUpdate: dataFilter,$/;"	r
+objectToUpdate	client/src/App.orig.js	/^    objectToUpdate: null$/;"	r
+onChange	client/src/App.orig.js	/^            onChange={e => this.setState({ idToDelete: e.target.value })}$/;"	r
+onChange	client/src/App.orig.js	/^            onChange={e => this.setState({ idToUpdate: e.target.value })}$/;"	r
+onChange	client/src/App.orig.js	/^            onChange={e => this.setState({ message: e.target.value })}$/;"	r
+onChange	client/src/App.orig.js	/^            onChange={e => this.setState({ updateToApply: e.target.value })}$/;"	r
+onChange	client/src/Create.js	/^        onChange={e => updateData(e)}$/;"	r
+onChange	client/src/Create.js	/^        onChange={e => updateTags(e)}$/;"	r
+onChange	client/src/Create.js	/^        onChange={e => updateTitle(e)}$/;"	r
+onChange	client/src/Delete.js	/^                onChange={e => updateId(e)}$/;"	r
+onChange	client/src/Update.js	/^            onChange={e => modifyValueCode(e)}$/;"	r
+onChange	client/src/Update.js	/^            onChange={e => modifyValueTags(e)}$/;"	r
+onChange	client/src/Update.js	/^            onChange={e => modifyValueTitle(e)}$/;"	r
+onClick	client/src/App.orig.js	/^            onClick={() =>$/;"	r
+onClick	client/src/Update.js	/^            onClick={e => modifyEntry(e)}$/;"	r
+onClickCreate	client/src/App.js	/^                        onClickCreate={this.createNew}$/;"	r
+onClickModify	client/src/App.js	/^                        onClickModify={this.modifyEntry}$/;"	r
+onClickProp	client/src/App.js	/^                                onClickProp={this.deleteThis}$/;"	r
+onstatechange	client/src/serviceWorker.js	/^        installingWorker.onstatechange = () => {$/;"	r
+onupdatefound	client/src/serviceWorker.js	/^      registration.onupdatefound = () => {$/;"	r
+placeholder	client/src/App.orig.js	/^            placeholder="add something in the database"$/;"	r
+placeholder	client/src/App.orig.js	/^            placeholder="id of item to update here"$/;"	r
+placeholder	client/src/App.orig.js	/^            placeholder="put id of item to delete here"$/;"	r
+placeholder	client/src/App.orig.js	/^            placeholder="put new value of the item here"$/;"	r
+placeholder	client/src/Create.js	/^        placeholder="add content"$/;"	r
+placeholder	client/src/Create.js	/^        placeholder="add tags separated by comma"$/;"	r
+placeholder	client/src/Create.js	/^        placeholder="add title"$/;"	r
+placeholder	client/src/Delete.js	/^                placeholder="put id of item to delete here"$/;"	r
+placeholder	client/src/Update.js	/^            placeholder="content to change"$/;"	r
+placeholder	client/src/Update.js	/^            placeholder="tags"$/;"	r
+placeholder	client/src/Update.js	/^            placeholder="title to change"$/;"	r
+propTypes	client/src/SearchTag.js	/^SearchTag.propTypes = {$/;"	r
+propTypes	client/src/TagSelector.js	/^TagSelector.propTypes = {$/;"	r
+propTypes	client/src/work/SearchTag.js	/^SearchTag.propTypes = {$/;"	r
+propTypes	client/src/work/TagSelector.js	/^TagSelector.propTypes = {$/;"	r
+putDataToDB	client/src/App.js	/^    putDataToDB = ( title, code, tags ) => {$/;"	r
+putDataToDB	client/src/App.orig.js	/^  putDataToDB = message => {$/;"	r
+register	client/src/serviceWorker.js	/^export function register(config) {$/;"	r
+registerValidSW	client/src/serviceWorker.js	/^function registerValidSW(swUrl, config) {$/;"	r
+reset	client/src/App.js	/^                         reset={this.resetInput} $/;"	r
+reset	client/src/work/App.js	/^                                 reset={this.resetInput} $/;"	r
+resetInput	client/src/App.js	/^        this.resetInput = this.resetInput.bind(this);$/;"	r
+resetInput	client/src/App.js	/^    resetInput = () => {$/;"	r
+resetInput	client/src/work/App.js	/^        this.resetInput = this.resetInput.bind(this);$/;"	r
+resetInput	client/src/work/App.js	/^    resetInput = () => {$/;"	r
+return	client/src/serviceWorker.js	/^          return;$/;"	r
+return	client/src/serviceWorker.js	/^      return;$/;"	r
+searchingTag	client/src/App.js	/^            searchingTag: '',$/;"	r
+searchingTag	client/src/App.js	/^            searchingTag: text}, () => {$/;"	r
+searchingTag	client/src/work/App.js	/^            searchingTag: '',$/;"	r
+searchingTag	client/src/work/App.js	/^            searchingTag: text}, () => {$/;"	r
+searchingTag	client/src/work/App.js	/^            searchingTag:'',$/;"	r
+serviceWorker	client/src/serviceWorker.js	/^  navigator.serviceWorker$/;"	r
+state	client/src/App.js	/^        this.state = {$/;"	r
+state	client/src/App.orig.js	/^  state = {$/;"	r
+state	client/src/work/App.js	/^        this.state = {$/;"	r
+status	client/src/serviceWorker.js	/^        response.status === 404 ||$/;"	r
+style	client/src/App.orig.js	/^            style={{ width: "200px" }}$/;"	r
+success	backend/server.js	/^      success: false,$/;"	r
+tagId	client/src/work/App.js	/^            tagId: parseInt(newTagId),$/;"	r
+tagId	client/src/work/App.js	/^            tagId:'',$/;"	r
+tagName	client/src/work/App.js	/^            tagName: newTagName,$/;"	r
+tagName	client/src/work/App.js	/^            tagName:'',$/;"	r
+tagnames	client/src/work/App.js	/^                        tagnames={this.state.tags}$/;"	r
+tags	backend/data.js	/^    tags: { type: [String], index: true } \/\/ field level$/;"	r
+tags	backend/server.js	/^  data.tags = tags;$/;"	r
+tags	client/src/App.js	/^                                tags={dat.tags}$/;"	r
+tags	client/src/App.js	/^                        tags={this.state.tagsupdate}$/;"	r
+tags	client/src/App.js	/^                        tags={this.state.tags}                $/;"	r
+tags	client/src/App.js	/^                tags: codetags.data$/;"	r
+tags	client/src/App.js	/^                tags: this.state.tagsupdate,$/;"	r
+tags	client/src/App.js	/^            tags: []$/;"	r
+tags	client/src/App.js	/^            tags: [],$/;"	r
+tags	client/src/App.js	/^            tags: tags$/;"	r
+tags	client/src/Create.js	/^        let tags = e.target.value;$/;"	r
+tags	client/src/work/App.js	/^                        tags={code.tags} $/;"	r
+tags	client/src/work/App.js	/^                tags: codetags.data$/;"	r
+tags	client/src/work/App.js	/^            tags:[],$/;"	r
+tagsupdate	client/src/App.js	/^             tagsupdate: value $/;"	r
+tagsupdate	client/src/App.js	/^            tagsupdate: [],$/;"	r
+tagsupdate	client/src/App.js	/^            tagsupdate: dataFilter.tags$/;"	r
+title	client/src/App.js	/^                                title={dat.name}$/;"	r
+title	client/src/App.js	/^                        title={this.state.titleupdate}$/;"	r
+title	client/src/App.js	/^                        title={this.state.title}$/;"	r
+title	client/src/App.js	/^                    title={this.state.tagName}$/;"	r
+title	client/src/App.js	/^                title: this.state.titleupdate,$/;"	r
+title	client/src/App.js	/^            title: "",$/;"	r
+title	client/src/ListItems.js	/^const ListItems = ({id, title, content, tags, key, onClickProp}) => {$/;"	r
+title	client/src/Update.js	/^const Update = ({data, title, content, tags, modifyTitle, modifyCode, modifyTags, onClickModify}) => {$/;"	r
+title	client/src/work/App.js	/^                            title={this.state.tagName}$/;"	r
+title	client/src/work/App.js	/^                        title={code.title.rendered} $/;"	r
+titleupdate	client/src/App.js	/^             titleupdate: value $/;"	r
+titleupdate	client/src/App.js	/^            titleupdate: "",$/;"	r
+titleupdate	client/src/App.js	/^            titleupdate: dataFilter.name,$/;"	r
+type	client/src/App.orig.js	/^            type="text"$/;"	r
+type	client/src/Create.js	/^        type="text"$/;"	r
+type	client/src/Delete.js	/^                type="text"$/;"	r
+type	client/src/Update.js	/^            type="text"$/;"	r
+ul	client/src/app.css	/^ul {$/;"	t
+unregister	client/src/serviceWorker.js	/^export function unregister() {$/;"	r
+update	backend/server.js	/^  Data.findOneAndUpdate(id, update, err => {$/;"	r
+update	client/src/App.js	/^                        update: { $/;"	r
+update	client/src/App.orig.js	/^      update: { message: updateToApply }$/;"	r
+updateActiveTag	client/src/work/App.js	/^    updateActiveTag = ( newTagName, newTagId ) => {$/;"	r
+updateDB	client/src/App.js	/^    updateDB = (idToUpdate, update) => {$/;"	r
+updateDB	client/src/App.orig.js	/^  updateDB = (idToUpdate, updateToApply) => {$/;"	r
+updateEntry	client/src/App.js	/^    updateEntry = () => {$/;"	r
+updateId	client/src/App.js	/^    updateId = id => {$/;"	r
+updateToApply	client/src/App.js	/^            updateToApply: value $/;"	r
+updateToApply	client/src/App.js	/^            updateToApply: {$/;"	r
+updateToApply	client/src/App.js	/^            updateToApply: {} $/;"	r
+updateUpdate	client/src/App.js	/^    updateUpdate = id => {$/;"	r
+updateValue	client/src/App.js	/^    updateValue = value => {$/;"	r
+updatetag	client/src/App.js	/^        this.updatetag = this.updatetag.bind(this);$/;"	r
+updatetag	client/src/App.js	/^    updatetag = ( text ) => {$/;"	r
+updatetag	client/src/work/App.js	/^        this.updatetag = this.updatetag.bind(this);$/;"	r
+updatetag	client/src/work/App.js	/^    updatetag = ( text ) => {$/;"	r
+value	client/src/Create.js	/^        value={code}$/;"	r
+value	client/src/Create.js	/^        value={tags}$/;"	r
+value	client/src/Create.js	/^        value={title}$/;"	r
+value	client/src/Update.js	/^            value={content}$/;"	r
+value	client/src/Update.js	/^            value={tags}$/;"	r
+value	client/src/Update.js	/^            value={title} $/;"	r
+value	client/src/Update.js	/^        let value = e.target.value;$/;"	r
