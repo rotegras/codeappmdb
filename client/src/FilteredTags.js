@@ -1,13 +1,13 @@
 /*jshint esversion: 6 */
 import React from 'react';
     
+// return tags that match search
+// in clickable buttons
 const FilteredTags = ({tags, clickTag}) => {
-
-    console.log(tags);
 
     const listItems = tags.map(item => {
         return <li key={item.index} className="taglist tag d-inline">
-            <button className="tagbutton mb-2 mr-2 px-3" id={item.index} name={item} onClick={(e) => TagCallback(e)}>
+            <button className="tagbutton mb-2 mr-2 px-3" name={item} onClick={(e) => TagCallback(e)}>
                 {item}
             </button>
         </li>

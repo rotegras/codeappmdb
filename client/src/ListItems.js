@@ -17,6 +17,7 @@ class ListItems extends Component {
             html : this.props.title,
             open : false
         }
+        
     }
 
     deleteThis = e => {
@@ -36,6 +37,12 @@ class ListItems extends Component {
     toggleOpen = e => {
         this.setState(prevState => ({open: !prevState.open }))
     }
+
+    TagCallback = e => {
+        const newTagName = e.target.name.trim();
+        this.props.clickTag ( newTagName );
+    };
+    
 
     render(){
         return (
@@ -66,8 +73,9 @@ class ListItems extends Component {
                         </div>
                         <ul className="taglist">
                             {this.state.tags.map(tag => (
-                                <li className="taglist tag d-inline" key={tag} name="tags">
-                                    <button className="tagbutton mb-2 mr-2 px-3" key={tag}>{tag.trim()}
+                                <li className="taglist tag d-inline" key={tag.index} name="tags">
+                                    <button className="tagbutton mb-2 mr-2 px-3" name={tag.trim()} onClick={(e) => this.TagCallback(e)}>
+                                    {tag.trim()}
                                     </button>
                                 </li>
                             ))} 

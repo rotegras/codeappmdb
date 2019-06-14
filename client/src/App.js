@@ -41,7 +41,6 @@ class App extends Component {
             searchingTag:'',
             filteredTags:[]
         }
-
     }
 
 
@@ -166,7 +165,8 @@ class App extends Component {
             <h5 className="w-50 app-title p-2">Code Library</h5>
             </div>
 
-            <div className="col-3 sticky-top">
+            <div className="col-3">
+            <div className="group sticky-top">
 
             <div className="c_tagdisplay">
             <h5 className="label mt-3">Selected Tag</h5>
@@ -191,6 +191,7 @@ class App extends Component {
                 />
             </div>
             </div>
+            </div>
 
             <div className="col-6">
 
@@ -200,21 +201,22 @@ class App extends Component {
                 ? "NO DB ENTRIES YET"
                 : codeFiltered.map(dat => (
                     <ListItems
-                    key={dat.id}
-                    id={dat.id}
-                    title={dat.name}
-                    content={dat.code}
-                    comment={dat.comment}
-                    tags={dat.tags}
-                    onClickProp={this.deleteThis}
-                    idToUpdate={this.updateId}
+                        key={dat.id}
+                        id={dat.id}
+                        title={dat.name}
+                        content={dat.code}
+                        comment={dat.comment}
+                        tags={dat.tags}
+                        onClickProp={this.deleteThis}
+                        idToUpdate={this.updateId}
+                        clickTag={this.updateActiveTag}
                     />
                 ))}
             </ul>
             </div>
             </div>
             <div className="col-3">
-
+                <div className="group sticky-top">
             <div className="c_create"> 
             <Create
             title={this.state.title}
@@ -245,6 +247,7 @@ class App extends Component {
             onClickModify={this.modifyEntry}
             />
 
+            </div>
             </div>
             </div>
             </div>
