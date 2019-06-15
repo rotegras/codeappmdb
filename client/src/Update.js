@@ -1,7 +1,6 @@
 import React from "react";
 
-const Update = ({id, data, title, content, comment, tags, modifyName, modifyComment, modifyTags, onClickModify}) => {
-// const Update = ({ props }) => {
+const Update = ({id, data, title, content, comment, tags, modifyName, modifyTags, onClickModify}) => {
 
     // >> todo: update in app.js
     const thisid = {id} 
@@ -9,11 +8,6 @@ const Update = ({id, data, title, content, comment, tags, modifyName, modifyComm
         const { target: { name, value } } = e;
         console.log('id name value: ', thisid, name, value)
         modifyName(thisid, name, value);
-    }
-
-    const modifyValueComment = e => {
-        let value = e.target.value;
-        modifyComment(value);
     }
 
     const modifyValueTags = e => {

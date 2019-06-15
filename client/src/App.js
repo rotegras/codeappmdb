@@ -219,32 +219,32 @@ class App extends Component {
                 <div className="group sticky-top">
             <div className="c_create"> 
             <Create
-            title={this.state.title}
-            code={this.state.code}
-            comment={this.state.comment}
-            tags={this.state.tags}                
-            addTitle={this.addTitle}
-            addContent={this.addContent}
-            addComment={this.addComment}
-            addTags={this.addTags}
-            onClickCreate={this.createNew}
+                title={this.state.title}
+                code={this.state.code}
+                comment={this.state.comment}
+                tags={this.state.tags}                
+                addTitle={this.addTitle}
+                addContent={this.addContent}
+                addComment={this.addComment}
+                addTags={this.addTags}
+                onClickCreate={this.createNew}
             />
             </div>
 
             <div className="c_update  mt-5"> 
             <Update
-            id={this.state.idToUpdate}
-            data={this.state.objectToUpdate}
-            title={this.state.titleupdate}
-            content={this.state.codeupdate}
-            comment={this.state.commentupdate}
-            tags={this.state.tagsupdate}
-            idToUpdate={this.state.idToUpdate}
-            changeId={this.updateId}
-            modifyName={this.modifyName}
-            modifyComment={this.modifyComment}
-            modifyTags={this.modifyTags}
-            onClickModify={this.modifyEntry}
+                id={this.state.idToUpdate}
+                data={this.state.objectToUpdate}
+                title={this.state.titleupdate}
+                content={this.state.codeupdate}
+                comment={this.state.commentupdate}
+                tags={this.state.tagsupdate}
+                idToUpdate={this.state.idToUpdate}
+                changeId={this.updateId}
+                modifyName={this.modifyName}
+                modifyComment={this.modifyComment}
+                modifyTags={this.modifyTags}
+                onClickModify={this.modifyEntry}
             />
 
             </div>
@@ -346,7 +346,6 @@ class App extends Component {
             [nameupdate] : value,
             data: update(this.state.data, {[$order]: {[name]: {$set: [value]}}})
         }, () => 
-
             this.filtercode(this.state.data, this.state.tagName)
             , () => console.log([$order], this.state.data[$order].title))
         console.clear();
