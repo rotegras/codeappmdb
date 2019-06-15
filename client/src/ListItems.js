@@ -29,7 +29,7 @@ class ListItems extends Component {
 
     updateId = e => {
         let idupdate = e.target.id;
-        this.state.idToUpdate(idupdate);
+        idupdate[0] && this.state.idToUpdate(idupdate);
     }
 
     handleChange = e => {
@@ -64,8 +64,9 @@ class ListItems extends Component {
                                         html={this.state.title}
                                         value={this.state.title}
                                     />
+                                    <div>id: {this.state.id}</div>
                                     <button className="action-icon ml-2" id={this.state.id} onClick={e => this.deleteThis(e)}>
-                                        <FontAwesomeIcon icon={faTrash} />
+                                        <FontAwesomeIcon icon={faTrash} id={this.state.id}/>
                                     </button> 
                                     <button className="mr-2 action-icon ml-2" id={this.state.id} onClick={e => this.updateId(e)}>
                                         <FontAwesomeIcon icon={faEdit} />

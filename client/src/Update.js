@@ -54,7 +54,7 @@ const Update = ({id, data, title, content, comment, tags, modifyName, modifyTags
             value={comment}
             name="comment"
           />
-
+          <div>{id}</div>
           <button
             onClick={e => modifyEntry(e)}
           >

@@ -38,6 +38,10 @@ button
     border-radius: 5px;
 }
 
+button > * {
+  pointer-events: none;
+}
+
 button:hover,
 button:focus,
 button:active
