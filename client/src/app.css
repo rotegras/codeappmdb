@@ -1,13 +1,15 @@
 html
 {
     overflow-y: scroll;
-    /* filter: invert(100%); */
 }
+
 
 body
 {
     color: #fff;
-    background: #111;
+    font-family: "Ubuntu Mono", Ubuntu, arial, sans-serif;
+    font-size: 16px;
+    
 }
 
 textarea,
@@ -20,9 +22,7 @@ input
     color: white;
     border: 1px solid #ebebeb;
     border-radius: 5px;
-    background: #111;
 }
-
 
 button
 {
@@ -33,15 +33,21 @@ button
     transition: all .3s ease-in-out;
 
     color: #ebebeb;
-    border: 0 solid #ebebeb;
+    border: 1 solid #ebebeb;
+    box-sizing: border-box;
     border-radius: 5px;
 }
 
-button:hover
+button:hover,
+button:focus,
+button:active
 {
     cursor: pointer;
 
     opacity: .5;
+    outline: 0 !important;
+    border: 0;
+
 }
 
 .tagbutton
@@ -60,8 +66,6 @@ button:hover
     padding: 5px 10px;
 
     text-transform: uppercase;
-
-    background: #000;
 }
 
 ul
@@ -75,8 +79,7 @@ li.item
     padding: 10px;
 
     list-style: none;
-
-    background: #333;
+    border-top: 1px dotted #eee;
 }
 
 .id
@@ -106,7 +109,7 @@ li.item
     flex-wrap: wrap;
 
     margin: 0 -5px;
-    top: 4rem;
+    /* top: 4rem; */
 }
 
 .tag
@@ -116,37 +119,20 @@ li.item
 
 .action-icon
 {
-    float: right;
-
     width: 36px;
     height: 36px;
-    margin-left: 15px;
 
     color: white;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 24px 24px;
 }
 
-.action-icon__trash
+.action-icon__close
 {
-    background-image: url(./Trash-icon.svg);
-}
-
-.action-icon__edit
-{
-    background-image: url(./Edit-icon.svg);
+    transform: rotate(270deg);
 }
 
 .action-icon__open
 {
-    background-image: url(./Caret-square-down.svg);
-    transform: rotate(180deg);
-}
-
-.action-icon__close 
-{
-    background-image: url(./Caret-square-down.svg);
+    transform: rotate(0deg);
 }
 
 .app-title
@@ -164,4 +150,16 @@ li.item
     font-weight: 300;
     font-size: 1.5rem;
     margin-top: -2px;
+}
+
+.sticky-2 {
+    top: 2rem;
+}
+
+.sticky-4 {
+    top: 4rem;
+}
+
+.sticky-6 {
+    top: 6rem;
 }

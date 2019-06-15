@@ -169,7 +169,7 @@ class App extends Component {
             <div className="group sticky-top">
 
             <div className="c_tagdisplay">
-            <h5 className="label mt-3">Selected Tag</h5>
+            <h5 className="label bg-dark mt-3">Selected Tag</h5>
             <TagDisplay
             title={this.state.tagName}
             /> 
@@ -184,7 +184,7 @@ class App extends Component {
             </div>
 
             <div className="c_filteredtags">
-            <h5 className="label mt-5">Matching Tags</h5>
+            <h5 className="bg-dark label mt-5">Matching Tags</h5>
                 <FilteredTags
                     tags={this.state.filteredTags}
                     clickTag={this.updateActiveTag}
