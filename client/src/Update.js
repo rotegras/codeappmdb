@@ -1,12 +1,12 @@
 import React from "react";
+import Button from '@material-ui/core/Button';
 
-const Update = ({id, data, title, content, comment, tags, modifyName, modifyTags, onClickModify}) => {
+const Update = ({id, data, modifyName, modifyTags, onClickModify}) => {
 
     // >> todo: update in app.js
     const thisid = {id} 
     const modifyN = e => {
         const { target: { name, value } } = e;
-        console.log('id name value: ', thisid, name, value)
         modifyName(thisid, name, value);
     }
 
@@ -22,13 +22,13 @@ const Update = ({id, data, title, content, comment, tags, modifyName, modifyTags
     return (
         <div>
         <h5 className="label">MODIFY</h5>
-
+        <form>
           <input
             type="text"
             id={id}
             onChange={e => modifyN(e)}
             placeholder="modify title"
-            value={title} 
+            value={data.name} 
             name="title"
           />
 
@@ -36,7 +36,7 @@ const Update = ({id, data, title, content, comment, tags, modifyName, modifyTags
             type="text"
             onChange={e => modifyN(e)}
             placeholder="modify content"
-            value={content}
+            value={data.code}
             name="code"
           />
 
@@ -44,22 +44,25 @@ const Update = ({id, data, title, content, comment, tags, modifyName, modifyTags
             type="text"
             onChange={e => modifyValueTags(e)}
             placeholder="modify tags"
-            value={tags}
+            value={data.tags}
           />
 
           <input 
             type="text"
             onChange={e => modifyN(e)}
             placeholder="modify cooment"
-            value={comment}
+            value={data.comment}
             name="comment"
           />
           <div>{id}</div>
-          <button
+          <button 
+            color="dark"
+            name="UPDATE"
             onClick={e => modifyEntry(e)}
           >
-            UPDATE
-          </button>
+    update
+</button>
+        </form>
         </div>
     )
 }
