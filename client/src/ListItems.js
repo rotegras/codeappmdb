@@ -17,7 +17,7 @@ class ListItems extends Component {
             onClickProp : this.props.onClickProp,
             idToUpdate : this.props.idToUpdate,
             html : this.props.title,
-            open : false
+            open : this.props.open 
         }
 
     }
@@ -87,7 +87,7 @@ class ListItems extends Component {
                     <div className="col-12 col-lg-4 ">
                             <ul className="taglist px-3 sticky-top sticky-6">
                                 {this.state.tags.map(tag => (
-                                    <li className="taglist tag d-inline" key={tag.index} name="tags">
+                                    <li className="taglist tag d-inline" key={`${this.state.id}${tag}`} name="tags">
                                         <button className="tagbutton mb-2 mr-2 px-3" name={tag.trim()} onClick={(e) => this.TagCallback(e)}>
                                         {tag.trim()}
                                         </button>

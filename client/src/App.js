@@ -6,6 +6,7 @@ import axios from "axios";
 import Create from "./Create";
 import FilteredTags from './FilteredTags';
 import ListItems from './ListItems';
+import LastEntry from './LastEntry';
 import SearchTag from './SearchTag';
 import TagDisplay from './TagDisplay';
 import Update from "./Update";
@@ -33,6 +34,7 @@ class App extends Component {
             idToUpdate: "",
             objectToUpdate: "",
             objectToDelete: "",
+            open: false,
             tags: [],
             tagsupdate: [],
             tagsList: [],
@@ -210,6 +212,7 @@ class App extends Component {
                         onClickProp={this.deleteThis}
                         idToUpdate={this.updateId}
                         clickTag={this.updateActiveTag}
+                        open={this.state.open}
                     />
                 ))}
             </ul>
@@ -246,7 +249,12 @@ class App extends Component {
                 modifyTags={this.modifyTags}
                 onClickModify={this.modifyEntry}
             />
+            </div>
 
+            <div className="c_lastentry"> 
+                <LastEntry
+                    data={this.state.data}
+                /> 
             </div>
             </div>
             </div>

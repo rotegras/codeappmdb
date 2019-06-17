@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-import React from 'react';
+import React from 'react'
 
 const TagDisplay = ({id, title}) => {
     
@@ -10,4 +10,4 @@ const TagDisplay = ({id, title}) => {
     );
 }
 
-export default TagDisplay;
+export default TagDisplay
