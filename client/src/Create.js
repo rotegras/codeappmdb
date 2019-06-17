@@ -1,4 +1,5 @@
 import React from "react";
+import Button from '@material-ui/core/Button';
 
 const Create = ({title, code, comment, tags, addTitle, addContent, addComment, addTags, onClickCreate}) => {
 
@@ -62,9 +63,14 @@ const Create = ({title, code, comment, tags, addTitle, addContent, addComment, a
             attr="comment"
         />
 
-        <button onClick={e => triggerAdd()}>
-        ADD
-        </button>
+        <Button 
+            color="secondary"
+            variant="contained"
+            name="ADD ITEM"
+            onClick={e => triggerAdd()}
+        >
+            ADD ITEM
+        </Button>
 
         </div>
     )

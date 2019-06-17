@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import ContentEditable from 'react-contenteditable'
 import { faEdit,faTrash, faCaretDown  } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Button from '@material-ui/core/Button';
 
 class ListItems extends Component {
 
@@ -52,9 +53,19 @@ class ListItems extends Component {
                 <div className="row">
                     <div className="col-12 sticky-top sticky-2 d-flex">
                                 <div className="d-flex space-between bg-dark mx-3 w-100">
-                                    <button className={`action-icon action-icon__${this.state.open === true ? "open" : "close"} mr-2`}  id={this.state.id} onClick={e => this.toggleOpen(e)}>
-                                        <FontAwesomeIcon icon={faCaretDown} />
-                                    </button>
+                                    <Button 
+                                        className={`action-icon action-icon__${
+                                            this.state.open || this.props.open === true ? 
+                                            "open" : 
+                                            "close"} 
+                                        mr-2`}  
+                                        variant="rounded" 
+                                        color="primary"
+                                        id={this.state.id} 
+                                        onClick={e => this.toggleOpen(e)}
+                                    >
+                                        <FontAwesomeIcon icon={faCaretDown} className="text-white" />
+                                    </Button>
                                     <ContentEditable 
                                         className="mb-3 item-title mr-auto"
                                         name="title" 
@@ -65,21 +76,34 @@ class ListItems extends Component {
                                         value={this.state.title}
                                     />
                                     <div>id: {this.state.id}</div>
-                                    <button className="action-icon ml-2" id={this.state.id} onClick={e => this.deleteThis(e)}>
+                                    <Button 
+                                        className="action-icon ml-2" 
+                                        id={this.state.id} 
+                                        variant="contained" 
+                                        color="info"
+                                        onClick={e => this.deleteThis(e)}
+                                    >
                                         <FontAwesomeIcon icon={faTrash} id={this.state.id}/>
-                                    </button> 
-                                    <button className="mr-2 action-icon ml-2" id={this.state.id} onClick={e => this.updateId(e)}>
+                                    </Button> 
+
+                                    <Button 
+                                        className="mr-2 action-icon ml-2" 
+                                        id={this.state.id} 
+                                        onClick={e => this.updateId(e)}
+                                        variant="contained" 
+                                        color="secondary"
+                                    >
                                         <FontAwesomeIcon icon={faEdit} />
-                                    </button>
+                                    </Button>
                                 </div>
                     </div>
                     <div className="col-12 col-lg-8 pl-5">
 
                             <div className="content line-break" name="content">
-                                {this.state.open === true ? this.state.content : ""}
+                                {this.props.open === true || this.state.open ? this.state.content : ""}
                             </div>
                             <div className="mt-2 text-secondary">
-                                {this.state.open === true ? this.state.comment : ""}
+                                {this.props.open || this.state.open === true ? this.state.comment : ""}
                             </div>
                             <span className="id"> id: {this.state.id} </span>
 

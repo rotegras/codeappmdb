@@ -55,13 +55,14 @@ const Update = ({id, data, modifyName, modifyTags, onClickModify}) => {
             name="comment"
           />
           <div>{id}</div>
-          <button 
-            color="dark"
+          <Button 
+            color="primary"
+            variant="contained"
             name="UPDATE"
             onClick={e => modifyEntry(e)}
           >
     update
-</button>
+</Button>
         </form>
         </div>
     )

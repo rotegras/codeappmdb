@@ -1,16 +1,18 @@
+'esversion: 6'
 // /client/App.js
-//
-import React, { Component } from "react";
-import update from 'react-addons-update';
-import axios from "axios";
-import Create from "./Create";
-import FilteredTags from './FilteredTags';
-import ListItems from './ListItems';
-import LastEntry from './LastEntry';
-import SearchTag from './SearchTag';
-import TagDisplay from './TagDisplay';
-import Update from "./Update";
-import "./app.css";
+
+import React, { Component } from "react"
+import update from 'react-addons-update'
+import axios from "axios"
+import Controls from "./Controls"
+import Create from "./Create"
+import FilteredTags from './FilteredTags'
+import ListItems from './ListItems'
+import LastEntry from './LastEntry'
+import SearchTag from './SearchTag'
+import TagDisplay from './TagDisplay'
+import Update from "./Update"
+import "./app.css"
 
 
 let codeFiltered = [];
@@ -165,6 +167,12 @@ class App extends Component {
 
             <div className="col-12">
             <h5 className="w-50 app-title p-2">Code Library</h5>
+
+            <Controls 
+                open={this.state.open}
+                clickCB={this.toggleOpen}
+            />
+
             </div>
 
             <div className="col-2">
@@ -455,6 +463,11 @@ class App extends Component {
         this.setState({
             tagName: newTagName
         })
+    }
+    
+    // control toggle open for all shown items
+    toggleOpen = () => {
+        this.setState(prevState => ({open: !prevState.open }))
     }
 
 }
