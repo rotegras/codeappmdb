@@ -122,15 +122,12 @@ li.item
 
 .action-icon
 {
-    width: 24px;
-    height: 36px;
-
-    color: white;
 }
 
 .action-icon__close
 {
     transform: rotate(270deg);
+    transition: transform .3s ease;
 }
 
 .action-icon__open

@@ -166,13 +166,18 @@ class App extends Component {
             <div className="row">
 
             <div className="col-12">
-            <h5 className="w-50 app-title p-2">Code Library</h5>
-
-            <Controls 
-                open={this.state.open}
-                clickCB={this.toggleOpen}
-            />
-
+                <div className="row">
+                    <div className="col-2">
+                        <h5 className="app-title d-inline  p-2">Code Library</h5>
+                    </div>
+                    <div className="col-10">
+                        <Controls 
+                            className="d-inline"
+                            open={this.state.open}
+                            clickCB={this.toggleOpen}
+                        />
+                    </div>
+                </div>
             </div>
 
             <div className="col-2">
@@ -211,7 +216,7 @@ class App extends Component {
                 ? "NO DB ENTRIES YET"
                 : codeFiltered.map(dat => (
                     <ListItems
-                        key={dat.id}
+                        keyid={dat._id}
                         id={dat.id}
                         title={dat.name}
                         content={dat.code}
@@ -259,7 +264,7 @@ class App extends Component {
             />
             </div>
 
-            <div className="c_lastentry"> 
+            <div className="c_lastentry mt-5"> 
                 <LastEntry
                     data={this.state.data}
                 /> 

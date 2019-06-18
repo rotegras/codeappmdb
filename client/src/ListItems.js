@@ -2,7 +2,10 @@ import React, { Component } from "react"
 import ContentEditable from 'react-contenteditable'
 import { faEdit,faTrash, faCaretDown  } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Button from '@material-ui/core/Button';
+
+import ActionButton from './ActionButton';
+
+
 
 class ListItems extends Component {
 
@@ -10,6 +13,7 @@ class ListItems extends Component {
         super(props);        
         this.contentEditable = React.createRef();
         this.state = {
+            key: this.props.keyid,
             id : this.props.id,
             title : this.props.title,
             content : this.props.content,
@@ -49,23 +53,23 @@ class ListItems extends Component {
 
     render(){
         return (
-            <li className="item" key={this.state.id}>
+            <li className="item" key={this.props.keyid}>
                 <div className="row">
                     <div className="col-12 sticky-top sticky-2 d-flex">
                                 <div className="d-flex space-between bg-dark mx-3 w-100">
-                                    <Button 
-                                        className={`action-icon action-icon__${
+                                    <div>
+                                    <ActionButton 
+                                        className={`action-icon__${
                                             this.state.open || this.props.open === true ? 
                                             "open" : 
                                             "close"} 
                                         mr-2`}  
-                                        variant="rounded" 
-                                        color="primary"
                                         id={this.state.id} 
                                         onClick={e => this.toggleOpen(e)}
                                     >
-                                        <FontAwesomeIcon icon={faCaretDown} className="text-white" />
-                                    </Button>
+                                        <FontAwesomeIcon icon={faCaretDown} />
+                                    </ActionButton>
+                                    </div>
                                     <ContentEditable 
                                         className="mb-3 item-title mr-auto"
                                         name="title" 
@@ -75,30 +79,35 @@ class ListItems extends Component {
                                         html={this.state.title}
                                         value={this.state.title}
                                     />
-                                    <div>id: {this.state.id}</div>
-                                    <Button 
+                                    <div>
+                                    <ActionButton 
                                         className="action-icon ml-2" 
                                         id={this.state.id} 
-                                        variant="contained" 
-                                        color="info"
+                                        variant="round" 
+                                        color="secondary"
                                         onClick={e => this.deleteThis(e)}
                                     >
                                         <FontAwesomeIcon icon={faTrash} id={this.state.id}/>
-                                    </Button> 
-
-                                    <Button 
+                                    </ActionButton> 
+                                    </div>
+                                    <div>
+                                    <ActionButton 
                                         className="mr-2 action-icon ml-2" 
                                         id={this.state.id} 
                                         onClick={e => this.updateId(e)}
-                                        variant="contained" 
-                                        color="secondary"
+                                        variant="round" 
+                                        color="primary"
                                     >
                                         <FontAwesomeIcon icon={faEdit} />
-                                    </Button>
+                                    </ActionButton>
+                                    </div>
                                 </div>
                     </div>
                     <div className="col-12 col-lg-8 pl-5">
 
+                                    <span className="mr-2 text-danger">
+                                        id: {this.state.id}
+                                    </span>
                             <div className="content line-break" name="content">
                                 {this.props.open === true || this.state.open ? this.state.content : ""}
                             </div>

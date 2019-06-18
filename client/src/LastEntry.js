@@ -13,10 +13,10 @@ const LastEntry = ({data}) => {
 
     return (
         <div>
-            <h5>Last Entry</h5>
-            <div>{lastel.name}</div>
-            <div>{lastel.code}</div>
-            <div>{lastel.updatedAt}</div>
+            <h5>LAST ENTRY</h5>
+            <div className="mb-2">{lastel.name}</div>
+            <div className="line-break text-info">{lastel.code}</div>
+            <div className="mt-4">{lastel.updatedAt}</div>
         </div>
     );
 
