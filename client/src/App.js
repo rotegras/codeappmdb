@@ -24,7 +24,7 @@ class App extends Component {
         // initialize our state 
         this.state = {
             data: [],
-            id: 0,
+            id: "",
             title: "",
             titleupdate: "",
             code: "",
@@ -218,9 +218,7 @@ class App extends Component {
                     <ListItems
                         keyid={dat._id}
                         id={dat.id}
-                        title={dat.name}
-                        content={dat.code}
-                        comment={dat.comment}
+                        data={dat}
                         tags={dat.tags}
                         onClickProp={this.deleteThis}
                         idToUpdate={this.updateId}
@@ -251,14 +249,7 @@ class App extends Component {
             <Update
                 id={this.state.idToUpdate}
                 data={this.state.objectToUpdate}
-                title={this.state.titleupdate}
-                content={this.state.codeupdate}
-                comment={this.state.commentupdate}
-                tags={this.state.tagsupdate}
-                idToUpdate={this.state.idToUpdate}
-                changeId={this.updateId}
                 modifyName={this.modifyName}
-                modifyComment={this.modifyComment}
                 modifyTags={this.modifyTags}
                 onClickModify={this.modifyEntry}
             />
@@ -325,15 +316,14 @@ class App extends Component {
     }
 
     updateUpdate = id => {
+        console.log(id);
         const dataFilter1 = this.state.data.filter(item => item.id == this.state.idToUpdate);
+        console.log(dataFilter);
         const dataFilter=dataFilter1[0];
 
         this.setState({
             idToUpdate: id, 
             objectToUpdate: dataFilter,
-            titleupdate: dataFilter.name,
-            codeupdate: dataFilter.code,
-            commentupdate: dataFilter.comment,
             tagsupdate: dataFilter.tags
         })
     }
@@ -357,7 +347,7 @@ class App extends Component {
 
     modifyName = (idn, name, value) => {
         const $id = idn.id;
-        const nameupdate = `${name}update`;
+        const nameupdate = `ojectToUpdate.${name}`;
 
         // find index of item on data to change state
         const $data = this.state.data;

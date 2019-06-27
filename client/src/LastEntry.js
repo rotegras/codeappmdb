@@ -1,6 +1,7 @@
 import React from 'react'
 
 const LastEntry = ({data}) => {
+
     
     let lastel={};
     let ordered =  data.sort((a,b) => {

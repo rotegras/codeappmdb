@@ -19,7 +19,7 @@ input
     margin-bottom: 5px;
     padding: 5px 10px;
 
-    color: white;
+    /* color: white; */
     border: 1px solid #ebebeb;
     border-radius: 5px;
 }
@@ -32,7 +32,7 @@ button
 
     transition: all .3s ease-in-out;
 
-    color: #ebebeb;
+    /* color: #ebebeb; */
     border: 1 solid #ebebeb;
     box-sizing: border-box;
     border-radius: 5px;
@@ -48,9 +48,8 @@ button:active
 {
     cursor: pointer;
 
-    opacity: .5;
+    opacity: .9;
     outline: 0 !important;
-
 }
 
 .tagbutton

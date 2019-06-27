@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+
 const rootEl = document.getElementById('root');
 
 ReactDOM.render(
@@ -12,12 +13,3 @@ ReactDOM.render(
 
 serviceWorker.register();
 
-if (module.hot) {
-  module.hot.accept('./App', () => {
-    const NextApp = require('./App').default
-    ReactDOM.render(
-      <NextApp />,
-      rootEl
-    )
-  })
-}

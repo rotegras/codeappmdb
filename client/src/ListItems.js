@@ -5,23 +5,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import ActionButton from './ActionButton';
 
-
-
 class ListItems extends Component {
 
     constructor(props) {
         super(props);        
         this.contentEditable = React.createRef();
         this.state = {
-            key: this.props.keyid,
             id : this.props.id,
-            title : this.props.title,
-            content : this.props.content,
-            comment : this.props.comment,
-            tags : this.props.tags,
+            data : this.props.data,
             onClickProp : this.props.onClickProp,
             idToUpdate : this.props.idToUpdate,
-            html : this.props.title,
+            html : this.props.data.name,
             open : this.props.open 
         }
 
@@ -53,7 +47,7 @@ class ListItems extends Component {
 
     render(){
         return (
-            <li className="item" key={this.props.keyid}>
+            <li className="item" key={this.props.id}>
                 <div className="row">
                     <div className="col-12 sticky-top sticky-2 d-flex">
                                 <div className="d-flex space-between bg-dark mx-3 w-100">
@@ -76,8 +70,8 @@ class ListItems extends Component {
                                         onChange={this.handleChange} 
                                         innerRef={this.contentEditable}
                                         disabled={false} 
-                                        html={this.state.title}
-                                        value={this.state.title}
+                                        html={this.state.data.name}
+                                        value={this.state.data.name}
                                     />
                                     <div>
                                     <ActionButton 
@@ -109,18 +103,18 @@ class ListItems extends Component {
                                         id: {this.state.id}
                                     </span>
                             <div className="content line-break" name="content">
-                                {this.props.open === true || this.state.open ? this.state.content : ""}
+                                {this.props.open === true || this.state.open ? this.state.data.code : ""}
                             </div>
                             <div className="mt-2 text-secondary">
-                                {this.props.open || this.state.open === true ? this.state.comment : ""}
+                                {this.props.open || this.state.open === true ? this.state.data.comment : ""}
                             </div>
                             <span className="id"> id: {this.state.id} </span>
 
                     </div>
                     <div className="col-12 col-lg-4 ">
                             <ul className="taglist px-3 sticky-top sticky-6">
-                                {this.state.tags.map(tag => (
-                                    <li className="taglist tag d-inline" key={`${this.state.id}${tag}`} name="tags">
+                                {this.state.data.tags.map(tag => (
+                                    <li className="taglist tag d-inline" key={`${this.props.id}${tag}`} name="tags">
                                         <button className="tagbutton mb-2 mr-2 px-3" name={tag.trim()} onClick={(e) => this.TagCallback(e)}>
                                         {tag.trim()}
                                         </button>
