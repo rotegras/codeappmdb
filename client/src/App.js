@@ -81,8 +81,8 @@ class App extends Component {
             .then(res => this.setState({ data: res.data })
             );
           this.arrayDuplicates(this.state.data);
-          console.log('entries: ', this.state.data.length);
-          console.log('last: ', this.state.data[this.state.data.length-1]);
+          // console.log('entries: ', this.state.data.length);
+          // console.log('last: ', this.state.data[this.state.data.length-1]);
     };
 
     // our put method that uses our backend api
@@ -158,10 +158,9 @@ class App extends Component {
     // see them render into our screen
     render() {
 
-        this.filtercode(this.state.data, this.state.tagName);
-
-
         const { data } = this.state;
+
+        this.filtercode(this.state.data, this.state.tagName);
 
 
         return (
@@ -306,6 +305,8 @@ class App extends Component {
     // get item to delete and trigger delete from db
     deleteThis = iddelete => {
         this.setState({ idToDelete: iddelete }, () =>{
+            console.clear();
+            console.log('deleteid: ', iddelete);
             this.deleteFromDB(this.state.idToDelete)
         })       
     }
@@ -441,7 +442,7 @@ class App extends Component {
     }
 
     // filter data by tags
-    filtercode = (dataToFilter, fltr) => {
+    filtercode = ( dataToFilter, fltr ) => {
 
         // reset codeFiltered every time
         // the function is called
@@ -469,7 +470,7 @@ class App extends Component {
         this.setState(prevState => ({open: !prevState.open }))
     }
 
-    sortNumber = (a,b) => {
+    sortOrder = (a,b) => {
       return a - b;
     }
 
@@ -485,11 +486,11 @@ class App extends Component {
         if  (!(singles.includes(array[i].id))) {
 
           singles.push(array[i].id); 
-          singles.sort(this.sortNumber);
+          singles.sort(this.sortOrder);
 
         } else {
           duplicates.push(array[i].id); 
-          duplicates.sort(this.sortNumber);
+          duplicates.sort(this.sortOrder);
           console.log('duplicates', duplicates);
 
         }

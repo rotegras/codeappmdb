@@ -1,8 +1,8 @@
 /*jshint esversion: 6 */
 import React from 'react';
     
-// return tags that match search
-// in clickable buttons
+// return tag list that matches search
+// as clickable buttons
 const FilteredTags = ({tags, clickTag}) => {
 
     const listItems = tags.map(item => {
