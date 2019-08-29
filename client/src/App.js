@@ -54,7 +54,7 @@ class App extends Component {
     componentDidMount() {
         this.getDataFromDb();
         if (!this.state.intervalIsSet) {
-            let interval = setInterval(this.getDataFromDb, 300);
+            let interval = setInterval(this.getDataFromDb, 3000);
             this.setState({ intervalIsSet: interval });
         }
     }
@@ -78,8 +78,11 @@ class App extends Component {
     getDataFromDb = () => {
         fetch("/api/getData")
             .then(data => data.json())
-            .then(res => this.setState({ data: res.data }
-            ));
+            .then(res => this.setState({ data: res.data })
+            );
+          this.arrayDuplicates(this.state.data);
+          console.log('entries: ', this.state.data.length);
+          console.log('last: ', this.state.data[this.state.data.length-1]);
     };
 
     // our put method that uses our backend api
@@ -126,7 +129,6 @@ class App extends Component {
         this.state.data.forEach(dat => {
 
             if (dat.id == idToUpdate) {
-
                 this.setState({
                     idToUpdate: dat._id
                 }, () => {
@@ -142,9 +144,9 @@ class App extends Component {
                         console.log(response);
                         console.log(response.data);
                     })
-                        .catch((error)=>{
-                            console.log(error);
-                        });
+                    .catch((error)=>{
+                        console.log(error);
+                    });
                 })
             }
         });
@@ -158,7 +160,9 @@ class App extends Component {
 
         this.filtercode(this.state.data, this.state.tagName);
 
+
         const { data } = this.state;
+
 
         return (
             <div className="container-fluid">
@@ -316,15 +320,13 @@ class App extends Component {
     }
 
     updateUpdate = id => {
-        console.log(id);
-        const dataFilter1 = this.state.data.filter(item => item.id == this.state.idToUpdate);
-        console.log(dataFilter);
-        const dataFilter=dataFilter1[0];
+        let dataFilter1 = this.state.data.filter(item => item.id == this.state.idToUpdate);
+        let dataFilter=dataFilter1[0];
 
         this.setState({
             idToUpdate: id, 
             objectToUpdate: dataFilter,
-            tagsupdate: dataFilter.tags
+            // tagsupdate: dataFilter.tags.split(',')
         })
     }
 
@@ -347,19 +349,20 @@ class App extends Component {
 
     modifyName = (idn, name, value) => {
         const $id = idn.id;
-        const nameupdate = `ojectToUpdate.${name}`;
+        // const nameupdate = `ojectToUpdate.${name}`;
 
         // find index of item on data to change state
         const $data = this.state.data;
         let $item = $data.filter(dat =>  dat.id == $id);
         let $order = $data.indexOf($item[0]);
         this.setState({
-            [nameupdate] : value,
+            objectToUpdate : {
+            [name] : value,
+            },
             data: update(this.state.data, {[$order]: {[name]: {$set: [value]}}})
         }, () => 
             this.filtercode(this.state.data, this.state.tagName)
             , () => console.log([$order], this.state.data[$order].title))
-        console.clear();
         console.log($order, this.state.data[$order].tags);
 
     }
@@ -381,7 +384,7 @@ class App extends Component {
                 tags: this.state.tagsupdate,
             }
         }, () => {
-            this.updateDB(this.state.idToUpdate, this.state.updateToApply);
+            this.updateDB(this.state.idToUpdate, this.state.objectToUpdate);
             this.setState({
                 titleupdate: "",
                 codeupdate: "",
@@ -419,12 +422,12 @@ class App extends Component {
                 }
             })
             filtered = [...new Set(filtered)];
-        })
-
         // return filter;
         this.setState({
             filteredTags: filtered
         }) 
+        })
+
     }
 
 
@@ -437,7 +440,7 @@ class App extends Component {
         }) 
     }
 
-    // search filter
+    // filter data by tags
     filtercode = (dataToFilter, fltr) => {
 
         // reset codeFiltered every time
@@ -445,8 +448,9 @@ class App extends Component {
         codeFiltered = [];
 
         dataToFilter.map(item => {
-            item.tags.filter(item2 => {
+              item.tags.filter(item2 => {
                 if (item2 == fltr) {
+                    console.log('codefilter', item.id);
                     codeFiltered.push(item);
                 }
             }); 
@@ -464,6 +468,40 @@ class App extends Component {
     toggleOpen = () => {
         this.setState(prevState => ({open: !prevState.open }))
     }
+
+    sortNumber = (a,b) => {
+      return a - b;
+    }
+
+    arrayDuplicates = ( array ) => {
+      // console.clear();
+      let singles = [];
+      let duplicates = [];
+
+      for (let i = 0; i < array.length; i++) {
+        
+
+        // if  (!(singles.indexOf(array[i].id))) {
+        if  (!(singles.includes(array[i].id))) {
+
+          singles.push(array[i].id); 
+          singles.sort(this.sortNumber);
+
+        } else {
+          duplicates.push(array[i].id); 
+          duplicates.sort(this.sortNumber);
+          console.log('duplicates', duplicates);
+
+        }
+
+       
+    }
+  }
+
+
+
+
+
 
 }
 
