@@ -6,9 +6,9 @@ import React from 'react';
 const FilteredTags = ({tags, clickTag}) => {
 
     const listItems = tags.map(item => {
-        return <li key={item} className="taglist tag d-inline">
-            <button className="tagbutton mb-2 mr-2 px-3" name={item} onClick={(e) => TagCallback(e)}>
-                {item}
+        return <li key={item['tag']} className="taglist tag d-inline">
+            <button className="tagbutton mb-2 mr-2 px-3" name={item.tag} onClick={(e) => TagCallback(e)}>
+                {item.tag} | {item.num}
             </button>
         </li>
     });

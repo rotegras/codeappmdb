@@ -414,18 +414,28 @@ class App extends Component {
 
         const tagsobj = this.state.data; 
 
+        let filteredsingle = [];
         let filtered = [];
+        
 
         const filter = tagsobj.map(item => {
             item.tags.filter(tag => {
                 if ( tag.includes(search) ) {
-                  if (!( filtered.includes(tag) )) {
-                    filtered.push(tag); 
+                  let t = {};
+                  t.tag = tag;
+                  // if the tag still isn't in the array, add it
+                  if (!( filteredsingle.includes(tag) )) {
+                    t.num = 1;
+                    filteredsingle.push(tag); 
+                    filtered.push(t);
+                  } else {
+                    let tagadd = filtered.filter(item => item.tag === tag );
+                    console.log('tagadd', tagadd);
+                    console.log('num', tagadd.num);
+                    tagadd[0]['num'] = tagadd[0]['num'] + 1;
                   }
                 }
             })
-
-            // filtered = [...new Set(filtered)];
 
         // return filter;
         this.setState({
