@@ -194,18 +194,18 @@ class App extends Component {
             </div>
 
             <div className="c_searchtag mt-3">
-            <SearchTag
-            keyDown={this.updatetag}
-            input={this.state.searchingTag}
-            reset={this.resetInput} 
-            />      
+              <SearchTag
+              keyDown={this.updatetag}
+              input={this.state.searchingTag}
+              reset={this.resetInput} 
+              />      
             </div>
 
             <div className="c_filteredtags">
             <h5 className="bg-dark label mt-5">Matching Tags</h5>
                 <FilteredTags
-                    tags={this.state.filteredTags}
-                    clickTag={this.updateActiveTag}
+                tags={this.state.filteredTags}
+                clickTag={this.updateActiveTag}
                 />
             </div>
             </div>
@@ -419,10 +419,14 @@ class App extends Component {
         const filter = tagsobj.map(item => {
             item.tags.filter(tag => {
                 if ( tag.includes(search) ) {
+                  if (!( filtered.includes(tag) )) {
                     filtered.push(tag); 
+                  }
                 }
             })
-            filtered = [...new Set(filtered)];
+
+            // filtered = [...new Set(filtered)];
+
         // return filter;
         this.setState({
             filteredTags: filtered
