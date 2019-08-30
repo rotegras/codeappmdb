@@ -54,7 +54,7 @@ class App extends Component {
     componentDidMount() {
         this.getDataFromDb();
         if (!this.state.intervalIsSet) {
-            let interval = setInterval(this.getDataFromDb, 3000);
+            let interval = setInterval(this.getDataFromDb, 300);
             this.setState({ intervalIsSet: interval });
         }
     }
@@ -81,8 +81,7 @@ class App extends Component {
             .then(res => this.setState({ data: res.data })
             );
           this.arrayDuplicates(this.state.data);
-          // console.log('entries: ', this.state.data.length);
-          // console.log('last: ', this.state.data[this.state.data.length-1]);
+          console.log(this.state.data.length);
     };
 
     // our put method that uses our backend api
@@ -305,8 +304,6 @@ class App extends Component {
     // get item to delete and trigger delete from db
     deleteThis = iddelete => {
         this.setState({ idToDelete: iddelete }, () =>{
-            console.clear();
-            console.log('deleteid: ', iddelete);
             this.deleteFromDB(this.state.idToDelete)
         })       
     }
@@ -430,8 +427,6 @@ class App extends Component {
                     filtered.push(t);
                   } else {
                     let tagadd = filtered.filter(item => item.tag === tag );
-                    console.log('tagadd', tagadd);
-                    console.log('num', tagadd.num);
                     tagadd[0]['num'] = tagadd[0]['num'] + 1;
                   }
                 }
@@ -465,7 +460,6 @@ class App extends Component {
         dataToFilter.map(item => {
               item.tags.filter(item2 => {
                 if (item2 == fltr) {
-                    console.log('codefilter', item.id);
                     codeFiltered.push(item);
                 }
             }); 
