@@ -20,20 +20,20 @@ open : props.open
 }
 
 deleteThis = e => {
-let idDelete = e.target.id;
-console.clear();
-console.log('click: ', e.target.id);
-this.props.onClickProp(idDelete);
+  let idDelete = e.target.id;
+  console.clear();
+  console.log('click: ', e.target.id);
+  this.props.onClickProp(idDelete);
 }
 
 updateId = e => {
-let idupdate = e.target.id;
-idupdate[0] && this.props.idToUpdate(idupdate);
+  let idupdate = e.target.id;
+  idupdate[0] && this.props.idToUpdate(idupdate);
 }
 
 handleChange = e => {
-// this.setState({html : e.target.value});
-this.setState({html : e.target.value});
+  // this.setState({html : e.target.value});
+  this.setState({html : e.target.value});
 };
 
 toggleOpen = e => {
@@ -74,23 +74,23 @@ return (
         <div>
           <ActionButton 
           className="action-icon ml-2" 
-                                      id={this.props.id} 
-                                      variant="round" 
-                                               color="secondary"
-                                                      onClick={e => this.deleteThis(e)}
-                                                      >
-                                                      <FontAwesomeIcon icon={faTrash} id={this.props.id}/>
+            id={this.props.id} 
+            variant="round" 
+            color="secondary"
+            onClick={e => this.deleteThis(e)}
+          >
+          <FontAwesomeIcon icon={faTrash} id={this.props.id}/>
           </ActionButton> 
         </div>
         <div>
           <ActionButton 
-          className="mr-2 action-icon ml-2" 
-                                            id={this.props.id} 
-                                            onClick={e => this.updateId(e)}
-                                            variant="round" 
-                                                     color="primary"
-                                                            >
-                                                            <FontAwesomeIcon icon={faEdit} />
+            className="mr-2 action-icon ml-2" 
+            id={this.props.id} 
+            onClick={e => this.updateId(e)}
+            variant="round" 
+            color="primary"
+            >
+            <FontAwesomeIcon icon={faEdit} />
           </ActionButton>
         </div>
       </div>
@@ -100,15 +100,12 @@ return (
       <span className="mr-2 text-success">
         id: {this.props.id}
       </span>
-      <span className="mr-2 text-success">
-        // _id: {this.props.keyid}
-      </span>
 
       <div className="content line-break" name="content">
-        {this.props.open === true || this.state.open ? this.state.data.code : ""}
+        {this.props.open === true || this.state.open ? this.props.data.code : ""}
       </div>
       <div className="mt-2 text-secondary">
-        {this.props.open || this.state.open === true ? this.state.data.comment : ""}
+        {this.props.open || this.state.open === true ? this.props.data.comment : ""}
       </div>
       <span className="id"> id: {this.props.id} </span>
 

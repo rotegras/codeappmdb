@@ -2,20 +2,17 @@ import React from 'react'
 
 const LastEntry = ({data}) => {
 
-    
     let lastel=[];
     let ordered =  data.sort((a,b) => {
         return a.updatedAt.localeCompare(b.updatedAt)
     });
 
     if ( ordered.length ) {
-        ('length');
         lastel = ordered.pop();
 
-        console.log('lastel', lastel.tags.map(tag => ({tag})));
+        // console.log('lastel', lastel.tags.map(tag => ({tag})));
     }
 
-  
     return (
         <div>
             <h5>LAST ENTRY</h5>
@@ -28,7 +25,6 @@ const LastEntry = ({data}) => {
             <div className="mt-0">_id: {lastel._id}</div>
         </div>
     );
-
 }
 
 export default LastEntry
