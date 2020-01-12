@@ -1,38 +1,31 @@
-html
-{
+html {
     overflow-y: scroll;
 }
 
-
-body
-{
+body {
     color: #fff;
     font-family: "Ubuntu Mono", Ubuntu, arial, sans-serif;
-    font-size: 16px;
-    
+    font-size: 12px;
+}
+
+h5 {
+    font-size: .75rem;;
 }
 
 textarea,
-input
-{
+input {
     width: 100%;
     margin-bottom: 5px;
     padding: 5px 10px;
-
-    /* color: white; */
     border: 1px solid #ebebeb;
     border-radius: 5px;
 }
 
-button
-{
+button {
     width: 100%;
     margin: 0 0 10px;
     padding: 5px 10px;
-
     transition: all .3s ease-in-out;
-
-    /* color: #ebebeb; */
     border: 1 solid #ebebeb;
     box-sizing: border-box;
     border-radius: 5px;
@@ -44,110 +37,88 @@ button > * {
 
 button:hover,
 button:focus,
-button:active
-{
+button:active {
     cursor: pointer;
-
     opacity: .9;
     outline: 0 !important;
+    color: #fff;
+    background: #111;
 }
 
-.tagbutton
-{
+.tagbutton {
     border: 1px solid #eee;
 }
 
-.label
-{
+.label {
     display: flex;
     /* border: 1px solid #999; */
     float: none;
-
     min-width: 100%;
     padding: 3px;
     padding: 5px 10px;
-
     text-transform: uppercase;
 }
 
-ul
-{
+ul {
     padding: 0;
 }
 
-li.item
-{
+li.item {
     margin-bottom: 10px;
     padding: 10px;
-
     list-style: none;
     border-top: 1px dotted #eee;
 }
 
-.id
-{
+.id {
     position: absolute;
     top: 0;
     left: 0;
-
     display: none;
-
     transform: translateX(-100%);
-
     color: #999;
 }
 
-.line-break
-{
+.line-break {
     margin-bottom: .5rem;
-
     white-space: pre-wrap;      /* current browsers */
 }
 
-.taglist
-{
+.taglist {
     display: flex;
     flex-grow: 1;
     flex-wrap: wrap;
-
     margin: 0 -5px;
-    /* top: 4rem; */
 }
 
-.tag
-{
+.tag {
     margin: 0 5px;
 }
 
-.action-icon
-{
+.action-icon {
 }
 
-.action-icon__close
-{
+.action-icon__close {
     transform: rotate(270deg);
     transition: transform .3s ease;
 }
 
-.action-icon__open
-{
+.action-icon__open {
     transform: rotate(0deg);
 }
 
-.app-title
-{
+.app-title {
     margin-top: auto;
     margin-bottom: auto;
 }
 
-.sidebar.sticky-top
-{
+.sidebar.sticky-top {
     top: 0;
 }
 
 .item-title {
     font-weight: 300;
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-top: -2px;
 }
 

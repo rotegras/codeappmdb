@@ -1,71 +1,91 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 import Button from '@material-ui/core/Button'
 
-const Update = ({id, data, modifyName, modifyTags, onClickModify}) => {
+class Update extends Component {
 
-  const modifyN = e => {
+  constructor(props) {
+    super(props);
+    this.state = {
+      update: this.props.update,
+    }
+
+    this.modifyN = this.modifyN.bind(this);
+    this.triggerUpdate = this.triggerUpdate.bind(this);
+    this.modifyValueTags = this.modifyValueTags.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps){
+        if(nextProps.update !== this.props.update){
+            this.setState({update:nextProps.update});
+        }
+    }
+
+  modifyN(e) {
     const { target: { name, value } } = e;
-    modifyName({id}, name, value);
+    this.setState({
+      update: {
+        [name]: value
+      }
+    })
   }
 
-  const modifyValueTags = e => {
+  triggerUpdate(e) {
+    this.props.onClickModify(e);
+  }
+
+  modifyValueTags(e) {
     let value = e.target.value;
-    modifyTags(value);
+    this.props.modifyTags(value);
   }
 
-  const modifyEntry = e => {
-    onClickModify(e);
-  }
+  render() {
+    return (
+      <div>
+        <h5 className="label">MODIFY</h5>
+        <form>
+          <input
+            type="text"
+            onChange={e => this.modifyN(e)}
+            placeholder="modify title"
+            value={this.state.update.name}
+            name="title"
+          />
 
-  console.table('data: ', data);
+          <textarea
+            type="text"
+            onChange={e => this.modifyN(e)}
+            placeholder="modify content"
+            value={this.state.update.code}
+            name="code"
+          />
 
-  return (
-    <div>
-    <h5 className="label">MODIFY</h5>
-    <form>
-    <input
-      type="text"
-      id={id}
-      onChange={e => modifyN(e)}
-      placeholder="modify title"
-      value={data.name} 
-      name="title"
-    />
+          <input
+            type="text"
+            onChange={e => this.modifyN(e)}
+            placeholder="modify tags"
+            value={this.state.update.tags}
+          />
 
-    <textarea 
-      type="text"
-      onChange={e => modifyN(e)}
-      placeholder="modify content"
-      value={data.code}
-      name="code"
-    />
-
-    <input 
-    type="text"
-    onChange={e => modifyN(e)}
-    placeholder="modify tags"
-    value={data.tags}
-    />
-
-    <input 
-    type="text"
-    onChange={e => modifyN(e)}
-    placeholder="modify cooment"
-    value={data.comment}
-    name="comment"
-    />
-    <div>{id}</div>
-    <Button 
-    color="primary"
-    variant="contained"
-    name="UPDATE"
-    onClick={e => modifyEntry(e)}
-    >
-    update
+          <input
+            type="text"
+            onChange={e => this.modifyN(e)}
+            placeholder="modify cooment"
+            value={this.state.update.comment}
+            name="comment"
+          />
+          <div>{this.props.id}</div>
+          <Button
+            color="primary"
+            variant="contained"
+            name="UPDATE"
+            onClick={e => this.triggerUpdate(e)}
+          >
+            update
     </Button>
-    </form>
-    </div>
-  );
+        </form>
+      </div>
+    );
+  }
 }
 
 export default Update

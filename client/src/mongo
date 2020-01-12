@@ -1,1 +1,0 @@
- mongoexport -h ds255924.mlab.com:55924 -d codelib -c datas -u rotegras -p  "{T)Lte\4_7c%4PGbEk" -o datas.json 

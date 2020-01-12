@@ -1,79 +1,90 @@
-import React from "react";
+import React, { Component } from "react";
 import Button from '@material-ui/core/Button';
 
-const Create = ({title, code, comment, tags, addTitle, addContent, addComment, addTags, onClickCreate}) => {
+class Create extends Component {
 
-    const updateTitle = e => {
-        let data = e.target.value;
-        addTitle(data);
-    } 
-
-    const updateCode = e => {
-        let code = e.target.value;
-        addContent(code);
-    } 
-
-    const updateComment = e => {
-        let code = e.target.value;
-        addComment(code);
-    } 
-
-    const updateTags = e => {
-        let tags = e.target.value;
-        addTags(tags); 
-    } 
-
-    const triggerAdd = () => {
-        onClickCreate();
+    constructor(props) {
+        super(props);
+        this.state = {
+            title: '',
+            code: '',
+            tags: '',
+            comment: ''
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.triggerAdd = this.triggerAdd.bind(this);
     }
 
-    return(
-        <div>
-        <h5 className="label">Add content</h5>
+    handleChange (e) {
+        const { target: { name, value } } = e;
+        this.setState ({
+            [name]: value
+        })
+    }
 
-        <input
-            type="text"
-            onChange={e => updateTitle(e)}
-            placeholder="add title"
-            value={title}
-            attr="title"
-        />
+    triggerAdd (e) {
+        e.preventDefault();
+        const { title, code, tags, comment } = this.state;
+        const { onClickCreate } = this.props;
+        onClickCreate(title, code, tags, comment);
+        this.setState({
+            title: '',
+            code: '',
+            tags: '',
+            comment: ''
+        })
+    }
 
-        <textarea
-            row="3"
-            type="text"
-            onChange={e => updateCode(e)}
-            placeholder="add content"
-            value={code}
-            attr="code"
-        />
+    render() {
+        return (
+            <div>
+                <h5 className="label">Add content</h5>
 
-        <input
-            type="text"
-            onChange={e => updateTags(e)}
-            placeholder="add tags separated by comma"
-            value={tags}
-        />
+                <input
+                    type="text"
+                    onChange={e => this.handleChange(e)}
+                    placeholder="add title"
+                    value={this.state.title}
+                    name="title"
+                />
 
-        <input
-            type="text"
-            onChange={e => updateComment(e)}
-            placeholder="add comment"
-            value={comment}
-            attr="comment"
-        />
+                <textarea
+                    row="3"
+                    type="text"
+                    onChange={e => this.handleChange(e)}
+                    placeholder="add content"
+                    value={this.state.code}
+                    name="code"
+                />
 
-        <Button 
-            color="secondary"
-            variant="contained"
-            name="ADD ITEM"
-            onClick={e => triggerAdd()}
-        >
-            ADD ITEM
+                <input
+                    type="text"
+                    onChange={e => this.handleChange(e)}
+                    placeholder="add tags separated by comma"
+                    value={this.state.tags}
+                    name="tags"
+                />
+
+                <input
+                    type="text"
+                    onChange={e => this.handleChange(e)}
+                    placeholder="add comment"
+                    value={this.state.comment}
+                    name="comment"
+                />
+
+                <Button
+                    color="secondary"
+                    variant="contained"
+                    name="ADD ITEM"
+                    onClick={e => this.triggerAdd(e)}
+                >
+                    ADD ITEM
         </Button>
 
-        </div>
-    )
+            </div>
+        )
+    }
 }
 
 export default Create;
