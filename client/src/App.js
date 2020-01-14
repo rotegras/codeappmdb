@@ -14,6 +14,7 @@ import SearchSwitch from './SearchSwitch'
 import TagDisplay from './TagDisplay'
 import Update from "./Update"
 import "./app.css"
+import { faThList } from "@fortawesome/free-solid-svg-icons"
 
 
 let codeFiltered = [];
@@ -32,8 +33,7 @@ class App extends Component {
         comment: ''
       },
       update: {
-        id: '',
-        title: '',
+        name: '',
         code: '',
         tags: [],
         comment: ''
@@ -43,26 +43,30 @@ class App extends Component {
         id: false,
         title: false,
         code: false,
-
       },
       intervalIsSet: false,
       idToUpdate: "",
-      objectToUpdate: "",
+      objectToUpdate: {
+        name: '',
+        code: '',
+        tags: [],
+        comment: ''
+      },
       idToDelete: "",
       objectToDelete: "",
       open: false,
       id: "",
-      title: "",
-      titleupdate: "",
-      code: "",
-      codeupdate: "",
-      comment: "",
-      commentupdate: "",
-      tags: [],
-      tagsupdate: [],
+      // title: "",
+      // titleupdate: "",
+      // code: "",
+      // codeupdate: "",
+      // comment: "",
+      // commentupdate: "",
+      // tags: [],
+      // tagsupdate: [],
       tagsList: [],
-      updateToApply: {},
-      tagName: "",
+      // updateToApply: {},
+      // tagName: "",
       searchingTag: '',
       searchById: '',
       filteredTags: [],
@@ -139,18 +143,19 @@ class App extends Component {
   // our update method that uses our backend api
   // to overwrite existing data base information
   updateDB = (idToUpdate, update) => {
-
+    console.log('almost there: ', idToUpdate, update)
     this.state.data.forEach(dat => {
 
       if (dat.id == idToUpdate) {
         this.setState({
           idToUpdate: dat._id
         }, () => {
+
           axios.post("/api/updateData", {
             id: { _id: dat._id },
             update: {
               "name": update.name,
-              "code": update.content,
+              "code": update.code,
               "comment": update.comment,
               "tags": update.tags,
             }
@@ -161,6 +166,7 @@ class App extends Component {
             .catch((error) => {
               console.log(error);
             });
+
         })
       }
     });
@@ -239,13 +245,13 @@ class App extends Component {
                     <ListItems
                       data={dat}
 
-                      id={dat.id}
-                      key={dat.id}
-                      tags={dat.tags}
+                      // id={dat.id}
+                      // key={dat.id}
+                      // tags={dat.tags}
 
-                      onClickProp={this.deleteThis}
                       idToUpdate={this.updateId}
-                      clickTag={this.updateActiveTag}
+                      onClickProp={this.deleteThis}
+                      // clickTag={this.updateActiveTag}
                       open={this.state.open}
                     />
                   ))}
@@ -277,10 +283,9 @@ class App extends Component {
               <div className="c_update  mt-5">
                 <Update
                   id={this.state.idToUpdate}
-                  update={this.state.objectToUpdate}
-                  // modifyField={this.modifyField}
-                  // modifyTags={this.modifyTags}
-                  onClickModify={this.modifyEntry}
+                  updateData={this.state.update}
+                  updateFunction={this.updateObjectToUpdate}
+                  onClickUpdate={this.doUpdate}
                 />
               </div>
 
@@ -320,81 +325,45 @@ class App extends Component {
   }
 
   //update
-  updateId = id => {
-    let itemToUpdate = this.state.data.filter(item => item.id == id)[0];
-
-    console.log('update: ', id, itemToUpdate);
+  updateId = ( id, name, code, tags, comment ) => {
 
     this.setState({
       idToUpdate: id,
-      objectToUpdate: itemToUpdate
     })
+
+    let update = {
+      ...this.state.update,
+      name: name,
+      code: code,
+      tags: tags,
+      comment: comment
+    }
+    this.setState({ update });
   }
 
-  updateValue = value => {
-    this.setState({
-      updateToApply: value
-    })
+  updateObjectToUpdate = ({ name, value }) => {
+    let update = {
+      ...this.state.update,
+      [name]: value = name == 'tags' ? value.split(',').map(item => { return item.trim() }) : value
+    }
+    this.setState({ update });
   }
 
-  modifyValue = (value, name) => {
-    this.setState({
-      updateToApply: {
-        title: this.state.titleupdate,
-        code: this.state.codeupdate,
-        comment: this.state.commentupdate,
-        tags: this.state.tagsupdate,
+  doUpdate = () => {
+      console.log('updateDb: ', this.state.idToUpdate, this.state.update);
+
+      this.updateDB(this.state.idToUpdate, this.state.update);
+
+      let update = {
+        ...this.state.update,
+        name: '',
+        code: '',
+        tags: [],
+        comment: ''
       }
-    })
+      this.setState({ update });
   }
 
-  modifyField = (idn, name, value) => {
-    const $id = idn.id;
-
-    // find index of item on data to change state
-    // const $data = this.state.data;
-    // let $item = $data.filter(dat => dat.id == $id);
-    // let $order = $data.indexOf($item[0]);
-    // this.setState({
-    // objectToUpdate: {
-    // [name]: value,
-    // },
-    // data: update(this.state.data, { [$order]: { [name]: { $set: [value] } } })
-    // data: update(this.state.data, { [this.state.idToUpdate]: { [name]: { $set: [value] } } })
-    // }, () =>
-    // this.filtercode(this.state.data, this.state.tagName)
-    // , () => console.log([$order], this.state.data[$order].title))
-    // , () => console.log([this.state.idToUpdate], this.state.data[this.state.idToUpdate].title))
-    // console.log(this.state.idToUpdate, this.state.data[$order].tags);
-    // console.log(this.state.idToUpdate, this.state.data[this.state.idToUpdate].tags);
-  }
-
-  // modifyTags = (value) => {
-  // const tagsArray = value.split(',');
-  // const tagsArray = value.split(',').map(item => { return item.trim() });
-  // this.setState({
-  // tagsupdate: tagsArray
-  // })
-  // }
-
-  modifyEntry = e => {
-    this.setState({
-      updateToApply: {
-        name: this.state.titleupdate,
-        content: this.state.codeupdate,
-        comment: this.state.commentupdate,
-        tags: this.state.tagsupdate,
-      }
-    }, () => {
-      this.updateDB(this.state.idToUpdate, this.state.objectToUpdate);
-      this.setState({
-        titleupdate: "",
-        codeupdate: "",
-        commentupdate: "",
-        tagsupdate: ""
-      })
-    })
-  }
 
   // tag management functions
 

@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "/home/rotegras/www/react/codeappmongodb"
+		},
+		{
+			"path": "/home/rotegras/www/teilraum"
+		},
+		{
+			"path": "/home/rotegras/www/22wp"
+		},
+		{
+			"path": "/home/rotegras/Documents/_dbs"
+		}
+	],
+	"settings": {
+		"workbench.editor.highlightModifiedTabs": true
+	}
+}

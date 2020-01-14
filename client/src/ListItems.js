@@ -12,9 +12,9 @@ class ListItems extends Component {
     this.contentEditable = React.createRef();
 
     this.state = {
-      data: props.data,
-      html: props.data.name,
-      open: props.open
+      data: this.props.data,
+      html: this.props.data.name,
+      open: this.props.open
     }
 
     this.deleteThis = this.deleteThis.bind(this);
@@ -27,14 +27,13 @@ class ListItems extends Component {
 
   deleteThis(e) {
     let idDelete = e.target.id;
-    console.clear();
+    // console.clear();
     console.log('click: ', e.target.id);
     this.props.onClickProp(idDelete);
   }
 
   updateId(e) {
-    let idupdate = e.target.id;
-    idupdate[0] && this.props.idToUpdate(idupdate);
+      this.props.idToUpdate(this.props.data.id, this.props.data.name, this.props.data.code, this.props.data.tags, this.props.data.comment);
   }
 
   handleChange(e) {
@@ -54,14 +53,14 @@ class ListItems extends Component {
   render() {
     let $open = this.state.open || this.props.open === true ? 'open' : 'close';
     return (
-      <li className="item" key={this.props.key}>
+      <li className="item" key={this.props.data._id}>
         <div className="row">
           <div className="col-12 sticky-top sticky-2 d-flex">
             <div className="d-flex space-between bg-dark mx-3 w-100">
               <div>
                 <ActionButton
                   className={'action-icon__' + $open + ' mr-2'}
-                  id={this.props.id}
+                  id={this.props.data.id}
                   onClick={e => this.toggleOpen(e)}
                 >
                   <FontAwesomeIcon icon={faCaretDown} />
@@ -79,18 +78,18 @@ class ListItems extends Component {
               <div>
                 <ActionButton
                   className="action-icon ml-2"
-                  id={this.props.id}
+                  id={this.props.data.id}
                   variant="round"
                   color="secondary"
                   onClick={e => this.deleteThis(e)}
                 >
-                  <FontAwesomeIcon icon={faTrash} id={this.props.id} />
+                  <FontAwesomeIcon icon={faTrash} id={this.props.data.id} />
                 </ActionButton>
               </div>
               <div>
                 <ActionButton
                   className="mr-2 action-icon ml-2"
-                  id={this.props.id}
+                  id={this.props.data.id}
                   onClick={e => this.updateId(e)}
                   variant="round"
                   color="primary"
@@ -103,7 +102,7 @@ class ListItems extends Component {
           <div className="col-12 col-lg-8 pl-5">
 
             <span className="mr-2 text-success">
-              id: {this.props.id}
+              id: {this.props.data.id}
             </span>
             <div className="content line-break" name="content">
               {this.props.open || this.state.open === true ? this.props.data.code : `${this.props.data.code.substring(0,100)} `}
@@ -114,7 +113,7 @@ class ListItems extends Component {
             <div className="mt-2 text-secondary">
               {this.props.open || this.state.open === true ? this.props.data.comment : ""}
             </div>
-            <span className="id"> id: {this.props.id} </span>
+            <span className="id"> id: {this.props.data.id} </span>
 
           </div>
           <div className="col-12 col-lg-4 ">
