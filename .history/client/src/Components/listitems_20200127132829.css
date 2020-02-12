@@ -1,0 +1,9 @@
+.item__header {
+    padding: .5rem 0;
+}
+
+.action-icon > span {
+    width: 1rem !important;
+    height: 1rem !important;
+    overflow: hidden;
+}
