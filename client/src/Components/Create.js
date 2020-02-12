@@ -1,90 +1,81 @@
 import React, { Component } from "react";
 import Button from '@material-ui/core/Button';
+import Modal from '@material-ui/core/Modal';
 
-class Create extends Component {
+function Create({onClickCreate}) {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            title: '',
-            code: '',
-            tags: '',
-            comment: ''
-        }
-        this.handleChange = this.handleChange.bind(this);
-        this.triggerAdd = this.triggerAdd.bind(this);
+    const [open, setOpen] = React.useState(true);
+    const [{title, code, tags, comment}, setValue] = React.useState({title: '', code: '', tags: '', comment: ''});
+
+    const handleOpen = () => {
+        setOpen(true);
     }
 
-    handleChange (e) {
-        const { target: { name, value } } = e;
-        this.setState ({
+    const handleClose = () => {
+        setOpen(false);
+    }
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setValue(prevState => ({
+            ...prevState,
             [name]: value
-        })
+        }));
     }
 
-    triggerAdd (e) {
+    const triggerAdd = (e) => {
         e.preventDefault();
-        const { title, code, tags, comment } = this.state;
-        const { onClickCreate } = this.props;
-        onClickCreate(title, code, tags, comment);
-        this.setState({
-            title: '',
-            code: '',
-            tags: '',
-            comment: ''
-        })
+        console.log( title, code, tags, comment )
+        onClickCreate( title, code, tags, comment )
     }
 
-    render() {
-        return (
-            <div>
-                <h5 className="label">Add content</h5>
+    return (
+        <div>
+        <h5 className="label">Add content</h5>
 
-                <input
-                    type="text"
-                    onChange={e => this.handleChange(e)}
-                    placeholder="add title"
-                    value={this.state.title}
-                    name="title"
-                />
+        <input
+        type="text"
+        onChange={e => handleChange(e)}
+        placeholder="add title"
+        value={title}
+        name="title"
+        />
 
-                <textarea
-                    row="3"
-                    type="text"
-                    onChange={e => this.handleChange(e)}
-                    placeholder="add content"
-                    value={this.state.code}
-                    name="code"
-                />
+        <textarea
+        row="3"
+        type="text"
+        onChange={e => handleChange(e)}
+        placeholder="add content"
+        value={code}
+        name="code"
+        />
 
-                <input
-                    type="text"
-                    onChange={e => this.handleChange(e)}
-                    placeholder="add tags separated by comma"
-                    value={this.state.tags}
-                    name="tags"
-                />
+        <input
+        type="text"
+        onChange={e => handleChange(e)}
+        placeholder="add tags separated by comma"
+        value={tags}
+        name="tags"
+        />
 
-                <input
-                    type="text"
-                    onChange={e => this.handleChange(e)}
-                    placeholder="add comment"
-                    value={this.state.comment}
-                    name="comment"
-                />
+        <input
+        type="text"
+        onChange={e => handleChange(e)}
+        placeholder="add comment"
+        value={comment}
+        name="comment"
+        />
 
-                <Button
-                    color="secondary"
-                    variant="contained"
-                    name="ADD ITEM"
-                    onClick={e => this.triggerAdd(e)}
-                >
-                    ADD ITEM
+        <Button
+        color="secondary"
+        variant="contained"
+        name="ADD ITEM"
+        onClick={e => triggerAdd(e)}
+        >
+        ADD ITEM
         </Button>
-
-            </div>
-        )
+        </div>
+        );
     }
-}
 
 export default Create;

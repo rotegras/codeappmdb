@@ -260,19 +260,7 @@ class App extends Component {
             <div className="group sticky-top">
               <div className="c_create">
                 <Create
-                  fields={this.state.new}
-                  handleNew={this.createNew}
                   onClickCreate={this.createNew}
-
-                  title={this.state.new.title}
-                  code={this.state.new.code}
-                  tags={this.state.new.tags}
-                  comment={this.state.new.comment}
-
-                  addTitle={this.addTitle}
-                  addContent={this.addContent}
-                  addComment={this.addComment}
-                  addTags={this.addTags}
                 />
               </div>
 
