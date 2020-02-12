@@ -13,60 +13,60 @@ const Update = ({ id, updateData, updateFunction, onClickUpdate }) => {
     onClickUpdate();
   }
 
-    return (
-      <div>
-        <h5 className="label">MODIFY</h5>
-        <form>
-          <input
-            type="text"
-            onChange={e => modifyN(e)}
-            placeholder="modify title"
-            value={updateData.name}
-            name="name"
-          />
+  return (
+    <div>
+    <h5 className="label">MODIFY</h5>
+    <form>
+    <input
+    type="text"
+    onChange={e => modifyN(e)}
+    placeholder="modify title"
+    value={updateData.name}
+    name="name"
+    />
 
-          <textarea
-            type="text"
-            onChange={e => modifyN(e)}
-            placeholder="modify content"
-            value={updateData.code}
-            name="code"
-          />
+    <textarea
+    type="text"
+    onChange={e => modifyN(e)}
+    placeholder="modify content"
+    value={updateData.code}
+    name="code"
+    />
 
-          <input
-            type="text"
-            onChange={e => modifyN(e)}
-            placeholder="modify tags"
-            value={updateData.tags}
-            name="tags"
-          />
+    <input
+    type="text"
+    onChange={e => modifyN(e)}
+    placeholder="modify tags"
+    value={updateData.tags}
+    name="tags"
+    />
 
-          <input
-            type="text"
-            onChange={e => modifyN(e)}
-            placeholder="modify cooment"
-            value={updateData.comment}
-            name="comment"
-          />
-          <div>{updateData.id}</div>
-          <Button
-            color="primary"
-            variant="contained"
-            name="UPDATE"
-            onClick={() => triggerUpdate()}
-          >
-            update
+    <input
+    type="text"
+    onChange={e => modifyN(e)}
+    placeholder="modify cooment"
+    value={updateData.comment}
+    name="comment"
+    />
+    <div>{updateData.id}</div>
+    <Button
+    color="primary"
+    variant="contained"
+    name="UPDATE"
+    onClick={() => triggerUpdate()}
+    >
+    update
     </Button>
-        </form>
-      </div>
+    </form>
+    </div>
     );
-}
+  }
 
-Update.propTypes = {
-  id: PropTypes.string.isRequired,
-  // updateData: PropTypes.function,
-  // updateFunction: PropTypes.function,
-  // onClickUpdate: PropTypes.function
-}
+  Update.propTypes = {
+    id: PropTypes.string.isRequired,
+    // updateData: PropTypes.function,
+    // updateFunction: PropTypes.function,
+    // onClickUpdate: PropTypes.function
+  }
 
-export default Update
+  export default Update

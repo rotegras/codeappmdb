@@ -66,3 +66,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### Todos
+// TODO: update form only visible on update item
+// TODO: smaller items / list >> action buttons smaller
+//            style size of material buttons
+// TODO: add content in diferent page?
+// TODO: validate tags on comma and display as tag
