@@ -9,6 +9,7 @@ import IdSelector from "./Components/IdSelector"
 import FilteredTags from './Components/FilteredTags'
 import ListItems from './Components/ListItems'
 import LastEntry from './Components/LastEntry'
+import NavBar from './Components/NavBar'
 import SearchTag from './Components/SearchTag'
 import SearchSwitch from './Components/SearchSwitch'
 import TagDisplay from './Components/TagDisplay'
@@ -180,15 +181,14 @@ class App extends Component {
 
     return (
       <div className="container-fluid">
-
+        <NavBar
+              onClickCreate={this.createNew}
+        />
         <div className="row">
 
           <div className="col-12">
             <div className="row">
-              <div className="col-2">
-                <h5 className="app-title d-inline  p-2">Code Library</h5>
-              </div>
-              <div className="col-10">
+              <div className="col">
                 <Controls
                   className="d-inline"
                   open={this.state.open}
@@ -258,19 +258,14 @@ class App extends Component {
 
           <div className="col-3">
             <div className="group sticky-top">
-              <div className="c_create">
-                <Create
-                  onClickCreate={this.createNew}
-                />
-              </div>
 
               <div className="c_update  mt-5">
-                <Update
+                {/* <Update
                   id={this.state.idToUpdate}
                   updateData={this.state.update}
                   updateFunction={this.updateObjectToUpdate}
                   onClickUpdate={this.doUpdate}
-                />
+                /> */}
               </div>
 
               <div className="c_lastentry mt-5">
@@ -447,6 +442,8 @@ class App extends Component {
     // console.clear();
     let singles = [];
     let duplicates = [];
+    let duplicatesTitles = [];
+
 
     for (let i = 0; i < array.length; i++) {
 
@@ -457,8 +454,11 @@ class App extends Component {
 
       } else {
         duplicates.push(array[i].id);
+        duplicatesTitles.push(array[i].name);
         duplicates.sort(this.sortOrder);
-        console.log('duplicates', duplicates);
+        console.log('duplicates', duplicatesTitles);
+        // console.clear();
+        // console.log('titles', duplicatesTitles.map(item => item.name));
       }
     }
   }

@@ -7,7 +7,7 @@ const SearchTag = ({keyDown, input, reset}) => {
 
     const sendText = e => {
         const text = e.target.value;
-        keyDown (text);
+        keyDown(text);
     }
 
     const resetText = (e) => {

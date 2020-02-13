@@ -1,16 +1,50 @@
 import React, { Component } from "react"
 import Button from '@material-ui/core/Button'
-import PropTypes from 'prop-types'
+import PropTypes, { func } from 'prop-types'
+import { makeStyles } from '@material-ui/core/styles';
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
 
-const Update = ({ id, updateData, updateFunction, onClickUpdate }) => {
+const useStyles = makeStyles(theme => ({
+  paper: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '60%',
+    backgroundColor: theme.palette.background.paper,
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+    modalbutton: {
+      color: '#fff',
+  }
+}));
+
+export default function Update({ id, updateData, updateFunction, onClickUpdate }) {
+
+  const classes = useStyles();
+  // const { title, code, tags, comment } = updateData;
+  const [{ title, code, tags, comment }, setValue] = React.useState({
+    title: '',
+    code: '',
+    tags: '',
+    comment: ''
+  });
 
   const modifyN = e => {
     const { name, value } = e.target;
-    updateFunction({ name, value });
+    setValue(prevState => ({
+        ...prevState,
+        [name]: value
+    }));
   }
 
-  const triggerUpdate = () => {
-    onClickUpdate();
+  const triggerUpdate = (e) => {
+    e.preventDefault();
+    console.log( title, code, tags, comment )
+    onClickUpdate( title, code, tags, comment )
   }
 
   return (
@@ -21,7 +55,7 @@ const Update = ({ id, updateData, updateFunction, onClickUpdate }) => {
     type="text"
     onChange={e => modifyN(e)}
     placeholder="modify title"
-    value={updateData.name}
+    value={title}
     name="name"
     />
 
@@ -29,7 +63,7 @@ const Update = ({ id, updateData, updateFunction, onClickUpdate }) => {
     type="text"
     onChange={e => modifyN(e)}
     placeholder="modify content"
-    value={updateData.code}
+    value={code}
     name="code"
     />
 
@@ -37,7 +71,7 @@ const Update = ({ id, updateData, updateFunction, onClickUpdate }) => {
     type="text"
     onChange={e => modifyN(e)}
     placeholder="modify tags"
-    value={updateData.tags}
+    value={tags}
     name="tags"
     />
 
@@ -45,10 +79,10 @@ const Update = ({ id, updateData, updateFunction, onClickUpdate }) => {
     type="text"
     onChange={e => modifyN(e)}
     placeholder="modify cooment"
-    value={updateData.comment}
+    value={comment}
     name="comment"
     />
-    <div>{updateData.id}</div>
+    <div>{id}</div>
     <Button
     color="primary"
     variant="contained"
@@ -69,4 +103,4 @@ const Update = ({ id, updateData, updateFunction, onClickUpdate }) => {
     // onClickUpdate: PropTypes.function
   }
 
-  export default Update
+  // export default Update
