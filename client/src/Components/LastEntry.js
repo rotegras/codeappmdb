@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 const LastEntry = ({data}) => {
 
-    let lastel = [];
-    const tags = [];
+    let lastel = {};
+    let tags = [];
 
     let ordered =  data.sort((a,b) => {
         return a.updatedAt.localeCompare(b.updatedAt)
@@ -13,11 +13,9 @@ const LastEntry = ({data}) => {
     if ( ordered.length ) {
         lastel = ordered.pop();
 
-        // console.log('lastel', lastel.tags.map(tag => ({tag})));
-
-        // tags = lastel.tags.map(tag => {
-            // return <li>{tag}</li>
-        // })
+        tags = lastel.tags.map(tag => {
+            return <li>{tag}</li>
+        })
     }
 
     return (
@@ -26,7 +24,7 @@ const LastEntry = ({data}) => {
             <div className="mb-1">{lastel.name}</div>
             <div className="line-break text-success">{lastel.code}</div>
             <ul className="mt-0">
-                Tags: {}
+                Tags: {tags}
             </ul>
             <div className="mt-1">Updated at: {lastel.updatedAt}</div>
             <div className="mt-0">id: {lastel.id}</div>

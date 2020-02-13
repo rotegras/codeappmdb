@@ -458,7 +458,7 @@ class App extends Component {
       } else {
         duplicates.push(array[i].id);
         duplicates.sort(this.sortOrder);
-        console.log('duplicates', duplicates);
+        // console.log('duplicates', duplicates);
       }
     }
   }
