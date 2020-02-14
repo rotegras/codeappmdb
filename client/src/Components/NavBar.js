@@ -39,7 +39,7 @@ function NavBar ({onClickCreate}) {
         onClickCreate(title, code, tags, comment);
     }
 
-    const [newItem, storeNewItem] = React.useState({ title: '', code: '', tags: '', comment: '' });
+    // const [newItem, storeNewItem] = React.useState({ title: '', code: '', tags: '', comment: '' });
 
     // onChildrenSubmit(data) {
         // storeNewItem({

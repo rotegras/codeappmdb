@@ -19,7 +19,7 @@ class ListItems extends Component {
     this.contentEditable = React.createRef();
 
     this.state = {
-      open: false,
+      modalopen: false,
       data: this.props.data,
       html: this.props.data.name,
       open: this.props.open
@@ -32,17 +32,23 @@ class ListItems extends Component {
     this.TagCallback = this.TagCallback.bind(this);
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.onClickUpdate = this.onClickUpdate.bind(this);
   }
 
-  handleOpen() {
+  onClickUpdate( title, code, tags, comment, modalopen) {
+    console.log(title, code, tags, comment, modalopen);
+  }
+
+  handleOpen(e) {
     this.setState({
-      open: true
+      modalopen: true
     })
+    this.updateId(e)
   }
 
   handleClose() {
     this.setState({
-      open: false
+      modalopen: false
     })
   }
 
@@ -57,7 +63,7 @@ class ListItems extends Component {
 
   handleChange(e) {
     this.setState({ html: e.target.value });
-  };
+  }
 
   toggleOpen(e) {
     this.setState(prevState => ({ open: !prevState.open }))
@@ -66,7 +72,7 @@ class ListItems extends Component {
   TagCallback(e) {
     const newTagName = e.target.name.trim();
     this.props.clickTag(newTagName);
-  };
+  }
 
   render() {
     let $open = this.state.open || this.props.open === true ? 'open' : 'close';
@@ -108,7 +114,8 @@ class ListItems extends Component {
       <ActionButton
       className="action-icon mr-2 py-2"
       id={this.props.data.id}
-      onClick={e => this.updateId(e)}
+      // onClick={e => this.updateId(e)}
+      onClick={e => this.handleOpen(e)}
       variant="round"
       color="primary"
       >
@@ -119,18 +126,22 @@ class ListItems extends Component {
       </ActionButton>
 
       <Modal
-      aria-labelledby="simple-modal-title"
-      aria-describedby="simple-modal-description"
-      open={this.state.open}
-      onClose={this.handleClose}
-      closeAfterTransition
-      BackdropComponent={Backdrop}
-      BackdropProps={{
-        timeout: 500,
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+        open={this.state.modalopen}
+        onClose={this.handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
       }}
       >
-        <Fade in={this.state.open}>
-          <Update />
+        <Fade in={this.state.modalopen}>
+            <Update
+            data={this.state.data}
+            onModalClick={this.onClickUpdate}
+            modalOpen={this.state.modalopen}
+            />
         </Fade>
       </Modal>
       </div>
@@ -170,7 +181,8 @@ class ListItems extends Component {
       }
 
       ListItems.propTypes = {
-        data: PropTypes.object.isRequired
+        data: PropTypes.object.isRequired,
+        // open: PropTypes.boolean.isRequired
       }
 
       ListItems.defaultProps = {

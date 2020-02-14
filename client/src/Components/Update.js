@@ -1,10 +1,7 @@
-import React, { Component } from "react"
+import React from "react"
 import Button from '@material-ui/core/Button'
-import PropTypes, { func } from 'prop-types'
+import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -22,48 +19,50 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Update({ id, updateData, updateFunction, onClickUpdate }) {
+export default function Update({ id, data, onModalClick, modalOpen }) {
 
   const classes = useStyles();
   // const { title, code, tags, comment } = updateData;
-  const [{ title, code, tags, comment }, setValue] = React.useState({
-    title: '',
-    code: '',
-    tags: '',
-    comment: ''
+  const [open, setOpen] = React.useState(modalOpen)
+  const [inputValues, setValue] = React.useState({
+      title: data.name,
+      code: data.code,
+      tags: data.tags,
+      comment: data.comment
   });
 
   const modifyN = e => {
     const { name, value } = e.target;
-    setValue(prevState => ({
-        ...prevState,
+    setValue({
+        ...inputValues,
         [name]: value
-    }));
+    });
   }
 
   const triggerUpdate = (e) => {
-    e.preventDefault();
-    console.log( title, code, tags, comment )
-    onClickUpdate( title, code, tags, comment )
+    e.preventDefault()
+    console.log( inputValues.title, inputValues.code, inputValues.tags, inputValues.comment )
+    setOpen(false);
+    onModalClick( inputValues.title, inputValues.code, inputValues.tags, inputValues.comment, open )
   }
 
   return (
-    <div>
+    <div className={classes.paper}>
     <h5 className="label">MODIFY</h5>
     <form>
     <input
     type="text"
     onChange={e => modifyN(e)}
     placeholder="modify title"
-    value={title}
-    name="name"
+    value={inputValues.title}
+    name="title"
     />
 
     <textarea
     type="text"
     onChange={e => modifyN(e)}
     placeholder="modify content"
-    value={code}
+    value={inputValues.code}
     name="code"
     />
 
@@ -71,7 +70,7 @@ export default function Update({ id, updateData, updateFunction, onClickUpdate }
     type="text"
     onChange={e => modifyN(e)}
     placeholder="modify tags"
-    value={tags}
+    value={inputValues.tags}
     name="tags"
     />
 
@@ -79,7 +78,7 @@ export default function Update({ id, updateData, updateFunction, onClickUpdate }
     type="text"
     onChange={e => modifyN(e)}
     placeholder="modify cooment"
-    value={comment}
+    value={inputValues.comment}
     name="comment"
     />
     <div>{id}</div>
@@ -87,7 +86,7 @@ export default function Update({ id, updateData, updateFunction, onClickUpdate }
     color="primary"
     variant="contained"
     name="UPDATE"
-    onClick={() => triggerUpdate()}
+    onClick={(e) => triggerUpdate(e)}
     >
     update
     </Button>
@@ -97,10 +96,8 @@ export default function Update({ id, updateData, updateFunction, onClickUpdate }
   }
 
   Update.propTypes = {
-    id: PropTypes.string.isRequired,
-    // updateData: PropTypes.function,
-    // updateFunction: PropTypes.function,
-    // onClickUpdate: PropTypes.function
+    data: PropTypes.object.isRequired,
+    // onModalClick: PropTypes.function.isRequired
   }
 
   // export default Update

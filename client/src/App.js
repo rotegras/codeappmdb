@@ -1,10 +1,8 @@
 'esversion: 6'
 
 import React, { Component } from "react"
-// import update from 'react-addons-update'
 import axios from "axios"
 import Controls from "./Components/Controls"
-import Create from "./Components/Create"
 import IdSelector from "./Components/IdSelector"
 import FilteredTags from './Components/FilteredTags'
 import ListItems from './Components/ListItems'
@@ -13,12 +11,11 @@ import NavBar from './Components/NavBar'
 import SearchTag from './Components/SearchTag'
 import SearchSwitch from './Components/SearchSwitch'
 import TagDisplay from './Components/TagDisplay'
-import Update from "./Components/Update"
 import "./app.css"
 // import { faThList } from "@fortawesome/free-solid-svg-icons"
 
 
-let codeFiltered = [];
+// let codeFilteredFromTags = [];
 
 class App extends Component {
   constructor() {
@@ -27,6 +24,8 @@ class App extends Component {
     // initialize our state
     this.state = {
       data: [],
+      codeFiltered: [],
+      duplicates: [],
       new: {
         title: '',
         code: '',
@@ -99,9 +98,7 @@ class App extends Component {
       .then(data => data.json())
       .then(res => this.setState({ data: res.data })
       );
-    // check for items with same id
     this.arrayDuplicates(this.state.data);
-    // console.log(this.state.data.length);
   };
 
   // put method that uses our backend api
@@ -127,7 +124,7 @@ class App extends Component {
     this.state.data.forEach(dat => {
     console.log('deleteFromDB fired test 2, id to delete: ', idTodelete);
       console.log('compare: ', dat.id, idTodelete);
-      if (dat.id == idTodelete) {
+      if (dat.id === idTodelete) {
         console.log(dat._id, ' : dat._id')
         this.setState({
           objectToDelete: dat._id
@@ -177,7 +174,7 @@ class App extends Component {
   render() {
     const { data } = this.state;
 
-    this.filtercode(this.state.data, this.state.tagName);
+    // this.filtercode(this.state.data, this.state.tagName);
 
     return (
       <div className="container-fluid">
@@ -242,14 +239,14 @@ class App extends Component {
               <ul>
                 {data.length <= 0
                   ? "NO DB ENTRIES YET"
-                  : codeFiltered.map(dat => (
+                  : this.state.codeFiltered.map(dat => (
                     <ListItems
                       data={dat}
-
                       idToUpdate={this.updateId}
                       onClickProp={this.deleteThis}
                       clickTag={this.updateActiveTag}
                       open={this.state.open}
+                      onClickUpdate={this.doUpdate}
                     />
                   ))}
               </ul>
@@ -286,6 +283,7 @@ class App extends Component {
   createNew = (title, code, tags, comment) => {
     this.setState({
       new: {
+        ...this.state.new,
         title: title,
         code: code,
         tags: tags.split(',').map(item => { return item.trim() }),
@@ -306,7 +304,7 @@ class App extends Component {
     })
   }
 
-  //update
+  //update state before upload data
   updateId = ( id, name, code, tags, comment ) => {
 
     this.setState({
@@ -332,18 +330,17 @@ class App extends Component {
   }
 
   doUpdate = () => {
-      // console.log('updateDb: ', this.state.idToUpdate, this.state.update);
+      console.log('updateDb: ', this.state.idToUpdate, this.state.update);
 
-      this.updateDB(this.state.idToUpdate, this.state.update);
+      // this.updateDB(this.state.idToUpdate, this.state.update);
 
-      let update = {
-        ...this.state.update,
-        name: '',
-        code: '',
-        tags: [],
-        comment: ''
-      }
-      this.setState({ update });
+      // let update = {
+      //   ...this.state.update,
+      //   name: '',
+      //   code: '',
+      //   tags: [],
+      //   comment: ''
+      // });
   }
 
 
@@ -372,11 +369,10 @@ class App extends Component {
     // const filter = tagsobj.map(item => {
     const filter = tagsobj.map(item => {
       item.tags.filter(tag => {
-        //
+
         if (tag.includes(search)) {
           let t = {};
           t.tag = tag;
-          // if the tag still isn't in the array, add it
           if (!(filteredsingle.includes(tag))) {
             t.num = 1;
             filteredsingle.push(tag);
@@ -388,8 +384,6 @@ class App extends Component {
         }
         return
       })
-
-      // return filter;
 
       this.setState({
         filteredTags: filtered
@@ -409,16 +403,20 @@ class App extends Component {
   // filter data by tags
   filtercode = (dataToFilter, fltr) => {
 
-    // reset codeFiltered every time
-    // the function is called
-    codeFiltered = [];
+    // reset codeFiltered every time the function is called
+    let codeFilteredFromTags = [];
 
     dataToFilter.map(item => {
       item.tags.filter(item2 => {
         if (item2 == fltr) {
-          codeFiltered.push(item);
+          codeFilteredFromTags.push(item);
         }
       });
+        console.log(codeFilteredFromTags.length);
+        return codeFilteredFromTags;
+    })
+    this.setState({
+      codeFiltered: codeFilteredFromTags
     })
   }
 
@@ -426,12 +424,15 @@ class App extends Component {
   updateActiveTag = (newTagName) => {
     this.setState({
       tagName: newTagName
+    }, () => {
+      this.filtercode(this.state.data, this.state.tagName);
     })
   }
 
   // control toggle open for all shown items
   toggleOpen = () => {
-    this.setState(prevState => ({ open: !prevState.open }))
+    this.setState(
+      prevState => ({ open: !prevState.open }))
   }
 
   sortOrder = (a, b) => {
@@ -439,7 +440,6 @@ class App extends Component {
   }
 
   arrayDuplicates = (array) => {
-    // console.clear();
     let singles = [];
     let duplicates = [];
     let duplicatesTitles = [];
@@ -456,11 +456,11 @@ class App extends Component {
         duplicates.push(array[i].id);
         duplicatesTitles.push(array[i].name);
         duplicates.sort(this.sortOrder);
-        console.log('duplicates', duplicatesTitles);
-        // console.clear();
-        // console.log('titles', duplicatesTitles.map(item => item.name));
       }
     }
+    this.setState({
+      duplicates: duplicates
+    })
   }
 
   // search by id
