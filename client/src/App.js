@@ -1,23 +1,21 @@
 'esversion: 6'
 
 import React, { Component } from "react"
-// import update from 'react-addons-update'
 import axios from "axios"
 import Controls from "./Components/Controls"
-import Create from "./Components/Create"
 import IdSelector from "./Components/IdSelector"
 import FilteredTags from './Components/FilteredTags'
 import ListItems from './Components/ListItems'
 import LastEntry from './Components/LastEntry'
+import NavBar from './Components/NavBar'
 import SearchTag from './Components/SearchTag'
 import SearchSwitch from './Components/SearchSwitch'
 import TagDisplay from './Components/TagDisplay'
-import Update from "./Components/Update"
 import "./app.css"
 // import { faThList } from "@fortawesome/free-solid-svg-icons"
 
 
-let codeFiltered = [];
+// let codeFilteredFromTags = [];
 
 class App extends Component {
   constructor() {
@@ -26,6 +24,8 @@ class App extends Component {
     // initialize our state
     this.state = {
       data: [],
+      codeFiltered: [],
+      duplicates: [],
       new: {
         title: '',
         code: '',
@@ -98,9 +98,7 @@ class App extends Component {
       .then(data => data.json())
       .then(res => this.setState({ data: res.data })
       );
-    // check for items with same id
     this.arrayDuplicates(this.state.data);
-    // console.log(this.state.data.length);
   };
 
   // put method that uses our backend api
@@ -126,7 +124,7 @@ class App extends Component {
     this.state.data.forEach(dat => {
     console.log('deleteFromDB fired test 2, id to delete: ', idTodelete);
       console.log('compare: ', dat.id, idTodelete);
-      if (dat.id == idTodelete) {
+      if (dat.id === idTodelete) {
         console.log(dat._id, ' : dat._id')
         this.setState({
           objectToDelete: dat._id
@@ -144,10 +142,9 @@ class App extends Component {
   // our update method that uses our backend api
   // to overwrite existing data base information
   updateDB = (idToUpdate, update) => {
-    console.log('almost there: ', idToUpdate, update)
     this.state.data.forEach(dat => {
 
-      if (dat.id == idToUpdate) {
+      if (dat.id === idToUpdate) {
         this.setState({
           idToUpdate: dat._id
         }, () => {
@@ -176,19 +173,18 @@ class App extends Component {
   render() {
     const { data } = this.state;
 
-    this.filtercode(this.state.data, this.state.tagName);
+    // this.filtercode(this.state.data, this.state.tagName);
 
     return (
       <div className="container-fluid">
-
+        <NavBar
+              onClickCreate={this.createNew}
+        />
         <div className="row">
-
+debugger;
           <div className="col-12">
             <div className="row">
-              <div className="col-2">
-                <h5 className="app-title d-inline  p-2">Code Library</h5>
-              </div>
-              <div className="col-10">
+              <div className="col">
                 <Controls
                   className="d-inline"
                   open={this.state.open}
@@ -242,14 +238,14 @@ class App extends Component {
               <ul>
                 {data.length <= 0
                   ? "NO DB ENTRIES YET"
-                  : codeFiltered.map(dat => (
+                  : this.state.codeFiltered.map(dat => (
                     <ListItems
                       data={dat}
-
                       idToUpdate={this.updateId}
                       onClickProp={this.deleteThis}
                       clickTag={this.updateActiveTag}
                       open={this.state.open}
+                      getUpdate={this.doUpdate}
                     />
                   ))}
               </ul>
@@ -258,19 +254,14 @@ class App extends Component {
 
           <div className="col-3">
             <div className="group sticky-top">
-              <div className="c_create">
-                <Create
-                  onClickCreate={this.createNew}
-                />
-              </div>
 
               <div className="c_update  mt-5">
-                <Update
+                {/* <Update
                   id={this.state.idToUpdate}
                   updateData={this.state.update}
                   updateFunction={this.updateObjectToUpdate}
                   onClickUpdate={this.doUpdate}
-                />
+                /> */}
               </div>
 
               <div className="c_lastentry mt-5">
@@ -291,6 +282,7 @@ class App extends Component {
   createNew = (title, code, tags, comment) => {
     this.setState({
       new: {
+        ...this.state.new,
         title: title,
         code: code,
         tags: tags.split(',').map(item => { return item.trim() }),
@@ -306,12 +298,11 @@ class App extends Component {
     this.setState({
       idToDelete: iddelete
     }, () => {
-        // console.log(this.state.idToDelete, 'id to delete');
       this.deleteFromDB(this.state.idToDelete)
     })
   }
 
-  //update
+  //update state before upload data
   updateId = ( id, name, code, tags, comment ) => {
 
     this.setState({
@@ -336,19 +327,29 @@ class App extends Component {
     this.setState({ update });
   }
 
-  doUpdate = () => {
-      // console.log('updateDb: ', this.state.idToUpdate, this.state.update);
-
+  doUpdate = (updateData) => {
+    let update = {
+      ...this.state.update,
+      name: updateData.title,
+      code: updateData.code,
+      tags: updateData.tags,
+      comment: updateData.comment
+    }
+      // ...updateData
+      // [name]: value = name == 'tags' ? value.split(',').map(item => { return item.trim() }) : value
+    // }
+    this.setState({ update }, () => {
+      console.log('updateDb: ', this.state.idToUpdate, this.state.update);
       this.updateDB(this.state.idToUpdate, this.state.update);
+    });
 
-      let update = {
-        ...this.state.update,
-        name: '',
-        code: '',
-        tags: [],
-        comment: ''
-      }
-      this.setState({ update });
+      // let update = {
+      //   ...this.state.update,
+      //   name: '',
+      //   code: '',
+      //   tags: [],
+      //   comment: ''
+      // });
   }
 
 
@@ -377,11 +378,10 @@ class App extends Component {
     // const filter = tagsobj.map(item => {
     const filter = tagsobj.map(item => {
       item.tags.filter(tag => {
-        //
+
         if (tag.includes(search)) {
           let t = {};
           t.tag = tag;
-          // if the tag still isn't in the array, add it
           if (!(filteredsingle.includes(tag))) {
             t.num = 1;
             filteredsingle.push(tag);
@@ -393,8 +393,6 @@ class App extends Component {
         }
         return
       })
-
-      // return filter;
 
       this.setState({
         filteredTags: filtered
@@ -414,16 +412,19 @@ class App extends Component {
   // filter data by tags
   filtercode = (dataToFilter, fltr) => {
 
-    // reset codeFiltered every time
-    // the function is called
-    codeFiltered = [];
+    // reset codeFiltered every time the function is called
+    let codeFilteredFromTags = [];
 
     dataToFilter.map(item => {
       item.tags.filter(item2 => {
         if (item2 == fltr) {
-          codeFiltered.push(item);
+          codeFilteredFromTags.push(item);
         }
       });
+        return codeFilteredFromTags;
+    })
+    this.setState({
+      codeFiltered: codeFilteredFromTags
     })
   }
 
@@ -431,12 +432,15 @@ class App extends Component {
   updateActiveTag = (newTagName) => {
     this.setState({
       tagName: newTagName
+    }, () => {
+      this.filtercode(this.state.data, this.state.tagName);
     })
   }
 
   // control toggle open for all shown items
   toggleOpen = () => {
-    this.setState(prevState => ({ open: !prevState.open }))
+    this.setState(
+      prevState => ({ open: !prevState.open }))
   }
 
   sortOrder = (a, b) => {
@@ -444,9 +448,10 @@ class App extends Component {
   }
 
   arrayDuplicates = (array) => {
-    // console.clear();
     let singles = [];
     let duplicates = [];
+    let duplicatesTitles = [];
+
 
     for (let i = 0; i < array.length; i++) {
 
@@ -457,10 +462,17 @@ class App extends Component {
 
       } else {
         duplicates.push(array[i].id);
+        duplicatesTitles.push(array[i].name);
         duplicates.sort(this.sortOrder);
+<<<<<<< HEAD
         // console.log('duplicates', duplicates);
+=======
+>>>>>>> 200212_modal2
       }
     }
+    this.setState({
+      duplicates: duplicates
+    })
   }
 
   // search by id

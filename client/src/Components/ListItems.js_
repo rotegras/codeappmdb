@@ -7,7 +7,6 @@ import ActionButton from './ActionButton'
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
-import Update from './Update';
 
 import './listitems.css'
 
@@ -20,10 +19,8 @@ class ListItems extends Component {
 
     this.state = {
       data: this.props.data,
-      update: this.props.data,
       html: this.props.data.name,
-      open: this.props.open,
-      modalopen: false
+      open: this.props.open
     }
 
     this.deleteThis = this.deleteThis.bind(this);
@@ -31,43 +28,6 @@ class ListItems extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.toggleOpen = this.toggleOpen.bind(this);
     this.TagCallback = this.TagCallback.bind(this);
-    this.handleOpen = this.handleOpen.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-    this.onClickUpdate = this.onClickUpdate.bind(this);
-    this.liftUpdate = this.liftUpdate.bind(this);
-  }
-
-  liftUpdate() {
-    this.props.getUpdate(this.state.update)
-  }
-
-  // onClickUpdate( title, code, tags, comment, modalopen) {
-  onClickUpdate( update, modalopen) {
-    // console.log(title, code, tags, comment, modalopen);
-    this.setState(prevState => ({
-      update: {
-        ...this.state.update,
-        // ...prevState,
-        ...update
-      },
-      modalopen: false
-    }), () => {
-      this.props.getUpdate(this.state.update)
-        // this.liftUpdate
-    })
-  }
-
-  handleOpen(e) {
-    this.setState({
-      modalopen: true
-    })
-    this.updateId(e)
-  }
-
-  handleClose() {
-    this.setState({
-      modalopen: false
-    })
   }
 
   deleteThis(e) {
@@ -81,7 +41,7 @@ class ListItems extends Component {
 
   handleChange(e) {
     this.setState({ html: e.target.value });
-  }
+  };
 
   toggleOpen(e) {
     this.setState(prevState => ({ open: !prevState.open }))
@@ -90,7 +50,7 @@ class ListItems extends Component {
   TagCallback(e) {
     const newTagName = e.target.name.trim();
     this.props.clickTag(newTagName);
-  }
+  };
 
   render() {
     let $open = this.state.open || this.props.open === true ? 'open' : 'close';
@@ -132,8 +92,7 @@ class ListItems extends Component {
       <ActionButton
       className="action-icon mr-2 py-2"
       id={this.props.data.id}
-      // onClick={e => this.updateId(e)}
-      onClick={(e) => this.handleOpen(e)}
+      onClick={e => this.updateId(e)}
       variant="round"
       color="primary"
       >
@@ -144,23 +103,19 @@ class ListItems extends Component {
       </ActionButton>
 
       <Modal
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-        open={this.state.modalopen}
-        onClose={this.handleClose}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
+      aria-labelledby="simple-modal-title"
+      aria-describedby="simple-modal-description"
+      open={open}
+      onClose={handleClose}
+      closeAfterTransition
+      BackdropComponent={Backdrop}
+      BackdropProps={{
+        timeout: 500,
       }}
       >
-        <Fade in={this.state.modalopen}>
-            <Update
-            data={this.state.data}
-            modalOpen={this.state.modalopen}
-            onModalClick={this.onClickUpdate}
-            />
-        </Fade>
+      <Fade in={open}>
+      <Update />
+      </Fade>
       </Modal>
       </div>
       </div>
@@ -199,8 +154,7 @@ class ListItems extends Component {
       }
 
       ListItems.propTypes = {
-        data: PropTypes.object.isRequired,
-        // open: PropTypes.boolean.isRequired
+        data: PropTypes.object.isRequired
       }
 
       ListItems.defaultProps = {
