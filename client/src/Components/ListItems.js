@@ -19,10 +19,11 @@ class ListItems extends Component {
     this.contentEditable = React.createRef();
 
     this.state = {
-      modalopen: false,
       data: this.props.data,
+      update: this.props.data,
       html: this.props.data.name,
-      open: this.props.open
+      open: this.props.open,
+      modalopen: false
     }
 
     this.deleteThis = this.deleteThis.bind(this);
@@ -33,10 +34,27 @@ class ListItems extends Component {
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.onClickUpdate = this.onClickUpdate.bind(this);
+    this.liftUpdate = this.liftUpdate.bind(this);
   }
 
-  onClickUpdate( title, code, tags, comment, modalopen) {
-    console.log(title, code, tags, comment, modalopen);
+  liftUpdate() {
+    this.props.getUpdate(this.state.update)
+  }
+
+  // onClickUpdate( title, code, tags, comment, modalopen) {
+  onClickUpdate( update, modalopen) {
+    // console.log(title, code, tags, comment, modalopen);
+    this.setState(prevState => ({
+      update: {
+        ...this.state.update,
+        // ...prevState,
+        ...update
+      },
+      modalopen: false
+    }), () => {
+      this.props.getUpdate(this.state.update)
+        // this.liftUpdate
+    })
   }
 
   handleOpen(e) {
@@ -115,7 +133,7 @@ class ListItems extends Component {
       className="action-icon mr-2 py-2"
       id={this.props.data.id}
       // onClick={e => this.updateId(e)}
-      onClick={e => this.handleOpen(e)}
+      onClick={(e) => this.handleOpen(e)}
       variant="round"
       color="primary"
       >
@@ -139,8 +157,8 @@ class ListItems extends Component {
         <Fade in={this.state.modalopen}>
             <Update
             data={this.state.data}
-            onModalClick={this.onClickUpdate}
             modalOpen={this.state.modalopen}
+            onModalClick={this.onClickUpdate}
             />
         </Fade>
       </Modal>

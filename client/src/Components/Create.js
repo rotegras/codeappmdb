@@ -121,5 +121,3 @@ export default function Create({onClickCreate}) {
         </div>
         );
     }
-
-// export default Create;

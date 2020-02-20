@@ -22,7 +22,6 @@ const useStyles = makeStyles(theme => ({
 export default function Update({ id, data, onModalClick, modalOpen }) {
 
   const classes = useStyles();
-  // const { title, code, tags, comment } = updateData;
   const [open, setOpen] = React.useState(modalOpen)
   const [inputValues, setValue] = React.useState({
       title: data.name,
@@ -41,9 +40,10 @@ export default function Update({ id, data, onModalClick, modalOpen }) {
 
   const triggerUpdate = (e) => {
     e.preventDefault()
-    console.log( inputValues.title, inputValues.code, inputValues.tags, inputValues.comment )
+    const { name, value } = e.target;
+    // console.log( inputValues.title, inputValues.code, inputValues.tags, inputValues.comment )
     setOpen(false);
-    onModalClick( inputValues.title, inputValues.code, inputValues.tags, inputValues.comment, open )
+    onModalClick(inputValues, open);
   }
 
   return (
@@ -99,5 +99,3 @@ export default function Update({ id, data, onModalClick, modalOpen }) {
     data: PropTypes.object.isRequired,
     // onModalClick: PropTypes.function.isRequired
   }
-
-  // export default Update

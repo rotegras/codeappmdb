@@ -70,9 +70,17 @@ $open	client/src/Components/ListItems.js	/^    let $open = this.state.open || th
 .tag	client/src/app.css	/^.tag {$/;"	c
 .tagbutton	client/src/app.css	/^.tagbutton {$/;"	c
 .taglist	client/src/app.css	/^.taglist {$/;"	c
+4	client/src/Components/Create.js	/^    padding: theme.spacing(2, 4, 3),$/;"	r
+4	client/src/Components/Update.js	/^    padding: theme.spacing(2, 4, 3),$/;"	r
 ADD	client/src/App.orig.js	/^            ADD$/;"	r
+BackdropComponent	client/src/Components/Create.js	/^        BackdropComponent={Backdrop}$/;"	r
+BackdropComponent	client/src/Components/ListItems.js	/^        BackdropComponent={Backdrop}$/;"	r
+BackdropProps	client/src/Components/Create.js	/^        BackdropProps={{$/;"	r
+BackdropProps	client/src/Components/ListItems.js	/^        BackdropProps={{$/;"	r
+Create	client/src/Components/Create.js	/^export default function Create({onClickCreate}) {$/;"	r
 DELETE	client/src/App.orig.js	/^            DELETE$/;"	r
 DELETE	client/src/Components/Delete.js	/^                DELETE$/;"	r
+NavBar	client/src/Components/NavBar.js	/^function NavBar ({onClickCreate}) {$/;"	r
 TagCallback	.history/client/src/Components/ListItems_20200127095216.js	/^    this.TagCallback = this.TagCallback.bind(this);$/;"	r
 TagCallback	.history/client/src/Components/ListItems_20200127125458.js	/^    this.TagCallback = this.TagCallback.bind(this);$/;"	r
 TagCallback	.history/client/src/Components/ListItems_20200127125657.js	/^    this.TagCallback = this.TagCallback.bind(this);$/;"	r
@@ -113,8 +121,8 @@ Tags	.history/client/src/Components/LastEntry_20200127112546.js	/^              
 Tags	.history/client/src/Components/LastEntry_20200127125547.js	/^                Tags: {}$/;"	r
 Tags	.history/client/src/Components/LastEntry_20200127130024.js	/^                Tags: {}$/;"	r
 Tags	.history/client/src/Components/LastEntry_20200127130227.js	/^                Tags: {}$/;"	r
-Tags	client/src/Components/LastEntry.js	/^                Tags: {}$/;"	r
 UPDATE	client/src/App.orig.js	/^            UPDATE$/;"	r
+Update	client/src/Components/Update.js	/^export default function Update({ id, data, onModalClick, modalOpen }) {$/;"	r
 _refactored	.history/client/src/App_20200114094254.js	/^      _refactored: true$/;"	r
 _refactored	.history/client/src/App_20200122141554.js	/^      _refactored: true$/;"	r
 _refactored	.history/client/src/App_20200122141646.js	/^      _refactored: true$/;"	r
@@ -191,7 +199,6 @@ addComment	.history/client/src/App_20200127111646.js	/^                  addComm
 addComment	.history/client/src/App_20200127111808.js	/^                  addComment={this.addComment}$/;"	r
 addComment	.history/client/src/App_20200127130056.js	/^                  addComment={this.addComment}$/;"	r
 addComment	.history/client/src/App_20200127131625.js	/^                  addComment={this.addComment}$/;"	r
-addComment	client/src/App.js	/^                  addComment={this.addComment}$/;"	r
 addContent	.history/client/src/App_20200114094254.js	/^                  addContent={this.addContent}$/;"	r
 addContent	.history/client/src/App_20200122141554.js	/^                  addContent={this.addContent}$/;"	r
 addContent	.history/client/src/App_20200122141646.js	/^                  addContent={this.addContent}$/;"	r
@@ -228,7 +235,6 @@ addContent	.history/client/src/App_20200127111646.js	/^                  addCont
 addContent	.history/client/src/App_20200127111808.js	/^                  addContent={this.addContent}$/;"	r
 addContent	.history/client/src/App_20200127130056.js	/^                  addContent={this.addContent}$/;"	r
 addContent	.history/client/src/App_20200127131625.js	/^                  addContent={this.addContent}$/;"	r
-addContent	client/src/App.js	/^                  addContent={this.addContent}$/;"	r
 addLessLoader	client/config-overrides.js	/^  addLessLoader,$/;"	r
 addTags	.history/client/src/App_20200114094254.js	/^                  addTags={this.addTags}$/;"	r
 addTags	.history/client/src/App_20200122141554.js	/^                  addTags={this.addTags}$/;"	r
@@ -266,7 +272,6 @@ addTags	.history/client/src/App_20200127111646.js	/^                  addTags={t
 addTags	.history/client/src/App_20200127111808.js	/^                  addTags={this.addTags}$/;"	r
 addTags	.history/client/src/App_20200127130056.js	/^                  addTags={this.addTags}$/;"	r
 addTags	.history/client/src/App_20200127131625.js	/^                  addTags={this.addTags}$/;"	r
-addTags	client/src/App.js	/^                  addTags={this.addTags}$/;"	r
 addTitle	.history/client/src/App_20200114094254.js	/^                  addTitle={this.addTitle}$/;"	r
 addTitle	.history/client/src/App_20200122141554.js	/^                  addTitle={this.addTitle}$/;"	r
 addTitle	.history/client/src/App_20200122141646.js	/^                  addTitle={this.addTitle}$/;"	r
@@ -303,7 +308,7 @@ addTitle	.history/client/src/App_20200127111646.js	/^                  addTitle=
 addTitle	.history/client/src/App_20200127111808.js	/^                  addTitle={this.addTitle}$/;"	r
 addTitle	.history/client/src/App_20200127130056.js	/^                  addTitle={this.addTitle}$/;"	r
 addTitle	.history/client/src/App_20200127131625.js	/^                  addTitle={this.addTitle}$/;"	r
-addTitle	client/src/App.js	/^                  addTitle={this.addTitle}$/;"	r
+alignItems	client/src/Components/NavBar.js	/^        alignItems: 'center',$/;"	r
 arrayDuplicates	.history/client/src/App_20200114094254.js	/^  arrayDuplicates = (array) => {$/;"	r
 arrayDuplicates	.history/client/src/App_20200122141554.js	/^  arrayDuplicates = (array) => {$/;"	r
 arrayDuplicates	.history/client/src/App_20200122141646.js	/^  arrayDuplicates = (array) => {$/;"	r
@@ -342,6 +347,8 @@ arrayDuplicates	.history/client/src/App_20200127130056.js	/^  arrayDuplicates = 
 arrayDuplicates	.history/client/src/App_20200127131625.js	/^  arrayDuplicates = (array) => {$/;"	r
 arrayDuplicates	client/src/App.js	/^  arrayDuplicates = (array) => {$/;"	r
 articles	client/src/js/reducers/index.js	/^    articles: []$/;"	r
+backgroundColor	client/src/Components/Create.js	/^    backgroundColor: theme.palette.background.paper,$/;"	r
+backgroundColor	client/src/Components/Update.js	/^    backgroundColor: theme.palette.background.paper,$/;"	r
 body	client/src/app.css	/^body {$/;"	t
 body	client/src/work/App.js	/^                        body={code.content.rendered} $/;"	r
 border	.history/client/src/Components/ActionButton_20200111200449.js	/^    border: 0,$/;"	r
@@ -355,6 +362,7 @@ border	.history/client/src/Components/ActionButton_20200127133811.js	/^    borde
 border	.history/client/src/Components/ActionButton_20200127134057.js	/^    border: 0,$/;"	r
 border	.history/client/src/Components/ActionButton_20200127134111.js	/^    border: 0,$/;"	r
 border	client/src/Components/ActionButton.js	/^    border: 0,$/;"	r
+borderBottom	client/src/Components/NavBar.js	/^        borderBottom: '1px solid #999',$/;"	r
 borderRadius	.history/client/src/Components/ActionButton_20200111200449.js	/^    borderRadius: 99,$/;"	r
 borderRadius	.history/client/src/Components/ActionButton_20200127133317.js	/^    borderRadius: 99,$/;"	r
 borderRadius	.history/client/src/Components/ActionButton_20200127133336.js	/^    borderRadius: 99,$/;"	r
@@ -366,6 +374,8 @@ borderRadius	.history/client/src/Components/ActionButton_20200127133811.js	/^   
 borderRadius	.history/client/src/Components/ActionButton_20200127134057.js	/^    borderRadius: 99,$/;"	r
 borderRadius	.history/client/src/Components/ActionButton_20200127134111.js	/^    borderRadius: 99,$/;"	r
 borderRadius	client/src/Components/ActionButton.js	/^    borderRadius: 99,$/;"	r
+boxShadow	client/src/Components/Create.js	/^    boxShadow: theme.shadows[5],$/;"	r
+boxShadow	client/src/Components/Update.js	/^    boxShadow: theme.shadows[5],$/;"	r
 button	client/src/app.css	/^button {$/;"	t
 cdde	.history/client/src/Components/ListItems_20200127095216.js	/^    cdde: 'default code',$/;"	r
 cdde	.history/client/src/Components/ListItems_20200127125458.js	/^    cdde: 'default code',$/;"	r
@@ -385,7 +395,7 @@ cdde	.history/client/src/Components/ListItems_20200127134242.js	/^    cdde: 'def
 cdde	.history/client/src/Components/ListItems_20200127134624.js	/^    cdde: 'default code',$/;"	r
 cdde	.history/client/src/ListItems_20200127095139.js	/^    cdde: 'default code',$/;"	r
 cdde	.history/client/src/ListItems_20200127095217.js	/^    cdde: 'default code',$/;"	r
-cdde	client/src/Components/ListItems.js	/^    cdde: 'default code',$/;"	r
+cdde	client/src/Components/ListItems.js	/^          cdde: 'default code',$/;"	r
 checkValidServiceWorker	client/src/serviceWorker.js	/^function checkValidServiceWorker(swUrl, config) {$/;"	r
 checked	client/src/Components/Controls.js	/^                        checked={open}$/;"	r
 className	.history/client/src/App_20200114094254.js	/^                  className="d-inline"$/;"	r
@@ -528,10 +538,11 @@ className	.history/client/src/ListItems_20200127095217.js	/^                  cl
 className	.history/client/src/ListItems_20200127095217.js	/^                  className={'action-icon__' + $open + ' mr-2'}$/;"	r
 className	.history/client/src/ListItems_20200127095217.js	/^                className="mb-3 item-title mr-auto"$/;"	r
 className	client/src/App.js	/^                  className="d-inline"$/;"	r
-className	client/src/Components/ListItems.js	/^                  className="action-icon mr-2 py-2"$/;"	r
-className	client/src/Components/ListItems.js	/^                  className="action-icon mr-2"$/;"	r
-className	client/src/Components/ListItems.js	/^                  className={'action-icon action-icon__' + $open + ' mr-2'}$/;"	r
-className	client/src/Components/ListItems.js	/^                className="mb-3 item-title mr-auto my-auto"$/;"	r
+className	client/src/Components/Create.js	/^                className={classes.modalbutton}$/;"	r
+className	client/src/Components/ListItems.js	/^      className="action-icon mr-2 py-2"$/;"	r
+className	client/src/Components/ListItems.js	/^      className="action-icon mr-2"$/;"	r
+className	client/src/Components/ListItems.js	/^      className="mb-3 item-title mr-auto my-auto"$/;"	r
+className	client/src/Components/ListItems.js	/^      className={'action-icon action-icon__' + $open + ' mr-2'}$/;"	r
 clickCB	.history/client/src/App_20200114094254.js	/^                  clickCB={this.toggleOpen}$/;"	r
 clickCB	.history/client/src/App_20200122141554.js	/^                  clickCB={this.toggleOpen}$/;"	r
 clickCB	.history/client/src/App_20200122141646.js	/^                  clickCB={this.toggleOpen}$/;"	r
@@ -647,6 +658,8 @@ clickTag	client/src/work/App.js	/^                                    clickTag={
 clickTag	client/src/work/FilteredTags.js	/^const FilteredTags = ({name, clickTag, id, active }) => {$/;"	r
 clickTag	client/src/work/TagSelector.js	/^  clickTag: PropTypes.func.isRequired,$/;"	r
 clickTag	client/src/work/TagSelector.js	/^const TagSelector = ({name, clickTag, id, active }) => {$/;"	r
+closeAfterTransition	client/src/Components/Create.js	/^        closeAfterTransition$/;"	r
+closeAfterTransition	client/src/Components/ListItems.js	/^        closeAfterTransition$/;"	r
 code	.history/client/src/App_20200114094254.js	/^                  code={this.state.new.code}$/;"	r
 code	.history/client/src/App_20200114094254.js	/^        code: '',$/;"	r
 code	.history/client/src/App_20200114094254.js	/^        code: code,$/;"	r
@@ -901,16 +914,24 @@ code	.history/client/src/App_20200127131625.js	/^  createNew = (title, code, tag
 code	.history/client/src/App_20200127131625.js	/^  putDataToDB = (title, code, comment, tags) => {$/;"	r
 code	backend/data.js	/^    code: String,$/;"	r
 code	backend/server.js	/^  data.code = code;$/;"	r
-code	client/src/App.js	/^                  code={this.state.new.code}$/;"	r
 code	client/src/App.js	/^        code: '',$/;"	r
 code	client/src/App.js	/^        code: code,$/;"	r
 code	client/src/App.js	/^        code: false,$/;"	r
 code	client/src/App.js	/^      code: code,$/;"	r
 code	client/src/App.js	/^  createNew = (title, code, tags, comment) => {$/;"	r
 code	client/src/App.js	/^  putDataToDB = (title, code, comment, tags) => {$/;"	r
-code	client/src/Components/Create.js	/^            code: '',$/;"	r
-code	client/src/Components/Create.js	/^        const { title, code, tags, comment } = this.state;$/;"	r
-code	client/src/Components/Create.js	/^        onClickCreate(title, code, tags, comment);$/;"	r
+code	client/src/Components/Create.js	/^        console.log( title, code, tags, comment )$/;"	r
+code	client/src/Components/Create.js	/^        onClickCreate( title, code, tags, comment )$/;"	r
+code	client/src/Components/Create.js	/^    const [{title, code, tags, comment}, setValue] = React.useState({title: '', code: '', tags: '', comment: ''});$/;"	r
+code	client/src/Components/CreateOld.js	/^            code: '',$/;"	r
+code	client/src/Components/CreateOld.js	/^        const { title, code, tags, comment } = this.state;$/;"	r
+code	client/src/Components/CreateOld.js	/^        onClickCreate(title, code, tags, comment);$/;"	r
+code	client/src/Components/ListItems.js	/^    \/\/ console.log(title, code, tags, comment, modalopen);$/;"	r
+code	client/src/Components/ListItems.js	/^  \/\/ onClickUpdate( title, code, tags, comment, modalopen) {$/;"	r
+code	client/src/Components/NavBar.js	/^        onClickCreate(title, code, tags, comment);$/;"	r
+code	client/src/Components/NavBar.js	/^    \/\/ const [newItem, storeNewItem] = React.useState({ title: '', code: '', tags: '', comment: '' });$/;"	r
+code	client/src/Components/NavBar.js	/^    const onClickCreateOnNavbar = (title, code, tags, comment) => {$/;"	r
+code	client/src/Components/Update.js	/^      code: data.code,$/;"	r
 code	client/src/work/App.js	/^                code: codedata.data$/;"	r
 code	client/src/work/App.js	/^            code:[],$/;"	r
 codeFiltered	.history/client/src/App_20200114094254.js	/^    codeFiltered = [];$/;"	r
@@ -985,10 +1006,11 @@ codeFiltered	.history/client/src/App_20200127130056.js	/^    codeFiltered = [];$
 codeFiltered	.history/client/src/App_20200127130056.js	/^let codeFiltered = [];$/;"	r
 codeFiltered	.history/client/src/App_20200127131625.js	/^    codeFiltered = [];$/;"	r
 codeFiltered	.history/client/src/App_20200127131625.js	/^let codeFiltered = [];$/;"	r
-codeFiltered	client/src/App.js	/^    codeFiltered = [];$/;"	r
-codeFiltered	client/src/App.js	/^let codeFiltered = [];$/;"	r
+codeFiltered	client/src/App.js	/^      codeFiltered: [],$/;"	r
+codeFiltered	client/src/App.js	/^      codeFiltered: codeFilteredFromTags$/;"	r
 codeFiltered	client/src/work/App.js	/^        codeFiltered = [];$/;"	r
 codeFiltered	client/src/work/App.js	/^let codeFiltered = [];$/;"	r
+codeFilteredFromTags	client/src/App.js	/^    let codeFilteredFromTags = [];$/;"	r
 color	.history/client/src/Components/ActionButton_20200111200449.js	/^    color: 'white',$/;"	r
 color	.history/client/src/Components/ActionButton_20200127133317.js	/^    color: 'white',$/;"	r
 color	.history/client/src/Components/ActionButton_20200127133336.js	/^    color: 'white',$/;"	r
@@ -1060,10 +1082,13 @@ color	.history/client/src/Update_20200114095003.js	/^            color="primary"
 color	.history/client/src/Update_20200127101001.js	/^            color="primary"$/;"	r
 color	.history/client/src/Update_20200127101450.js	/^            color="primary"$/;"	r
 color	client/src/Components/ActionButton.js	/^    color: 'white',$/;"	r
-color	client/src/Components/Create.js	/^                    color="secondary"$/;"	r
-color	client/src/Components/ListItems.js	/^                  color="primary"$/;"	r
-color	client/src/Components/ListItems.js	/^                  color="secondary"$/;"	r
-color	client/src/Components/Update.js	/^            color="primary"$/;"	r
+color	client/src/Components/Create.js	/^                color="secondary"$/;"	r
+color	client/src/Components/Create.js	/^      color: '#fff',$/;"	r
+color	client/src/Components/CreateOld.js	/^                    color="secondary"$/;"	r
+color	client/src/Components/ListItems.js	/^      color="primary"$/;"	r
+color	client/src/Components/ListItems.js	/^      color="secondary"$/;"	r
+color	client/src/Components/Update.js	/^      color: '#fff',$/;"	r
+color	client/src/Components/Update.js	/^    color="primary"$/;"	r
 comment	.history/client/src/App_20200114094254.js	/^                  comment={this.state.new.comment}$/;"	r
 comment	.history/client/src/App_20200114094254.js	/^        comment: ''$/;"	r
 comment	.history/client/src/App_20200114094254.js	/^        comment: comment$/;"	r
@@ -1265,13 +1290,13 @@ comment	.history/client/src/ListItems_20200127095139.js	/^    comment: 'default 
 comment	.history/client/src/ListItems_20200127095217.js	/^    comment: 'default comment'$/;"	r
 comment	backend/data.js	/^    comment: String,$/;"	r
 comment	backend/server.js	/^  data.comment = comment;$/;"	r
-comment	client/src/App.js	/^                  comment={this.state.new.comment}$/;"	r
 comment	client/src/App.js	/^        comment: ''$/;"	r
 comment	client/src/App.js	/^        comment: comment$/;"	r
 comment	client/src/App.js	/^      comment: comment$/;"	r
 comment	client/src/App.js	/^      comment: comment,$/;"	r
-comment	client/src/Components/Create.js	/^            comment: ''$/;"	r
-comment	client/src/Components/ListItems.js	/^    comment: 'default comment'$/;"	r
+comment	client/src/Components/CreateOld.js	/^            comment: ''$/;"	r
+comment	client/src/Components/ListItems.js	/^          comment: 'default comment'$/;"	r
+comment	client/src/Components/Update.js	/^      comment: data.comment$/;"	r
 config	client/config-overrides.js	/^  config = rewireReactHotLoader(config, env);$/;"	r
 contentEditable	.history/client/src/Components/ListItems_20200127095216.js	/^    this.contentEditable = React.createRef();$/;"	r
 contentEditable	.history/client/src/Components/ListItems_20200127125458.js	/^    this.contentEditable = React.createRef();$/;"	r
@@ -1613,9 +1638,12 @@ data	client/src/App.js	/^      data: [],$/;"	r
 data	client/src/App.orig.js	/^      data: {$/;"	r
 data	client/src/App.orig.js	/^    data: [],$/;"	r
 data	client/src/Components/LastEntry.js	/^    data: PropTypes.array$/;"	r
+data	client/src/Components/ListItems.js	/^            data={this.state.data}$/;"	r
+data	client/src/Components/ListItems.js	/^        data: PropTypes.object.isRequired,$/;"	r
+data	client/src/Components/ListItems.js	/^        data: {$/;"	r
 data	client/src/Components/ListItems.js	/^      data: this.props.data,$/;"	r
-data	client/src/Components/ListItems.js	/^  data: PropTypes.object.isRequired$/;"	r
-data	client/src/Components/ListItems.js	/^  data: {$/;"	r
+data	client/src/Components/Update.js	/^    data: PropTypes.object.isRequired,$/;"	r
+data	client/src/Components/Update.js	/^export default function Update({ id, data, onModalClick, modalOpen }) {$/;"	r
 dataById	.history/client/src/App_20200114094254.js	/^    let dataById = this.state.data.filter(item => item.id == id);$/;"	r
 dataById	.history/client/src/App_20200122141554.js	/^    let dataById = this.state.data.filter(item => item.id == id);$/;"	r
 dataById	.history/client/src/App_20200122141646.js	/^    let dataById = this.state.data.filter(item => item.id == id);$/;"	r
@@ -1655,6 +1683,7 @@ dataById	.history/client/src/App_20200127131625.js	/^    let dataById = this.sta
 dataById	client/src/App.js	/^    let dataById = this.state.data.filter(item => item.id == id);$/;"	r
 db	backend/server.js	/^let db = mongoose.connection;$/;"	r
 dbRoute	backend/server.js	/^  dbRoute,$/;"	r
+debugger	client/src/App.js	/^debugger;$/;"	r
 defaultProps	.history/client/src/Components/ListItems_20200127095216.js	/^ListItems.defaultProps = {$/;"	r
 defaultProps	.history/client/src/Components/ListItems_20200127125458.js	/^ListItems.defaultProps = {$/;"	r
 defaultProps	.history/client/src/Components/ListItems_20200127125657.js	/^ListItems.defaultProps = {$/;"	r
@@ -1679,7 +1708,7 @@ defaultProps	.history/client/src/ListItems_20200127095217.js	/^ListItems.default
 defaultProps	.history/client/src/SearchTag_20200125173623.js	/^SearchTag.defaultProps = {$/;"	r
 defaultProps	.history/client/src/SearchTag_20200125173653.js	/^SearchTag.defaultProps = {$/;"	r
 defaultProps	.history/client/src/SearchTag_20200127101504.js	/^SearchTag.defaultProps = {$/;"	r
-defaultProps	client/src/Components/ListItems.js	/^ListItems.defaultProps = {$/;"	r
+defaultProps	client/src/Components/ListItems.js	/^      ListItems.defaultProps = {$/;"	r
 deleteFromDB	.history/client/src/App_20200114094254.js	/^  deleteFromDB = idTodelete => {$/;"	r
 deleteFromDB	.history/client/src/App_20200122141554.js	/^  deleteFromDB = idTodelete => {$/;"	r
 deleteFromDB	.history/client/src/App_20200122141646.js	/^  deleteFromDB = idTodelete => {$/;"	r
@@ -1808,7 +1837,7 @@ disabled	.history/client/src/ListItems_20200127094840.js	/^                disab
 disabled	.history/client/src/ListItems_20200127095053.js	/^                disabled={false}$/;"	r
 disabled	.history/client/src/ListItems_20200127095139.js	/^                disabled={false}$/;"	r
 disabled	.history/client/src/ListItems_20200127095217.js	/^                disabled={false}$/;"	r
-disabled	client/src/Components/ListItems.js	/^                disabled={false}$/;"	r
+disabled	client/src/Components/ListItems.js	/^      disabled={false}$/;"	r
 display	.history/client/src/Components/ActionButton_20200111200449.js	/^    display: 'flex',$/;"	r
 display	.history/client/src/Components/ActionButton_20200127133317.js	/^    display: 'flex',$/;"	r
 display	.history/client/src/Components/ActionButton_20200127133336.js	/^    display: 'flex',$/;"	r
@@ -1817,6 +1846,7 @@ display	.history/client/src/Components/ActionButton_20200127133701.js	/^    disp
 display	.history/client/src/Components/ActionButton_20200127133706.js	/^    display: 'flex',$/;"	r
 display	.history/client/src/Components/ActionButton_20200127133747.js	/^    display: 'flex',$/;"	r
 display	.history/client/src/Components/ActionButton_20200127133811.js	/^    display: 'flex',$/;"	r
+display	client/src/Components/NavBar.js	/^        display: 'flex',$/;"	r
 doUpdate	.history/client/src/App_20200114094254.js	/^  doUpdate = () => {$/;"	r
 doUpdate	.history/client/src/App_20200122141554.js	/^  doUpdate = () => {$/;"	r
 doUpdate	.history/client/src/App_20200122141646.js	/^  doUpdate = () => {$/;"	r
@@ -1853,7 +1883,7 @@ doUpdate	.history/client/src/App_20200127111646.js	/^  doUpdate = () => {$/;"	r
 doUpdate	.history/client/src/App_20200127111808.js	/^  doUpdate = () => {$/;"	r
 doUpdate	.history/client/src/App_20200127130056.js	/^  doUpdate = () => {$/;"	r
 doUpdate	.history/client/src/App_20200127131625.js	/^  doUpdate = () => {$/;"	r
-doUpdate	client/src/App.js	/^  doUpdate = () => {$/;"	r
+doUpdate	client/src/App.js	/^  doUpdate = (name, value) => {$/;"	r
 duplicates	.history/client/src/App_20200114094254.js	/^    let duplicates = [];$/;"	r
 duplicates	.history/client/src/App_20200122141554.js	/^    let duplicates = [];$/;"	r
 duplicates	.history/client/src/App_20200122141646.js	/^    let duplicates = [];$/;"	r
@@ -1890,7 +1920,10 @@ duplicates	.history/client/src/App_20200127111646.js	/^    let duplicates = [];$
 duplicates	.history/client/src/App_20200127111808.js	/^    let duplicates = [];$/;"	r
 duplicates	.history/client/src/App_20200127130056.js	/^    let duplicates = [];$/;"	r
 duplicates	.history/client/src/App_20200127131625.js	/^    let duplicates = [];$/;"	r
+duplicates	client/src/App.js	/^      duplicates: [],$/;"	r
+duplicates	client/src/App.js	/^      duplicates: duplicates$/;"	r
 duplicates	client/src/App.js	/^    let duplicates = [];$/;"	r
+duplicatesTitles	client/src/App.js	/^    let duplicatesTitles = [];$/;"	r
 err	backend/server.js	/^  Data.findOneAndDelete(id, err => {$/;"	r
 err	backend/server.js	/^  Data.findOneAndUpdate(id, update, err => {$/;"	r
 error	backend/server.js	/^      error: "INVALID INPUTS"$/;"	r
@@ -1961,7 +1994,6 @@ fields	.history/client/src/App_20200127111646.js	/^                  fields={thi
 fields	.history/client/src/App_20200127111808.js	/^                  fields={this.state.new}$/;"	r
 fields	.history/client/src/App_20200127130056.js	/^                  fields={this.state.new}$/;"	r
 fields	.history/client/src/App_20200127131625.js	/^                  fields={this.state.new}$/;"	r
-fields	client/src/App.js	/^                  fields={this.state.new}$/;"	r
 filtercode	.history/client/src/App_20200114094254.js	/^  filtercode = (dataToFilter, fltr) => {$/;"	r
 filtercode	.history/client/src/App_20200122141554.js	/^  filtercode = (dataToFilter, fltr) => {$/;"	r
 filtercode	.history/client/src/App_20200122141646.js	/^  filtercode = (dataToFilter, fltr) => {$/;"	r
@@ -2192,6 +2224,7 @@ filtertagsonsearch	client/src/App.js	/^  filtertagsonsearch = (search) => {$/;"	
 filtertagsonsearch	client/src/work/App.js	/^        this.filtertagsonsearch = this.filtertagsonsearch.bind(this);$/;"	r
 filtertagsonsearch	client/src/work/App.js	/^    filtertagsonsearch = ( search ) => {$/;"	r
 fixBabelImports	client/config-overrides.js	/^  fixBabelImports,$/;"	r
+fontSize	client/src/Components/NavBar.js	/^        fontSize: '1.5rem',$/;"	r
 getDataFromDb	.history/client/src/App_20200114094254.js	/^  getDataFromDb = () => {$/;"	r
 getDataFromDb	.history/client/src/App_20200122141554.js	/^  getDataFromDb = () => {$/;"	r
 getDataFromDb	.history/client/src/App_20200122141646.js	/^  getDataFromDb = () => {$/;"	r
@@ -2232,6 +2265,7 @@ getDataFromDb	client/src/App.js	/^  getDataFromDb = () => {$/;"	r
 getDataFromDb	client/src/App.orig.js	/^  getDataFromDb = () => {$/;"	r
 getNodes	client/src/work/App.js	/^        this.getNodes = this.getNodes.bind(this);$/;"	r
 getTags	client/src/work/App.js	/^        this.getTags = this.getTags.bind(this);$/;"	r
+getUpdate	client/src/App.js	/^                      getUpdate={this.doUpdate}$/;"	r
 h5	client/src/app.css	/^h5 {$/;"	t
 handleChange	.history/client/src/Components/ListItems_20200127095216.js	/^    this.handleChange = this.handleChange.bind(this);$/;"	r
 handleChange	.history/client/src/Components/ListItems_20200127125458.js	/^    this.handleChange = this.handleChange.bind(this);$/;"	r
@@ -2259,8 +2293,9 @@ handleChange	.history/client/src/ListItems_20200127094840.js	/^    this.handleCh
 handleChange	.history/client/src/ListItems_20200127095053.js	/^    this.handleChange = this.handleChange.bind(this);$/;"	r
 handleChange	.history/client/src/ListItems_20200127095139.js	/^    this.handleChange = this.handleChange.bind(this);$/;"	r
 handleChange	.history/client/src/ListItems_20200127095217.js	/^    this.handleChange = this.handleChange.bind(this);$/;"	r
-handleChange	client/src/Components/Create.js	/^        this.handleChange = this.handleChange.bind(this);$/;"	r
+handleChange	client/src/Components/CreateOld.js	/^        this.handleChange = this.handleChange.bind(this);$/;"	r
 handleChange	client/src/Components/ListItems.js	/^    this.handleChange = this.handleChange.bind(this);$/;"	r
+handleClose	client/src/Components/ListItems.js	/^    this.handleClose = this.handleClose.bind(this);$/;"	r
 handleNew	.history/client/src/App_20200114094254.js	/^                  handleNew={this.createNew}$/;"	r
 handleNew	.history/client/src/App_20200122141554.js	/^                  handleNew={this.createNew}$/;"	r
 handleNew	.history/client/src/App_20200122141646.js	/^                  handleNew={this.createNew}$/;"	r
@@ -2297,10 +2332,11 @@ handleNew	.history/client/src/App_20200127111646.js	/^                  handleNe
 handleNew	.history/client/src/App_20200127111808.js	/^                  handleNew={this.createNew}$/;"	r
 handleNew	.history/client/src/App_20200127130056.js	/^                  handleNew={this.createNew}$/;"	r
 handleNew	.history/client/src/App_20200127131625.js	/^                  handleNew={this.createNew}$/;"	r
-handleNew	client/src/App.js	/^                  handleNew={this.createNew}$/;"	r
+handleOpen	client/src/Components/ListItems.js	/^    this.handleOpen = this.handleOpen.bind(this);$/;"	r
 height	.history/client/src/Components/ActionButton_20200111200449.js	/^    height: 24,$/;"	r
 height	.history/client/src/Components/ActionButton_20200127133317.js	/^    height: 16,$/;"	r
 height	.history/client/src/Components/ActionButton_20200127133336.js	/^    height: 8,$/;"	r
+height	client/src/Components/NavBar.js	/^        height: '100%',$/;"	r
 here	client/src/App.orig.js	/^  \/\/ just a note, here, in the front end, we use the id key of our data object $/;"	r
 hostname	client/src/serviceWorker.js	/^    window.location.hostname === '[::1]' ||$/;"	r
 hostname	client/src/serviceWorker.js	/^  window.location.hostname === 'localhost' ||$/;"	r
@@ -2356,8 +2392,8 @@ html	.history/client/src/ListItems_20200127095139.js	/^                html={thi
 html	.history/client/src/ListItems_20200127095139.js	/^      html: this.props.data.name,$/;"	r
 html	.history/client/src/ListItems_20200127095217.js	/^                html={this.props.data.name}$/;"	r
 html	.history/client/src/ListItems_20200127095217.js	/^      html: this.props.data.name,$/;"	r
-html	client/src/Components/ListItems.js	/^                html={this.props.data.name}$/;"	r
 html	client/src/Components/ListItems.js	/^      html: this.props.data.name,$/;"	r
+html	client/src/Components/ListItems.js	/^      html={this.props.data.name}$/;"	r
 html	client/src/app.css	/^html {$/;"	t
 iant	.history/client/src/Components/ListItems_20200127095216.js	/^                  variant="round"$/;"	r
 iant	.history/client/src/Components/ListItems_20200127125458.js	/^                  variant="round"$/;"	r
@@ -2393,16 +2429,17 @@ iant	.history/client/src/ListItems_20200127095217.js	/^                  variant
 iant	.history/client/src/Update_20200114095003.js	/^            variant="contained"$/;"	r
 iant	.history/client/src/Update_20200127101001.js	/^            variant="contained"$/;"	r
 iant	.history/client/src/Update_20200127101450.js	/^            variant="contained"$/;"	r
-iant	client/src/Components/Create.js	/^                    variant="contained"$/;"	r
-iant	client/src/Components/ListItems.js	/^                  variant="round"$/;"	r
-iant	client/src/Components/Update.js	/^            variant="contained"$/;"	r
+iant	client/src/Components/Create.js	/^                variant="contained"$/;"	r
+iant	client/src/Components/CreateOld.js	/^                    variant="contained"$/;"	r
+iant	client/src/Components/ListItems.js	/^      variant="round"$/;"	r
+iant	client/src/Components/Update.js	/^    variant="contained"$/;"	r
 icon	.history/client/src/Components/ListItems_20200127133919.js	/^                    icon={faEdit}$/;"	r
 icon	.history/client/src/Components/ListItems_20200127134015.js	/^                    icon={faEdit}$/;"	r
 icon	.history/client/src/Components/ListItems_20200127134242.js	/^                    icon={faEdit}$/;"	r
 icon	.history/client/src/Components/ListItems_20200127134624.js	/^                    icon={faEdit}$/;"	r
 icon	.history/client/src/Components/ListItems_20200127134624.js	/^                    icon={faTrash}$/;"	r
-icon	client/src/Components/ListItems.js	/^                    icon={faEdit}$/;"	r
-icon	client/src/Components/ListItems.js	/^                    icon={faTrash}$/;"	r
+icon	client/src/Components/ListItems.js	/^      icon={faEdit}$/;"	r
+icon	client/src/Components/ListItems.js	/^      icon={faTrash}$/;"	r
 id	.history/client/src/App_20200114094254.js	/^                  id={this.state.idToUpdate}$/;"	r
 id	.history/client/src/App_20200114094254.js	/^              id: { _id: this.state.objectToDelete }$/;"	r
 id	.history/client/src/App_20200114094254.js	/^            id: { _id: dat._id },$/;"	r
@@ -2699,11 +2736,9 @@ id	client/src/App.orig.js	/^      id: idToBeAdded,$/;"	r
 id	client/src/App.orig.js	/^      id: objIdToUpdate,$/;"	r
 id	client/src/App.orig.js	/^    id: 0,$/;"	r
 id	client/src/Components/Delete.js	/^        let id = e.target.value;$/;"	r
-id	client/src/Components/ListItems.js	/^                    id={this.props.data.id}$/;"	r
-id	client/src/Components/ListItems.js	/^                  id={this.props.data.id}$/;"	r
-id	client/src/Components/ListItems.js	/^              id: {this.props.data.id}$/;"	r
+id	client/src/Components/ListItems.js	/^      id: {this.props.data.id}$/;"	r
+id	client/src/Components/ListItems.js	/^      id={this.props.data.id}$/;"	r
 id	client/src/Components/TagDisplay.js	/^    id: PropTypes.number,$/;"	r
-id	client/src/Components/Update.js	/^  id: PropTypes.string.isRequired,$/;"	r
 id	client/src/work/App.js	/^                                    id={tag.id}$/;"	r
 id	client/src/work/App.js	/^                            id={this.state.tagId}$/;"	r
 id	client/src/work/TagSelector.js	/^  id: PropTypes.number.isRequired,$/;"	r
@@ -3025,7 +3060,6 @@ idToUpdate	client/src/App.js	/^                      idToUpdate={this.updateId}$
 idToUpdate	client/src/App.js	/^          idToUpdate: dat._id$/;"	r
 idToUpdate	client/src/App.js	/^      idToUpdate: "",$/;"	r
 idToUpdate	client/src/App.js	/^      idToUpdate: id,$/;"	r
-idToUpdate	client/src/App.js	/^    console.log('almost there: ', idToUpdate, update)$/;"	r
 idToUpdate	client/src/App.orig.js	/^    idToUpdate: null,$/;"	r
 index	backend/data.js	/^    tags: { type: [String], index: true } \/\/ field level$/;"	r
 innerRef	.history/client/src/Components/ListItems_20200127095216.js	/^                innerRef={this.contentEditable}$/;"	r
@@ -3054,7 +3088,7 @@ innerRef	.history/client/src/ListItems_20200127094840.js	/^                inner
 innerRef	.history/client/src/ListItems_20200127095053.js	/^                innerRef={this.contentEditable}$/;"	r
 innerRef	.history/client/src/ListItems_20200127095139.js	/^                innerRef={this.contentEditable}$/;"	r
 innerRef	.history/client/src/ListItems_20200127095217.js	/^                innerRef={this.contentEditable}$/;"	r
-innerRef	client/src/Components/ListItems.js	/^                innerRef={this.contentEditable}$/;"	r
+innerRef	client/src/Components/ListItems.js	/^      innerRef={this.contentEditable}$/;"	r
 input	.history/client/src/App_20200114094254.js	/^                  input={this.state.searchById}$/;"	r
 input	.history/client/src/App_20200114094254.js	/^                  input={this.state.searchingTag}$/;"	r
 input	.history/client/src/App_20200122141554.js	/^                  input={this.state.searchById}$/;"	r
@@ -3226,6 +3260,7 @@ intervalIsSet	.history/client/src/App_20200127131625.js	/^      intervalIsSet: f
 intervalIsSet	client/src/App.js	/^      intervalIsSet: false,$/;"	r
 intervalIsSet	client/src/App.orig.js	/^    intervalIsSet: false,$/;"	r
 javascriptEnabled	client/config-overrides.js	/^    javascriptEnabled: true,$/;"	r
+justifyContent	client/src/Components/NavBar.js	/^        justifyContent: 'flex-end',$/;"	r
 key	client/src/work/App.js	/^                                    key={tag.index}$/;"	r
 key	client/src/work/App.js	/^                            key={this.state.tagId.toString}$/;"	r
 key	client/src/work/App.js	/^                        key={code.title.rendered} $/;"	r
@@ -3313,6 +3348,7 @@ keyDown	client/src/Components/SearchTag.js	/^  keyDown: PropTypes.func.isRequire
 keyDown	client/src/work/App.js	/^                                 keyDown={this.updatetag}$/;"	r
 keyDown	client/src/work/SearchTag.js	/^  keyDown: PropTypes.func.isRequired,$/;"	r
 label	client/src/Components/Controls.js	/^                label="toggle"$/;"	r
+lastEl	client/src/Components/LastEntry.js	/^    let lastEl = [];$/;"	r
 lastel	.history/client/src/Components/LastEntry_20200110144020.js	/^        lastel = ordered.pop();$/;"	r
 lastel	.history/client/src/Components/LastEntry_20200110144020.js	/^    let lastel=[];$/;"	r
 lastel	.history/client/src/Components/LastEntry_20200127111037.js	/^        lastel = ordered.pop();$/;"	r
@@ -3344,14 +3380,27 @@ lastel	.history/client/src/Components/LastEntry_20200127130024.js	/^        last
 lastel	.history/client/src/Components/LastEntry_20200127130024.js	/^    let lastel = [];$/;"	r
 lastel	.history/client/src/Components/LastEntry_20200127130227.js	/^        lastel = ordered.pop();$/;"	r
 lastel	.history/client/src/Components/LastEntry_20200127130227.js	/^    let lastel = [];$/;"	r
-lastel	client/src/Components/LastEntry.js	/^        lastel = ordered.pop();$/;"	r
-lastel	client/src/Components/LastEntry.js	/^    let lastel = [];$/;"	r
+left	client/src/Components/Create.js	/^    left: '50%',$/;"	r
+left	client/src/Components/Update.js	/^    left: '50%',$/;"	r
 libraryName	client/config-overrides.js	/^    libraryName: "antd", libraryDirectory: "es", style: true \/\/ change importing css to less$/;"	r
+liftUpdate	client/src/Components/ListItems.js	/^      this.liftUpdate$/;"	r
+liftUpdate	client/src/Components/ListItems.js	/^    this.liftUpdate = this.liftUpdate.bind(this);$/;"	r
+listStyle	client/src/Components/NavBar.js	/^        listStyle: 'none',$/;"	r
+marginBottom	client/src/Components/NavBar.js	/^        marginBottom: '.5rem',$/;"	r
+marginBottom	client/src/Components/NavBar.js	/^        marginBottom: '0',$/;"	r
 match	.history/client/src/App_20200123132411.js	/^          let match = tag;$/;"	r
 match	.history/client/src/App_20200123132632.js	/^          let match = tag;$/;"	r
 match	.history/client/src/App_20200123133002.js	/^          let match = tag;$/;"	r
+maxHeight	client/src/Components/ActionButton.js	/^    maxHeight: '24px',$/;"	r
+maxWidth	client/src/Components/ActionButton.js	/^    maxWidth: '24px',$/;"	r
 message	client/src/App.orig.js	/^      message: message$/;"	r
 message	client/src/App.orig.js	/^    message: null,$/;"	r
+minHeight	client/src/Components/ActionButton.js	/^    minHeight: '0',$/;"	r
+modalOpen	client/src/Components/ListItems.js	/^            modalOpen={this.state.modalopen}$/;"	r
+modalbutton	client/src/Components/Create.js	/^    modalbutton: {$/;"	r
+modalbutton	client/src/Components/Update.js	/^    modalbutton: {$/;"	r
+modalopen	client/src/Components/ListItems.js	/^      modalopen: false$/;"	r
+modalopen	client/src/Components/ListItems.js	/^      modalopen: true$/;"	r
 modified	client/src/work/App.js	/^                        modified={code.modified}$/;"	r
 modifyVars	client/config-overrides.js	/^    modifyVars: { "@primary-color": "#1DA57A" }$/;"	r
 name	.history/client/src/App_20200114094254.js	/^        name: '',$/;"	r
@@ -3589,22 +3638,30 @@ name	client/src/App.js	/^        name: '',$/;"	r
 name	client/src/App.js	/^      name: name,$/;"	r
 name	client/src/App.js	/^      name: title,$/;"	r
 name	client/src/App.js	/^  updateId = ( id, name, code, tags, comment ) => {$/;"	r
-name	client/src/Components/Create.js	/^                    name="ADD ITEM"$/;"	r
-name	client/src/Components/Create.js	/^                    name="code"$/;"	r
-name	client/src/Components/Create.js	/^                    name="comment"$/;"	r
-name	client/src/Components/Create.js	/^                    name="tags"$/;"	r
-name	client/src/Components/Create.js	/^                    name="title"$/;"	r
-name	client/src/Components/ListItems.js	/^                name="title"$/;"	r
-name	client/src/Components/ListItems.js	/^    name: 'default',$/;"	r
+name	client/src/Components/Create.js	/^                name="ADD ITEM"$/;"	r
+name	client/src/Components/Create.js	/^                name="code"$/;"	r
+name	client/src/Components/Create.js	/^                name="comment"$/;"	r
+name	client/src/Components/Create.js	/^                name="tags"$/;"	r
+name	client/src/Components/Create.js	/^                name="title"$/;"	r
+name	client/src/Components/CreateOld.js	/^                    name="ADD ITEM"$/;"	r
+name	client/src/Components/CreateOld.js	/^                    name="code"$/;"	r
+name	client/src/Components/CreateOld.js	/^                    name="comment"$/;"	r
+name	client/src/Components/CreateOld.js	/^                    name="tags"$/;"	r
+name	client/src/Components/CreateOld.js	/^                    name="title"$/;"	r
+name	client/src/Components/ListItems.js	/^          name: 'default',$/;"	r
+name	client/src/Components/ListItems.js	/^      name="title"$/;"	r
 name	client/src/Components/TagButton.js	/^            name={name}$/;"	r
-name	client/src/Components/Update.js	/^            name="UPDATE"$/;"	r
-name	client/src/Components/Update.js	/^            name="code"$/;"	r
-name	client/src/Components/Update.js	/^            name="comment"$/;"	r
-name	client/src/Components/Update.js	/^            name="name"$/;"	r
-name	client/src/Components/Update.js	/^            name="tags"$/;"	r
+name	client/src/Components/Update.js	/^    name="UPDATE"$/;"	r
+name	client/src/Components/Update.js	/^    name="code"$/;"	r
+name	client/src/Components/Update.js	/^    name="comment"$/;"	r
+name	client/src/Components/Update.js	/^    name="tags"$/;"	r
+name	client/src/Components/Update.js	/^    name="title"$/;"	r
 name	client/src/work/App.js	/^                                    name={tag.name} $/;"	r
 name	client/src/work/App.js	/^            let name = tagItem.name;$/;"	r
 name	client/src/work/TagSelector.js	/^  name: PropTypes.string.isRequired,$/;"	r
+navbar	client/src/Components/NavBar.js	/^    navbar: {$/;"	r
+navbarmenu	client/src/Components/NavBar.js	/^    navbarmenu: {$/;"	r
+navbartitle	client/src/Components/NavBar.js	/^    navbartitle: {$/;"	r
 new	.history/client/src/App_20200114094254.js	/^      new: {$/;"	r
 new	.history/client/src/App_20200122141554.js	/^      new: {$/;"	r
 new	.history/client/src/App_20200122141646.js	/^      new: {$/;"	r
@@ -3803,10 +3860,11 @@ onChange	client/src/App.orig.js	/^            onChange={e => this.setState({ idT
 onChange	client/src/App.orig.js	/^            onChange={e => this.setState({ message: e.target.value })}$/;"	r
 onChange	client/src/App.orig.js	/^            onChange={e => this.setState({ updateToApply: e.target.value })}$/;"	r
 onChange	client/src/Components/Controls.js	/^                        onChange={e => handleClick(e)}$/;"	r
-onChange	client/src/Components/Create.js	/^                    onChange={e => this.handleChange(e)}$/;"	r
+onChange	client/src/Components/Create.js	/^                onChange={e => handleChange(e)}$/;"	r
+onChange	client/src/Components/CreateOld.js	/^                    onChange={e => this.handleChange(e)}$/;"	r
 onChange	client/src/Components/Delete.js	/^                onChange={e => updateId(e)}$/;"	r
-onChange	client/src/Components/ListItems.js	/^                onChange={this.handleChange}$/;"	r
-onChange	client/src/Components/Update.js	/^            onChange={e => modifyN(e)}$/;"	r
+onChange	client/src/Components/ListItems.js	/^      onChange={this.handleChange}$/;"	r
+onChange	client/src/Components/Update.js	/^    onChange={e => modifyN(e)}$/;"	r
 onClick	.history/client/src/Components/ListItems_20200127095216.js	/^                  onClick={e => this.deleteThis(e)}$/;"	r
 onClick	.history/client/src/Components/ListItems_20200127095216.js	/^                  onClick={e => this.toggleOpen(e)}$/;"	r
 onClick	.history/client/src/Components/ListItems_20200127095216.js	/^                  onClick={e => this.updateId(e)}$/;"	r
@@ -3894,11 +3952,13 @@ onClick	.history/client/src/Update_20200114095003.js	/^            onClick={() =
 onClick	.history/client/src/Update_20200127101001.js	/^            onClick={() => triggerUpdate()}$/;"	r
 onClick	.history/client/src/Update_20200127101450.js	/^            onClick={() => triggerUpdate()}$/;"	r
 onClick	client/src/App.orig.js	/^            onClick={() =>$/;"	r
-onClick	client/src/Components/Create.js	/^                    onClick={e => this.triggerAdd(e)}$/;"	r
-onClick	client/src/Components/ListItems.js	/^                  onClick={e => this.deleteThis(e)}$/;"	r
-onClick	client/src/Components/ListItems.js	/^                  onClick={e => this.toggleOpen(e)}$/;"	r
-onClick	client/src/Components/ListItems.js	/^                  onClick={e => this.updateId(e)}$/;"	r
-onClick	client/src/Components/Update.js	/^            onClick={() => triggerUpdate()}$/;"	r
+onClick	client/src/Components/Create.js	/^                onClick={e => triggerAdd(e)}$/;"	r
+onClick	client/src/Components/Create.js	/^                onClick={handleOpen}$/;"	r
+onClick	client/src/Components/CreateOld.js	/^                    onClick={e => this.triggerAdd(e)}$/;"	r
+onClick	client/src/Components/ListItems.js	/^      onClick={(e) => this.handleOpen(e)}$/;"	r
+onClick	client/src/Components/ListItems.js	/^      onClick={e => this.deleteThis(e)}$/;"	r
+onClick	client/src/Components/ListItems.js	/^      onClick={e => this.toggleOpen(e)}$/;"	r
+onClick	client/src/Components/Update.js	/^    onClick={(e) => triggerUpdate(e)}$/;"	r
 onClickCreate	.history/client/src/App_20200114094254.js	/^                  onClickCreate={this.createNew}$/;"	r
 onClickCreate	.history/client/src/App_20200122141554.js	/^                  onClickCreate={this.createNew}$/;"	r
 onClickCreate	.history/client/src/App_20200122141646.js	/^                  onClickCreate={this.createNew}$/;"	r
@@ -3935,7 +3995,8 @@ onClickCreate	.history/client/src/App_20200127111646.js	/^                  onCl
 onClickCreate	.history/client/src/App_20200127111808.js	/^                  onClickCreate={this.createNew}$/;"	r
 onClickCreate	.history/client/src/App_20200127130056.js	/^                  onClickCreate={this.createNew}$/;"	r
 onClickCreate	.history/client/src/App_20200127131625.js	/^                  onClickCreate={this.createNew}$/;"	r
-onClickCreate	client/src/App.js	/^                  onClickCreate={this.createNew}$/;"	r
+onClickCreate	client/src/App.js	/^              onClickCreate={this.createNew}$/;"	r
+onClickCreate	client/src/Components/NavBar.js	/^                            onClickCreate={onClickCreateOnNavbar}$/;"	r
 onClickProp	.history/client/src/App_20200114094254.js	/^                      onClickProp={this.deleteThis}$/;"	r
 onClickProp	.history/client/src/App_20200122141554.js	/^                      onClickProp={this.deleteThis}$/;"	r
 onClickProp	.history/client/src/App_20200122141646.js	/^                      onClickProp={this.deleteThis}$/;"	r
@@ -4016,6 +4077,10 @@ onClickUpdate	.history/client/src/Components/Update_20200127131127.js	/^  onClic
 onClickUpdate	.history/client/src/Update_20200127101001.js	/^  onClickUpdate: PropTypes.function.isRequired$/;"	r
 onClickUpdate	.history/client/src/Update_20200127101450.js	/^  onClickUpdate: PropTypes.function.isRequired$/;"	r
 onClickUpdate	client/src/App.js	/^                  onClickUpdate={this.doUpdate}$/;"	r
+onClickUpdate	client/src/Components/ListItems.js	/^    this.onClickUpdate = this.onClickUpdate.bind(this);$/;"	r
+onClose	client/src/Components/Create.js	/^        onClose={handleClose}$/;"	r
+onClose	client/src/Components/ListItems.js	/^        onClose={this.handleClose}$/;"	r
+onModalClick	client/src/Components/ListItems.js	/^            onModalClick={this.onClickUpdate}$/;"	r
 onstatechange	client/src/serviceWorker.js	/^        installingWorker.onstatechange = () => {$/;"	r
 onupdatefound	client/src/serviceWorker.js	/^      registration.onupdatefound = () => {$/;"	r
 open	.history/client/src/App_20200114094254.js	/^                      open={this.state.open}$/;"	r
@@ -4174,8 +4239,10 @@ open	.history/client/src/ListItems_20200127095217.js	/^  open: false,$/;"	r
 open	client/src/App.js	/^                      open={this.state.open}$/;"	r
 open	client/src/App.js	/^                  open={this.state.open}$/;"	r
 open	client/src/App.js	/^      open: false,$/;"	r
-open	client/src/Components/ListItems.js	/^      open: this.props.open$/;"	r
-open	client/src/Components/ListItems.js	/^  open: false,$/;"	r
+open	client/src/Components/Create.js	/^        open={open}$/;"	r
+open	client/src/Components/ListItems.js	/^        open: false,$/;"	r
+open	client/src/Components/ListItems.js	/^        open={this.state.modalopen}$/;"	r
+open	client/src/Components/ListItems.js	/^      open: this.props.open,$/;"	r
 ordered	.history/client/src/Components/LastEntry_20200110144020.js	/^    let ordered =  data.sort((a,b) => {$/;"	r
 ordered	.history/client/src/Components/LastEntry_20200127111037.js	/^    let ordered =  data.sort((a,b) => {$/;"	r
 ordered	.history/client/src/Components/LastEntry_20200127111040.js	/^    let ordered =  data.sort((a,b) => {$/;"	r
@@ -4194,14 +4261,17 @@ ordered	.history/client/src/Components/LastEntry_20200127112546.js	/^    let ord
 ordered	.history/client/src/Components/LastEntry_20200127125547.js	/^    let ordered =  data.sort((a,b) => {$/;"	r
 ordered	.history/client/src/Components/LastEntry_20200127130024.js	/^    let ordered =  data.sort((a,b) => {$/;"	r
 ordered	.history/client/src/Components/LastEntry_20200127130227.js	/^    let ordered =  data.sort((a,b) => {$/;"	r
-ordered	client/src/Components/LastEntry.js	/^    let ordered =  data.sort((a,b) => {$/;"	r
 override	client/config-overrides.js	/^  override,$/;"	r
 override	client/config-overrides.js	/^\/\/ module.exports = function override(config, env) {$/;"	r
 padding	.history/client/src/Components/ActionButton_20200127133747.js	/^    padding: '10px 0'$/;"	r
 padding	.history/client/src/Components/ActionButton_20200127133811.js	/^    padding: '10px 0'$/;"	r
 padding	.history/client/src/Components/ActionButton_20200127134057.js	/^    padding: '10px 0'$/;"	r
 padding	.history/client/src/Components/ActionButton_20200127134111.js	/^    padding: '10px 0'$/;"	r
-padding	client/src/Components/ActionButton.js	/^    padding: '10px 0'$/;"	r
+padding	client/src/Components/ActionButton.js	/^    padding: '0'$/;"	r
+padding	client/src/Components/Create.js	/^    padding: theme.spacing(2, 4, 3),$/;"	r
+padding	client/src/Components/Update.js	/^    padding: theme.spacing(2, 4, 3),$/;"	r
+paper	client/src/Components/Create.js	/^  paper: {$/;"	r
+paper	client/src/Components/Update.js	/^  paper: {$/;"	r
 placeholder	.history/client/src/Components/Update_20200127101449.js	/^            placeholder="modify content"$/;"	r
 placeholder	.history/client/src/Components/Update_20200127101449.js	/^            placeholder="modify cooment"$/;"	r
 placeholder	.history/client/src/Components/Update_20200127101449.js	/^            placeholder="modify tags"$/;"	r
@@ -4238,19 +4308,26 @@ placeholder	client/src/App.orig.js	/^            placeholder="add something in t
 placeholder	client/src/App.orig.js	/^            placeholder="id of item to update here"$/;"	r
 placeholder	client/src/App.orig.js	/^            placeholder="put id of item to delete here"$/;"	r
 placeholder	client/src/App.orig.js	/^            placeholder="put new value of the item here"$/;"	r
-placeholder	client/src/Components/Create.js	/^                    placeholder="add comment"$/;"	r
-placeholder	client/src/Components/Create.js	/^                    placeholder="add content"$/;"	r
-placeholder	client/src/Components/Create.js	/^                    placeholder="add tags separated by comma"$/;"	r
-placeholder	client/src/Components/Create.js	/^                    placeholder="add title"$/;"	r
+placeholder	client/src/Components/Create.js	/^                placeholder="add comment"$/;"	r
+placeholder	client/src/Components/Create.js	/^                placeholder="add content"$/;"	r
+placeholder	client/src/Components/Create.js	/^                placeholder="add tags separated by comma"$/;"	r
+placeholder	client/src/Components/Create.js	/^                placeholder="add title"$/;"	r
+placeholder	client/src/Components/CreateOld.js	/^                    placeholder="add comment"$/;"	r
+placeholder	client/src/Components/CreateOld.js	/^                    placeholder="add content"$/;"	r
+placeholder	client/src/Components/CreateOld.js	/^                    placeholder="add tags separated by comma"$/;"	r
+placeholder	client/src/Components/CreateOld.js	/^                    placeholder="add title"$/;"	r
 placeholder	client/src/Components/Delete.js	/^                placeholder="put id of item to delete here"$/;"	r
-placeholder	client/src/Components/Update.js	/^            placeholder="modify content"$/;"	r
-placeholder	client/src/Components/Update.js	/^            placeholder="modify cooment"$/;"	r
-placeholder	client/src/Components/Update.js	/^            placeholder="modify tags"$/;"	r
-placeholder	client/src/Components/Update.js	/^            placeholder="modify title"$/;"	r
+placeholder	client/src/Components/Update.js	/^    placeholder="modify content"$/;"	r
+placeholder	client/src/Components/Update.js	/^    placeholder="modify cooment"$/;"	r
+placeholder	client/src/Components/Update.js	/^    placeholder="modify tags"$/;"	r
+placeholder	client/src/Components/Update.js	/^    placeholder="modify title"$/;"	r
 positin	.history/client/src/Components/ActionButton_20200127133701.js	/^    positin: 'relative',$/;"	r
 position	.history/client/src/Components/ActionButton_20200127133706.js	/^    position: 'relative',$/;"	r
 position	.history/client/src/Components/ActionButton_20200127133747.js	/^    position: 'relative',$/;"	r
 position	.history/client/src/Components/ActionButton_20200127133811.js	/^    position: 'relative',$/;"	r
+position	client/src/Components/Create.js	/^    position: 'absolute',$/;"	r
+position	client/src/Components/Update.js	/^    position: 'absolute',$/;"	r
+prevState	client/src/App.js	/^      prevState => ({ open: !prevState.open }))$/;"	r
 propTypes	.history/client/src/Components/LastEntry_20200127111037.js	/^LastEntry.propTypes = {$/;"	r
 propTypes	.history/client/src/Components/LastEntry_20200127111040.js	/^LastEntry.propTypes = {$/;"	r
 propTypes	.history/client/src/Components/LastEntry_20200127111221.js	/^LastEntry.propTypes = {$/;"	r
@@ -4310,10 +4387,10 @@ propTypes	.history/client/src/TagDisplay_20200127100700.js	/^TagDisplay.propType
 propTypes	.history/client/src/Update_20200127101001.js	/^Update.propTypes = {$/;"	r
 propTypes	.history/client/src/Update_20200127101450.js	/^Update.propTypes = {$/;"	r
 propTypes	client/src/Components/LastEntry.js	/^LastEntry.propTypes = {$/;"	r
-propTypes	client/src/Components/ListItems.js	/^ListItems.propTypes = {$/;"	r
+propTypes	client/src/Components/ListItems.js	/^      ListItems.propTypes = {$/;"	r
 propTypes	client/src/Components/SearchTag.js	/^SearchTag.propTypes = {$/;"	r
 propTypes	client/src/Components/TagDisplay.js	/^TagDisplay.propTypes = {$/;"	r
-propTypes	client/src/Components/Update.js	/^Update.propTypes = {$/;"	r
+propTypes	client/src/Components/Update.js	/^  Update.propTypes = {$/;"	r
 propTypes	client/src/work/SearchTag.js	/^SearchTag.propTypes = {$/;"	r
 propTypes	client/src/work/TagSelector.js	/^TagSelector.propTypes = {$/;"	r
 putDataToDB	.history/client/src/App_20200114094254.js	/^  putDataToDB = (title, code, comment, tags) => {$/;"	r
@@ -4456,7 +4533,8 @@ return	client/src/App.js	/^        return$/;"	r
 return	client/src/serviceWorker.js	/^          return;$/;"	r
 return	client/src/serviceWorker.js	/^      return;$/;"	r
 rootReducer	client/src/js/reducers/index.js	/^function rootReducer(state = initialState, action) {$/;"	r
-row	client/src/Components/Create.js	/^                    row="3"$/;"	r
+row	client/src/Components/Create.js	/^                row="3"$/;"	r
+row	client/src/Components/CreateOld.js	/^                    row="3"$/;"	r
 searchById	.history/client/src/App_20200114094254.js	/^      searchById: '',$/;"	r
 searchById	.history/client/src/App_20200114094254.js	/^      searchById: id$/;"	r
 searchById	.history/client/src/App_20200114094254.js	/^  searchById = (id) => {$/;"	r
@@ -4728,7 +4806,7 @@ size	.history/client/src/Components/ListItems_20200127134015.js	/^              
 size	.history/client/src/Components/ListItems_20200127134242.js	/^                    size='1x'$/;"	r
 size	.history/client/src/Components/ListItems_20200127134624.js	/^                    size='1x'$/;"	r
 size	client/src/Components/ActionButton.js	/^    size: 'small',$/;"	r
-size	client/src/Components/ListItems.js	/^                    size='1x'$/;"	r
+size	client/src/Components/ListItems.js	/^      size='1x'$/;"	r
 sortOrder	.history/client/src/App_20200114094254.js	/^  sortOrder = (a, b) => {$/;"	r
 sortOrder	.history/client/src/App_20200122141554.js	/^  sortOrder = (a, b) => {$/;"	r
 sortOrder	.history/client/src/App_20200122141646.js	/^  sortOrder = (a, b) => {$/;"	r
@@ -4830,7 +4908,7 @@ state	.history/client/src/ListItems_20200127095139.js	/^    this.state = {$/;"	r
 state	.history/client/src/ListItems_20200127095217.js	/^    this.state = {$/;"	r
 state	client/src/App.js	/^    this.state = {$/;"	r
 state	client/src/App.orig.js	/^  state = {$/;"	r
-state	client/src/Components/Create.js	/^        this.state = {$/;"	r
+state	client/src/Components/CreateOld.js	/^        this.state = {$/;"	r
 state	client/src/Components/ListItems.js	/^    this.state = {$/;"	r
 state	client/src/js/reducers/index.js	/^    return Object.assign({}, state, {$/;"	r
 state	client/src/work/App.js	/^        this.state = {$/;"	r
@@ -5268,14 +5346,14 @@ tags	.history/client/src/ListItems_20200127095217.js	/^    tags: ['default', 'ta
 tags	backend/data.js	/^    tags: { type: [String], index: true } \/\/ field level$/;"	r
 tags	backend/server.js	/^  data.tags = tags;$/;"	r
 tags	client/src/App.js	/^                  tags={this.state.filteredTags}$/;"	r
-tags	client/src/App.js	/^                  tags={this.state.new.tags}$/;"	r
 tags	client/src/App.js	/^        tags: [],$/;"	r
 tags	client/src/App.js	/^        tags: tags.split(',').map(item => { return item.trim() }),$/;"	r
 tags	client/src/App.js	/^        tags: true,$/;"	r
 tags	client/src/App.js	/^      tags: tags$/;"	r
 tags	client/src/App.js	/^      tags: tags,$/;"	r
-tags	client/src/Components/Create.js	/^            tags: '',$/;"	r
-tags	client/src/Components/ListItems.js	/^    tags: ['default', 'tags'],$/;"	r
+tags	client/src/Components/CreateOld.js	/^            tags: '',$/;"	r
+tags	client/src/Components/ListItems.js	/^          tags: ['default', 'tags'],$/;"	r
+tags	client/src/Components/Update.js	/^      tags: data.tags,$/;"	r
 tags	client/src/work/App.js	/^                        tags={code.tags} $/;"	r
 tags	client/src/work/App.js	/^                tags: codetags.data$/;"	r
 tags	client/src/work/App.js	/^            tags:[],$/;"	r
@@ -5316,6 +5394,8 @@ tagsList	.history/client/src/App_20200127111808.js	/^      tagsList: [],$/;"	r
 tagsList	.history/client/src/App_20200127130056.js	/^      tagsList: [],$/;"	r
 tagsList	.history/client/src/App_20200127131625.js	/^      tagsList: [],$/;"	r
 tagsList	client/src/App.js	/^      tagsList: [],$/;"	r
+timeout	client/src/Components/Create.js	/^          timeout: 500,$/;"	r
+timeout	client/src/Components/ListItems.js	/^          timeout: 500,$/;"	r
 title	.history/client/src/App_20200114094254.js	/^                  title={this.state.new.title}$/;"	r
 title	.history/client/src/App_20200114094254.js	/^                  title={this.state.tagName}$/;"	r
 title	.history/client/src/App_20200114094254.js	/^        title: '',$/;"	r
@@ -5503,13 +5583,13 @@ title	.history/client/src/TagDisplay_20200127095456.js	/^    title: PropTypes.st
 title	.history/client/src/TagDisplay_20200127095512.js	/^    title: PropTypes.string$/;"	r
 title	.history/client/src/TagDisplay_20200127095534.js	/^    title: PropTypes.string$/;"	r
 title	.history/client/src/TagDisplay_20200127100700.js	/^    title: PropTypes.string$/;"	r
-title	client/src/App.js	/^                  title={this.state.new.title}$/;"	r
 title	client/src/App.js	/^                  title={this.state.tagName}$/;"	r
 title	client/src/App.js	/^        title: '',$/;"	r
 title	client/src/App.js	/^        title: false,$/;"	r
 title	client/src/App.js	/^        title: title,$/;"	r
-title	client/src/Components/Create.js	/^            title: '',$/;"	r
+title	client/src/Components/CreateOld.js	/^            title: '',$/;"	r
 title	client/src/Components/TagDisplay.js	/^    title: PropTypes.string$/;"	r
+title	client/src/Components/Update.js	/^      title: data.name,$/;"	r
 title	client/src/work/App.js	/^                            title={this.state.tagName}$/;"	r
 title	client/src/work/App.js	/^                        title={code.title.rendered} $/;"	r
 toggleOpen	.history/client/src/App_20200114094254.js	/^  toggleOpen = () => {$/;"	r
@@ -5576,7 +5656,11 @@ toggleOpen	.history/client/src/ListItems_20200127095139.js	/^    this.toggleOpen
 toggleOpen	.history/client/src/ListItems_20200127095217.js	/^    this.toggleOpen = this.toggleOpen.bind(this);$/;"	r
 toggleOpen	client/src/App.js	/^  toggleOpen = () => {$/;"	r
 toggleOpen	client/src/Components/ListItems.js	/^    this.toggleOpen = this.toggleOpen.bind(this);$/;"	r
-triggerAdd	client/src/Components/Create.js	/^        this.triggerAdd = this.triggerAdd.bind(this);$/;"	r
+top	client/src/Components/Create.js	/^    top: '50%',$/;"	r
+top	client/src/Components/Update.js	/^    top: '50%',$/;"	r
+transform	client/src/Components/Create.js	/^    transform: 'translate(-50%, -50%)',$/;"	r
+transform	client/src/Components/Update.js	/^    transform: 'translate(-50%, -50%)',$/;"	r
+triggerAdd	client/src/Components/CreateOld.js	/^        this.triggerAdd = this.triggerAdd.bind(this);$/;"	r
 type	.history/client/src/Components/Update_20200127101449.js	/^            type="text"$/;"	r
 type	.history/client/src/Components/Update_20200127110759.js	/^            type="text"$/;"	r
 type	.history/client/src/Components/Update_20200127110855.js	/^            type="text"$/;"	r
@@ -5586,9 +5670,11 @@ type	.history/client/src/Update_20200114095003.js	/^            type="text"$/;"	
 type	.history/client/src/Update_20200127101001.js	/^            type="text"$/;"	r
 type	.history/client/src/Update_20200127101450.js	/^            type="text"$/;"	r
 type	client/src/App.orig.js	/^            type="text"$/;"	r
-type	client/src/Components/Create.js	/^                    type="text"$/;"	r
+type	client/src/Components/Create.js	/^                type="button"$/;"	r
+type	client/src/Components/Create.js	/^                type="text"$/;"	r
+type	client/src/Components/CreateOld.js	/^                    type="text"$/;"	r
 type	client/src/Components/Delete.js	/^                type="text"$/;"	r
-type	client/src/Components/Update.js	/^            type="text"$/;"	r
+type	client/src/Components/Update.js	/^    type="text"$/;"	r
 ul	client/src/app.css	/^ul {$/;"	t
 unregister	client/src/serviceWorker.js	/^export function unregister() {$/;"	r
 update	.history/client/src/App_20200114094254.js	/^            update: {$/;"	r
@@ -5745,11 +5831,12 @@ update	.history/client/src/Update_20200127101001.js	/^            update$/;"	r
 update	.history/client/src/Update_20200127101450.js	/^            update$/;"	r
 update	backend/server.js	/^  Data.findOneAndUpdate(id, update, err => {$/;"	r
 update	client/src/App.js	/^            update: {$/;"	r
-update	client/src/App.js	/^      let update = {$/;"	r
 update	client/src/App.js	/^      update: {$/;"	r
 update	client/src/App.js	/^    let update = {$/;"	r
 update	client/src/App.orig.js	/^      update: { message: updateToApply }$/;"	r
-update	client/src/Components/Update.js	/^            update$/;"	r
+update	client/src/Components/ListItems.js	/^      update: this.props.data,$/;"	r
+update	client/src/Components/ListItems.js	/^      update: {$/;"	r
+update	client/src/Components/Update.js	/^    update$/;"	r
 updateActiveTag	.history/client/src/App_20200114094254.js	/^  updateActiveTag = (newTagName) => {$/;"	r
 updateActiveTag	.history/client/src/App_20200122141554.js	/^  updateActiveTag = (newTagName) => {$/;"	r
 updateActiveTag	.history/client/src/App_20200122141646.js	/^  updateActiveTag = (newTagName) => {$/;"	r
@@ -5877,7 +5964,6 @@ updateData	.history/client/src/Update_20200127101001.js	/^const Update = ({ id, 
 updateData	.history/client/src/Update_20200127101450.js	/^  updateData: PropTypes.function.isRequired,$/;"	r
 updateData	.history/client/src/Update_20200127101450.js	/^const Update = ({ id, updateData, updateFunction, onClickUpdate }) => {$/;"	r
 updateData	client/src/App.js	/^                  updateData={this.state.update}$/;"	r
-updateData	client/src/Components/Update.js	/^const Update = ({ id, updateData, updateFunction, onClickUpdate }) => {$/;"	r
 updateFunction	.history/client/src/App_20200114094254.js	/^                  updateFunction={this.updateObjectToUpdate}$/;"	r
 updateFunction	.history/client/src/App_20200122141554.js	/^                  updateFunction={this.updateObjectToUpdate}$/;"	r
 updateFunction	.history/client/src/App_20200122141646.js	/^                  updateFunction={this.updateObjectToUpdate}$/;"	r
@@ -6119,16 +6205,24 @@ value	.history/client/src/Update_20200127101450.js	/^            value={updateDa
 value	.history/client/src/Update_20200127101450.js	/^            value={updateData.comment}$/;"	r
 value	.history/client/src/Update_20200127101450.js	/^            value={updateData.name}$/;"	r
 value	.history/client/src/Update_20200127101450.js	/^            value={updateData.tags}$/;"	r
-value	client/src/Components/Create.js	/^                    value={this.state.code}$/;"	r
-value	client/src/Components/Create.js	/^                    value={this.state.comment}$/;"	r
-value	client/src/Components/Create.js	/^                    value={this.state.tags}$/;"	r
-value	client/src/Components/Create.js	/^                    value={this.state.title}$/;"	r
+value	client/src/Components/Create.js	/^                value={code}$/;"	r
+value	client/src/Components/Create.js	/^                value={comment}$/;"	r
+value	client/src/Components/Create.js	/^                value={tags}$/;"	r
+value	client/src/Components/Create.js	/^                value={title}$/;"	r
+value	client/src/Components/CreateOld.js	/^                    value={this.state.code}$/;"	r
+value	client/src/Components/CreateOld.js	/^                    value={this.state.comment}$/;"	r
+value	client/src/Components/CreateOld.js	/^                    value={this.state.tags}$/;"	r
+value	client/src/Components/CreateOld.js	/^                    value={this.state.title}$/;"	r
 value	client/src/Components/IdSelector.js	/^        value = { input } className="mb-2 px-2 mr-2 pr-3" onChange={ ( e ) => sendId(e)} \/>$/;"	r
-value	client/src/Components/ListItems.js	/^                value={this.props.data.name}$/;"	r
-value	client/src/Components/Update.js	/^            value={updateData.code}$/;"	r
-value	client/src/Components/Update.js	/^            value={updateData.comment}$/;"	r
-value	client/src/Components/Update.js	/^            value={updateData.name}$/;"	r
-value	client/src/Components/Update.js	/^            value={updateData.tags}$/;"	r
+value	client/src/Components/ListItems.js	/^      value={this.props.data.name}$/;"	r
+value	client/src/Components/ListItems.js	/^  onClickUpdate( [name], value, open) {$/;"	r
+value	client/src/Components/Update.js	/^    onModalClick([name], value, open);$/;"	r
+value	client/src/Components/Update.js	/^    value={inputValues.code}$/;"	r
+value	client/src/Components/Update.js	/^    value={inputValues.comment}$/;"	r
+value	client/src/Components/Update.js	/^    value={inputValues.tags}$/;"	r
+value	client/src/Components/Update.js	/^    value={inputValues.title}$/;"	r
 width	.history/client/src/Components/ActionButton_20200111200449.js	/^    width: 36,$/;"	r
 width	.history/client/src/Components/ActionButton_20200127133317.js	/^    width: 24,$/;"	r
 width	.history/client/src/Components/ActionButton_20200127133336.js	/^    width: 24,$/;"	r
+width	client/src/Components/Create.js	/^    width: '60%',$/;"	r
+width	client/src/Components/Update.js	/^    width: '60%',$/;"	r

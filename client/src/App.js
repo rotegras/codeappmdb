@@ -142,10 +142,9 @@ class App extends Component {
   // our update method that uses our backend api
   // to overwrite existing data base information
   updateDB = (idToUpdate, update) => {
-    console.log('almost there: ', idToUpdate, update)
     this.state.data.forEach(dat => {
 
-      if (dat.id == idToUpdate) {
+      if (dat.id === idToUpdate) {
         this.setState({
           idToUpdate: dat._id
         }, () => {
@@ -182,7 +181,7 @@ class App extends Component {
               onClickCreate={this.createNew}
         />
         <div className="row">
-
+debugger;
           <div className="col-12">
             <div className="row">
               <div className="col">
@@ -246,7 +245,7 @@ class App extends Component {
                       onClickProp={this.deleteThis}
                       clickTag={this.updateActiveTag}
                       open={this.state.open}
-                      onClickUpdate={this.doUpdate}
+                      getUpdate={this.doUpdate}
                     />
                   ))}
               </ul>
@@ -299,7 +298,6 @@ class App extends Component {
     this.setState({
       idToDelete: iddelete
     }, () => {
-        // console.log(this.state.idToDelete, 'id to delete');
       this.deleteFromDB(this.state.idToDelete)
     })
   }
@@ -329,10 +327,21 @@ class App extends Component {
     this.setState({ update });
   }
 
-  doUpdate = () => {
+  doUpdate = (updateData) => {
+    let update = {
+      ...this.state.update,
+      name: updateData.title,
+      code: updateData.code,
+      tags: updateData.tags,
+      comment: updateData.comment
+    }
+      // ...updateData
+      // [name]: value = name == 'tags' ? value.split(',').map(item => { return item.trim() }) : value
+    // }
+    this.setState({ update }, () => {
       console.log('updateDb: ', this.state.idToUpdate, this.state.update);
-
-      // this.updateDB(this.state.idToUpdate, this.state.update);
+      this.updateDB(this.state.idToUpdate, this.state.update);
+    });
 
       // let update = {
       //   ...this.state.update,
@@ -412,7 +421,6 @@ class App extends Component {
           codeFilteredFromTags.push(item);
         }
       });
-        console.log(codeFilteredFromTags.length);
         return codeFilteredFromTags;
     })
     this.setState({
