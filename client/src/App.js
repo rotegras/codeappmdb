@@ -2,7 +2,7 @@
 
 import React, { Component } from "react"
 import axios from "axios"
-import Controls from "./Components/Controls"
+// import Controls from "./Components/Controls"
 import IdSelector from "./Components/IdSelector"
 import FilteredTags from './Components/FilteredTags'
 import ListItems from './Components/ListItems'
@@ -184,11 +184,11 @@ class App extends Component {
           <div className="col-12">
             <div className="row">
               <div className="col">
-                <Controls
+                {/* <Controls
                   className="d-inline"
                   open={this.state.open}
                   clickCB={this.toggleOpen}
-                />
+                /> */}
               </div>
             </div>
           </div>

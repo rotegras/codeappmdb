@@ -43,17 +43,14 @@ class ListItems extends Component {
 
   // onClickUpdate( title, code, tags, comment, modalopen) {
   onClickUpdate( update, modalopen) {
-    // console.log(title, code, tags, comment, modalopen);
     this.setState(prevState => ({
       update: {
         ...this.state.update,
-        // ...prevState,
         ...update
       },
       modalopen: false
     }), () => {
       this.props.getUpdate(this.state.update)
-        // this.liftUpdate
     })
   }
 
@@ -114,8 +111,8 @@ class ListItems extends Component {
       onChange={this.handleChange}
       innerRef={this.contentEditable}
       disabled={false}
-      html={this.props.data.name}
-      value={this.props.data.name}
+      html={this.state.update.name}
+      value={this.state.update.name}
       />
       <ActionButton
       className="action-icon mr-2"
@@ -170,13 +167,14 @@ class ListItems extends Component {
       id: {this.props.data.id}
       </span>
       <div className="content line-break" name="content">
-      {this.props.open || this.state.open === true ? this.props.data.code : `${this.props.data.code.substring(0,100)} `}
+      {this.state.open === true ? this.props.data.code : `${this.props.data.code.substring(0,100)} `}
       </div>
-      { this.props.open === false || this.state.open === false && this.props.data.code.length >= 100
+      {this.state.open === false && this.props.data.code.length >= 100
         ? '[...]'
         : ''}
         <div className="mt-2 text-secondary">
-        {this.props.open || this.state.open === true ? this.props.data.comment : ""}
+        {/* {this.props.open === true || this.state.open === true ? this.props.data.comment : ""} */}
+        {this.state.comment}
         </div>
         <span className="id"> id: {this.props.data.id} </span>
 
