@@ -181,7 +181,6 @@ class App extends Component {
               onClickCreate={this.createNew}
         />
         <div className="row">
-debugger;
           <div className="col-12">
             <div className="row">
               <div className="col">
@@ -464,10 +463,6 @@ debugger;
         duplicates.push(array[i].id);
         duplicatesTitles.push(array[i].name);
         duplicates.sort(this.sortOrder);
-<<<<<<< HEAD
-        // console.log('duplicates', duplicates);
-=======
->>>>>>> 200212_modal2
       }
     }
     this.setState({
