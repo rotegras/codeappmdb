@@ -26,6 +26,7 @@ class App extends Component {
       data: [],
       codeFiltered: [],
       duplicates: [],
+      lastEntry: {},
       new: {
         title: '',
         code: '',
@@ -56,17 +57,7 @@ class App extends Component {
       objectToDelete: "",
       open: false,
       id: "",
-      // title: "",
-      // titleupdate: "",
-      // code: "",
-      // codeupdate: "",
-      // comment: "",
-      // commentupdate: "",
-      // tags: [],
-      // tagsupdate: [],
       tagsList: [],
-      // updateToApply: {},
-      // tagName: "",
       searchingTag: '',
       searchById: '',
       filteredTags: [],
@@ -77,6 +68,7 @@ class App extends Component {
   // fetch data when component mounts
   componentDidMount() {
     this.getDataFromDb();
+    // this.getLast(this.state.data);
     if (!this.state.intervalIsSet) {
       let interval = setInterval(this.getDataFromDb, 300);
       this.setState({ intervalIsSet: interval });
@@ -99,6 +91,7 @@ class App extends Component {
       .then(res => this.setState({ data: res.data })
       );
     this.arrayDuplicates(this.state.data);
+    this.getLast(this.state.data);
   };
 
   // put method that uses our backend api
@@ -169,6 +162,7 @@ class App extends Component {
       }
     });
   };
+
 
   render() {
     const { data } = this.state;
@@ -254,18 +248,10 @@ class App extends Component {
           <div className="col-3">
             <div className="group sticky-top">
 
-              <div className="c_update  mt-5">
-                {/* <Update
-                  id={this.state.idToUpdate}
-                  updateData={this.state.update}
-                  updateFunction={this.updateObjectToUpdate}
-                  onClickUpdate={this.doUpdate}
-                /> */}
-              </div>
-
               <div className="c_lastentry mt-5">
                 <LastEntry
-                  data={this.state.data}
+                  data={this.state.lastEntry}
+                  tags={this.state.lastEntry.tags}
                 />
               </div>
             </div>
@@ -321,7 +307,7 @@ class App extends Component {
   updateObjectToUpdate = ({ name, value }) => {
     let update = {
       ...this.state.update,
-      [name]: value = name == 'tags' ? value.split(',').map(item => { return item.trim() }) : value
+      [name]: value = name === 'tags' ? value.split(',').map(item => { return item.trim() }) : value
     }
     this.setState({ update });
   }
@@ -334,21 +320,19 @@ class App extends Component {
       tags: updateData.tags,
       comment: updateData.comment
     }
-      // ...updateData
-      // [name]: value = name == 'tags' ? value.split(',').map(item => { return item.trim() }) : value
-    // }
+
     this.setState({ update }, () => {
       console.log('updateDb: ', this.state.idToUpdate, this.state.update);
       this.updateDB(this.state.idToUpdate, this.state.update);
     });
 
-      // let update = {
-      //   ...this.state.update,
-      //   name: '',
-      //   code: '',
-      //   tags: [],
-      //   comment: ''
-      // });
+    // let update = {
+      // ...this.state.update,
+      // name: '',
+      // code: '',
+      // tags: [],
+      // comment: ''
+    // });
   }
 
 
@@ -368,14 +352,12 @@ class App extends Component {
   // return matching tags when typing on search
   filtertagsonsearch = (search) => {
 
-    // const tagsobj = this.state.data;
     const tagsobj = Object.assign(this.state.data);
 
     let filteredsingle = [];
     let filtered = [];
 
-    // const filter = tagsobj.map(item => {
-    const filter = tagsobj.map(item => {
+    tagsobj.map(item => {
       item.tags.filter(tag => {
 
         if (tag.includes(search)) {
@@ -390,7 +372,7 @@ class App extends Component {
             tagadd[0]['num'] = tagadd[0]['num'] + 1;
           }
         }
-        return
+        return filtered;
       })
 
       this.setState({
@@ -415,13 +397,16 @@ class App extends Component {
     let codeFilteredFromTags = [];
 
     dataToFilter.map(item => {
+
       item.tags.filter(item2 => {
-        if (item2 == fltr) {
+        if (item2 === fltr) {
           codeFilteredFromTags.push(item);
         }
       });
-        return codeFilteredFromTags;
+
+      return codeFilteredFromTags;
     })
+
     this.setState({
       codeFiltered: codeFilteredFromTags
     })
@@ -475,10 +460,23 @@ class App extends Component {
     this.setState({
       searchById: id
     })
-    let dataById = this.state.data.filter(item => item.id == id);
+    let dataById = this.state.data.filter(item => item.id === id);
     console.clear();
     console.log(dataById);
   }
+
+  getLast = () => {
+    const cl = Object.assign(this.state.data);
+    let ordered = cl.sort((a, b) => (a.createdAt > b.createdAt) ? 1 : -1).pop();
+
+    this.setState({
+      lastEntry: {
+        ...this.state.lastEntry,
+        ...ordered
+      }
+    })
+  }
+
 }
 
 export default App

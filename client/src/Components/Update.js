@@ -40,8 +40,6 @@ export default function Update({ id, data, onModalClick, modalOpen }) {
 
   const triggerUpdate = (e) => {
     e.preventDefault()
-    const { name, value } = e.target;
-    // console.log( inputValues.title, inputValues.code, inputValues.tags, inputValues.comment )
     setOpen(false);
     onModalClick(inputValues, open);
   }

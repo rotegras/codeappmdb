@@ -111,8 +111,8 @@ class ListItems extends Component {
       onChange={this.handleChange}
       innerRef={this.contentEditable}
       disabled={false}
-      html={this.state.update.name}
-      value={this.state.update.name}
+      html={this.props.data.name}
+      value={this.props.data.name}
       />
       <ActionButton
       className="action-icon mr-2"
