@@ -1,5 +1,6 @@
 html {
     overflow-y: scroll;
+    background: #eee;
 }
 
 body {
@@ -12,7 +13,7 @@ h5 {
     font-size: .75rem;;
 }
 
-textarea,
+/* textarea,
 input {
     width: 100%;
     margin-bottom: 5px;
@@ -52,7 +53,7 @@ button:active {
 .label {
     display: flex;
     /* border: 1px solid #999; */
-    float: none;
+    /* float: none;
     min-width: 100%;
     padding: 3px;
     padding: 5px 10px;
@@ -82,9 +83,9 @@ li.item {
 .line-break {
     margin-bottom: .5rem;
     white-space: pre-wrap;      /* current browsers */
-}
+/* } */
 
-.taglist {
+/* .taglist {
     display: flex;
     flex-grow: 1;
     flex-wrap: wrap;
@@ -134,15 +135,15 @@ li.item {
 
 .sticky-6 {
     top: 6rem;
-}
+} */
 
-@media all and (min-width: 480px) {
-  .Login {
-    padding: 60px 0;
-  }
+/* @media all and (min-width: 480px) {
+  /* .Login { */
+    /* padding: 60px 0; */
+  /* } */
 
-  .Login form {
-    margin: 0 auto;
-    max-width: 320px;
-  }
-}
+  /* .Login form { */
+    /* margin: 0 auto; */
+    /* max-width: 320px; */
+  /* } */
+/* } */

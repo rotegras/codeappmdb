@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+// import axios from "axios"
 import Main from './Views/Main';
+import './app.css';
 
 class App extends Component {
   constructor() {
@@ -9,7 +11,6 @@ class App extends Component {
       data: [],
     };
   }
-
 
   componentDidMount() {
     this.getDataFromDb();
@@ -31,85 +32,84 @@ class App extends Component {
       .then(data => data.json())
       .then(res => this.setState({ data: res.data })
       );
-    this.arrayDuplicates(this.state.data);
-    this.getLast(this.state.data);
+    // this.arrayDuplicates(this.state.data);
+    // this.getLast(this.state.data);
   };
 
-  putDataToDB = (title, code, comment, tags) => {
-    let currentIds = this.state.data.map(data => data.id);
-    let idToBeAdded = 0;
-    while (currentIds.includes(idToBeAdded)) {
-      ++idToBeAdded;
-    }
-    axios.post("/api/putData", {
-      id: idToBeAdded,
-      name: title,
-      code: code,
-      comment: comment,
-      tags: tags
-    });
-  };
+  // putDataToDB = (title, code, comment, tags) => {
+  //   let currentIds = this.state.data.map(data => data.id);
+  //   let idToBeAdded = 0;
+  //   while (currentIds.includes(idToBeAdded)) {
+  //     ++idToBeAdded;
+  //   }
+  //   axios.post("/api/putData", {
+  //     id: idToBeAdded,
+  //     name: title,
+  //     code: code,
+  //     comment: comment,
+  //     tags: tags
+  //   });
+  // };
 
-  // delete item from database by id
-  deleteFromDB = idTodelete => {
-    console.log('deleteFromDB fired, id to delete: ', idTodelete);
-    this.state.data.forEach(dat => {
-    console.log('deleteFromDB fired test 2, id to delete: ', idTodelete);
-      console.log('compare: ', dat.id, idTodelete);
-      if (dat.id === idTodelete) {
-        console.log(dat._id, ' : dat._id')
-        this.setState({
-          objectToDelete: dat._id
-        }, () => {
-          axios.delete("/api/deleteData", {
-            data: {
-              id: { _id: this.state.objectToDelete }
-            }
-          });
-        })
-      }
-    });
-  };
+  // deleteFromDB = idTodelete => {
+  //   console.log('deleteFromDB fired, id to delete: ', idTodelete);
+  //   this.state.data.forEach(dat => {
+  //   console.log('deleteFromDB fired test 2, id to delete: ', idTodelete);
+  //     console.log('compare: ', dat.id, idTodelete);
+  //     if (dat.id === idTodelete) {
+  //       console.log(dat._id, ' : dat._id')
+  //       this.setState({
+  //         objectToDelete: dat._id
+  //       }, () => {
+  //         axios.delete("/api/deleteData", {
+  //           data: {
+  //             id: { _id: this.state.objectToDelete }
+  //           }
+  //         });
+  //       })
+  //     }
+  //   });
+  // };
 
-  // our update method that uses our backend api
-  // to overwrite existing data base information
-  updateDB = (idToUpdate, update) => {
-    this.state.data.forEach(dat => {
+  // updateDB = (idToUpdate, update) => {
+  //   this.state.data.forEach(dat => {
 
-      if (dat.id === idToUpdate) {
-        this.setState({
-          idToUpdate: dat._id
-        }, () => {
+  //     if (dat.id === idToUpdate) {
+  //       this.setState({
+  //         idToUpdate: dat._id
+  //       }, () => {
 
-          axios.post("/api/updateData", {
-            id: { _id: dat._id },
-            update: {
-              "name": update.name,
-              "code": update.code,
-              "comment": update.comment,
-              "tags": update.tags,
-            }
-          }).then((response) => {
-            console.log(response);
-            console.log(response.data);
-          })
-            .catch((error) => {
-              console.log(error);
-            });
-
-        })
-      }
-    });
-  };
+  //         axios.post("/api/updateData", {
+  //           id: { _id: dat._id },
+  //           update: {
+  //             "name": update.name,
+  //             "code": update.code,
+  //             "comment": update.comment,
+  //             "tags": update.tags,
+  //           }
+  //         }).then((response) => {
+  //           console.log(response);
+  //           console.log(response.data);
+  //         })
+  //           .catch((error) => {
+  //             console.log(error);
+  //           });
+  //       })
+  //     }
+  //   });
+  // };
 
   render() {
+    const { data } = this.state;
+    console.log(data);
     return (
-      <>
-        <Main />
-      </>
+      <div>
+        <Main
+          data={data}
+          />
+      </div>
     );
   }
-
 }
 
 export default App;
