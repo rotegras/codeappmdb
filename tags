@@ -72,21 +72,21 @@ $open	client/src/Components/ListItems.js	/^    let $open = this.state.open || th
 .tag	client/src/app.css	/^.tag {$/;"	c
 .tagbutton	client/src/app.css	/^.tagbutton {$/;"	c
 .taglist	client/src/app.css	/^.taglist {$/;"	c
-4	client/src/Components/Create.js	/^    padding: theme.spacing(2, 4, 3),$/;"	r
+4	client/src/Components/Create/Create.js	/^    padding: theme.spacing(2, 4, 3),$/;"	r
 4	client/src/Components/Update.js	/^    padding: theme.spacing(2, 4, 3),$/;"	r
 @media	client/src/app.css	/^@media all and (min-width: 480px) {$/;"	v
 ADD	client/src/App.orig.js	/^            ADD$/;"	r
-AuthenticatedRoute	client/src/Components/AuthenticatedRoute.js	/^export default function AuthenticatedRoute({ component: C, appProps, ...rest }) {$/;"	r
-BackdropComponent	client/src/Components/Create.js	/^        BackdropComponent={Backdrop}$/;"	r
+AuthenticatedRoute	client/src/Components/Login/AuthenticatedRoute.js	/^export default function AuthenticatedRoute({ component: C, appProps, ...rest }) {$/;"	r
+BackdropComponent	client/src/Components/Create/Create.js	/^        BackdropComponent={Backdrop}$/;"	r
 BackdropComponent	client/src/Components/ListItems.js	/^        BackdropComponent={Backdrop}$/;"	r
-BackdropProps	client/src/Components/Create.js	/^        BackdropProps={{$/;"	r
+BackdropProps	client/src/Components/Create/Create.js	/^        BackdropProps={{$/;"	r
 BackdropProps	client/src/Components/ListItems.js	/^        BackdropProps={{$/;"	r
-Create	client/src/Components/Create.js	/^export default function Create({onClickCreate}) {$/;"	r
+Create	client/src/Components/Create/Create.js	/^export default function Create({onClickCreate}) {$/;"	r
 DELETE	client/src/App.orig.js	/^            DELETE$/;"	r
 DELETE	client/src/Components/Delete.js	/^                DELETE$/;"	r
-FormGroup	client/src/Components/Login.js	/^import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";$/;"	r
-Login	client/src/Components/Login.js	/^          Login$/;"	r
-Login	client/src/Components/Login.js	/^export default function Login(props) {$/;"	r
+FormGroup	client/src/Components/Login/Login.js	/^import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";$/;"	r
+Login	client/src/Components/Login/Login.js	/^          Login$/;"	r
+Login	client/src/Components/Login/Login.js	/^export default function Login(props) {$/;"	r
 NavBar	client/src/Components/NavBar.js	/^function NavBar ({onClickCreate}) {$/;"	r
 TagCallback	.history/client/src/Components/ListItems_20200127095216.js	/^    this.TagCallback = this.TagCallback.bind(this);$/;"	r
 TagCallback	.history/client/src/Components/ListItems_20200127125458.js	/^    this.TagCallback = this.TagCallback.bind(this);$/;"	r
@@ -318,7 +318,7 @@ addTitle	.history/client/src/App_20200127130056.js	/^                  addTitle=
 addTitle	.history/client/src/App_20200127131625.js	/^                  addTitle={this.addTitle}$/;"	r
 alignItems	client/src/Components/NavBar.js	/^        alignItems: 'center',$/;"	r
 all	client/src/app.css	/^@media all and (min-width: 480px) {$/;"	m
-appProps	client/src/Components/AuthenticatedRoute.js	/^export default function AuthenticatedRoute({ component: C, appProps, ...rest }) {$/;"	r
+appProps	client/src/Components/Login/AuthenticatedRoute.js	/^export default function AuthenticatedRoute({ component: C, appProps, ...rest }) {$/;"	r
 arrayDuplicates	.history/client/src/App_20200114094254.js	/^  arrayDuplicates = (array) => {$/;"	r
 arrayDuplicates	.history/client/src/App_20200122141554.js	/^  arrayDuplicates = (array) => {$/;"	r
 arrayDuplicates	.history/client/src/App_20200122141646.js	/^  arrayDuplicates = (array) => {$/;"	r
@@ -357,8 +357,8 @@ arrayDuplicates	.history/client/src/App_20200127130056.js	/^  arrayDuplicates = 
 arrayDuplicates	.history/client/src/App_20200127131625.js	/^  arrayDuplicates = (array) => {$/;"	r
 arrayDuplicates	client/src/App.js	/^  arrayDuplicates = (array) => {$/;"	r
 articles	client/src/js/reducers/index.js	/^    articles: []$/;"	r
-autoFocus	client/src/Components/Login.js	/^            autoFocus$/;"	r
-backgroundColor	client/src/Components/Create.js	/^    backgroundColor: theme.palette.background.paper,$/;"	r
+autoFocus	client/src/Components/Login/Login.js	/^            autoFocus$/;"	r
+backgroundColor	client/src/Components/Create/Create.js	/^    backgroundColor: theme.palette.background.paper,$/;"	r
 backgroundColor	client/src/Components/Update.js	/^    backgroundColor: theme.palette.background.paper,$/;"	r
 body	client/src/app.css	/^body {$/;"	t
 body	client/src/work/App.js	/^                        body={code.content.rendered} $/;"	r
@@ -385,7 +385,7 @@ borderRadius	.history/client/src/Components/ActionButton_20200127133811.js	/^   
 borderRadius	.history/client/src/Components/ActionButton_20200127134057.js	/^    borderRadius: 99,$/;"	r
 borderRadius	.history/client/src/Components/ActionButton_20200127134111.js	/^    borderRadius: 99,$/;"	r
 borderRadius	client/src/Components/ActionButton.js	/^    borderRadius: 99,$/;"	r
-boxShadow	client/src/Components/Create.js	/^    boxShadow: theme.shadows[5],$/;"	r
+boxShadow	client/src/Components/Create/Create.js	/^    boxShadow: theme.shadows[5],$/;"	r
 boxShadow	client/src/Components/Update.js	/^    boxShadow: theme.shadows[5],$/;"	r
 button	client/src/app.css	/^button {$/;"	t
 cdde	.history/client/src/Components/ListItems_20200127095216.js	/^    cdde: 'default code',$/;"	r
@@ -549,7 +549,7 @@ className	.history/client/src/ListItems_20200127095217.js	/^                  cl
 className	.history/client/src/ListItems_20200127095217.js	/^                  className={'action-icon__' + $open + ' mr-2'}$/;"	r
 className	.history/client/src/ListItems_20200127095217.js	/^                className="mb-3 item-title mr-auto"$/;"	r
 className	client/src/App.js	/^                  className="d-inline"$/;"	r
-className	client/src/Components/Create.js	/^                className={classes.modalbutton}$/;"	r
+className	client/src/Components/Create/Create.js	/^                className={classes.modalbutton}$/;"	r
 className	client/src/Components/ListItems.js	/^      className="action-icon mr-2 py-2"$/;"	r
 className	client/src/Components/ListItems.js	/^      className="action-icon mr-2"$/;"	r
 className	client/src/Components/ListItems.js	/^      className="mb-3 item-title mr-auto my-auto"$/;"	r
@@ -669,7 +669,7 @@ clickTag	client/src/work/App.js	/^                                    clickTag={
 clickTag	client/src/work/FilteredTags.js	/^const FilteredTags = ({name, clickTag, id, active }) => {$/;"	r
 clickTag	client/src/work/TagSelector.js	/^  clickTag: PropTypes.func.isRequired,$/;"	r
 clickTag	client/src/work/TagSelector.js	/^const TagSelector = ({name, clickTag, id, active }) => {$/;"	r
-closeAfterTransition	client/src/Components/Create.js	/^        closeAfterTransition$/;"	r
+closeAfterTransition	client/src/Components/Create/Create.js	/^        closeAfterTransition$/;"	r
 closeAfterTransition	client/src/Components/ListItems.js	/^        closeAfterTransition$/;"	r
 code	.history/client/src/App_20200114094254.js	/^                  code={this.state.new.code}$/;"	r
 code	.history/client/src/App_20200114094254.js	/^        code: '',$/;"	r
@@ -932,12 +932,12 @@ code	client/src/App.js	/^      code: code,$/;"	r
 code	client/src/App.js	/^      code: updateData.code,$/;"	r
 code	client/src/App.js	/^  createNew = (title, code, tags, comment) => {$/;"	r
 code	client/src/App.js	/^  putDataToDB = (title, code, comment, tags) => {$/;"	r
-code	client/src/Components/Create.js	/^        console.log( title, code, tags, comment )$/;"	r
-code	client/src/Components/Create.js	/^        onClickCreate( title, code, tags, comment )$/;"	r
-code	client/src/Components/Create.js	/^    const [{title, code, tags, comment}, setValue] = React.useState({title: '', code: '', tags: '', comment: ''});$/;"	r
-code	client/src/Components/CreateOld.js	/^            code: '',$/;"	r
-code	client/src/Components/CreateOld.js	/^        const { title, code, tags, comment } = this.state;$/;"	r
-code	client/src/Components/CreateOld.js	/^        onClickCreate(title, code, tags, comment);$/;"	r
+code	client/src/Components/Create/Create.js	/^        console.log( title, code, tags, comment )$/;"	r
+code	client/src/Components/Create/Create.js	/^        onClickCreate( title, code, tags, comment )$/;"	r
+code	client/src/Components/Create/Create.js	/^    const [{title, code, tags, comment}, setValue] = React.useState({title: '', code: '', tags: '', comment: ''});$/;"	r
+code	client/src/Components/Create/CreateOld.js	/^            code: '',$/;"	r
+code	client/src/Components/Create/CreateOld.js	/^        const { title, code, tags, comment } = this.state;$/;"	r
+code	client/src/Components/Create/CreateOld.js	/^        onClickCreate(title, code, tags, comment);$/;"	r
 code	client/src/Components/ListItems.js	/^  \/\/ onClickUpdate( title, code, tags, comment, modalopen) {$/;"	r
 code	client/src/Components/NavBar.js	/^        onClickCreate(title, code, tags, comment);$/;"	r
 code	client/src/Components/NavBar.js	/^    \/\/ const [newItem, storeNewItem] = React.useState({ title: '', code: '', tags: '', comment: '' });$/;"	r
@@ -1093,9 +1093,9 @@ color	.history/client/src/Update_20200114095003.js	/^            color="primary"
 color	.history/client/src/Update_20200127101001.js	/^            color="primary"$/;"	r
 color	.history/client/src/Update_20200127101450.js	/^            color="primary"$/;"	r
 color	client/src/Components/ActionButton.js	/^    color: 'white',$/;"	r
-color	client/src/Components/Create.js	/^                color="secondary"$/;"	r
-color	client/src/Components/Create.js	/^      color: '#fff',$/;"	r
-color	client/src/Components/CreateOld.js	/^                    color="secondary"$/;"	r
+color	client/src/Components/Create/Create.js	/^                color="secondary"$/;"	r
+color	client/src/Components/Create/Create.js	/^      color: '#fff',$/;"	r
+color	client/src/Components/Create/CreateOld.js	/^                    color="secondary"$/;"	r
 color	client/src/Components/ListItems.js	/^      color="primary"$/;"	r
 color	client/src/Components/ListItems.js	/^      color="secondary"$/;"	r
 color	client/src/Components/Update.js	/^      color: '#fff',$/;"	r
@@ -1306,7 +1306,7 @@ comment	client/src/App.js	/^        comment: comment$/;"	r
 comment	client/src/App.js	/^      comment: comment$/;"	r
 comment	client/src/App.js	/^      comment: comment,$/;"	r
 comment	client/src/App.js	/^      comment: updateData.comment$/;"	r
-comment	client/src/Components/CreateOld.js	/^            comment: ''$/;"	r
+comment	client/src/Components/Create/CreateOld.js	/^            comment: ''$/;"	r
 comment	client/src/Components/ListItems.js	/^          comment: 'default comment'$/;"	r
 comment	client/src/Components/Update.js	/^      comment: data.comment$/;"	r
 config	client/config-overrides.js	/^  config = rewireReactHotLoader(config, env);$/;"	r
@@ -2307,7 +2307,7 @@ handleChange	.history/client/src/ListItems_20200127094840.js	/^    this.handleCh
 handleChange	.history/client/src/ListItems_20200127095053.js	/^    this.handleChange = this.handleChange.bind(this);$/;"	r
 handleChange	.history/client/src/ListItems_20200127095139.js	/^    this.handleChange = this.handleChange.bind(this);$/;"	r
 handleChange	.history/client/src/ListItems_20200127095217.js	/^    this.handleChange = this.handleChange.bind(this);$/;"	r
-handleChange	client/src/Components/CreateOld.js	/^        this.handleChange = this.handleChange.bind(this);$/;"	r
+handleChange	client/src/Components/Create/CreateOld.js	/^        this.handleChange = this.handleChange.bind(this);$/;"	r
 handleChange	client/src/Components/ListItems.js	/^    this.handleChange = this.handleChange.bind(this);$/;"	r
 handleClose	client/src/Components/ListItems.js	/^    this.handleClose = this.handleClose.bind(this);$/;"	r
 handleNew	.history/client/src/App_20200114094254.js	/^                  handleNew={this.createNew}$/;"	r
@@ -2347,7 +2347,7 @@ handleNew	.history/client/src/App_20200127111808.js	/^                  handleNe
 handleNew	.history/client/src/App_20200127130056.js	/^                  handleNew={this.createNew}$/;"	r
 handleNew	.history/client/src/App_20200127131625.js	/^                  handleNew={this.createNew}$/;"	r
 handleOpen	client/src/Components/ListItems.js	/^    this.handleOpen = this.handleOpen.bind(this);$/;"	r
-handleSubmit	client/src/Components/Login.js	/^  function handleSubmit(event) {$/;"	r
+handleSubmit	client/src/Components/Login/Login.js	/^  function handleSubmit(event) {$/;"	r
 height	.history/client/src/Components/ActionButton_20200111200449.js	/^    height: 24,$/;"	r
 height	.history/client/src/Components/ActionButton_20200127133317.js	/^    height: 16,$/;"	r
 height	.history/client/src/Components/ActionButton_20200127133336.js	/^    height: 8,$/;"	r
@@ -2444,8 +2444,8 @@ iant	.history/client/src/ListItems_20200127095217.js	/^                  variant
 iant	.history/client/src/Update_20200114095003.js	/^            variant="contained"$/;"	r
 iant	.history/client/src/Update_20200127101001.js	/^            variant="contained"$/;"	r
 iant	.history/client/src/Update_20200127101450.js	/^            variant="contained"$/;"	r
-iant	client/src/Components/Create.js	/^                variant="contained"$/;"	r
-iant	client/src/Components/CreateOld.js	/^                    variant="contained"$/;"	r
+iant	client/src/Components/Create/Create.js	/^                variant="contained"$/;"	r
+iant	client/src/Components/Create/CreateOld.js	/^                    variant="contained"$/;"	r
 iant	client/src/Components/ListItems.js	/^      variant="round"$/;"	r
 iant	client/src/Components/Update.js	/^    variant="contained"$/;"	r
 icon	.history/client/src/Components/ListItems_20200127133919.js	/^                    icon={faEdit}$/;"	r
@@ -3273,7 +3273,7 @@ intervalIsSet	.history/client/src/App_20200127130056.js	/^      intervalIsSet: f
 intervalIsSet	.history/client/src/App_20200127131625.js	/^      intervalIsSet: false,$/;"	r
 intervalIsSet	client/src/App.js	/^      intervalIsSet: false,$/;"	r
 intervalIsSet	client/src/App.orig.js	/^    intervalIsSet: false,$/;"	r
-isAuthenticated	client/src/Components/AuthenticatedRoute.js	/^        appProps.isAuthenticated$/;"	r
+isAuthenticated	client/src/Components/Login/AuthenticatedRoute.js	/^        appProps.isAuthenticated$/;"	r
 itemList	client/src/Components/LastEntry.js	/^    itemList: {$/;"	r
 javascriptEnabled	client/config-overrides.js	/^    javascriptEnabled: true,$/;"	r
 justifyContent	client/src/Components/NavBar.js	/^        justifyContent: 'flex-end',$/;"	r
@@ -3397,7 +3397,7 @@ lastel	.history/client/src/Components/LastEntry_20200127130024.js	/^        last
 lastel	.history/client/src/Components/LastEntry_20200127130024.js	/^    let lastel = [];$/;"	r
 lastel	.history/client/src/Components/LastEntry_20200127130227.js	/^        lastel = ordered.pop();$/;"	r
 lastel	.history/client/src/Components/LastEntry_20200127130227.js	/^    let lastel = [];$/;"	r
-left	client/src/Components/Create.js	/^    left: '50%',$/;"	r
+left	client/src/Components/Create/Create.js	/^    left: '50%',$/;"	r
 left	client/src/Components/Update.js	/^    left: '50%',$/;"	r
 libraryName	client/config-overrides.js	/^    libraryName: "antd", libraryDirectory: "es", style: true \/\/ change importing css to less$/;"	r
 liftUpdate	client/src/Components/ListItems.js	/^    this.liftUpdate = this.liftUpdate.bind(this);$/;"	r
@@ -3416,7 +3416,7 @@ message	client/src/App.orig.js	/^      message: message$/;"	r
 message	client/src/App.orig.js	/^    message: null,$/;"	r
 minHeight	client/src/Components/ActionButton.js	/^    minHeight: '0',$/;"	r
 modalOpen	client/src/Components/ListItems.js	/^            modalOpen={this.state.modalopen}$/;"	r
-modalbutton	client/src/Components/Create.js	/^    modalbutton: {$/;"	r
+modalbutton	client/src/Components/Create/Create.js	/^    modalbutton: {$/;"	r
 modalbutton	client/src/Components/Update.js	/^    modalbutton: {$/;"	r
 modalopen	client/src/Components/ListItems.js	/^      modalopen: false$/;"	r
 modalopen	client/src/Components/ListItems.js	/^      modalopen: true$/;"	r
@@ -3658,16 +3658,16 @@ name	client/src/App.js	/^      name: name,$/;"	r
 name	client/src/App.js	/^      name: title,$/;"	r
 name	client/src/App.js	/^      name: updateData.title,$/;"	r
 name	client/src/App.js	/^  updateId = ( id, name, code, tags, comment ) => {$/;"	r
-name	client/src/Components/Create.js	/^                name="ADD ITEM"$/;"	r
-name	client/src/Components/Create.js	/^                name="code"$/;"	r
-name	client/src/Components/Create.js	/^                name="comment"$/;"	r
-name	client/src/Components/Create.js	/^                name="tags"$/;"	r
-name	client/src/Components/Create.js	/^                name="title"$/;"	r
-name	client/src/Components/CreateOld.js	/^                    name="ADD ITEM"$/;"	r
-name	client/src/Components/CreateOld.js	/^                    name="code"$/;"	r
-name	client/src/Components/CreateOld.js	/^                    name="comment"$/;"	r
-name	client/src/Components/CreateOld.js	/^                    name="tags"$/;"	r
-name	client/src/Components/CreateOld.js	/^                    name="title"$/;"	r
+name	client/src/Components/Create/Create.js	/^                name="ADD ITEM"$/;"	r
+name	client/src/Components/Create/Create.js	/^                name="code"$/;"	r
+name	client/src/Components/Create/Create.js	/^                name="comment"$/;"	r
+name	client/src/Components/Create/Create.js	/^                name="tags"$/;"	r
+name	client/src/Components/Create/Create.js	/^                name="title"$/;"	r
+name	client/src/Components/Create/CreateOld.js	/^                    name="ADD ITEM"$/;"	r
+name	client/src/Components/Create/CreateOld.js	/^                    name="code"$/;"	r
+name	client/src/Components/Create/CreateOld.js	/^                    name="comment"$/;"	r
+name	client/src/Components/Create/CreateOld.js	/^                    name="tags"$/;"	r
+name	client/src/Components/Create/CreateOld.js	/^                    name="title"$/;"	r
 name	client/src/Components/ListItems.js	/^          name: 'default',$/;"	r
 name	client/src/Components/ListItems.js	/^      name="title"$/;"	r
 name	client/src/Components/TagButton.js	/^            name={name}$/;"	r
@@ -3880,12 +3880,12 @@ onChange	client/src/App.orig.js	/^            onChange={e => this.setState({ idT
 onChange	client/src/App.orig.js	/^            onChange={e => this.setState({ message: e.target.value })}$/;"	r
 onChange	client/src/App.orig.js	/^            onChange={e => this.setState({ updateToApply: e.target.value })}$/;"	r
 onChange	client/src/Components/Controls.js	/^                        onChange={e => handleClick(e)}$/;"	r
-onChange	client/src/Components/Create.js	/^                onChange={e => handleChange(e)}$/;"	r
-onChange	client/src/Components/CreateOld.js	/^                    onChange={e => this.handleChange(e)}$/;"	r
+onChange	client/src/Components/Create/Create.js	/^                onChange={e => handleChange(e)}$/;"	r
+onChange	client/src/Components/Create/CreateOld.js	/^                    onChange={e => this.handleChange(e)}$/;"	r
 onChange	client/src/Components/Delete.js	/^                onChange={e => updateId(e)}$/;"	r
 onChange	client/src/Components/ListItems.js	/^      onChange={this.handleChange}$/;"	r
-onChange	client/src/Components/Login.js	/^            onChange={e => setEmail(e.target.value)}$/;"	r
-onChange	client/src/Components/Login.js	/^            onChange={e => setPassword(e.target.value)}$/;"	r
+onChange	client/src/Components/Login/Login.js	/^            onChange={e => setEmail(e.target.value)}$/;"	r
+onChange	client/src/Components/Login/Login.js	/^            onChange={e => setPassword(e.target.value)}$/;"	r
 onChange	client/src/Components/Update.js	/^    onChange={e => modifyN(e)}$/;"	r
 onClick	.history/client/src/Components/ListItems_20200127095216.js	/^                  onClick={e => this.deleteThis(e)}$/;"	r
 onClick	.history/client/src/Components/ListItems_20200127095216.js	/^                  onClick={e => this.toggleOpen(e)}$/;"	r
@@ -3974,9 +3974,9 @@ onClick	.history/client/src/Update_20200114095003.js	/^            onClick={() =
 onClick	.history/client/src/Update_20200127101001.js	/^            onClick={() => triggerUpdate()}$/;"	r
 onClick	.history/client/src/Update_20200127101450.js	/^            onClick={() => triggerUpdate()}$/;"	r
 onClick	client/src/App.orig.js	/^            onClick={() =>$/;"	r
-onClick	client/src/Components/Create.js	/^                onClick={e => triggerAdd(e)}$/;"	r
-onClick	client/src/Components/Create.js	/^                onClick={handleOpen}$/;"	r
-onClick	client/src/Components/CreateOld.js	/^                    onClick={e => this.triggerAdd(e)}$/;"	r
+onClick	client/src/Components/Create/Create.js	/^                onClick={e => triggerAdd(e)}$/;"	r
+onClick	client/src/Components/Create/Create.js	/^                onClick={handleOpen}$/;"	r
+onClick	client/src/Components/Create/CreateOld.js	/^                    onClick={e => this.triggerAdd(e)}$/;"	r
 onClick	client/src/Components/ListItems.js	/^      onClick={(e) => this.handleOpen(e)}$/;"	r
 onClick	client/src/Components/ListItems.js	/^      onClick={e => this.deleteThis(e)}$/;"	r
 onClick	client/src/Components/ListItems.js	/^      onClick={e => this.toggleOpen(e)}$/;"	r
@@ -4099,7 +4099,7 @@ onClickUpdate	.history/client/src/Components/Update_20200127131127.js	/^  onClic
 onClickUpdate	.history/client/src/Update_20200127101001.js	/^  onClickUpdate: PropTypes.function.isRequired$/;"	r
 onClickUpdate	.history/client/src/Update_20200127101450.js	/^  onClickUpdate: PropTypes.function.isRequired$/;"	r
 onClickUpdate	client/src/Components/ListItems.js	/^    this.onClickUpdate = this.onClickUpdate.bind(this);$/;"	r
-onClose	client/src/Components/Create.js	/^        onClose={handleClose}$/;"	r
+onClose	client/src/Components/Create/Create.js	/^        onClose={handleClose}$/;"	r
 onClose	client/src/Components/ListItems.js	/^        onClose={this.handleClose}$/;"	r
 onModalClick	client/src/Components/ListItems.js	/^            onModalClick={this.onClickUpdate}$/;"	r
 onstatechange	client/src/serviceWorker.js	/^        installingWorker.onstatechange = () => {$/;"	r
@@ -4260,7 +4260,7 @@ open	.history/client/src/ListItems_20200127095217.js	/^  open: false,$/;"	r
 open	client/src/App.js	/^                      open={this.state.open}$/;"	r
 open	client/src/App.js	/^                  open={this.state.open}$/;"	r
 open	client/src/App.js	/^      open: false,$/;"	r
-open	client/src/Components/Create.js	/^        open={open}$/;"	r
+open	client/src/Components/Create/Create.js	/^        open={open}$/;"	r
 open	client/src/Components/ListItems.js	/^        open: false,$/;"	r
 open	client/src/Components/ListItems.js	/^        open={this.state.modalopen}$/;"	r
 open	client/src/Components/ListItems.js	/^      open: this.props.open,$/;"	r
@@ -4290,9 +4290,9 @@ padding	.history/client/src/Components/ActionButton_20200127133811.js	/^    padd
 padding	.history/client/src/Components/ActionButton_20200127134057.js	/^    padding: '10px 0'$/;"	r
 padding	.history/client/src/Components/ActionButton_20200127134111.js	/^    padding: '10px 0'$/;"	r
 padding	client/src/Components/ActionButton.js	/^    padding: '0'$/;"	r
-padding	client/src/Components/Create.js	/^    padding: theme.spacing(2, 4, 3),$/;"	r
+padding	client/src/Components/Create/Create.js	/^    padding: theme.spacing(2, 4, 3),$/;"	r
 padding	client/src/Components/Update.js	/^    padding: theme.spacing(2, 4, 3),$/;"	r
-paper	client/src/Components/Create.js	/^  paper: {$/;"	r
+paper	client/src/Components/Create/Create.js	/^  paper: {$/;"	r
 paper	client/src/Components/Update.js	/^  paper: {$/;"	r
 placeholder	.history/client/src/Components/Update_20200127101449.js	/^            placeholder="modify content"$/;"	r
 placeholder	.history/client/src/Components/Update_20200127101449.js	/^            placeholder="modify cooment"$/;"	r
@@ -4330,14 +4330,14 @@ placeholder	client/src/App.orig.js	/^            placeholder="add something in t
 placeholder	client/src/App.orig.js	/^            placeholder="id of item to update here"$/;"	r
 placeholder	client/src/App.orig.js	/^            placeholder="put id of item to delete here"$/;"	r
 placeholder	client/src/App.orig.js	/^            placeholder="put new value of the item here"$/;"	r
-placeholder	client/src/Components/Create.js	/^                placeholder="add comment"$/;"	r
-placeholder	client/src/Components/Create.js	/^                placeholder="add content"$/;"	r
-placeholder	client/src/Components/Create.js	/^                placeholder="add tags separated by comma"$/;"	r
-placeholder	client/src/Components/Create.js	/^                placeholder="add title"$/;"	r
-placeholder	client/src/Components/CreateOld.js	/^                    placeholder="add comment"$/;"	r
-placeholder	client/src/Components/CreateOld.js	/^                    placeholder="add content"$/;"	r
-placeholder	client/src/Components/CreateOld.js	/^                    placeholder="add tags separated by comma"$/;"	r
-placeholder	client/src/Components/CreateOld.js	/^                    placeholder="add title"$/;"	r
+placeholder	client/src/Components/Create/Create.js	/^                placeholder="add comment"$/;"	r
+placeholder	client/src/Components/Create/Create.js	/^                placeholder="add content"$/;"	r
+placeholder	client/src/Components/Create/Create.js	/^                placeholder="add tags separated by comma"$/;"	r
+placeholder	client/src/Components/Create/Create.js	/^                placeholder="add title"$/;"	r
+placeholder	client/src/Components/Create/CreateOld.js	/^                    placeholder="add comment"$/;"	r
+placeholder	client/src/Components/Create/CreateOld.js	/^                    placeholder="add content"$/;"	r
+placeholder	client/src/Components/Create/CreateOld.js	/^                    placeholder="add tags separated by comma"$/;"	r
+placeholder	client/src/Components/Create/CreateOld.js	/^                    placeholder="add title"$/;"	r
 placeholder	client/src/Components/Delete.js	/^                placeholder="put id of item to delete here"$/;"	r
 placeholder	client/src/Components/Update.js	/^    placeholder="modify content"$/;"	r
 placeholder	client/src/Components/Update.js	/^    placeholder="modify cooment"$/;"	r
@@ -4347,7 +4347,7 @@ positin	.history/client/src/Components/ActionButton_20200127133701.js	/^    posi
 position	.history/client/src/Components/ActionButton_20200127133706.js	/^    position: 'relative',$/;"	r
 position	.history/client/src/Components/ActionButton_20200127133747.js	/^    position: 'relative',$/;"	r
 position	.history/client/src/Components/ActionButton_20200127133811.js	/^    position: 'relative',$/;"	r
-position	client/src/Components/Create.js	/^    position: 'absolute',$/;"	r
+position	client/src/Components/Create/Create.js	/^    position: 'absolute',$/;"	r
 position	client/src/Components/Update.js	/^    position: 'absolute',$/;"	r
 prevState	client/src/App.js	/^      prevState => ({ open: !prevState.open }))$/;"	r
 propTypes	.history/client/src/Components/LastEntry_20200127111037.js	/^LastEntry.propTypes = {$/;"	r
@@ -4455,7 +4455,7 @@ putDataToDB	client/src/App.js	/^  putDataToDB = (title, code, comment, tags) => 
 putDataToDB	client/src/App.orig.js	/^  putDataToDB = message => {$/;"	r
 register	client/src/serviceWorker.js	/^export function register(config) {$/;"	r
 registerValidSW	client/src/serviceWorker.js	/^function registerValidSW(swUrl, config) {$/;"	r
-render	client/src/Components/AuthenticatedRoute.js	/^      render={props =>$/;"	r
+render	client/src/Components/Login/AuthenticatedRoute.js	/^      render={props =>$/;"	r
 reset	.history/client/src/App_20200114094254.js	/^                  reset={this.resetInput}$/;"	r
 reset	.history/client/src/App_20200122141554.js	/^                  reset={this.resetInput}$/;"	r
 reset	.history/client/src/App_20200122141646.js	/^                  reset={this.resetInput}$/;"	r
@@ -4555,8 +4555,8 @@ return	.history/client/src/App_20200127131625.js	/^        return$/;"	r
 return	client/src/serviceWorker.js	/^          return;$/;"	r
 return	client/src/serviceWorker.js	/^      return;$/;"	r
 rootReducer	client/src/js/reducers/index.js	/^function rootReducer(state = initialState, action) {$/;"	r
-row	client/src/Components/Create.js	/^                row="3"$/;"	r
-row	client/src/Components/CreateOld.js	/^                    row="3"$/;"	r
+row	client/src/Components/Create/Create.js	/^                row="3"$/;"	r
+row	client/src/Components/Create/CreateOld.js	/^                    row="3"$/;"	r
 searchById	.history/client/src/App_20200114094254.js	/^      searchById: '',$/;"	r
 searchById	.history/client/src/App_20200114094254.js	/^      searchById: id$/;"	r
 searchById	.history/client/src/App_20200114094254.js	/^  searchById = (id) => {$/;"	r
@@ -4930,7 +4930,7 @@ state	.history/client/src/ListItems_20200127095139.js	/^    this.state = {$/;"	r
 state	.history/client/src/ListItems_20200127095217.js	/^    this.state = {$/;"	r
 state	client/src/App.js	/^    this.state = {$/;"	r
 state	client/src/App.orig.js	/^  state = {$/;"	r
-state	client/src/Components/CreateOld.js	/^        this.state = {$/;"	r
+state	client/src/Components/Create/CreateOld.js	/^        this.state = {$/;"	r
 state	client/src/Components/ListItems.js	/^    this.state = {$/;"	r
 state	client/src/js/reducers/index.js	/^    return Object.assign({}, state, {$/;"	r
 state	client/src/work/App.js	/^        this.state = {$/;"	r
@@ -5375,7 +5375,7 @@ tags	client/src/App.js	/^        tags: true,$/;"	r
 tags	client/src/App.js	/^      tags: tags$/;"	r
 tags	client/src/App.js	/^      tags: tags,$/;"	r
 tags	client/src/App.js	/^      tags: updateData.tags,$/;"	r
-tags	client/src/Components/CreateOld.js	/^            tags: '',$/;"	r
+tags	client/src/Components/Create/CreateOld.js	/^            tags: '',$/;"	r
 tags	client/src/Components/LastEntry.js	/^        tags: PropTypes.array$/;"	r
 tags	client/src/Components/LastEntry.js	/^        tags: []$/;"	r
 tags	client/src/Components/ListItems.js	/^          tags: ['default', 'tags'],$/;"	r
@@ -5420,7 +5420,7 @@ tagsList	.history/client/src/App_20200127111808.js	/^      tagsList: [],$/;"	r
 tagsList	.history/client/src/App_20200127130056.js	/^      tagsList: [],$/;"	r
 tagsList	.history/client/src/App_20200127131625.js	/^      tagsList: [],$/;"	r
 tagsList	client/src/App.js	/^      tagsList: [],$/;"	r
-timeout	client/src/Components/Create.js	/^          timeout: 500,$/;"	r
+timeout	client/src/Components/Create/Create.js	/^          timeout: 500,$/;"	r
 timeout	client/src/Components/ListItems.js	/^          timeout: 500,$/;"	r
 title	.history/client/src/App_20200114094254.js	/^                  title={this.state.new.title}$/;"	r
 title	.history/client/src/App_20200114094254.js	/^                  title={this.state.tagName}$/;"	r
@@ -5613,12 +5613,12 @@ title	client/src/App.js	/^                  title={this.state.tagName}$/;"	r
 title	client/src/App.js	/^        title: '',$/;"	r
 title	client/src/App.js	/^        title: false,$/;"	r
 title	client/src/App.js	/^        title: title,$/;"	r
-title	client/src/Components/CreateOld.js	/^            title: '',$/;"	r
+title	client/src/Components/Create/CreateOld.js	/^            title: '',$/;"	r
 title	client/src/Components/TagDisplay.js	/^    title: PropTypes.string$/;"	r
 title	client/src/Components/Update.js	/^      title: data.name,$/;"	r
 title	client/src/work/App.js	/^                            title={this.state.tagName}$/;"	r
 title	client/src/work/App.js	/^                        title={code.title.rendered} $/;"	r
-to	client/src/Components/AuthenticatedRoute.js	/^              to={`\/login?redirect=${props.location.pathname}${props.location$/;"	r
+to	client/src/Components/Login/AuthenticatedRoute.js	/^              to={`\/login?redirect=${props.location.pathname}${props.location$/;"	r
 toggleOpen	.history/client/src/App_20200114094254.js	/^  toggleOpen = () => {$/;"	r
 toggleOpen	.history/client/src/App_20200122141554.js	/^  toggleOpen = () => {$/;"	r
 toggleOpen	.history/client/src/App_20200122141646.js	/^  toggleOpen = () => {$/;"	r
@@ -5683,11 +5683,11 @@ toggleOpen	.history/client/src/ListItems_20200127095139.js	/^    this.toggleOpen
 toggleOpen	.history/client/src/ListItems_20200127095217.js	/^    this.toggleOpen = this.toggleOpen.bind(this);$/;"	r
 toggleOpen	client/src/App.js	/^  toggleOpen = () => {$/;"	r
 toggleOpen	client/src/Components/ListItems.js	/^    this.toggleOpen = this.toggleOpen.bind(this);$/;"	r
-top	client/src/Components/Create.js	/^    top: '50%',$/;"	r
+top	client/src/Components/Create/Create.js	/^    top: '50%',$/;"	r
 top	client/src/Components/Update.js	/^    top: '50%',$/;"	r
-transform	client/src/Components/Create.js	/^    transform: 'translate(-50%, -50%)',$/;"	r
+transform	client/src/Components/Create/Create.js	/^    transform: 'translate(-50%, -50%)',$/;"	r
 transform	client/src/Components/Update.js	/^    transform: 'translate(-50%, -50%)',$/;"	r
-triggerAdd	client/src/Components/CreateOld.js	/^        this.triggerAdd = this.triggerAdd.bind(this);$/;"	r
+triggerAdd	client/src/Components/Create/CreateOld.js	/^        this.triggerAdd = this.triggerAdd.bind(this);$/;"	r
 type	.history/client/src/Components/Update_20200127101449.js	/^            type="text"$/;"	r
 type	.history/client/src/Components/Update_20200127110759.js	/^            type="text"$/;"	r
 type	.history/client/src/Components/Update_20200127110855.js	/^            type="text"$/;"	r
@@ -5697,12 +5697,12 @@ type	.history/client/src/Update_20200114095003.js	/^            type="text"$/;"	
 type	.history/client/src/Update_20200127101001.js	/^            type="text"$/;"	r
 type	.history/client/src/Update_20200127101450.js	/^            type="text"$/;"	r
 type	client/src/App.orig.js	/^            type="text"$/;"	r
-type	client/src/Components/Create.js	/^                type="button"$/;"	r
-type	client/src/Components/Create.js	/^                type="text"$/;"	r
-type	client/src/Components/CreateOld.js	/^                    type="text"$/;"	r
+type	client/src/Components/Create/Create.js	/^                type="button"$/;"	r
+type	client/src/Components/Create/Create.js	/^                type="text"$/;"	r
+type	client/src/Components/Create/CreateOld.js	/^                    type="text"$/;"	r
 type	client/src/Components/Delete.js	/^                type="text"$/;"	r
-type	client/src/Components/Login.js	/^            type="email"$/;"	r
-type	client/src/Components/Login.js	/^            type="password"$/;"	r
+type	client/src/Components/Login/Login.js	/^            type="email"$/;"	r
+type	client/src/Components/Login/Login.js	/^            type="password"$/;"	r
 type	client/src/Components/Update.js	/^    type="text"$/;"	r
 ul	client/src/app.css	/^ul {$/;"	t
 unregister	client/src/serviceWorker.js	/^export function unregister() {$/;"	r
@@ -6174,7 +6174,7 @@ updatetag	.history/client/src/App_20200127131625.js	/^  updatetag = (text) => {$
 updatetag	client/src/App.js	/^  updatetag = (text) => {$/;"	r
 updatetag	client/src/work/App.js	/^        this.updatetag = this.updatetag.bind(this);$/;"	r
 updatetag	client/src/work/App.js	/^    updatetag = ( text ) => {$/;"	r
-validateForm	client/src/Components/Login.js	/^  function validateForm() {$/;"	r
+validateForm	client/src/Components/Login/Login.js	/^  function validateForm() {$/;"	r
 value	.history/client/src/Components/ListItems_20200127095216.js	/^                value={this.props.data.name}$/;"	r
 value	.history/client/src/Components/ListItems_20200127125458.js	/^                value={this.props.data.name}$/;"	r
 value	.history/client/src/Components/ListItems_20200127125657.js	/^                value={this.props.data.name}$/;"	r
@@ -6233,18 +6233,18 @@ value	.history/client/src/Update_20200127101450.js	/^            value={updateDa
 value	.history/client/src/Update_20200127101450.js	/^            value={updateData.comment}$/;"	r
 value	.history/client/src/Update_20200127101450.js	/^            value={updateData.name}$/;"	r
 value	.history/client/src/Update_20200127101450.js	/^            value={updateData.tags}$/;"	r
-value	client/src/Components/Create.js	/^                value={code}$/;"	r
-value	client/src/Components/Create.js	/^                value={comment}$/;"	r
-value	client/src/Components/Create.js	/^                value={tags}$/;"	r
-value	client/src/Components/Create.js	/^                value={title}$/;"	r
-value	client/src/Components/CreateOld.js	/^                    value={this.state.code}$/;"	r
-value	client/src/Components/CreateOld.js	/^                    value={this.state.comment}$/;"	r
-value	client/src/Components/CreateOld.js	/^                    value={this.state.tags}$/;"	r
-value	client/src/Components/CreateOld.js	/^                    value={this.state.title}$/;"	r
+value	client/src/Components/Create/Create.js	/^                value={code}$/;"	r
+value	client/src/Components/Create/Create.js	/^                value={comment}$/;"	r
+value	client/src/Components/Create/Create.js	/^                value={tags}$/;"	r
+value	client/src/Components/Create/Create.js	/^                value={title}$/;"	r
+value	client/src/Components/Create/CreateOld.js	/^                    value={this.state.code}$/;"	r
+value	client/src/Components/Create/CreateOld.js	/^                    value={this.state.comment}$/;"	r
+value	client/src/Components/Create/CreateOld.js	/^                    value={this.state.tags}$/;"	r
+value	client/src/Components/Create/CreateOld.js	/^                    value={this.state.title}$/;"	r
 value	client/src/Components/IdSelector.js	/^        value = { input } className="mb-2 px-2 mr-2 pr-3" onChange={ ( e ) => sendId(e)} \/>$/;"	r
 value	client/src/Components/ListItems.js	/^      value={this.props.data.name}$/;"	r
-value	client/src/Components/Login.js	/^            value={email}$/;"	r
-value	client/src/Components/Login.js	/^            value={password}$/;"	r
+value	client/src/Components/Login/Login.js	/^            value={email}$/;"	r
+value	client/src/Components/Login/Login.js	/^            value={password}$/;"	r
 value	client/src/Components/Update.js	/^    value={inputValues.code}$/;"	r
 value	client/src/Components/Update.js	/^    value={inputValues.comment}$/;"	r
 value	client/src/Components/Update.js	/^    value={inputValues.tags}$/;"	r
@@ -6252,5 +6252,5 @@ value	client/src/Components/Update.js	/^    value={inputValues.title}$/;"	r
 width	.history/client/src/Components/ActionButton_20200111200449.js	/^    width: 36,$/;"	r
 width	.history/client/src/Components/ActionButton_20200127133317.js	/^    width: 24,$/;"	r
 width	.history/client/src/Components/ActionButton_20200127133336.js	/^    width: 24,$/;"	r
-width	client/src/Components/Create.js	/^    width: '60%',$/;"	r
+width	client/src/Components/Create/Create.js	/^    width: '60%',$/;"	r
 width	client/src/Components/Update.js	/^    width: '60%',$/;"	r
