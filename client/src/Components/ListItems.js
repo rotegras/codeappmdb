@@ -1,15 +1,17 @@
 import React, { Component } from "react"
 import ContentEditable from 'react-contenteditable'
 import PropTypes from 'prop-types'
-import { faEdit, faTrash, faCaretDown } from "@fortawesome/free-solid-svg-icons"
+import { faEdit, faTrash, faCaretDown, faBorderNone } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import ActionButton from './ActionButton'
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import Update from './Update';
-
 import './listitems.css'
+
+
+
 
 class ListItems extends Component {
 

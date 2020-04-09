@@ -9,7 +9,8 @@ const API_PORT = 3001;
 const app = express();
 const router = express.Router();
 const dbRoute = process.env.DB_CONNECTION;
-console.log(process.env.MONGODB_CONNECTION);
+// console.log(process.env.MONGODB_CONNECTION);
+
 // this is our MongoDB database
 // connects our back end code with the database
 mongoose.connect(
@@ -17,7 +18,7 @@ mongoose.connect(
   { useNewUrlParser: true }
 );
 
-mongoose.set('debug', true);
+mongoose.set('debug', false);
 
 let db = mongoose.connection;
 
@@ -26,14 +27,14 @@ db.once("open", () => console.log("connected to the database"));
 // checks if connection with the database is successful
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
-// (optional) only made for logging and
-// bodyParser, parses the request body to be a readable json format
+// (optional) only made for logging and bodyParser
+//  parses the request body to be a readable json format
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(logger("dev"));
 
-// this is our get method
-// this method fetches all available data in our database
+// get method
+// fetches all available data in our database
 router.get("/getData", (req, res) => {
   Data.find((err, data) => {
     if (err) return res.json({ success: false, error: err });
@@ -41,21 +42,21 @@ router.get("/getData", (req, res) => {
   });
 });
 
-// this is our update method
-// this method overwrites existing data in our database
+// update method
+// overwrites existing data in our database
 router.post("/updateData", (req, res) => {
 
   const { id, update } = req.body;
 
   Data.findOneAndUpdate(id, update, err => {
-      
+
     if (err) return res.json({ success: false, error: err });
     return res.json({ success: true });
   });
 });
 
-// this is our delete method
-// this method removes existing data in our database
+// delete method
+// removes existing data in our database
 router.delete("/deleteData", (req, res) => {
   const { id } = req.body;
   Data.findOneAndDelete(id, err => {
@@ -64,8 +65,8 @@ router.delete("/deleteData", (req, res) => {
   });
 });
 
-// this is our create method
-// this method adds new data in our database
+// create method
+// adds new data in our database
 router.post("/putData", (req, res) => {
   let data = new Data();
 
