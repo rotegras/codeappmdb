@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Create from './Create';
+import Create from './Create/Create';
 
 const useStyles = makeStyles(theme => ({
     navbar: {
