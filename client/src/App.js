@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
+import Header from './Components/Header/Header';
+import Theme from './Theme/Theme';
+import ThemeView from './Views/ThemeView';
+
+
 // import axios from "axios"
 import Main from './Views/Main';
-import './app.css';
+import About from './Views/About';
 
 class App extends Component {
   constructor() {
@@ -101,13 +111,26 @@ class App extends Component {
 
   render() {
     const { data } = this.state;
-    console.log(data);
+
     return (
-      <div>
-        <Main
-          data={data}
-          />
-      </div>
+      <Theme>
+        <Router>
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              <Main
+                data={data}
+              />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/theme">
+              <ThemeView />
+            </Route>
+          </Switch>
+        </Router>
+      </Theme>
     );
   }
 }

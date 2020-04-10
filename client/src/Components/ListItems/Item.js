@@ -1,24 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-
-const ItemWrapper = styled.div`
-  padding: 2rem;
-  margin: 0 0 1rem;
-  box-shadow: 0 0 15px black;
-`;
+import { ItemWrapper, ItemTitle }  from './Item.styles';
 
 
 export default function Item({ item }) {
   return (
-    <div>
-      <ItemWrapper key={item['_id']}>
+    <ItemWrapper key={item['_id']}>
+      <div>
+        {item._id} / {item.id}
+      </div>
+      <ItemTitle>
         {item.name}
-      </ItemWrapper>
-    </div>
+      </ItemTitle>
+      <div>
+        {
+          item.tags.map((tag) => (
+            <div>
+              { tag }
+            </div>
+          ))}
+      </div>
+      <div>
+        {item.comment}
+      </div>
+    </ItemWrapper>
   );
 }
+
 
 Item.propTypes = {
   item: PropTypes.objectOf(PropTypes.any).isRequired,

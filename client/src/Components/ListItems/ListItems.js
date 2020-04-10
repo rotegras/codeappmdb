@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ListWrapper } from './ListItems.styles';
 import Item from './Item';
-
 
 
 export default function ListItems({ data }) {
   return (
-    <div>
-      ListItems
+    <ListWrapper>
       {
         data.map((item) => (
           <Item
@@ -15,9 +14,10 @@ export default function ListItems({ data }) {
           />
         ))
       }
-    </div>
+    </ListWrapper>
   );
 }
+
 
 ListItems.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,

@@ -12,6 +12,8 @@
   "dependencies": {
     "concurrently": "^4.1.0",
     "dotenv": "^6.2.0",
-    "styled-components": "^5.1.0"
+    "react-router-dom": "^5.1.2",
+    "styled-components": "^5.1.0",
+    "styled-normalize": "^8.0.7"
   }
 }
