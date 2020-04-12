@@ -20,10 +20,12 @@ class App extends Component {
     this.state = {
       data: [],
       tags: [],
+      activeTag: '',
     };
 
     this.listTags = this.listTags.bind(this);
     this.getDataFromDb = this.getDataFromDb.bind(this);
+    this.updateActiveTag = this.updateActiveTag.bind(this);
   };
 
   componentDidMount() {
@@ -143,6 +145,12 @@ class App extends Component {
     })
   }
 
+  updateActiveTag(value) {
+    this.setState({
+      activeTag: value,
+    });
+  }
+
   render() {
     const { data, tags } = this.state;
 
@@ -155,6 +163,7 @@ class App extends Component {
               <Main
                 data={data}
                 tags={tags}
+                tagUp={this.updateActiveTag}
               />
             </Route>
             <Route path="/about">

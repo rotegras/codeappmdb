@@ -1,19 +1,29 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
+import PropTypes from 'prop-types';
 
-const TagButton = ({ name, clickTag, id, active }) => {
+function TagButton({ name, total, sendTag }) {
 
-    const TagCallback = (e) => {
-        const newTagName = e.target.name;
-        const newTagId = e.target.id;
-        clickTag ( newTagName );
-    };
+  const tagCallback = (e) => {
+    const { value } = e.target;
+    sendTag(value);
+  };
 
-    return(
-        <Button className="mb-2 mr-2 px-3" id={id} name={name} onClick={(e) => TagCallback(e)}
-            name={name}
-        />
-    );
+  return(
+    <button
+      onClick={(e) => tagCallback(e)}
+      value={name}
+    >
+      { name } / { total }
+    </button>
+  );
 }
+
+
+TagButton.propTypes = {
+    name: PropTypes.string.isRequired,
+    total: PropTypes.number.isRequired,
+    sendTag: PropTypes.func.isRequired,
+};
+
 
 export default TagButton;

@@ -4,12 +4,13 @@ import {
   Wrapper,
   Input,
 } from './SearchByTag.styles';
+import TagButton from '../Buttons/TagButton';
 
 // import { faTimes } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-function SearchByTag({ tags }) {
+function SearchByTag({ tags, submitTag }) {
   const [inputValue, setInputValue] = useState('');
   const [matchingTags, filterTags] = useState([]);
 
@@ -26,12 +27,18 @@ function SearchByTag({ tags }) {
       }
     });
     filterTags(match.sort((a, b) => ( a.name - b.name)));
-    // filterTags(match);
+  };
+
+  const selectTag = (name) => {
+    console.log(name);
+    submitTag(name);
+
   };
 
   useEffect(() => {
       searchInTagList();
   }, [inputValue]);
+
 
   return (
     <Wrapper>
@@ -43,9 +50,14 @@ function SearchByTag({ tags }) {
       <div>
       {
         matchingTags.map((tag,i) => (
-          <div key={tag.name+i}>
+          <TagButton
+            key={tag.name + i}
+            sendTag={selectTag}
+            name={tag.name}
+            total={tag.total}
+          >
             { tag.name } / { tag.total }
-          </div>
+          </TagButton>
          ))
       }
       </div>

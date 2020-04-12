@@ -11,7 +11,12 @@ import {
   Col6,
 } from '../Components/Layout/Layout';
 
-export default function Main({ data, tags }) {
+export default function Main({ data, tags, tagUp }) {
+  const submitTag = (value) => {
+    tagUp(value);
+  };
+
+
   return (
     <Content>
       <Container>
@@ -19,6 +24,7 @@ export default function Main({ data, tags }) {
           <Col2>
             <SearchByTag
               tags={tags}
+              submitTag={submitTag}
             />
           </Col2>
           <Col4>
