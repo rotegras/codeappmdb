@@ -19,8 +19,12 @@ class App extends Component {
 
     this.state = {
       data: [],
+      tags: [],
     };
-  }
+
+    this.listTags = this.listTags.bind(this);
+    this.getDataFromDb = this.getDataFromDb.bind(this);
+  };
 
   componentDidMount() {
     this.getDataFromDb();
@@ -37,14 +41,20 @@ class App extends Component {
     }
   }
 
-  getDataFromDb = () => {
+  getDataFromDb() {
     fetch("/api/getData")
       .then(data => data.json())
-      .then(res => this.setState({ data: res.data })
-      );
+      .then(res => this.setState({ data: [...res.data] }))
+      // .then(() => this.listTags())
+      .catch((error) => console.log(`Error: ${error}`));
+
+    this.listTags();
+
+  }
+
     // this.arrayDuplicates(this.state.data);
     // this.getLast(this.state.data);
-  };
+
 
   // putDataToDB = (title, code, comment, tags) => {
   //   let currentIds = this.state.data.map(data => data.id);
@@ -109,8 +119,32 @@ class App extends Component {
   //   });
   // };
 
-  render() {
+  listTags() {
     const { data } = this.state;
+
+    const tagList = [];
+    const singleTags = [];
+
+    data.forEach((item) => {
+      item.tags.forEach((tag) => {
+        if (singleTags.indexOf(tag.trim()) === -1) {
+          const tagEntry = { name: tag.trim(), total: 1}
+          tagList.push(tagEntry);
+          singleTags.push(tag);
+        } else {
+          const i = singleTags.indexOf(tag.trim());
+          // console.log(tagList[i]);
+          tagList[i].total++;
+        }
+      });
+    });
+    this.setState({
+      tags: tagList,
+    })
+  }
+
+  render() {
+    const { data, tags } = this.state;
 
     return (
       <Theme>
@@ -120,6 +154,7 @@ class App extends Component {
             <Route exact path="/">
               <Main
                 data={data}
+                tags={tags}
               />
             </Route>
             <Route path="/about">

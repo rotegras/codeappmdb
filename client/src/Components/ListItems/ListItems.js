@@ -11,6 +11,7 @@ export default function ListItems({ data }) {
         data.map((item) => (
           <Item
             item={item}
+            key={item._id}
           />
         ))
       }

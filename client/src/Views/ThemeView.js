@@ -6,7 +6,6 @@ import {
   Col,
 } from '../Components/Layout/Layout';
 import {
-  Rectangle,
   ColorBlack,
   ColorWhite,
   ColorLightGray,

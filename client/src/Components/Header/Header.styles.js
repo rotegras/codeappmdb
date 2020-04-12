@@ -14,6 +14,7 @@ const HeaderWrapper = styled.header`
 const MenuItem = styled(Link)`
   padding: 1rem;
   font-size: ${({ theme }) => theme.fontSize.normal};
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 

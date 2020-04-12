@@ -5,7 +5,9 @@ import { ItemWrapper, ItemTitle }  from './Item.styles';
 
 export default function Item({ item }) {
   return (
-    <ItemWrapper key={item['_id']}>
+    <ItemWrapper
+      key={item._id}
+    >
       <div>
         {item._id} / {item.id}
       </div>
@@ -13,9 +15,12 @@ export default function Item({ item }) {
         {item.name}
       </ItemTitle>
       <div>
+        {item.code}
+      </div>
+      <div>
         {
           item.tags.map((tag) => (
-            <div>
+            <div key={tag}>
               { tag }
             </div>
           ))}

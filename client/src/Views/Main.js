@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ListItems from '../Components/ListItems/ListItems';
+import SearchByTag from '../Components/Search/SearchByTag.js';
 import {
   Content,
   Container,
@@ -10,14 +11,15 @@ import {
   Col6,
 } from '../Components/Layout/Layout';
 
-export default function Main({ data }) {
+export default function Main({ data, tags }) {
   return (
-
     <Content>
       <Container>
         <Row>
           <Col2>
-            Search
+            <SearchByTag
+              tags={tags}
+            />
           </Col2>
           <Col4>
             <ListItems
@@ -35,5 +37,6 @@ export default function Main({ data }) {
 
 
 Main.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object),
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  tags: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
