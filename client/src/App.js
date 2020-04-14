@@ -21,11 +21,13 @@ class App extends Component {
       data: [],
       tags: [],
       activeTag: '',
+      selection: [],
     };
 
     this.listTags = this.listTags.bind(this);
     this.getDataFromDb = this.getDataFromDb.bind(this);
     this.updateActiveTag = this.updateActiveTag.bind(this);
+    this.filterContentByTag = this.filterContentByTag.bind(this);
   };
 
   componentDidMount() {
@@ -47,7 +49,6 @@ class App extends Component {
     fetch("/api/getData")
       .then(data => data.json())
       .then(res => this.setState({ data: [...res.data] }))
-      // .then(() => this.listTags())
       .catch((error) => console.log(`Error: ${error}`));
 
     this.listTags();
@@ -135,7 +136,6 @@ class App extends Component {
           singleTags.push(tag);
         } else {
           const i = singleTags.indexOf(tag.trim());
-          // console.log(tagList[i]);
           tagList[i].total++;
         }
       });
@@ -148,11 +148,25 @@ class App extends Component {
   updateActiveTag(value) {
     this.setState({
       activeTag: value,
+    }, () => {
+      const { activeTag } = this.state;
+      this.filterContentByTag(activeTag);
     });
   }
 
+  filterContentByTag(value) {
+    const { data } = this.state;
+    const result = [];
+    data.map((item) => {
+      if (item.tags.indexOf(value) > -1) {
+        result.push(item);
+      }
+    })
+    this.setState({ selection: result })
+  }
+
   render() {
-    const { data, tags, activeTag } = this.state;
+    const { selection, tags, activeTag } = this.state;
 
     return (
       <Theme>
@@ -161,7 +175,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/">
               <Main
-                data={data}
+                data={selection}
                 tags={tags}
                 tagUp={this.updateActiveTag}
                 selectedTag={activeTag}
