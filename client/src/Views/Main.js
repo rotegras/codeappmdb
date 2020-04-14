@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ListItems from '../Components/ListItems/ListItems';
 import SearchByTag from '../Components/Search/SearchByTag.js';
+import TagDisplay from '../Components/Search/TagDisplay';
 import {
   Content,
   Container,
@@ -11,7 +12,7 @@ import {
   Col6,
 } from '../Components/Layout/Layout';
 
-export default function Main({ data, tags, tagUp }) {
+export default function Main({ selectedTag, data, tags, tagUp }) {
   const submitTag = (value) => {
     tagUp(value);
   };
@@ -22,6 +23,9 @@ export default function Main({ data, tags, tagUp }) {
       <Container>
         <Row>
           <Col2>
+            <TagDisplay
+              name={selectedTag}
+            />
             <SearchByTag
               tags={tags}
               submitTag={submitTag}
@@ -43,6 +47,7 @@ export default function Main({ data, tags, tagUp }) {
 
 
 Main.propTypes = {
+  selectedTag: PropTypes.string.isRequired,
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   tags: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

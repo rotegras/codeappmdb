@@ -22,7 +22,8 @@ const Row = styled.div`
 const Col = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: flex-start;
   padding: 1rem;
 `;
 

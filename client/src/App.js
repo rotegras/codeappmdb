@@ -152,7 +152,7 @@ class App extends Component {
   }
 
   render() {
-    const { data, tags } = this.state;
+    const { data, tags, activeTag } = this.state;
 
     return (
       <Theme>
@@ -164,6 +164,7 @@ class App extends Component {
                 data={data}
                 tags={tags}
                 tagUp={this.updateActiveTag}
+                selectedTag={activeTag}
               />
             </Route>
             <Route path="/about">
