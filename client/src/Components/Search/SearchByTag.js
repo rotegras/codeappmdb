@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {
   Wrapper,
   Input,
+  TagsArea,
 } from './SearchByTag.styles';
 import TagButton from '../Buttons/TagButton';
 
@@ -47,7 +48,7 @@ function SearchByTag({ tags, submitTag }) {
         type="text"
         onChange={(e) => changeInput(e)}
       />
-      <div>
+      <TagsArea>
       {
         matchingTags.map((tag,i) => (
           <TagButton
@@ -60,7 +61,7 @@ function SearchByTag({ tags, submitTag }) {
           </TagButton>
          ))
       }
-      </div>
+      </TagsArea>
     </Wrapper>
   );
 }

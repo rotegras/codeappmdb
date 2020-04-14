@@ -112,6 +112,8 @@ FormGroup	client/src/Components/Login/Login.js	/^import { Button, FormGroup, For
 Header	client/src/Components/Header/Header.js	/^export default function Header() {$/;"	r
 HeaderWrapper	client/src/Components/Header/Header.styles.js	/^  HeaderWrapper,$/;"	r
 Info	client/src/Views/Main.js	/^            Info$/;"	r
+Input	client/src/Components/Search/SearchByTag.js	/^  Input,$/;"	r
+Input	client/src/Components/Search/SearchByTag.styles.js	/^  Input,$/;"	r
 Item	client/src/Components/ListItems/Item.js	/^export default function Item({ item }) {$/;"	r
 ItemTitle	client/src/Components/ListItems/Item.styles.js	/^  ItemTitle,$/;"	r
 ItemWrapper	client/src/Components/ListItems/Item.styles.js	/^  ItemWrapper,$/;"	r
@@ -119,18 +121,18 @@ ListItems	client/src/Components/ListItems/ListItems.js	/^export default function
 ListWrapper	client/src/Components/ListItems/ListItems.styles.js	/^  ListWrapper,$/;"	r
 Login	client/src/Components/Login/Login.js	/^          Login$/;"	r
 Login	client/src/Components/Login/Login.js	/^export default function Login(props) {$/;"	r
-Main	client/src/Views/Main.js	/^export default function Main({ data, tags }) {$/;"	r
+Main	client/src/Views/Main.js	/^export default function Main({ data, tags, tagUp }) {$/;"	r
 MenuItem	client/src/Components/Header/Header.styles.js	/^  MenuItem,$/;"	r
 NavBar	client/src/Components/Header/NavBar_old.js	/^function NavBar ({onClickCreate}) {$/;"	r
 Rectangle	client/src/Theme/ColoredRectangle.js	/^  Rectangle,$/;"	r
-Rectangle	client/src/Views/ThemeView.js	/^  Rectangle,$/;"	r
 Route	client/src/App.js	/^  Route,$/;"	r
 Row	client/src/Components/Layout/Layout.js	/^  Row,$/;"	r
 Row	client/src/Views/Main.js	/^  Row,$/;"	r
 Row	client/src/Views/ThemeView.js	/^  Row,$/;"	r
-SearchByTag	client/src/Components/Search/SearchByTag.js	/^function SearchByTag({ tags }) {$/;"	r
-SearchByTag_Old	client/src/Components/Search/SearchByTag.js	/^ function SearchByTag_Old({ keyDown, input, reset}) {$/;"	r
+SearchByTag	client/src/Components/Search/SearchByTag.js	/^function SearchByTag({ tags, submitTag }) {$/;"	r
+SearchByTag_Old	client/src/Components/Search/SearchByTag.js	/^\/\/  function SearchByTag_Old({ keyDown, input, reset}) {$/;"	r
 Switch	client/src/App.js	/^  Switch,$/;"	r
+TagButton	client/src/Components/Buttons/TagButton.js	/^function TagButton({ name, total, sendTag }) {$/;"	r
 TagCallback	.history/client/src/Components/ListItems_20200127095216.js	/^    this.TagCallback = this.TagCallback.bind(this);$/;"	r
 TagCallback	.history/client/src/Components/ListItems_20200127125458.js	/^    this.TagCallback = this.TagCallback.bind(this);$/;"	r
 TagCallback	.history/client/src/Components/ListItems_20200127125657.js	/^    this.TagCallback = this.TagCallback.bind(this);$/;"	r
@@ -172,11 +174,15 @@ Tags	.history/client/src/Components/LastEntry_20200127125547.js	/^              
 Tags	.history/client/src/Components/LastEntry_20200127130024.js	/^                Tags: {}$/;"	r
 Tags	.history/client/src/Components/LastEntry_20200127130227.js	/^                Tags: {}$/;"	r
 Tags	client/src/Components/LastEntry/LastEntry.js	/^        Tags: {tagli}$/;"	r
+TagsArea	client/src/Components/Search/SearchByTag.js	/^  TagsArea,$/;"	r
+TagsArea	client/src/Components/Search/SearchByTag.styles.js	/^  TagsArea,$/;"	r
 Theme	client/src/Theme/Theme.js	/^function Theme({ children }) {$/;"	r
 Theme	client/src/Views/ThemeView.js	/^            Theme$/;"	r
 ThemeView	client/src/Views/ThemeView.js	/^export default function ThemeView() {$/;"	r
 Typography	client/src/Views/ThemeView.js	/^              Typography$/;"	r
 Update	client/src/Components/Forms/Update/Update.js	/^export default function Update({ id, data, onModalClick, modalOpen }) {$/;"	r
+Wrapper	client/src/Components/Search/SearchByTag.js	/^  Wrapper,$/;"	r
+Wrapper	client/src/Components/Search/SearchByTag.styles.js	/^  Wrapper,$/;"	r
 _refactored	.history/client/src/App_20200114094254.js	/^      _refactored: true$/;"	r
 _refactored	.history/client/src/App_20200122141554.js	/^      _refactored: true$/;"	r
 _refactored	.history/client/src/App_20200122141646.js	/^      _refactored: true$/;"	r
@@ -214,12 +220,14 @@ _refactored	.history/client/src/App_20200127111808.js	/^      _refactored: true$
 _refactored	.history/client/src/App_20200127130056.js	/^      _refactored: true$/;"	r
 _refactored	.history/client/src/App_20200127131625.js	/^      _refactored: true$/;"	r
 _refactored	client/src/App_old.js	/^      _refactored: true$/;"	r
-accentDark	client/src/Theme/Theme.js	/^    accentDark: '#3b945e',$/;"	r
 accentDark	client/src/Theme/Theme.js	/^    accentDark: '#647660',$/;"	r
-accentLight	client/src/Theme/Theme.js	/^    accentLight: '#57886c',$/;"	r
-accentLight	client/src/Theme/Theme.js	/^    accentLight: '#57ba98',$/;"	r
+accentDark	client/src/work/theme.colors.js	/^    accentDark: '#3b945e',$/;"	r
 accentLight	client/src/Theme/Theme.js	/^    accentLight: '#819b7c',$/;"	r
+accentLight	client/src/work/theme.colors.js	/^    accentLight: '#57886c',$/;"	r
+accentLight	client/src/work/theme.colors.js	/^    accentLight: '#57ba98',$/;"	r
 active	client/src/work/App_old.js	/^                                    active={this.state.tagName}$/;"	r
+activeTag	client/src/App.js	/^      activeTag: '',$/;"	r
+activeTag	client/src/App.js	/^      activeTag: value,$/;"	r
 addArticle	client/src/redux/actions/index.js	/^export function addArticle(payload) {$/;"	r
 addArticle	client/src/redux/index.js	/^    window.addArticle = addArticle;$/;"	r
 addComment	.history/client/src/App_20200114094254.js	/^                  addComment={this.addComment}$/;"	r
@@ -407,14 +415,13 @@ arrayDuplicates	.history/client/src/App_20200127131625.js	/^  arrayDuplicates = 
 arrayDuplicates	client/src/App_old.js	/^  arrayDuplicates = (array) => {$/;"	r
 articles	client/src/redux/reducers/index.js	/^    articles: []$/;"	r
 autoFocus	client/src/Components/Login/Login.js	/^            autoFocus$/;"	r
-background	client/src/Theme/Theme.js	/^  background: {$/;"	r
 backgroundColor	client/src/Components/Forms/Create/Create.js	/^    backgroundColor: theme.palette.background.paper,$/;"	r
 backgroundColor	client/src/Components/Forms/Update/Update.js	/^    backgroundColor: theme.palette.background.paper,$/;"	r
 big	client/src/Theme/Theme.js	/^    big: '1.75rem',$/;"	r
 bigger	client/src/Theme/Theme.js	/^    bigger: '3rem',$/;"	r
-black	client/src/Theme/Theme.js	/^    black: '#0e0f19',$/;"	r
-black	client/src/Theme/Theme.js	/^    black: '#182628',$/;"	r
 black	client/src/Theme/Theme.js	/^    black: '#262212',$/;"	r
+black	client/src/work/theme.colors.js	/^    black: '#0e0f19',$/;"	r
+black	client/src/work/theme.colors.js	/^    black: '#182628',$/;"	r
 body	client/src/app.css	/^body {$/;"	t
 body	client/src/work/App_old.js	/^                        body={code.content.rendered} $/;"	r
 border	.history/client/src/Components/ActionButton_20200111200449.js	/^    border: 0,$/;"	r
@@ -428,7 +435,8 @@ border	.history/client/src/Components/ActionButton_20200127133811.js	/^    borde
 border	.history/client/src/Components/ActionButton_20200127134057.js	/^    border: 0,$/;"	r
 border	.history/client/src/Components/ActionButton_20200127134111.js	/^    border: 0,$/;"	r
 border	client/src/Components/Buttons/ActionButton.js	/^    border: 0,$/;"	r
-border	client/src/Components/Search/SearchByTag.js	/^  border: 2px solid yellow;$/;"	r
+border	client/src/Components/Buttons/TagButton.styles.js	/^  border: none;$/;"	r
+border	client/src/Components/Search/SearchByTag.styles.js	/^  border: 0;$/;"	r
 borderBottom	client/src/Components/Header/NavBar_old.js	/^        borderBottom: '1px solid #999',$/;"	r
 borderRadius	.history/client/src/Components/ActionButton_20200111200449.js	/^    borderRadius: 99,$/;"	r
 borderRadius	.history/client/src/Components/ActionButton_20200127133317.js	/^    borderRadius: 99,$/;"	r
@@ -443,7 +451,6 @@ borderRadius	.history/client/src/Components/ActionButton_20200127134111.js	/^   
 borderRadius	client/src/Components/Buttons/ActionButton.js	/^    borderRadius: 99,$/;"	r
 boxShadow	client/src/Components/Forms/Create/Create.js	/^    boxShadow: theme.shadows[5],$/;"	r
 boxShadow	client/src/Components/Forms/Update/Update.js	/^    boxShadow: theme.shadows[5],$/;"	r
-button	client/src/Components/Search/SearchByTag.js	/^        button$/;"	r
 button	client/src/app.css	/^button {$/;"	t
 cdde	.history/client/src/Components/ListItems_20200127095216.js	/^    cdde: 'default code',$/;"	r
 cdde	.history/client/src/Components/ListItems_20200127125458.js	/^    cdde: 'default code',$/;"	r
@@ -721,7 +728,6 @@ clickTag	.history/client/src/App_20200127131625.js	/^                      click
 clickTag	.history/client/src/App_20200127131625.js	/^                  clickTag={this.updateActiveTag}$/;"	r
 clickTag	client/src/App_old.js	/^                      clickTag={this.updateActiveTag}$/;"	r
 clickTag	client/src/App_old.js	/^                  clickTag={this.updateActiveTag}$/;"	r
-clickTag	client/src/Components/Buttons/TagButton.js	/^const TagButton = ({ name, clickTag, id, active }) => {$/;"	r
 clickTag	client/src/Components/Search/TagSelector.js	/^const TagSelector = ({name, clickTag, id, active }) => {$/;"	r
 clickTag	client/src/work/App_old.js	/^                                    clickTag={this.updateActiveTag}$/;"	r
 clickTag	client/src/work/FilteredTags.js	/^const FilteredTags = ({name, clickTag, id, active }) => {$/;"	r
@@ -1160,8 +1166,8 @@ color	client/src/Components/Forms/Update/Update.js	/^    color="primary"$/;"	r
 color	client/src/Components/ListItems/ListItems_old.js	/^      color="primary"$/;"	r
 color	client/src/Components/ListItems/ListItems_old.js	/^      color="secondary"$/;"	r
 colors	client/src/Theme/Theme.js	/^  colors: {$/;"	r
-colors0	client/src/Theme/Theme.js	/^  colors0: {$/;"	r
-colors1	client/src/Theme/Theme.js	/^  colors1: {$/;"	r
+colors0	client/src/work/theme.colors.js	/^  colors0: {$/;"	r
+colors1	client/src/work/theme.colors.js	/^  colors1: {$/;"	r
 comment	.history/client/src/App_20200114094254.js	/^                  comment={this.state.new.comment}$/;"	r
 comment	.history/client/src/App_20200114094254.js	/^        comment: ''$/;"	r
 comment	.history/client/src/App_20200114094254.js	/^        comment: comment$/;"	r
@@ -1925,6 +1931,7 @@ display	client/src/Components/Header/Header.styles.js	/^  display: flex;$/;"	r
 display	client/src/Components/Header/NavBar_old.js	/^        display: 'flex',$/;"	r
 display	client/src/Components/LastEntry/LastEntry.js	/^        display: 'flex'$/;"	r
 display	client/src/Components/Layout/Layout.js	/^  display: flex;$/;"	r
+display	client/src/Components/Search/SearchByTag.styles.js	/^  display: flex;$/;"	r
 doUpdate	.history/client/src/App_20200114094254.js	/^  doUpdate = () => {$/;"	r
 doUpdate	.history/client/src/App_20200122141554.js	/^  doUpdate = () => {$/;"	r
 doUpdate	.history/client/src/App_20200122141646.js	/^  doUpdate = () => {$/;"	r
@@ -2146,7 +2153,6 @@ filtered	.history/client/src/App_20200127111808.js	/^    let filtered = [];$/;"	
 filtered	.history/client/src/App_20200127130056.js	/^    let filtered = [];$/;"	r
 filtered	.history/client/src/App_20200127131625.js	/^    let filtered = [];$/;"	r
 filtered	client/src/App_old.js	/^    let filtered = [];$/;"	r
-filtered	client/src/Components/Search/SearchByTag.js	/^    let filtered = [];$/;"	r
 filteredTags	.history/client/src/App_20200114094254.js	/^        filteredTags: filtered$/;"	r
 filteredTags	.history/client/src/App_20200114094254.js	/^      filteredTags: [],$/;"	r
 filteredTags	.history/client/src/App_20200122141554.js	/^        filteredTags: filtered$/;"	r
@@ -2221,7 +2227,6 @@ filteredTags	.history/client/src/App_20200127131625.js	/^        filteredTags: f
 filteredTags	.history/client/src/App_20200127131625.js	/^      filteredTags: [],$/;"	r
 filteredTags	client/src/App_old.js	/^        filteredTags: filtered$/;"	r
 filteredTags	client/src/App_old.js	/^      filteredTags: [],$/;"	r
-filteredTags	client/src/Components/Search/SearchByTag.js	/^        filteredTags: filtered$/;"	r
 filteredTags	client/src/work/App_old.js	/^            filteredTags: [] $/;"	r
 filteredTags	client/src/work/App_old.js	/^            filteredTags: filter $/;"	r
 filteredTags	client/src/work/App_old.js	/^            filteredTags:[]$/;"	r
@@ -2262,7 +2267,6 @@ filteredsingle	.history/client/src/App_20200127111808.js	/^    let filteredsingl
 filteredsingle	.history/client/src/App_20200127130056.js	/^    let filteredsingle = [];$/;"	r
 filteredsingle	.history/client/src/App_20200127131625.js	/^    let filteredsingle = [];$/;"	r
 filteredsingle	client/src/App_old.js	/^    let filteredsingle = [];$/;"	r
-filteredsingle	client/src/Components/Search/SearchByTag.js	/^    let filteredsingle = [];$/;"	r
 filtertagsonsearch	.history/client/src/App_20200114094254.js	/^  filtertagsonsearch = (search) => {$/;"	r
 filtertagsonsearch	.history/client/src/App_20200122141554.js	/^  filtertagsonsearch = (search) => {$/;"	r
 filtertagsonsearch	.history/client/src/App_20200122141646.js	/^  filtertagsonsearch = (search) => {$/;"	r
@@ -3256,7 +3260,7 @@ input	.history/client/src/SearchTag_20200127101504.js	/^const SearchTag = ({keyD
 input	client/src/App_old.js	/^                  input={this.state.searchById}$/;"	r
 input	client/src/App_old.js	/^                  input={this.state.searchingTag}$/;"	r
 input	client/src/Components/Search/IdSelector.js	/^const IdSelector = ({ keyDown, input, reset }) => {$/;"	r
-input	client/src/Components/Search/SearchByTag.js	/^ function SearchByTag_Old({ keyDown, input, reset}) {$/;"	r
+input	client/src/Components/Search/SearchByTag.js	/^\/\/  function SearchByTag_Old({ keyDown, input, reset}) {$/;"	r
 input	client/src/app.css	/^input {$/;"	t
 input	client/src/work/App_old.js	/^                                 input={this.state.searchingTag}$/;"	r
 input	client/src/work/SearchTag.js	/^const SearchTag = ({keyDown, input, reset}) => {$/;"	r
@@ -3342,6 +3346,7 @@ itemList	client/src/Components/LastEntry/LastEntry.js	/^    itemList: {$/;"	r
 justifyContent	client/src/Components/Header/NavBar_old.js	/^        justifyContent: 'flex-end',$/;"	r
 key	client/src/Components/ListItems/Item.js	/^      key={item._id}$/;"	r
 key	client/src/Components/ListItems/ListItems.js	/^            key={item._id}$/;"	r
+key	client/src/Components/Search/SearchByTag.js	/^            key={tag.name + i}$/;"	r
 key	client/src/work/App_old.js	/^                                    key={tag.index}$/;"	r
 key	client/src/work/App_old.js	/^                            key={this.state.tagId.toString}$/;"	r
 key	client/src/work/App_old.js	/^                        key={code.title.rendered} $/;"	r
@@ -3464,16 +3469,18 @@ lastel	.history/client/src/Components/LastEntry_20200127130227.js	/^    let last
 left	client/src/Components/Forms/Create/Create.js	/^    left: '50%',$/;"	r
 left	client/src/Components/Forms/Update/Update.js	/^    left: '50%',$/;"	r
 liftUpdate	client/src/Components/ListItems/ListItems_old.js	/^    this.liftUpdate = this.liftUpdate.bind(this);$/;"	r
-lightGray	client/src/Theme/Theme.js	/^    lightGray: '#65ccb8',$/;"	r
-lightGray	client/src/Theme/Theme.js	/^    lightGray: '#81a684',$/;"	r
 lightGray	client/src/Theme/Theme.js	/^    lightGray: '#c5b9a1',$/;"	r
+lightGray	client/src/work/theme.colors.js	/^    lightGray: '#65ccb8',$/;"	r
+lightGray	client/src/work/theme.colors.js	/^    lightGray: '#81a684',$/;"	r
 list	client/src/Components/LastEntry/LastEntry.js	/^    list: {$/;"	r
 listStyle	client/src/Components/Header/NavBar_old.js	/^        listStyle: 'none',$/;"	r
 listStyle	client/src/Components/LastEntry/LastEntry.js	/^        listStyle: 'none',$/;"	r
 listTags	client/src/App.js	/^    this.listTags = this.listTags.bind(this);$/;"	r
+margin	client/src/Components/Buttons/TagButton.styles.js	/^  margin: 0 .5rem .5rem 0;$/;"	r
 margin	client/src/Components/LastEntry/LastEntry.js	/^        margin: '0 4px',$/;"	r
 margin	client/src/Components/Layout/Layout.js	/^  margin: 0 -1rem;$/;"	r
 margin	client/src/Components/ListItems/Item.styles.js	/^  margin: 0 1rem 1rem;$/;"	r
+margin	client/src/Components/Search/SearchByTag.styles.js	/^  margin: 1rem 0;$/;"	r
 margin	client/src/Theme/GlobalStyles.js	/^    margin: 0;$/;"	r
 marginBottom	client/src/Components/Header/NavBar_old.js	/^        marginBottom: '.5rem',$/;"	r
 marginBottom	client/src/Components/Header/NavBar_old.js	/^        marginBottom: '0',$/;"	r
@@ -3726,7 +3733,7 @@ name	client/src/App_old.js	/^      name: name,$/;"	r
 name	client/src/App_old.js	/^      name: title,$/;"	r
 name	client/src/App_old.js	/^      name: updateData.title,$/;"	r
 name	client/src/App_old.js	/^  updateId = ( id, name, code, tags, comment ) => {$/;"	r
-name	client/src/Components/Buttons/TagButton.js	/^            name={name}$/;"	r
+name	client/src/Components/Buttons/TagButton.js	/^    name: PropTypes.string.isRequired,$/;"	r
 name	client/src/Components/Forms/Create/Create.js	/^                name="ADD ITEM"$/;"	r
 name	client/src/Components/Forms/Create/Create.js	/^                name="code"$/;"	r
 name	client/src/Components/Forms/Create/Create.js	/^                name="comment"$/;"	r
@@ -3744,6 +3751,7 @@ name	client/src/Components/Forms/Update/Update.js	/^    name="tags"$/;"	r
 name	client/src/Components/Forms/Update/Update.js	/^    name="title"$/;"	r
 name	client/src/Components/ListItems/ListItems_old.js	/^          name: 'default',$/;"	r
 name	client/src/Components/ListItems/ListItems_old.js	/^      name="title"$/;"	r
+name	client/src/Components/Search/SearchByTag.js	/^            name={tag.name}$/;"	r
 name	client/src/work/App_old.js	/^                                    name={tag.name} $/;"	r
 name	client/src/work/App_old.js	/^            let name = tagItem.name;$/;"	r
 name	client/src/work/TagSelector.js	/^  name: PropTypes.string.isRequired,$/;"	r
@@ -4034,6 +4042,7 @@ onClick	.history/client/src/ListItems_20200127095217.js	/^                  onCl
 onClick	.history/client/src/Update_20200114095003.js	/^            onClick={() => triggerUpdate()}$/;"	r
 onClick	.history/client/src/Update_20200127101001.js	/^            onClick={() => triggerUpdate()}$/;"	r
 onClick	.history/client/src/Update_20200127101450.js	/^            onClick={() => triggerUpdate()}$/;"	r
+onClick	client/src/Components/Buttons/TagButton.js	/^      onClick={(e) => tagCallback(e)}$/;"	r
 onClick	client/src/Components/Forms/Create/Create.js	/^                onClick={e => triggerAdd(e)}$/;"	r
 onClick	client/src/Components/Forms/Create/Create.js	/^                onClick={handleOpen}$/;"	r
 onClick	client/src/Components/Forms/Create/CreateOld.js	/^                    onClick={e => this.triggerAdd(e)}$/;"	r
@@ -4348,12 +4357,14 @@ padding	.history/client/src/Components/ActionButton_20200127133811.js	/^    padd
 padding	.history/client/src/Components/ActionButton_20200127134057.js	/^    padding: '10px 0'$/;"	r
 padding	.history/client/src/Components/ActionButton_20200127134111.js	/^    padding: '10px 0'$/;"	r
 padding	client/src/Components/Buttons/ActionButton.js	/^    padding: '0'$/;"	r
+padding	client/src/Components/Buttons/TagButton.styles.js	/^  padding: .25rem .5rem;$/;"	r
 padding	client/src/Components/Forms/Create/Create.js	/^    padding: theme.spacing(2, 4, 3),$/;"	r
 padding	client/src/Components/Forms/Update/Update.js	/^    padding: theme.spacing(2, 4, 3),$/;"	r
 padding	client/src/Components/Header/Header.styles.js	/^  padding: 0 2rem;$/;"	r
 padding	client/src/Components/Header/Header.styles.js	/^  padding: 1rem;$/;"	r
 padding	client/src/Components/Layout/Layout.js	/^  padding: 1rem;$/;"	r
 padding	client/src/Components/ListItems/Item.styles.js	/^  padding: 1rem 0;$/;"	r
+padding	client/src/Components/Search/SearchByTag.styles.js	/^  padding: .5rem;$/;"	r
 paper	client/src/Components/Forms/Create/Create.js	/^  paper: {$/;"	r
 paper	client/src/Components/Forms/Update/Update.js	/^  paper: {$/;"	r
 placeholder	.history/client/src/Components/Update_20200127101449.js	/^            placeholder="modify content"$/;"	r
@@ -4401,7 +4412,6 @@ placeholder	client/src/Components/Forms/Update/Update.js	/^    placeholder="modi
 placeholder	client/src/Components/Forms/Update/Update.js	/^    placeholder="modify cooment"$/;"	r
 placeholder	client/src/Components/Forms/Update/Update.js	/^    placeholder="modify tags"$/;"	r
 placeholder	client/src/Components/Forms/Update/Update.js	/^    placeholder="modify title"$/;"	r
-placeholder	client/src/Components/Search/SearchByTag.js	/^        placeholder="Search by tag..."$/;"	r
 positin	.history/client/src/Components/ActionButton_20200127133701.js	/^    positin: 'relative',$/;"	r
 position	.history/client/src/Components/ActionButton_20200127133706.js	/^    position: 'relative',$/;"	r
 position	.history/client/src/Components/ActionButton_20200127133747.js	/^    position: 'relative',$/;"	r
@@ -4410,7 +4420,6 @@ position	client/src/Components/Forms/Create/Create.js	/^    position: 'absolute'
 position	client/src/Components/Forms/Update/Update.js	/^    position: 'absolute',$/;"	r
 position	client/src/Components/Header/Header.styles.js	/^  position: relative;$/;"	r
 prevState	client/src/App_old.js	/^      prevState => ({ open: !prevState.open }))$/;"	r
-primary	client/src/Theme/Theme.js	/^    primary: '#fff',$/;"	r
 primary	client/src/Theme/Theme.js	/^    primary: 'Montserrat',$/;"	r
 propTypes	.history/client/src/Components/LastEntry_20200127111037.js	/^LastEntry.propTypes = {$/;"	r
 propTypes	.history/client/src/Components/LastEntry_20200127111040.js	/^LastEntry.propTypes = {$/;"	r
@@ -4470,6 +4479,7 @@ propTypes	.history/client/src/TagDisplay_20200127095534.js	/^TagDisplay.propType
 propTypes	.history/client/src/TagDisplay_20200127100700.js	/^TagDisplay.propTypes = {$/;"	r
 propTypes	.history/client/src/Update_20200127101001.js	/^Update.propTypes = {$/;"	r
 propTypes	.history/client/src/Update_20200127101450.js	/^Update.propTypes = {$/;"	r
+propTypes	client/src/Components/Buttons/TagButton.js	/^TagButton.propTypes = {$/;"	r
 propTypes	client/src/Components/Forms/Update/Update.js	/^  Update.propTypes = {$/;"	r
 propTypes	client/src/Components/LastEntry/LastEntry.js	/^    LastEntry.propTypes = {$/;"	r
 propTypes	client/src/Components/ListItems/Item.js	/^Item.propTypes = {$/;"	r
@@ -4847,6 +4857,8 @@ searchmode	.history/client/src/App_20200127130056.js	/^      searchmode: {$/;"	r
 searchmode	.history/client/src/App_20200127131625.js	/^      searchmode: {$/;"	r
 searchmode	client/src/App_old.js	/^      searchmode: {$/;"	r
 secondary	client/src/Theme/Theme.js	/^    secondary: 'Bitter',$/;"	r
+sendTag	client/src/Components/Buttons/TagButton.js	/^    sendTag: PropTypes.func.isRequired,$/;"	r
+sendTag	client/src/Components/Search/SearchByTag.js	/^            sendTag={selectTag}$/;"	r
 serviceWorker	client/src/serviceWorker.js	/^  navigator.serviceWorker$/;"	r
 singles	.history/client/src/App_20200114094254.js	/^    let singles = [];$/;"	r
 singles	.history/client/src/App_20200122141554.js	/^    let singles = [];$/;"	r
@@ -5003,6 +5015,7 @@ state	client/src/redux/reducers/index.js	/^    return Object.assign({}, state, {
 state	client/src/work/App_old.js	/^        this.state = {$/;"	r
 status	client/src/serviceWorker.js	/^        response.status === 404 ||$/;"	r
 store	client/src/redux/index.js	/^    window.store = store;$/;"	r
+submitTag	client/src/Views/Main.js	/^              submitTag={submitTag}$/;"	r
 success	backend/server.js	/^      success: false,$/;"	r
 t	.history/client/src/App_20200114094254.js	/^          let t = {};$/;"	r
 t	.history/client/src/App_20200122141554.js	/^          let t = {};$/;"	r
@@ -5041,7 +5054,6 @@ t	.history/client/src/App_20200127111808.js	/^          let t = {};$/;"	r
 t	.history/client/src/App_20200127130056.js	/^          let t = {};$/;"	r
 t	.history/client/src/App_20200127131625.js	/^          let t = {};$/;"	r
 t	client/src/App_old.js	/^          let t = {};$/;"	r
-t	client/src/Components/Search/SearchByTag.js	/^          let t = {};$/;"	r
 tagId	client/src/work/App_old.js	/^            tagId: parseInt(newTagId),$/;"	r
 tagId	client/src/work/App_old.js	/^            tagId:'',$/;"	r
 tagName	.history/client/src/App_20200114094254.js	/^      tagName: '',$/;"	r
@@ -5120,6 +5132,7 @@ tagName	client/src/App_old.js	/^      tagName: '',$/;"	r
 tagName	client/src/App_old.js	/^      tagName: newTagName$/;"	r
 tagName	client/src/work/App_old.js	/^            tagName: newTagName,$/;"	r
 tagName	client/src/work/App_old.js	/^            tagName:'',$/;"	r
+tagUp	client/src/App.js	/^                tagUp={this.updateActiveTag}$/;"	r
 tagadd	.history/client/src/App_20200114094254.js	/^            let tagadd = filtered.filter(item => item.tag === tag);$/;"	r
 tagadd	.history/client/src/App_20200122141554.js	/^            let tagadd = filtered.filter(item => item.tag === tag);$/;"	r
 tagadd	.history/client/src/App_20200122141646.js	/^            let tagadd = filtered.filter(item => item.tag === tag);$/;"	r
@@ -5154,7 +5167,6 @@ tagadd	.history/client/src/App_20200127111808.js	/^            let tagadd = filt
 tagadd	.history/client/src/App_20200127130056.js	/^            let tagadd = filtered.filter(item => item.tag === tag);$/;"	r
 tagadd	.history/client/src/App_20200127131625.js	/^            let tagadd = filtered.filter(item => item.tag === tag);$/;"	r
 tagadd	client/src/App_old.js	/^            let tagadd = filtered.filter(item => item.tag === tag);$/;"	r
-tagadd	client/src/Components/Search/SearchByTag.js	/^            let tagadd = filtered.filter(item => item.tag === tag);$/;"	r
 tagnames	client/src/work/App_old.js	/^                        tagnames={this.state.tags}$/;"	r
 tags	.history/client/src/App_20200114094254.js	/^                  tags={this.state.filteredTags}$/;"	r
 tags	.history/client/src/App_20200114094254.js	/^                  tags={this.state.new.tags}$/;"	r
@@ -5453,6 +5465,7 @@ tags	client/src/Components/ListItems/ListItems_old.js	/^          tags: ['defaul
 tags	client/src/Components/Search/SearchByTag.js	/^  tags: PropTypes.arrayOf(PropTypes.any).isRequired,$/;"	r
 tags	client/src/Views/Main.js	/^              tags={tags}$/;"	r
 tags	client/src/Views/Main.js	/^  tags: PropTypes.arrayOf(PropTypes.object).isRequired,$/;"	r
+tags	client/src/Views/Main.js	/^export default function Main({ data, tags, tagUp }) {$/;"	r
 tags	client/src/work/App_old.js	/^                        tags={code.tags} $/;"	r
 tags	client/src/work/App_old.js	/^                tags: codetags.data$/;"	r
 tags	client/src/work/App_old.js	/^            tags:[],$/;"	r
@@ -5760,6 +5773,9 @@ toggleOpen	client/src/Components/ListItems/ListItems_old.js	/^    this.toggleOpe
 top	client/src/Components/Forms/Create/Create.js	/^    top: '50%',$/;"	r
 top	client/src/Components/Forms/Update/Update.js	/^    top: '50%',$/;"	r
 total	client/src/App.js	/^          const tagEntry = { name: tag.trim(), total: 1}$/;"	r
+total	client/src/Components/Buttons/TagButton.js	/^    total: PropTypes.number.isRequired,$/;"	r
+total	client/src/Components/Buttons/TagButton.js	/^function TagButton({ name, total, sendTag }) {$/;"	r
+total	client/src/Components/Search/SearchByTag.js	/^            total={tag.total}$/;"	r
 transform	client/src/Components/Forms/Create/Create.js	/^    transform: 'translate(-50%, -50%)',$/;"	r
 transform	client/src/Components/Forms/Update/Update.js	/^    transform: 'translate(-50%, -50%)',$/;"	r
 triggerAdd	client/src/Components/Forms/Create/CreateOld.js	/^        this.triggerAdd = this.triggerAdd.bind(this);$/;"	r
@@ -5779,7 +5795,6 @@ type	client/src/Components/Forms/Update/Update.js	/^    type="text"$/;"	r
 type	client/src/Components/Login/Login.js	/^            type="email"$/;"	r
 type	client/src/Components/Login/Login.js	/^            type="password"$/;"	r
 type	client/src/Components/Search/SearchByTag.js	/^        type="text"$/;"	r
-type	client/src/Components/Search/SearchByTag.js	/^        type='text'$/;"	r
 ul	client/src/app.css	/^ul {$/;"	t
 unregister	client/src/serviceWorker.js	/^export function unregister() {$/;"	r
 update	.history/client/src/App_20200114094254.js	/^            update: {$/;"	r
@@ -5977,6 +5992,7 @@ updateActiveTag	.history/client/src/App_20200127111646.js	/^  updateActiveTag = 
 updateActiveTag	.history/client/src/App_20200127111808.js	/^  updateActiveTag = (newTagName) => {$/;"	r
 updateActiveTag	.history/client/src/App_20200127130056.js	/^  updateActiveTag = (newTagName) => {$/;"	r
 updateActiveTag	.history/client/src/App_20200127131625.js	/^  updateActiveTag = (newTagName) => {$/;"	r
+updateActiveTag	client/src/App.js	/^    this.updateActiveTag = this.updateActiveTag.bind(this);$/;"	r
 updateActiveTag	client/src/App_old.js	/^  updateActiveTag = (newTagName) => {$/;"	r
 updateActiveTag	client/src/work/App_old.js	/^    updateActiveTag = ( newTagName, newTagId ) => {$/;"	r
 updateDB	.history/client/src/App_20200114094254.js	/^  updateDB = (idToUpdate, update) => {$/;"	r
@@ -6307,6 +6323,7 @@ value	.history/client/src/Update_20200127101450.js	/^            value={updateDa
 value	.history/client/src/Update_20200127101450.js	/^            value={updateData.comment}$/;"	r
 value	.history/client/src/Update_20200127101450.js	/^            value={updateData.name}$/;"	r
 value	.history/client/src/Update_20200127101450.js	/^            value={updateData.tags}$/;"	r
+value	client/src/Components/Buttons/TagButton.js	/^      value={name}$/;"	r
 value	client/src/Components/Forms/Create/Create.js	/^                value={code}$/;"	r
 value	client/src/Components/Forms/Create/Create.js	/^                value={comment}$/;"	r
 value	client/src/Components/Forms/Create/Create.js	/^                value={tags}$/;"	r
@@ -6323,10 +6340,9 @@ value	client/src/Components/ListItems/ListItems_old.js	/^      value={this.props
 value	client/src/Components/Login/Login.js	/^            value={email}$/;"	r
 value	client/src/Components/Login/Login.js	/^            value={password}$/;"	r
 value	client/src/Components/Search/IdSelector.js	/^        value = { input } className="mb-2 px-2 mr-2 pr-3" onChange={ ( e ) => sendId(e)} \/>$/;"	r
-value	client/src/Components/Search/SearchByTag.js	/^        value={input}$/;"	r
 white	client/src/Theme/Theme.js	/^    white: '#e5d1c9',$/;"	r
-white	client/src/Theme/Theme.js	/^    white: '#f2f2f2',$/;"	r
-white	client/src/Theme/Theme.js	/^    white: '#f8c7cc',$/;"	r
+white	client/src/work/theme.colors.js	/^    white: '#f2f2f2',$/;"	r
+white	client/src/work/theme.colors.js	/^    white: '#f8c7cc',$/;"	r
 width	.history/client/src/Components/ActionButton_20200111200449.js	/^    width: 36,$/;"	r
 width	.history/client/src/Components/ActionButton_20200127133317.js	/^    width: 24,$/;"	r
 width	.history/client/src/Components/ActionButton_20200127133336.js	/^    width: 24,$/;"	r
@@ -6337,5 +6353,6 @@ width	client/src/Components/Layout/Layout.js	/^  width: 16.667%;$/;"	r
 width	client/src/Components/Layout/Layout.js	/^  width: 25%;$/;"	r
 width	client/src/Components/Layout/Layout.js	/^  width: 33.33%;$/;"	r
 width	client/src/Components/Layout/Layout.js	/^  width: 50%;$/;"	r
+width	client/src/Components/Search/SearchByTag.styles.js	/^  width: 100%;$/;"	r
 width	client/src/Theme/ColoredRectangle.js	/^  width: 6rem;$/;"	r
 width	client/src/Theme/GlobalStyles.js	/^    width: 100%;$/;"	r

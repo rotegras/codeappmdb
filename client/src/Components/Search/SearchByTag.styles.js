@@ -2,10 +2,20 @@ import styled from 'styled-components';
 
 
 const Wrapper = styled.div`
+
 `;
 
+const TagsArea = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 1rem 0;
+`;
+
+
 const Input = styled.input`
-  max-width: 100%;
+  width: 100%;
   background: ${({ theme }) => theme.colors.white};
   color: ${({ theme }) => theme.colors.accentDark};
   font-size: ${({ theme }) => theme.fontSize.small};
@@ -18,4 +28,5 @@ const Input = styled.input`
 export {
   Wrapper,
   Input,
+  TagsArea,
 };

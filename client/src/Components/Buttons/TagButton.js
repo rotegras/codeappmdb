@@ -1,20 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import TagButtonWrapper from './TagButton.styles';
+
 
 function TagButton({ name, total, sendTag }) {
 
-  const tagCallback = (e) => {
-    const { value } = e.target;
-    sendTag(value);
-  };
+  const tagCallback = (e) =>  sendTag(e.target.value);
 
   return(
-    <button
+    <TagButtonWrapper
       onClick={(e) => tagCallback(e)}
       value={name}
     >
       { name } / { total }
-    </button>
+    </TagButtonWrapper>
   );
 }
 
