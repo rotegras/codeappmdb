@@ -4,7 +4,7 @@ import { ListWrapper } from './ListItems.styles';
 import Item from './Item';
 
 
-export default function ListItems({ data }) {
+export default function ListItems({ data, selectItem, submitTag }) {
   return (
     <ListWrapper>
       {
@@ -12,6 +12,8 @@ export default function ListItems({ data }) {
           <Item
             item={item}
             key={item._id}
+            selectItem={selectItem}
+            submitTag={submitTag}
           />
         ))
       }
@@ -22,4 +24,6 @@ export default function ListItems({ data }) {
 
 ListItems.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  selectItem: PropTypes.func.isRequired,
+  submitTag: PropTypes.func.isRequired,
 };

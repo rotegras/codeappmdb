@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { HeaderWrapper, MenuItem } from './Header.styles';
 
 export default function Header() {

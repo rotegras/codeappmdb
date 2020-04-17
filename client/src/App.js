@@ -22,12 +22,14 @@ class App extends Component {
       tags: [],
       activeTag: '',
       selection: [],
+      focusItem: {},
     };
 
-    this.listTags = this.listTags.bind(this);
-    this.getDataFromDb = this.getDataFromDb.bind(this);
-    this.updateActiveTag = this.updateActiveTag.bind(this);
     this.filterContentByTag = this.filterContentByTag.bind(this);
+    this.getDataFromDb = this.getDataFromDb.bind(this);
+    this.listTags = this.listTags.bind(this);
+    this.selectItem = this.selectItem.bind(this);
+    this.updateActiveTag = this.updateActiveTag.bind(this);
   };
 
   componentDidMount() {
@@ -161,12 +163,19 @@ class App extends Component {
       if (item.tags.indexOf(value) > -1) {
         result.push(item);
       }
+      return null;
     })
     this.setState({ selection: result })
   }
 
+  selectItem(value) {
+    const { data } = this.state;
+    const focus = data.filter((item) => item._id === value)[0];
+    this.setState({ focusItem: focus });
+  }
+
   render() {
-    const { selection, tags, activeTag } = this.state;
+    const { focusItem, selection, tags, activeTag } = this.state;
 
     return (
       <Theme>
@@ -179,6 +188,8 @@ class App extends Component {
                 tags={tags}
                 tagUp={this.updateActiveTag}
                 selectedTag={activeTag}
+                selectItem={this.selectItem}
+                focusItem={focusItem}
               />
             </Route>
             <Route path="/about">

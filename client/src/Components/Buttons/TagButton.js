@@ -19,10 +19,13 @@ function TagButton({ name, total, sendTag }) {
 
 
 TagButton.propTypes = {
-    name: PropTypes.string.isRequired,
-    total: PropTypes.number.isRequired,
-    sendTag: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  total: PropTypes.number,
+  sendTag: PropTypes.func.isRequired,
 };
 
+TagButton.defaultProps = {
+  total: undefined,
+}
 
 export default TagButton;

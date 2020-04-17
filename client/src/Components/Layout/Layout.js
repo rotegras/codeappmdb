@@ -36,7 +36,7 @@ const Col3 = styled(Col)`
 `;
 
 const Col4 = styled(Col)`
-  width: 33.33%;
+  width: 33.333%;
 `;
 
 const Col6 = styled(Col)`

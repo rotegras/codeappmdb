@@ -3,11 +3,12 @@ import { normalize } from 'styled-normalize';
 
 
 const GlobalStyles = createGlobalStyle`
-  ${ normalize }
+  ${ normalize}
 
   html{
     font-size: 14px;
-    font-family: ${({ theme }) => theme.fonts.primary
+    font-family: ${({ theme }) => theme.fonts.primary};
+    overflow-y: scroll;
   }
 
   html,
@@ -18,6 +19,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     background: ${({ theme }) => theme.colors.black};
+    background: linear-gradient(180deg, rgba(0,0,0,0)) 0%, rgba(0,0,0,1) 100%);
     color: ${({ theme }) => theme.colors.white};
   }
 

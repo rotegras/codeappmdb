@@ -33,7 +33,6 @@ function SearchByTag({ tags, submitTag }) {
   const selectTag = (name) => {
     console.log(name);
     submitTag(name);
-
   };
 
   useEffect(() => {
@@ -112,6 +111,7 @@ function SearchByTag({ tags, submitTag }) {
 
 SearchByTag.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.any).isRequired,
+  submitTag: PropTypes.func.isRequired,
   // keyDown: PropTypes.func.isRequired,
   // reset: PropTypes.func.isRequired,
   // input: PropTypes.string.isRequired,

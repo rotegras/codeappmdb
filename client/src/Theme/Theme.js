@@ -18,6 +18,7 @@ const theme = {
     secondary: 'Bitter',
   },
   fontSize: {
+    superbig: '6rem',
     bigger: '3rem',
     big: '1.75rem',
     medium: '1.25rem',
