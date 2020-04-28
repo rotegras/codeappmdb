@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import { connect } from 'react-redux';
+
 import Header from './Components/Header/Header';
 import Theme from './Theme/Theme';
 import ThemeView from './Views/ThemeView';
@@ -21,7 +20,7 @@ class App extends Component {
       data: [],
       tags: [],
       activeTag: '',
-      selection: [],
+      showData: [],
       focusItem: {},
     };
 
@@ -165,7 +164,7 @@ class App extends Component {
       }
       return null;
     })
-    this.setState({ selection: result })
+    this.setState({ showData: result })
   }
 
   selectItem(value) {
@@ -175,7 +174,7 @@ class App extends Component {
   }
 
   render() {
-    const { focusItem, selection, tags, activeTag } = this.state;
+    const { focusItem, showData, tags, activeTag } = this.state;
 
     return (
       <Theme>
@@ -184,7 +183,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/">
               <Main
-                data={selection}
+                data={showData}
                 tags={tags}
                 tagUp={this.updateActiveTag}
                 selectedTag={activeTag}
@@ -205,4 +204,12 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = function(state) {
+  return {
+    data: state.data,
+    tags: state.tags
+  }
+}
+
+
+export default connect(mapStateToProps)(App);
