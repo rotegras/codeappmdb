@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { connect } from 'react-redux';
@@ -13,51 +13,48 @@ import ThemeView from './Views/ThemeView';
 import Main from './Views/Main';
 import About from './Views/About';
 
-// function App({props, dispatch})
-class App extends Component {
-  constructor() {
-    super();
+function App() {
+  // class App extends Component {
+  // constructor() {
+  // super();
 
-    this.state = {
-      data: [],
-      tags: [],
-      activeTag: '',
-      showData: [],
-      focusItem: {},
-    };
+  // this.state = {
+  // data: [],
+  // tags: [],
+  // activeTag: '',
+  // showData: [],
+  // focusItem: {},
+  // };
 
-    this.filterContentByTag = this.filterContentByTag.bind(this);
-    this.getDataFromDb = this.getDataFromDb.bind(this);
-    this.listTags = this.listTags.bind(this);
-    this.selectItem = this.selectItem.bind(this);
-    this.updateActiveTag = this.updateActiveTag.bind(this);
-  };
+  // this.filterContentByTag = this.filterContentByTag.bind(this);
+  // this.getDataFromDb = this.getDataFromDb.bind(this);
+  // this.listTags = this.listTags.bind(this);
+  // this.selectItem = this.selectItem.bind(this);
+  // this.updateActiveTag = this.updateActiveTag.bind(this);
+  // };
 
-  componentDidMount() {
-    this.getDataFromDb();
-    if (!this.state.intervalIsSet) {
-      let interval = setInterval(this.getDataFromDb, 300);
-      this.setState({ intervalIsSet: interval });
-    }
-  }
+  const [data, setData] = useState([]);
+  const [tags, setTags] = useState([]);
+  const [activeTag, setActiveTag] = useState('');
+  const [showData, setShowData] = useState([]);
+  const [focusItem, setFocusItem] = useState({});
+  const [intervalIsSet, setIntervalIsSet] = useState(null);
 
-  componentWillUnmount() {
-    if (this.state.intervalIsSet) {
-      clearInterval(this.state.intervalIsSet);
-      this.setState({ intervalIsSet: null });
-    }
-  }
 
-  getDataFromDb() {
-    fetch("/api/getData")
-      .then(data => data.json())
-      .then(res => this.setState({ data: [...res.data] }))
-      // .then(res => dispatch(SET_DATA(res.data)))
-      .catch((error) => console.log(`Error: ${error}`));
+  // componentDidMount() {
+  //   this.getDataFromDb();
+  //   if (!this.state.intervalIsSet) {
+  //     let interval = setInterval(this.getDataFromDb, 300);
+  //     this.setState({ intervalIsSet: interval });
+  //   }
+  // }
 
-    this.listTags();
-
-  }
+  // componentWillUnmount() {
+  //   if (this.state.intervalIsSet) {
+  //     clearInterval(this.state.intervalIsSet);
+  //     this.setState({ intervalIsSet: null });
+  //   }
+  // }
 
     // this.arrayDuplicates(this.state.data);
     // this.getLast(this.state.data);
@@ -126,9 +123,7 @@ class App extends Component {
   //   });
   // };
 
-  listTags() {
-    const { data } = this.state;
-
+  const listTags = () => {
     const tagList = [];
     const singleTags = [];
 
@@ -145,22 +140,14 @@ class App extends Component {
       });
     });
     // dispatch(setTags(tagList));
-    this.setState({
-      tags: tagList,
-    })
+    setTags(tagList);
   }
 
-  updateActiveTag(value) {
-    this.setState({
-      activeTag: value,
-    }, () => {
-      const { activeTag } = this.state;
-      this.filterContentByTag(activeTag);
-    });
+  const updateActiveTag = (value) => {
+    setActiveTag(value);
   }
 
-  filterContentByTag(value) {
-    const { data } = this.state;
+  const filterContentByTag = (value) => {
     const result = [];
     data.map((item) => {
       if (item.tags.indexOf(value) > -1) {
@@ -168,44 +155,69 @@ class App extends Component {
       }
       return null;
     })
-    this.setState({ showData: result })
+    setShowData(result);
   }
 
-  selectItem(value) {
-    const { data } = this.state;
+  const selectItem = (value) => {
     const focus = data.filter((item) => item._id === value)[0];
-    this.setState({ focusItem: focus });
+    setFocusItem(focus);
   }
 
-  render() {
-    const { focusItem, showData, tags, activeTag } = this.state;
-
-    return (
-      <Theme>
-        <Router>
-          <Header />
-          <Switch>
-            <Route exact path="/">
-              <Main
-                data={showData}
-                tags={tags}
-                tagUp={this.updateActiveTag}
-                selectedTag={activeTag}
-                selectItem={this.selectItem}
-                focusItem={focusItem}
-              />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/theme">
-              <ThemeView />
-            </Route>
-          </Switch>
-        </Router>
-      </Theme>
-    );
+  const getDataFromDb = () => {
+    fetch("/api/getData")
+      .then((data) => data.json())
+      .then((res) => setData([...res.data]))
+      // .then(res => dispatch(SET_DATA(res.data)))
+      .catch((error) => console.log(`Error: ${error}`));
   }
+
+  useEffect(() => {
+    getDataFromDb();
+    if (!intervalIsSet) {
+      let interval = setInterval(getDataFromDb, 300);
+      setIntervalIsSet(interval);
+    }
+    return () => {
+      if (intervalIsSet) {
+        clearInterval(intervalIsSet);
+        setIntervalIsSet(null);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    listTags();
+  }, [data])
+
+  useEffect(() => {
+    filterContentByTag(activeTag);
+  }, [activeTag]);
+
+  return (
+    <Theme>
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Main
+              data={showData}
+              tags={tags}
+              tagUp={updateActiveTag}
+              selectedTag={activeTag}
+              selectItem={selectItem}
+              focusItem={focusItem}
+            />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/theme">
+            <ThemeView />
+          </Route>
+        </Switch>
+      </Router>
+    </Theme>
+  );
 }
 
 const mapStateToProps = function(state) {
