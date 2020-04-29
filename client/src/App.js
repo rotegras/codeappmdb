@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { connect } from 'react-redux';
+// import { SET_DATA, SET_TAGS } from './actions';
 
 import Header from './Components/Header/Header';
 import Theme from './Theme/Theme';
@@ -12,6 +13,7 @@ import ThemeView from './Views/ThemeView';
 import Main from './Views/Main';
 import About from './Views/About';
 
+// function App({props, dispatch})
 class App extends Component {
   constructor() {
     super();
@@ -50,6 +52,7 @@ class App extends Component {
     fetch("/api/getData")
       .then(data => data.json())
       .then(res => this.setState({ data: [...res.data] }))
+      // .then(res => dispatch(SET_DATA(res.data)))
       .catch((error) => console.log(`Error: ${error}`));
 
     this.listTags();
@@ -141,6 +144,7 @@ class App extends Component {
         }
       });
     });
+    // dispatch(setTags(tagList));
     this.setState({
       tags: tagList,
     })
@@ -206,10 +210,14 @@ class App extends Component {
 
 const mapStateToProps = function(state) {
   return {
-    data: state.data,
-    tags: state.tags
+    dataAsProps: state.data,
+    tagsAsProps: state.tags
   }
 }
 
+// const mapDispatchToProps = (dispatch) => {
+  // getData: dispatch(getData());
+  //  getTags: dispatch(getTags());
+// }
 
 export default connect(mapStateToProps)(App);
