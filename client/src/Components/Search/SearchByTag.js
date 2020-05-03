@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import {
   Wrapper,
   Input,
@@ -30,11 +31,6 @@ function SearchByTag({ tags, submitTag }) {
     filterTags(match.sort((a, b) => ( a.name - b.name)));
   };
 
-  const selectTag = (name) => {
-    console.log(name);
-    submitTag(name);
-  };
-
   useEffect(() => {
       searchInTagList();
   }, [inputValue]);
@@ -52,7 +48,6 @@ function SearchByTag({ tags, submitTag }) {
         matchingTags.map((tag,i) => (
           <TagButton
             key={tag.name + i}
-            sendTag={selectTag}
             name={tag.name}
             total={tag.total}
           >
@@ -65,56 +60,15 @@ function SearchByTag({ tags, submitTag }) {
   );
 }
 
-
-//  function SearchByTag_Old({ keyDown, input, reset}) {
-
-
-  // const sendText = (e) => {
-  //   const { text } = e.target;
-  //   keyDown(text);
-  // };
-
-  // const resetText = (e) => {
-    // reset();
-  // };
-
-  // const filtertagsonsearch = (search) => {
-  //   const tagsobj = Object.assign(this.state.data);
-
-  //   let filteredsingle = [];
-  //   let filtered = [];
-
-  //   tagsobj.map(item => {
-  //     item.tags.filter(tag => {
-
-  //       if (tag.includes(search)) {
-  //         let t = {};
-  //         t.tag = tag;
-  //         if (!(filteredsingle.includes(tag))) {
-  //           t.num = 1;
-  //           filteredsingle.push(tag);
-  //           filtered.push(t);
-  //         } else {
-  //           let tagadd = filtered.filter(item => item.tag === tag);
-  //           tagadd[0]['num'] = tagadd[0]['num'] + 1;
-  //         }
-  //       }
-  //       return filtered;
-  //     })
-
-  //     this.setState({
-  //       filteredTags: filtered
-  //     });
-  //   });
-  // }
-// }
-
 SearchByTag.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.any).isRequired,
-  submitTag: PropTypes.func.isRequired,
-  // keyDown: PropTypes.func.isRequired,
-  // reset: PropTypes.func.isRequired,
-  // input: PropTypes.string.isRequired,
 }
 
-export default SearchByTag;
+const mapStateToProps = (state) => {
+  return {
+    tags: state.tags,
+  }
+};
+
+
+export default connect(mapStateToProps)(SearchByTag);

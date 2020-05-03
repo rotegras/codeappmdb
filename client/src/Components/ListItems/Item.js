@@ -1,23 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ItemWrapper, ItemTitle }  from './Item.styles';
+import { connect } from 'react-redux';
+import { setFocusItem } from '../../actions/actions';
 import TagButton from '../Buttons/TagButton';
+import { ItemWrapper, ItemTitle }  from './Item.styles';
 
 
-export default function Item({ item, selectItem, submitTag }) {
+function Item({ item, setFocusItem }) {
 
-  const updateItem = () => {
-    selectItem(item._id);
-  };
-
-  const selectTag = (name) => {
-    submitTag(name);
-  };
+  const selectFocusItem = () => {
+    setFocusItem(item);
+  }
 
   return (
     <ItemWrapper
+      id={item.id}
       key={item._id}
-      onMouseEnter={updateItem}
+      onClick={selectFocusItem}
     >
       <ItemTitle>
         {item.name}
@@ -28,7 +27,6 @@ export default function Item({ item, selectItem, submitTag }) {
             <TagButton
               key={tag}
               name={tag}
-              sendTag={selectTag}
             />
           ))}
       </div>
@@ -39,13 +37,11 @@ export default function Item({ item, selectItem, submitTag }) {
   );
 }
 
-
 Item.propTypes = {
-  item: PropTypes.objectOf(PropTypes.any),
-  selectItem: PropTypes.func.isRequired,
-  submitTag: PropTypes.func.isRequired,
+  item: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
-Item.defaultProps = {
-  item: { name: 'default', code: 'default', tags: ['default1', 'default2'], comment: 'default' },
-}
+const mapDispatchToProps = { setFocusItem };
+
+
+export default connect(null, mapDispatchToProps)(Item);

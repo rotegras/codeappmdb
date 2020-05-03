@@ -1,31 +1,41 @@
-import { GET_DATA, GET_TAGS } from "../constants/actionTypes";
+import {
+  GET_DATA,
+  GET_TAGS,
+  SET_DISPLAYDATA,
+  SET_ACTIVETAG,
+  SET_FOCUSITEM,
+} from "../constants/actionTypes";
 
 
 const initialState = {
   data: [],
   tags: [],
   activeTag: '',
-  showData: [],
-  focusItem: {},
+  displayData: [],
+  focusItem: '',
 };
 
 
 function rootReducer(state = initialState, action) {
-  if(state === undefined) {
-    return initialState;
-  }
-
-  const newState = state;
-
   switch (action.type) {
+
     case GET_DATA:
-      const newData = Object.assign([], state, { data: action.data });
-      break;
+      return Object.assign({}, state, { data: action.payload });
+
     case GET_TAGS:
-      const newTags = Object.assign([], state, { data: action.tags });
-      break;
+      return Object.assign({}, state, { tags: action.payload });
+
+    case SET_DISPLAYDATA:
+      return Object.assign({}, state, { displayData: action.payload });
+
+    case SET_ACTIVETAG:
+      return Object.assign({}, state, { activeTag: action.payload });
+
+    case SET_FOCUSITEM:
+      return Object.assign({}, state, { focusItem: action.payload })
+
+    default: return state;
   }
-  return state;
 }
 
 

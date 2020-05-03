@@ -14,11 +14,9 @@ import {
 } from '../Components/Layout/Layout';
 import StickyWrapper from './Main.styles';
 
+
 export default function Main({
-  selectItem,
-  focusItem,
   selectedTag,
-  data,
   tags,
   tagUp,
 }) {
@@ -44,21 +42,12 @@ export default function Main({
           </Col2>
           <Col4>
             <StickyWrapper>
-              <ListItems
-                data={data}
-                selectItem={selectItem}
-                submitTag={submitTag}
-              />
+              <ListItems />
             </StickyWrapper>
           </Col4>
           <Col6>
             <StickyWrapper>
-              <FocusedItem
-                item={focusItem}
-                selectItem={selectItem}
-                submitTag={submitTag}
-                // tags={focusItem.tags}
-              />
+              <FocusedItem />
             </StickyWrapper>
           </Col6>
         </Row>
@@ -70,8 +59,5 @@ export default function Main({
 
 Main.propTypes = {
   selectedTag: PropTypes.string.isRequired,
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
-  tags: PropTypes.arrayOf(PropTypes.object).isRequired,
-  selectItem: PropTypes.func.isRequired,
   focusItem: PropTypes.objectOf(PropTypes.any).isRequired,
 };

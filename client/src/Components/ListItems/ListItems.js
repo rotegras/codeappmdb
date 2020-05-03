@@ -1,19 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { ListWrapper } from './ListItems.styles';
 import Item from './Item';
 
 
-export default function ListItems({ data, selectItem, submitTag }) {
+function ListItems({ displayData }) {
   return (
     <ListWrapper>
       {
-        data.map((item) => (
+        displayData.map((item) => (
           <Item
             item={item}
             key={item._id}
-            selectItem={selectItem}
-            submitTag={submitTag}
           />
         ))
       }
@@ -23,7 +22,15 @@ export default function ListItems({ data, selectItem, submitTag }) {
 
 
 ListItems.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
-  selectItem: PropTypes.func.isRequired,
-  submitTag: PropTypes.func.isRequired,
+  displayData: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
+
+
+const mapStateToProps = (state) => {
+  return {
+    displayData : state.displayData,
+  }
+}
+
+
+export default connect(mapStateToProps)(ListItems);

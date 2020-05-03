@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { setActiveTag } from '../../actions/actions';
 import TagButtonWrapper from './TagButton.styles';
 
 
-function TagButton({ name, total, sendTag }) {
+function TagButton({ name, total, setActiveTag }) {
 
-  const tagCallback = (e) =>  sendTag(e.target.value);
+  // const tagCallback = (e) =>  sendTag(e.target.value);
+  const tagCallback = (e) =>  setActiveTag(e.target.value);
 
   return(
     <TagButtonWrapper
@@ -28,4 +31,7 @@ TagButton.defaultProps = {
   total: undefined,
 }
 
-export default TagButton;
+
+const mapDispatchToProps = { setActiveTag };
+
+export default connect(null, mapDispatchToProps)(TagButton);

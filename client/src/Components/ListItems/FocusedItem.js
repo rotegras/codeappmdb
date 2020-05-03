@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { ItemWrapper, ItemSticky, ItemTitle, ItemCode }  from './FocusedItem.styles';
 import TagButton from '../Buttons/TagButton';
 
 
-export default function FocusedItem({ item, submitTag, tags }) {
+function FocusedItem({ focusItem, submitTag, tags }) {
 
   const selectTag = (name) => {
     submitTag(name);
@@ -15,17 +16,16 @@ export default function FocusedItem({ item, submitTag, tags }) {
   return (
     <ItemWrapper>
       <ItemTitle>
-        {item.name}
+        {focusItem.name}
       </ItemTitle>
       <ItemSticky>
         <ItemCode>
-          {item.code}
+          {focusItem.code}
         </ItemCode>
       </ItemSticky>
       <div>
         {
-          tags && tags.map((tag) => (
-            // <div>a</div>
+          focusItem.tags && focusItem.tags.map((tag) => (
             <TagButton
               key={tag}
               name={tag}
@@ -35,7 +35,7 @@ export default function FocusedItem({ item, submitTag, tags }) {
         }
       </div>
       <div>
-        {item.comment}
+        {focusItem.comment}
       </div>
     </ItemWrapper>
   );
@@ -56,3 +56,11 @@ FocusedItem.defaultProps = {
     comment: 'default',
   },
 };
+
+const mapStateToProps = (state) => {
+  return {
+    focusItem: state.focusItem,
+  }
+}
+
+export default connect(mapStateToProps)(FocusedItem);

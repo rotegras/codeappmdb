@@ -1,16 +1,23 @@
 import React from 'react'
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 
-function TagDisplay({ name }) {
+function TagDisplay({ activeTag }) {
     return(
         <div>
-        >_  { name }
+        >_  { activeTag }
         </div>
     );
 }
 
 TagDisplay.propTypes = {
-    name: PropTypes.string
+    activeTag: PropTypes.string
 }
 
-export default TagDisplay
+const mapStateToProps = (state) => {
+  return {
+    activeTag: state.activeTag,
+  }
+}
+
+export default connect(mapStateToProps)(TagDisplay);
