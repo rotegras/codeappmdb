@@ -2,11 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getData, getTags, setDisplayData } from './actions/actions';
-
 import Header from './Components/Header/Header';
 import Theme from './Theme/Theme';
 import ThemeView from './Views/ThemeView';
-
 import Main from './Views/Main';
 import About from './Views/About';
 
@@ -117,6 +115,7 @@ const mapStateToProps = (state) => {
     activeTag: state.activeTag,
   }
 }
+
 
 const mapDispatchToProps = { getData, getTags, setDisplayData };
 

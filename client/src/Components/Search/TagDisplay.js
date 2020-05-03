@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 
 function TagDisplay({ activeTag }) {
-    return(
-        <div>
-        >_  { activeTag }
-        </div>
-    );
+  return (
+    <div>
+    >_  { activeTag }
+    </div>
+  );
 }
 
 TagDisplay.propTypes = {
-    activeTag: PropTypes.string
+  activeTag: PropTypes.string
 }
 
 const mapStateToProps = (state) => {
