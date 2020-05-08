@@ -6,12 +6,9 @@ import TagButton from '../Buttons/TagButton';
 
 
 function FocusedItem({ focusItem, submitTag, tags }) {
-
   const selectTag = (name) => {
     submitTag(name);
   };
-
-  console.log(tags);
 
   return (
     <ItemWrapper>
@@ -41,20 +38,10 @@ function FocusedItem({ focusItem, submitTag, tags }) {
   );
 }
 
-
 FocusedItem.propTypes = {
-  item: PropTypes.objectOf(PropTypes.any),
-  submitTag: PropTypes.func.isRequired,
+  item: PropTypes.objectOf(PropTypes.any).isRequired,
+  submitTag: PropTypes.func.isRequired.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-};
-
-FocusedItem.defaultProps = {
-  item: {
-    name: 'default',
-    code: 'default',
-    tags: ['default1', 'default2'],
-    comment: 'default',
-  },
 };
 
 const mapStateToProps = (state) => {

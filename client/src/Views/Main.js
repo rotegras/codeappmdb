@@ -4,40 +4,24 @@ import ListItems from '../Components/ListItems/ListItems';
 import FocusedItem from '../Components/ListItems/FocusedItem';
 import SearchByTag from '../Components/Search/SearchByTag.js';
 import TagDisplay from '../Components/Search/TagDisplay';
-import {
-  Content,
-  Container,
-  Row,
-  Col2,
-  Col4,
-  Col6,
-} from '../Components/Layout/Layout';
 import StickyWrapper from './Main.styles';
+import {
+  Content, Container, Row, Col2, Col4, Col6,
+} from '../Components/Layout/Layout';
 
 
-export default function Main({
-  selectedTag,
-  tags,
-  tagUp,
-}) {
-  const submitTag = (value) => {
-    tagUp(value);
-  };
-
-
+export default function Main({ loading }) {
   return (
     <Content>
       <Container>
         <Row>
           <Col2>
             <StickyWrapper>
-              <TagDisplay
-                name={selectedTag}
-              />
-              <SearchByTag
-                tags={tags}
-                submitTag={submitTag}
-              />
+              <TagDisplay />
+              <SearchByTag />
+              {
+                loading && `Loading...`
+              }
             </StickyWrapper>
           </Col2>
           <Col4>
@@ -55,9 +39,3 @@ export default function Main({
     </Content>
   );
 }
-
-
-Main.propTypes = {
-  selectedTag: PropTypes.string.isRequired,
-  focusItem: PropTypes.objectOf(PropTypes.any).isRequired,
-};

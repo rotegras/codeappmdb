@@ -1,7 +1,0 @@
- {
-            "type": "firefox",
-            "request": "attach",
-            "name": "Firefox debug",
-           "url": "http://localhost:3000",
-           "webRoot": "${workspaceFolder}/client/"
-},

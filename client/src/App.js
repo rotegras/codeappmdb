@@ -7,6 +7,7 @@ import Theme from './Theme/Theme';
 import ThemeView from './Views/ThemeView';
 import Main from './Views/Main';
 import About from './Views/About';
+import AddContent from './Views/AddContent';
 
 
 function App({ data, displayData, activeTag, tags, getData, getTags, setDisplayData }) {
@@ -17,26 +18,20 @@ function App({ data, displayData, activeTag, tags, getData, getTags, setDisplayD
     const tagList = [],
           singleTags = [];
 
-    // if (value) {
-      value.forEach((item) => {
-        item.tags.forEach((tag) => {
-          if (singleTags.indexOf(tag.trim()) === -1) {
-            const tagEntry = { name: tag.trim(), total: 1}
-            tagList.push(tagEntry);
-            singleTags.push(tag);
-          } else {
-            const i = singleTags.indexOf(tag.trim());
-            tagList[i].total++;
-          }
-        });
+    value.forEach((item) => {
+      item.tags.forEach((tag) => {
+        if (singleTags.indexOf(tag.trim()) === -1) {
+          const tagEntry = { name: tag.trim(), total: 1}
+          tagList.push(tagEntry);
+          singleTags.push(tag);
+        } else {
+          const i = singleTags.indexOf(tag.trim());
+          tagList[i].total++;
+        }
       });
-      getTags(tagList);
-    // }
+    });
+    getTags(tagList);
   }
-
-  // const updateActiveTag = (value) => {
-    // setActiveTag(value);
-  // }
 
   const filterContentByTag = (value) => {
     const result = [];
@@ -51,14 +46,12 @@ function App({ data, displayData, activeTag, tags, getData, getTags, setDisplayD
 
   useEffect(() => {
     filterContentByTag(activeTag);
-  }, [activeTag])
+  }, [data, activeTag])
 
 
   async function getDataFromDb() {
       const response = await fetch('/api/getData');
       const json = await response.json();
-
-      console.log(json.data);
       return json.data;
   }
 
@@ -83,7 +76,9 @@ function App({ data, displayData, activeTag, tags, getData, getTags, setDisplayD
   }, []);
 
   useEffect(() => {
-    listTags(data);
+    if (!loading) {
+      listTags(data);
+    }
   }, [loading]);
 
 
@@ -93,7 +88,10 @@ function App({ data, displayData, activeTag, tags, getData, getTags, setDisplayD
         <Header />
         <Switch>
           <Route exact path="/">
-            <Main />
+            <Main loading={loading} />
+          </Route>
+          <Route path="/add">
+            <AddContent />
           </Route>
           <Route path="/about">
             <About />

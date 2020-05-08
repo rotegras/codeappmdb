@@ -12,7 +12,7 @@ import TagButton from '../Buttons/TagButton';
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-function SearchByTag({ tags, submitTag }) {
+function SearchByTag({ tags }) {
   const [inputValue, setInputValue] = useState('');
   const [matchingTags, filterTags] = useState([]);
 

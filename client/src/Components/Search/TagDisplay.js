@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 
+
 function TagDisplay({ activeTag }) {
   return (
     <div>
@@ -11,7 +12,7 @@ function TagDisplay({ activeTag }) {
 }
 
 TagDisplay.propTypes = {
-  activeTag: PropTypes.string
+  activeTag: PropTypes.string.isRequired,
 }
 
 const mapStateToProps = (state) => {
@@ -19,5 +20,6 @@ const mapStateToProps = (state) => {
     activeTag: state.activeTag,
   }
 }
+
 
 export default connect(mapStateToProps)(TagDisplay);

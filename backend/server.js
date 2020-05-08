@@ -15,7 +15,11 @@ const dbRoute = process.env.DB_CONNECTION;
 // connects our back end code with the database
 mongoose.connect(
   dbRoute,
-  { useNewUrlParser: true }
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+  }
 );
 
 mongoose.set('debug', false);
@@ -69,6 +73,7 @@ router.delete("/deleteData", (req, res) => {
 // adds new data in our database
 router.post("/putData", (req, res) => {
   let data = new Data();
+  console.log('add item in backent');
 
   const { id, name, code, comment, tags } = req.body;
 
