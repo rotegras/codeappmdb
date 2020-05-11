@@ -58,10 +58,10 @@ function App({ data, displayData, activeTag, tags, getData, getTags, setDisplayD
   //component did mount
   useEffect(() => {
     try {
-      setLoading((loading) => !loading);
+      setLoading(true);
       getDataFromDb()
         .then((response) => getData(response))
-        .then(() => setLoading((loading) => !loading));
+        .then(() => setLoading(false))
     } catch (error) { };
     if (!intervalIsSet) {
       let interval = setInterval(getDataFromDb, 300);
@@ -77,7 +77,17 @@ function App({ data, displayData, activeTag, tags, getData, getTags, setDisplayD
 
   useEffect(() => {
     if (!loading) {
+      try {
+      getDataFromDb()
+        .then((response) => getData(response))
+        .then(() => setLoading(false))
+      } catch (error) { };
       listTags(data);
+    }
+    return () => {
+      if (loading) {
+        setLoading(false);
+      }
     }
   }, [loading]);
 

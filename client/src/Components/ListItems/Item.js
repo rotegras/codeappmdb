@@ -27,6 +27,7 @@ function Item({ item, setFocusItem }) {
             <TagButton
               key={tag}
               name={tag}
+              aaaa
             />
           ))}
       </div>

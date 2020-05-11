@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import TagButton from '../Buttons/TagButton';
 import {
   Wrapper,
   Input,
   TagsArea,
 } from './SearchByTag.styles';
-import TagButton from '../Buttons/TagButton';
-
-// import { faTimes } from "@fortawesome/free-solid-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 function SearchByTag({ tags }) {
