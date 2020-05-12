@@ -27,4 +27,4 @@ const AddButton = styled(Button)`
 `;
 
 
-export { Wrapper, Inner, Input, Textarea, AddButton };
+export { Wrapper, Input, Textarea, AddButton };
