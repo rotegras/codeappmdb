@@ -30,9 +30,8 @@ export default function Main({ loading }) {
             </StickyWrapper>
           </Col4>
           <Col6>
-              <AddForm />
             <StickyWrapper>
-              {/* <FocusedItem /> */}
+              <FocusedItem />
             </StickyWrapper>
           </Col6>
         </Row>

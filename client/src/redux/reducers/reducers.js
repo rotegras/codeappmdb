@@ -1,7 +1,5 @@
 import {
   GET_DATA,
-  GET_TAGS,
-  SET_DISPLAYDATA,
   SET_ACTIVETAG,
   SET_FOCUSITEM,
   SET_LOADING,
@@ -10,9 +8,7 @@ import {
 
 const initialState = {
   data: [],
-  tags: [],
   activeTag: '',
-  displayData: [],
   focusItem: '',
   loading: true,
 };
@@ -23,12 +19,6 @@ function rootReducer(state = initialState, action) {
 
     case GET_DATA:
       return Object.assign({}, state, { data: action.payload });
-
-    case GET_TAGS:
-      return Object.assign({}, state, { tags: action.payload });
-
-    case SET_DISPLAYDATA:
-      return Object.assign({}, state, { displayData: action.payload });
 
     case SET_ACTIVETAG:
       return Object.assign({}, state, { activeTag: action.payload });

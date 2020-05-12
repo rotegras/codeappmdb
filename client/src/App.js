@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Header from './Components/Header/Header';
 import Theme from './Theme/Theme';
 import ThemeView from './Views/ThemeView';
@@ -9,50 +10,14 @@ import About from './Views/About';
 import AddContent from './Views/AddContent';
 
 import {
-  getData, getTags, setDisplayData, setLoading,
+  getData, setLoading,
 } from './redux/actions/actions';
 
 
 function App({
-  data, activeTag, getData, getTags, setDisplayData, setLoading, loading
+  getData, setLoading, loading
 }) {
   const [intervalIsSet, setIntervalIsSet] = useState(null);
-  // const [loading, setLoading] = useState(false);
-
-  function listTags(value) {
-    const tagList = [],
-          singleTags = [];
-
-    value.forEach((item) => {
-      item.tags.forEach((tag) => {
-        if (singleTags.indexOf(tag.trim()) === -1) {
-          const tagEntry = { name: tag.trim(), total: 1}
-          tagList.push(tagEntry);
-          singleTags.push(tag);
-        } else {
-          const i = singleTags.indexOf(tag.trim());
-          tagList[i].total++;
-        }
-      });
-    });
-    getTags(tagList);
-  }
-
-  const filterContentByTag = (value) => {
-    const result = [];
-    data.map((item) => {
-      if (item.tags.indexOf(value) > -1) {
-        result.push(item);
-      }
-      return null;
-    })
-    setDisplayData(result);
-  }
-
-  useEffect(() => {
-    filterContentByTag(activeTag);
-  }, [data, activeTag])
-
 
   async function getDataFromDb() {
       const response = await fetch('/api/getData');
@@ -60,7 +25,6 @@ function App({
       return json.data;
   }
 
-  //component did mount
   useEffect(() => {
     if (loading === true) {
       try {
@@ -80,23 +44,6 @@ function App({
       }
     }
   }, [loading]);
-
-  useEffect(() => {
-    if (!loading) {
-      try {
-      getDataFromDb()
-        .then((response) => getData(response))
-        .then(() => setLoading(false))
-      } catch (error) { };
-      listTags(data);
-    }
-    return () => {
-      if (loading) {
-        setLoading(false);
-      }
-    }
-  }, [loading]);
-
 
   return (
     <Theme>
@@ -123,14 +70,15 @@ function App({
 
 const mapStateToProps = (state) => {
   return {
-    data: state.data,
-    activeTag: state.activeTag,
     loading: state.loading,
   }
 }
 
+App.propTypes = {
+  loading: PropTypes.bool.isRequired,
+};
 
-const mapDispatchToProps = { getData, getTags, setDisplayData, setLoading };
+const mapDispatchToProps = { getData, setLoading };
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

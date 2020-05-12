@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TagButton from '../Buttons/TagButton';
@@ -9,9 +9,28 @@ import {
 } from './SearchByTag.styles';
 
 
-function SearchByTag({ tags }) {
+function SearchByTag({ data }) {
   const [inputValue, setInputValue] = useState('');
   const [matchingTags, filterTags] = useState([]);
+
+  const listTags = useMemo(() => {
+    const tagList = [],
+      singleTags = [];
+
+    data.forEach((item) => {
+      item.tags.forEach((tag) => {
+        if (singleTags.indexOf(tag.trim()) === -1) {
+          const tagEntry = { name: tag.trim(), total: 1 }
+          tagList.push(tagEntry);
+          singleTags.push(tag);
+        } else {
+          const i = singleTags.indexOf(tag.trim());
+          tagList[i].total++;
+        }
+      });
+    });
+    return tagList;
+  }, [data]);
 
   const changeInput = (e) => {
     const { value } = e.target;
@@ -20,7 +39,7 @@ function SearchByTag({ tags }) {
 
   const searchInTagList = () => {
     const match = [];
-    tags.forEach((tag) => {
+    listTags.forEach((tag) => {
       if (inputValue && tag.name.indexOf(inputValue) > -1) {
         match.push(tag);
       }
@@ -63,7 +82,7 @@ SearchByTag.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    tags: state.tags,
+    data: state.data,
   }
 };
 

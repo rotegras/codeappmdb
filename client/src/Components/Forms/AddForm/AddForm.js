@@ -8,8 +8,9 @@ import {
 } from './AddForm.styles';
 
 function AddForm({ data, setLoading, loading }) {
-  // const [open, setOpen] = useState(false);
-  const [{ title, code, comment, tags }, setValue] = useState({title: '', code: '', tags: '', comment: ''});
+  const [{ title, code, comment, tags }, setValue] = useState({
+    title: '', code: '', tags: '', comment: '',
+  });
 
   // create new query into the data base
   const putDataToDB = (title, code, comment, tags) => {
@@ -35,12 +36,20 @@ function AddForm({ data, setLoading, loading }) {
     }));
   }
 
+  const resetForm = () => {
+    setValue({
+      title: '', code: '', tags: '', comment: '',
+    })
+  };
+
   const triggerAdd = (e) => {
     e.preventDefault();
     console.log('trigger');
     putDataToDB(title, code, comment, tags);
     setLoading(true);
+    resetForm();
   }
+
 
   return (
     <div>
@@ -101,9 +110,11 @@ AddForm.propTypes = {
 const mapStateToProps = (state) => {
   return {
     data: state.data,
+    loading: state.loading,
   }
 };
 
 const mapDispatchToProps = { setLoading };
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddForm);
