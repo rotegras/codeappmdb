@@ -24,7 +24,7 @@ function AddForm({ data, setLoading, loading }) {
       name: title,
       code: code,
       comment: comment,
-      tags: tags
+      tags: tags.map((item) => item.trim()),
     });
   };
 
@@ -33,6 +33,16 @@ function AddForm({ data, setLoading, loading }) {
     setValue(prevState => ({
       ...prevState,
       [name]: value
+    }));
+  };
+
+  const handleTags = (e) => {
+    const { value } = e.target;
+    const tagArray = value.split(',');
+
+    setValue(prevState => ({
+      ...prevState,
+      tags: tagArray
     }));
   }
 
@@ -44,7 +54,6 @@ function AddForm({ data, setLoading, loading }) {
 
   const triggerAdd = (e) => {
     e.preventDefault();
-    console.log('trigger');
     putDataToDB(title, code, comment, tags);
     setLoading(true);
     resetForm();
@@ -73,7 +82,7 @@ function AddForm({ data, setLoading, loading }) {
 
         <Input
           type="text"
-          onChange={e => handleChange(e)}
+          onChange={e => handleTags(e)}
           placeholder="add tags separated by comma"
           value={tags}
           name="tags"
