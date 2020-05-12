@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getData, getTags, setDisplayData } from './actions/actions';
 import Header from './Components/Header/Header';
 import Theme from './Theme/Theme';
 import ThemeView from './Views/ThemeView';
@@ -9,11 +8,16 @@ import Main from './Views/Main';
 import About from './Views/About';
 import AddContent from './Views/AddContent';
 
+import {
+  getData, getTags, setDisplayData, setLoading,
+} from './redux/actions/actions';
+
+
 function App({
-  data, activeTag, getData, getTags, setDisplayData
+  data, activeTag, getData, getTags, setDisplayData, setLoading, loading
 }) {
   const [intervalIsSet, setIntervalIsSet] = useState(null);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   function listTags(value) {
     const tagList = [],
@@ -58,23 +62,24 @@ function App({
 
   //component did mount
   useEffect(() => {
-    try {
-      setLoading(true);
-      getDataFromDb()
-        .then((response) => getData(response))
-        .then(() => setLoading(false))
-    } catch (error) { };
-    if (!intervalIsSet) {
-      let interval = setInterval(getDataFromDb, 300);
-      setIntervalIsSet(interval);
-    }
-    return () => {
-      if (intervalIsSet) {
-        clearInterval(intervalIsSet);
-        setIntervalIsSet(null);
+    if (loading === true) {
+      try {
+        getDataFromDb()
+          .then((response) => getData(response))
+          .then(() => setLoading(false))
+      } catch (error) { };
+      if (!intervalIsSet) {
+        let interval = setInterval(getDataFromDb, 300);
+        setIntervalIsSet(interval);
+      }
+      return () => {
+        if (intervalIsSet) {
+          clearInterval(intervalIsSet);
+          setIntervalIsSet(null);
+        }
       }
     }
-  }, []);
+  }, [loading]);
 
   useEffect(() => {
     if (!loading) {
@@ -120,11 +125,12 @@ const mapStateToProps = (state) => {
   return {
     data: state.data,
     activeTag: state.activeTag,
+    loading: state.loading,
   }
 }
 
 
-const mapDispatchToProps = { getData, getTags, setDisplayData };
+const mapDispatchToProps = { getData, getTags, setDisplayData, setLoading };
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

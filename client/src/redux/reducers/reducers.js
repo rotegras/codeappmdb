@@ -4,6 +4,7 @@ import {
   SET_DISPLAYDATA,
   SET_ACTIVETAG,
   SET_FOCUSITEM,
+  SET_LOADING,
 } from "../constants/actionTypes";
 
 
@@ -13,6 +14,7 @@ const initialState = {
   activeTag: '',
   displayData: [],
   focusItem: '',
+  loading: true,
 };
 
 
@@ -33,6 +35,9 @@ function rootReducer(state = initialState, action) {
 
     case SET_FOCUSITEM:
       return Object.assign({}, state, { focusItem: action.payload })
+
+    case SET_LOADING:
+      return Object.assign({}, state, { loading: action.payload })
 
     default: return state;
   }

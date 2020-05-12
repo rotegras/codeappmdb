@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setFocusItem } from '../../actions/actions';
+import { setFocusItem } from '../../redux/actions/actions';
 import TagButton from '../Buttons/TagButton';
 import { ItemWrapper, ItemTitle }  from './Item.styles';
 

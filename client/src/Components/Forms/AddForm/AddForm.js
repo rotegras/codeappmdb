@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { Wrapper, Input, Textarea, AddButton } from './AddForm.styles';
+import { setLoading } from '../../../redux/actions/actions';
+import {
+  Wrapper, Inner, Input, Textarea, AddButton,
+} from './AddForm.styles';
 
-function AddForm({ data }) {
+function AddForm({ data, setLoading, loading }) {
   // const [open, setOpen] = useState(false);
   const [{ title, code, comment, tags }, setValue] = useState({title: '', code: '', tags: '', comment: ''});
 
-  // put method that uses our backend api
-  // to create new query into the data base
+  // create new query into the data base
   const putDataToDB = (title, code, comment, tags) => {
     let currentIds = data.map(data => data.id);
     let idToBeAdded = 0;
@@ -37,53 +39,56 @@ function AddForm({ data }) {
     e.preventDefault();
     console.log('trigger');
     putDataToDB(title, code, comment, tags);
+    setLoading(true);
   }
 
   return (
     <div>
       Add Item
       <Wrapper>
-        <Input
-          type="text"
-          onChange={e => handleChange(e)}
-          placeholder="add title"
-          value={title}
-          name="title"
-        />
+        <Inner>
+          <Input
+            type="text"
+            onChange={e => handleChange(e)}
+            placeholder="add title"
+            value={title}
+            name="title"
+          />
 
-        <Textarea
-          row="3"
-          type="text"
-          onChange={e => handleChange(e)}
-          placeholder="add content"
-          value={code}
-          name="code"
-        />
+          <Textarea
+            row="3"
+            type="text"
+            onChange={e => handleChange(e)}
+            placeholder="add content"
+            value={code}
+            name="code"
+          />
 
-        <Input
-          type="text"
-          onChange={e => handleChange(e)}
-          placeholder="add tags separated by comma"
-          value={tags}
-          name="tags"
-        />
+          <Input
+            type="text"
+            onChange={e => handleChange(e)}
+            placeholder="add tags separated by comma"
+            value={tags}
+            name="tags"
+          />
 
-        <Input
-          type="text"
-          onChange={e => handleChange(e)}
-          placeholder="add comment"
-          value={comment}
-          name="comment"
-        />
+          <Input
+            type="text"
+            onChange={e => handleChange(e)}
+            placeholder="add comment"
+            value={comment}
+            name="comment"
+          />
 
-        <AddButton
-          color="secondary"
-          variant="contained"
-          name="ADD ITEM"
-          onClick={e => triggerAdd(e)}
-        >
-          ADD ITEM
-        </AddButton>
+          <AddButton
+            color="secondary"
+            variant="contained"
+            name="ADD ITEM"
+            onClick={e => triggerAdd(e)}
+          >
+            ADD ITEM
+          </AddButton>
+        </Inner>
       </Wrapper>
   </div>
   );
@@ -99,4 +104,6 @@ const mapStateToProps = (state) => {
   }
 };
 
-export default connect(mapStateToProps)(AddForm);
+const mapDispatchToProps = { setLoading };
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddForm);

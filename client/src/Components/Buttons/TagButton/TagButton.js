@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setActiveTag } from '../../actions/actions';
+import { setActiveTag } from '../../../redux/actions/actions';
 import { Wrapper, Inner } from './TagButton.styles';
 
 
 function TagButton({ name, total, setActiveTag }) {
-  const tagCallback = (e) =>  setActiveTag(e.target.value);
+  const onTagClick = () =>  setActiveTag(name);
 
   return(
     <Wrapper
-      onClick={(e) => tagCallback(e)}
+      onClick={onTagClick}
       value={name}
     >
       <Inner>
@@ -23,7 +23,7 @@ function TagButton({ name, total, setActiveTag }) {
 TagButton.propTypes = {
   name: PropTypes.string.isRequired,
   total: PropTypes.number,
-  sendTag: PropTypes.func.isRequired,
+  setActiveTag: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = { setActiveTag };

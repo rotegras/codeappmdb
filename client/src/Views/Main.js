@@ -1,7 +1,8 @@
 import React from 'react';
 import ListItems from '../Components/ListItems/ListItems';
-import FocusedItem from '../Components/ListItems/FocusedItem';
-import SearchByTag from '../Components/Search/SearchByTag.js';
+import FocusedItem from '../Components/FocusedItem';
+import SearchByTag from '../Components/Search';
+import AddForm from '../Components/Forms/AddForm';
 import TagDisplay from '../Components/Search/TagDisplay';
 import StickyWrapper from './Main.styles';
 import {
@@ -29,8 +30,9 @@ export default function Main({ loading }) {
             </StickyWrapper>
           </Col4>
           <Col6>
+              <AddForm />
             <StickyWrapper>
-              <FocusedItem />
+              {/* <FocusedItem /> */}
             </StickyWrapper>
           </Col6>
         </Row>
