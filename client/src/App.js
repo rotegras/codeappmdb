@@ -9,8 +9,9 @@ import Main from './Views/Main';
 import About from './Views/About';
 import AddContent from './Views/AddContent';
 
-
-function App({ data, displayData, activeTag, tags, getData, getTags, setDisplayData }) {
+function App({
+  data, activeTag, getData, getTags, setDisplayData
+}) {
   const [intervalIsSet, setIntervalIsSet] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -118,8 +119,6 @@ function App({ data, displayData, activeTag, tags, getData, getTags, setDisplayD
 const mapStateToProps = (state) => {
   return {
     data: state.data,
-    tags: state.tags,
-    displayData: state.displayData,
     activeTag: state.activeTag,
   }
 }

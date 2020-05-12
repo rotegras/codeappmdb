@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ListItems from '../Components/ListItems/ListItems';
 import FocusedItem from '../Components/ListItems/FocusedItem';
 import SearchByTag from '../Components/Search/SearchByTag.js';
