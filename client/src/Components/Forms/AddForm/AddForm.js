@@ -4,7 +4,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { setLoading } from '../../../redux/actions/actions';
 import {
-  Wrapper, Inner, Input, Textarea, AddButton,
+  Wrapper, Input, Textarea, AddButton,
 } from './AddForm.styles';
 
 function AddForm({ data, setLoading, loading }) {
@@ -53,51 +53,48 @@ function AddForm({ data, setLoading, loading }) {
 
   return (
     <div>
-      Add Item
       <Wrapper>
-        <Inner>
-          <Input
-            type="text"
-            onChange={e => handleChange(e)}
-            placeholder="add title"
-            value={title}
-            name="title"
-          />
+        <Input
+          type="text"
+          onChange={e => handleChange(e)}
+          placeholder="add title"
+          value={title}
+          name="title"
+        />
 
-          <Textarea
-            row="3"
-            type="text"
-            onChange={e => handleChange(e)}
-            placeholder="add content"
-            value={code}
-            name="code"
-          />
+        <Textarea
+          row="3"
+          type="text"
+          onChange={e => handleChange(e)}
+          placeholder="add content"
+          value={code}
+          name="code"
+        />
 
-          <Input
-            type="text"
-            onChange={e => handleChange(e)}
-            placeholder="add tags separated by comma"
-            value={tags}
-            name="tags"
-          />
+        <Input
+          type="text"
+          onChange={e => handleChange(e)}
+          placeholder="add tags separated by comma"
+          value={tags}
+          name="tags"
+        />
 
-          <Input
-            type="text"
-            onChange={e => handleChange(e)}
-            placeholder="add comment"
-            value={comment}
-            name="comment"
-          />
+        <Input
+          type="text"
+          onChange={e => handleChange(e)}
+          placeholder="add comment"
+          value={comment}
+          name="comment"
+        />
 
-          <AddButton
-            color="secondary"
-            variant="contained"
-            name="ADD ITEM"
-            onClick={e => triggerAdd(e)}
-          >
-            ADD ITEM
-          </AddButton>
-        </Inner>
+        <AddButton
+          color="secondary"
+          variant="contained"
+          name="ADD ITEM"
+          onClick={e => triggerAdd(e)}
+        >
+          ADD ITEM
+        </AddButton>
       </Wrapper>
   </div>
   );
