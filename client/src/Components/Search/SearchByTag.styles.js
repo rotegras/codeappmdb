@@ -1,19 +1,6 @@
 import styled from 'styled-components';
 
 
-const Wrapper = styled.div`
-
-`;
-
-const TagsArea = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  flex-grow: 1;
-  margin: 1rem 0;
-`;
-
-
 const Input = styled.input`
   background: ${({ theme }) => theme.colors.white};
   color: ${({ theme }) => theme.colors.accentDark};
@@ -24,8 +11,4 @@ const Input = styled.input`
 `;
 
 
-export {
-  Wrapper,
-  Input,
-  TagsArea,
-};
+export { Input };

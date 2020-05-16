@@ -2,7 +2,6 @@ import React from 'react';
 import ListItems from '../Components/ListItems/ListItems';
 import FocusedItem from '../Components/FocusedItem';
 import SearchByTag from '../Components/Search';
-import AddForm from '../Components/Forms/AddForm';
 import TagDisplay from '../Components/Search/TagDisplay';
 import StickyWrapper from './Main.styles';
 import {

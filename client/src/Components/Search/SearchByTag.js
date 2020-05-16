@@ -1,15 +1,11 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import TagButton from '../Buttons/TagButton';
-import {
-  Wrapper,
-  Input,
-  TagsArea,
-} from './SearchByTag.styles';
+import TagList from './TagList';
+import { Input } from './SearchByTag.styles';
 
 
-function SearchByTag({ data }) {
+function SearchByTag({ data, loading }) {
   const [inputValue, setInputValue] = useState('');
   const [matchingTags, filterTags] = useState([]);
 
@@ -29,6 +25,8 @@ function SearchByTag({ data }) {
         }
       });
     });
+
+    console.log('listTag updated');
     return tagList;
   }, [data]);
 
@@ -53,26 +51,14 @@ function SearchByTag({ data }) {
 
 
   return (
-    <Wrapper>
+    <>
       <h5>Search by Tag</h5>
       <Input
         type="text"
         onChange={(e) => changeInput(e)}
       />
-      <TagsArea>
-      {
-        matchingTags.map((tag,i) => (
-          <TagButton
-            key={tag.name + i}
-            name={tag.name}
-            total={tag.total}
-          >
-            { tag.name } / { tag.total }
-          </TagButton>
-         ))
-      }
-      </TagsArea>
-    </Wrapper>
+      <TagList matchingTags={matchingTags} />
+    </>
   );
 }
 
@@ -83,6 +69,7 @@ SearchByTag.propTypes = {
 const mapStateToProps = (state) => {
   return {
     data: state.data,
+    loading: state.loading,
   }
 };
 
