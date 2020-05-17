@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import TagList from './TagList';
+import TagList from '../TagList';
 import { Input } from './SearchByTag.styles';
 
 

@@ -4,11 +4,17 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { setFocusItem, setLoading, setItemIdToUpdate } from '../../../redux/actions/actions';
 import TagButton from '../../Buttons/TagButton';
+import TagList from '../../TagList';
 import { Row, Col } from '../../../Theme/Grid';
-import { ItemWrapper, ItemTitle }  from './Item.styles';
+import { Wrapper, Title }  from './Item.styles';
 
 
 function Item({ data, item, setFocusItem, setLoading, setItemIdToUpdate }) {
+  const normalizeTags = (arrayOfTags) => {
+    const result = [];
+    arrayOfTags.forEach((item) => result.push({ name: item }))
+    return result;
+  };
   
   // delete item from database by id
   const deleteFromDB = () => {
@@ -33,55 +39,47 @@ function Item({ data, item, setFocusItem, setLoading, setItemIdToUpdate }) {
   }
   
   return (
-    <ItemWrapper
-      id={item.id}
-      key={item._id}
+    <Wrapper
+    id={item.id}
+    key={item._id}
     >
-    <ItemTitle
-      onClick={selectFocusItem}
+    <Title
+    onClick={selectFocusItem}
     >
-      {item.name}
-    </ItemTitle>
-    {
-      item.tags.map((tag) => (
-        <TagButton
-        key={tag}
-        name={tag}
-        />
-      ))
+    {item.name}
+    </Title>
+    
+    <TagList matchingTags={normalizeTags(item.tags)}/>
+    
+    <Row>
+    <Col>
+    <button onClick={(e) => deleteFromDB(e)}>
+    DELETE
+    </button>
+    </Col>
+    <Col>
+    <button onClick={handleUpdate}>
+    UPDATE
+    </button>
+    </Col>
+    </Row>
+    </Wrapper>
+    );
+  }
+  
+  Item.propTypes = {
+    item: PropTypes.objectOf(PropTypes.any).isRequired,
+    data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  };
+  
+  const mapStateToProps = (state) => {
+    return {
+      data: state.data,
     }
-      <div>
-        {item.comment}
-      </div>
-      <Row>
-        <Col>
-          <button onClick={(e) => deleteFromDB(e)}>
-            DELETE
-          </button>
-        </Col>
-        <Col>
-          <button onClick={handleUpdate}>
-            UPDATE
-          </button>
-        </Col>
-      </Row>
-    </ItemWrapper>
-        );
-      }
-      
-      Item.propTypes = {
-        item: PropTypes.objectOf(PropTypes.any).isRequired,
-        data: PropTypes.arrayOf(PropTypes.object).isRequired,
-      };
-      
-      const mapStateToProps = (state) => {
-        return {
-          data: state.data,
-        }
-      };
-      
-      const mapDispatchToProps = { setFocusItem, setLoading, setItemIdToUpdate };
-      
-      
-      export default connect(mapStateToProps, mapDispatchToProps)(Item);
-      
+  };
+  
+  const mapDispatchToProps = { setFocusItem, setLoading, setItemIdToUpdate };
+  
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(Item);
+  

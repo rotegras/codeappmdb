@@ -29,7 +29,7 @@ const theme = {
   padding: {
     normal: '1rem',
     negative: '-1rem',
-    tagButtonWrapper: '.5rem .25rem',
+    tagButtonWrapper: '.25rem .25rem',
     tagButtonInner: '.5rem 1rem',
   },
   margin: {

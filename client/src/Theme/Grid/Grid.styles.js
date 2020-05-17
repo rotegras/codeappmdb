@@ -26,13 +26,12 @@ const Row = styled.div`
 
 const Col = styled.div`
   display: flex;
-  border: 1px dashed white;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   padding: ${({ theme }) => theme.padding.normal};
   width: ${(props) => `${1 / 60 * props.cols * 100}%`};
-  border: 1px dashed white;
+  width: 100%;
 `;
 
 const Col2 = styled(Col)`

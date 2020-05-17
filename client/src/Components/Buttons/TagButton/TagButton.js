@@ -26,6 +26,10 @@ TagButton.propTypes = {
   setActiveTag: PropTypes.func.isRequired,
 };
 
+TagButton.defaultProps = { 
+  total: null,
+}
+
 const mapDispatchToProps = { setActiveTag };
 
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import TagList from '../TagList';
 import { ItemWrapper, ItemSticky, ItemTitle, ItemCode }  from './FocusedItem.styles';
 import TagButton from '../Buttons/TagButton';
 
@@ -9,6 +10,13 @@ function FocusedItem({ focusItem, submitTag, tags }) {
   const selectTag = (name) => {
     submitTag(name);
   };
+
+  const normalizeTags = (arrayOfTags) => {
+    const result = [];
+    arrayOfTags.forEach((item) => result.push({ name: item }))
+    return result;
+  };
+
 
   return (
     <ItemWrapper>
@@ -20,17 +28,9 @@ function FocusedItem({ focusItem, submitTag, tags }) {
           {focusItem.code}
         </ItemCode>
       </ItemSticky>
-      <div>
-        {
-          focusItem.tags && focusItem.tags.map((tag) => (
-            <TagButton
-              key={tag}
-              name={tag}
-              sendTag={selectTag}
-            />
-          ))
-        }
-      </div>
+
+      { focusItem.tags && <TagList matchingTags={normalizeTags(focusItem.tags)} /> }
+
       <div>
         {focusItem.comment}
       </div>

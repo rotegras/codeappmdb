@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TagButton from '../../Buttons/TagButton';
+import TagButton from '../Buttons/TagButton';
 import { Wrapper } from './TagList.styles';
 
 
