@@ -5,7 +5,7 @@ import TagList from './TagList';
 import { Input } from './SearchByTag.styles';
 
 
-function SearchByTag({ data, loading }) {
+function SearchByTag({ data }) {
   const [inputValue, setInputValue] = useState('');
   const [matchingTags, filterTags] = useState([]);
 
@@ -26,7 +26,6 @@ function SearchByTag({ data, loading }) {
       });
     });
 
-    console.log('listTag updated');
     return tagList;
   }, [data]);
 
@@ -35,19 +34,20 @@ function SearchByTag({ data, loading }) {
     setInputValue(value);
   }
 
-  const searchInTagList = () => {
-    const match = [];
-    listTags.forEach((tag) => {
-      if (inputValue && tag.name.indexOf(inputValue) > -1) {
-        match.push(tag);
-      }
-    });
-    filterTags(match.sort((a, b) => ( a.name - b.name)));
-  };
 
   useEffect(() => {
-      searchInTagList();
-  }, [inputValue]);
+    const searchInTagList = () => {
+      const match = [];
+      listTags.forEach((tag) => {
+        if (inputValue && tag.name.indexOf(inputValue) > -1) {
+          match.push(tag);
+        }
+      });
+      filterTags(match.sort((a, b) => ( a.name - b.name)));
+    };
+
+    searchInTagList();
+  }, [inputValue, listTags]);
 
 
   return (
@@ -63,13 +63,12 @@ function SearchByTag({ data, loading }) {
 }
 
 SearchByTag.propTypes = {
-  tags: PropTypes.arrayOf(PropTypes.any).isRequired,
+  data: PropTypes.arrayOf(PropTypes.any).isRequired,
 }
 
 const mapStateToProps = (state) => {
   return {
     data: state.data,
-    loading: state.loading,
   }
 };
 

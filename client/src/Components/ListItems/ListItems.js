@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { ListWrapper } from './ListItems.styles';
+import { Row, Col } from '../../Theme/Grid';
 import Item from './Item';
 
 
@@ -20,16 +20,18 @@ function ListItems({ data, activeTag }) {
   }, [data, activeTag]);
 
   return (
-    <ListWrapper>
+    <Row direction="column">
       {
         displayData.map((item) => (
-          <Item
-            item={item}
-            key={item._id}
-          />
+          <Col key={item._id}>
+            <Item
+              item={item}
+              key={item._id}
+            />
+          </Col>
         ))
       }
-    </ListWrapper>
+    </Row>
   );
 }
 

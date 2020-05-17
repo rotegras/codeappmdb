@@ -3,6 +3,7 @@ import {
   SET_ACTIVETAG,
   SET_FOCUSITEM,
   SET_LOADING,
+  SET_ITEMIDTOUPDATE,
 } from '../constants/actionTypes';
 
 export function getData(payload) {
@@ -19,4 +20,8 @@ export function setFocusItem(payload) {
 
 export function setLoading(payload) {
   return { type: SET_LOADING, payload };
+}
+
+export function setItemIdToUpdate(payload) {
+  return { type: SET_ITEMIDTOUPDATE, payload };
 }

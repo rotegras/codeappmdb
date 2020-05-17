@@ -3,6 +3,7 @@ import {
   SET_ACTIVETAG,
   SET_FOCUSITEM,
   SET_LOADING,
+  SET_ITEMIDTOUPDATE,
 } from "../constants/actionTypes";
 
 
@@ -11,6 +12,7 @@ const initialState = {
   activeTag: '',
   focusItem: '',
   loading: true,
+  itemIdToUpdate: {},
 };
 
 
@@ -28,6 +30,9 @@ function rootReducer(state = initialState, action) {
 
     case SET_LOADING:
       return Object.assign({}, state, { loading: action.payload })
+
+    case SET_ITEMIDTOUPDATE:
+      return Object.assign({}, state, { itemIdToUpdate: action.payload })
 
     default: return state;
   }

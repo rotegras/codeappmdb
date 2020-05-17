@@ -3,6 +3,7 @@ import ListItems from '../Components/ListItems/ListItems';
 import FocusedItem from '../Components/FocusedItem';
 import SearchByTag from '../Components/Search';
 import TagDisplay from '../Components/Search/TagDisplay';
+import UpdateForm from '../Components/Forms/UpdateForm';
 import StickyWrapper from './Main.styles';
 import {
   Content, Container, Row, Col,
@@ -10,7 +11,7 @@ import {
 import { connect } from 'react-redux';
 
 
-function Main({ loading }) {
+function Main({ loading, itemIdToUpdate }) {
   return (
     <Content>
       <Container>
@@ -31,7 +32,8 @@ function Main({ loading }) {
           </Col>
           <Col cols={36}>
             <StickyWrapper>
-              <FocusedItem />
+              { !itemIdToUpdate && <FocusedItem /> }
+              { itemIdToUpdate.id && <UpdateForm /> }
             </StickyWrapper>
           </Col>
         </Row>
@@ -43,6 +45,7 @@ function Main({ loading }) {
 const mapStateToProps = (state) => {
   return {
     loading: state.loading,
+    itemIdToUpdate: state.itemIdToUpdate,
   }
 }
 

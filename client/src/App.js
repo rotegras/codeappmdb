@@ -43,7 +43,7 @@ function App({
         }
       }
     }
-  }, [loading]);
+  }, [loading, getData, intervalIsSet, setLoading]);
 
   return (
     <Theme>
