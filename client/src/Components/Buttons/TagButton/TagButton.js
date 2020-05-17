@@ -9,11 +9,11 @@ function TagButton({ name, total, setActiveTag }) {
   const onTagClick = () =>  setActiveTag(name);
 
   return(
-    <Wrapper
-      onClick={onTagClick}
-      value={name}
-    >
-      <Inner>
+    <Wrapper>
+      <Inner
+        onClick={onTagClick}
+        value={name}
+      >
         {name}  {total ? `| ${total}` : false }
       </Inner>
     </Wrapper>

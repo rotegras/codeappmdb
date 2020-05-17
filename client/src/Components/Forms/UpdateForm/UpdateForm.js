@@ -61,7 +61,7 @@ function UpdateForm({ data, itemIdToUpdate, setLoading }) {
   }, [itemIdToUpdate]);
 
   return (
-    <>
+    <React.Fragment>
       <h3>Update item</h3>
       <form>
         <input
@@ -92,7 +92,7 @@ function UpdateForm({ data, itemIdToUpdate, setLoading }) {
           Submit changes
         </button>
       </form>
-    </>
+    </React.Fragment>
   );
 }
 

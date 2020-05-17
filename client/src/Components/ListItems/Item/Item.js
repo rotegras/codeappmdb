@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { setFocusItem, setLoading, setItemIdToUpdate } from '../../../redux/actions/actions';
 import TagButton from '../../Buttons/TagButton';
+import { Row, Col } from '../../../Theme/Grid';
 import { ItemWrapper, ItemTitle }  from './Item.styles';
 
 
@@ -33,33 +34,38 @@ function Item({ data, item, setFocusItem, setLoading, setItemIdToUpdate }) {
   
   return (
     <ItemWrapper
-    id={item.id}
-    key={item._id}
+      id={item.id}
+      key={item._id}
     >
     <ItemTitle
-    onClick={selectFocusItem}
+      onClick={selectFocusItem}
     >
-    {item.name}
+      {item.name}
     </ItemTitle>
-    <div>
     {
       item.tags.map((tag) => (
         <TagButton
         key={tag}
         name={tag}
         />
-        ))}
-        </div>
-        <div>
+      ))
+    }
+      <div>
         {item.comment}
-        </div>
-        <button onClick={(e) => deleteFromDB(e)}>
-        DELETE
-        </button>
-        <button onClick={handleUpdate}>
-        UPDATE
-        </button>
-        </ItemWrapper>
+      </div>
+      <Row>
+        <Col>
+          <button onClick={(e) => deleteFromDB(e)}>
+            DELETE
+          </button>
+        </Col>
+        <Col>
+          <button onClick={handleUpdate}>
+            UPDATE
+          </button>
+        </Col>
+      </Row>
+    </ItemWrapper>
         );
       }
       

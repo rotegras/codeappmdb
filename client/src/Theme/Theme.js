@@ -28,6 +28,13 @@ const theme = {
   },
   padding: {
     normal: '1rem',
+    negative: '-1rem',
+    tagButtonWrapper: '.5rem .25rem',
+    tagButtonInner: '.5rem 1rem',
+  },
+  margin: {
+    tagButtonWrapper: '0 -1.5rem .5rem',
+    tagListWrapper: '1rem -.25rem',
   },
 };
 

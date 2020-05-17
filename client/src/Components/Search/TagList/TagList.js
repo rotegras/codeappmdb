@@ -7,17 +7,17 @@ import { Wrapper } from './TagList.styles';
 function TagList({ matchingTags }) {
   return (
       <Wrapper>
-      {
-        matchingTags.map((tag,i) => (
-          <TagButton
-            key={tag.name + i}
-            name={tag.name}
-            total={tag.total}
-          >
-            { tag.name } / { tag.total }
-          </TagButton>
-         ))
-      }
+        {
+          matchingTags.map((tag,i) => (
+            <TagButton
+              key={tag.name + i}
+              name={tag.name}
+              total={tag.total}
+            >
+              { tag.name } / { tag.total }
+            </TagButton>
+          ))
+        }
       </Wrapper>
   )
 }

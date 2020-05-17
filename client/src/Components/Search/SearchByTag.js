@@ -52,14 +52,14 @@ function SearchByTag({ data }) {
 
 
   return (
-    <>
+    <React.Fragment>
       <h5>Search by Tag</h5>
       <Input
         type="text"
         onChange={(e) => changeInput(e)}
       />
       <TagList matchingTags={matchingTags} />
-    </>
+    </React.Fragment>
   );
 }
 

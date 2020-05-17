@@ -16,7 +16,7 @@ function Main({ loading, itemIdToUpdate }) {
     <Content>
       <Container>
         <Row>
-          <Col cols={12}>
+          <Col cols={18}>
             <StickyWrapper>
               <TagDisplay />
               <SearchByTag />
@@ -30,10 +30,10 @@ function Main({ loading, itemIdToUpdate }) {
               <ListItems />
             </StickyWrapper>
           </Col>
-          <Col cols={36}>
+          <Col cols={30}>
             <StickyWrapper>
               { !itemIdToUpdate && <FocusedItem /> }
-              { itemIdToUpdate.id && <UpdateForm /> }
+              { itemIdToUpdate && <UpdateForm /> }
             </StickyWrapper>
           </Col>
         </Row>
