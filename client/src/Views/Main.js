@@ -5,16 +5,17 @@ import SearchByTag from '../Components/Search';
 import TagDisplay from '../Components/Search/TagDisplay';
 import StickyWrapper from './Main.styles';
 import {
-  Content, Container, Row, Col2, Col4, Col6,
-} from '../Components/Layout/Layout';
+  Content, Container, Row, Col,
+} from '../Theme/Grid';
+import { connect } from 'react-redux';
 
 
-export default function Main({ loading }) {
+function Main({ loading }) {
   return (
     <Content>
       <Container>
         <Row>
-          <Col2>
+          <Col cols={12}>
             <StickyWrapper>
               <TagDisplay />
               <SearchByTag />
@@ -22,19 +23,27 @@ export default function Main({ loading }) {
                 loading && `Loading...`
               }
             </StickyWrapper>
-          </Col2>
-          <Col4>
+          </Col>
+          <Col cols={24}>
             <StickyWrapper>
               <ListItems />
             </StickyWrapper>
-          </Col4>
-          <Col6>
+          </Col>
+          <Col cols={36}>
             <StickyWrapper>
               <FocusedItem />
             </StickyWrapper>
-          </Col6>
+          </Col>
         </Row>
       </Container>
     </Content>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    loading: state.loading,
+  }
+}
+
+export default connect(mapStateToProps)(Main);

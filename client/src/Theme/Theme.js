@@ -26,6 +26,9 @@ const theme = {
     small: '.75rem',
     smaller: '.5rem',
   },
+  padding: {
+    normal: '1rem',
+  },
 };
 
 
