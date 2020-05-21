@@ -35,6 +35,11 @@ const theme = {
     normal: '.25rem',
     full: '100%',
   },
+  gap: {
+    1: '1rem',
+    2: '.5rem',
+    4: '.25rem',
+  }
   padding: {
     normal: '1rem',
     halfNormal: '.5rem',
