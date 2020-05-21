@@ -12,6 +12,11 @@ const theme = {
     accentLight: '#819b7c',
     accentDark: '#647660',
     black: '#262212',
+    info: 'green',
+    warning: 'orange',
+    danger: 'purple',
+    neutral: 'black',
+    transparent: 'transparent',
   },
   fonts: {
     primary: 'Montserrat',
@@ -26,15 +31,27 @@ const theme = {
     small: '.75rem',
     smaller: '.5rem',
   },
+  borderRadius: {
+    normal: '.25rem',
+    full: '100%',
+  },
   padding: {
     normal: '1rem',
+    halfNormal: '.5rem',
     negative: '-1rem',
+    halfNegative: '-.5rem',
     tagButtonWrapper: '.25rem .25rem',
     tagButtonInner: '.5rem 1rem',
+    contentButton: '1rem',
   },
   margin: {
+    normal: '1rem',
+    halfNormal: '.5rem',
+    negative: '-1rem',
+    halfNegative: '-.5rem',
     tagButtonWrapper: '0 -1.5rem .5rem',
     tagListWrapper: '1rem -.25rem',
+    contentButton: '0 .5rem',
   },
 };
 

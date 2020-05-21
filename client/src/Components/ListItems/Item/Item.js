@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { setFocusItem, setLoading, setItemIdToUpdate } from '../../../redux/actions/actions';
-import TagButton from '../../Buttons/TagButton';
 import TagList from '../../TagList';
-import { Row, Col } from '../../../Theme/Grid';
-import { Wrapper, Title }  from './Item.styles';
+import ContentButton from '../../Buttons/ContentButton';
+import { Wrapper, Title, ButtonContainer }  from './Item.styles';
 
 
 function Item({ data, item, setFocusItem, setLoading, setItemIdToUpdate }) {
@@ -30,6 +29,7 @@ function Item({ data, item, setFocusItem, setLoading, setItemIdToUpdate }) {
   };
   
   const handleUpdate = () => {
+    console.log('click');
     setItemIdToUpdate(item);
   };
   
@@ -40,29 +40,30 @@ function Item({ data, item, setFocusItem, setLoading, setItemIdToUpdate }) {
   
   return (
     <Wrapper
-    id={item.id}
-    key={item._id}
+      id={item.id}
+      key={item._id}
     >
-    <Title
-    onClick={selectFocusItem}
-    >
-    {item.name}
-    </Title>
+      <Title onClick={selectFocusItem}>
+      {item.name}
+      </Title>
     
-    <TagList matchingTags={normalizeTags(item.tags)}/>
+      <TagList matchingTags={normalizeTags(item.tags)}/>
     
-    <Row>
-    <Col>
-    <button onClick={(e) => deleteFromDB(e)}>
-    DELETE
-    </button>
-    </Col>
-    <Col>
-    <button onClick={handleUpdate}>
-    UPDATE
-    </button>
-    </Col>
-    </Row>
+      <ButtonContainer>
+        <ContentButton
+          type="neutral"
+          onClick={deleteFromDB}
+        >
+          DELETE
+        </ContentButton>
+
+        <ContentButton
+          type="info"
+          onClick={(e) => handleUpdate(e)}
+        >
+          EDIT
+        </ContentButton>
+      </ButtonContainer>
     </Wrapper>
     );
   }

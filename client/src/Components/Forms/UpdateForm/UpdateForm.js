@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { setLoading } from '../../../redux/actions/actions';
 import axios from 'axios';
+import ContentButton from '../../Buttons/ContentButton';
+import { NegativeContainer } from './UpdateForm.styles';
+import { Input, TextArea } from '../../../Theme/Forms';
 
 
 function UpdateForm({ data, itemIdToUpdate, setLoading }) {
@@ -64,33 +67,35 @@ function UpdateForm({ data, itemIdToUpdate, setLoading }) {
     <React.Fragment>
       <h3>Update item</h3>
       <form>
-        <input
+        <Input
           type="text"
           value={ inputValues.name }
           onChange={(e) => handleChange(e)}
           name="name"
         />
-        <input
+        <TextArea
           type="textarea"
           value={ inputValues.code }
           onChange={(e) => handleChange(e)}
           name="code"
         />
-        <input
+        <Input
           type="text"
           value={ inputValues.tags }
           onChange={(e) => handleTagsChange(e)}
           name="tags"
         />
-        <input
+        <Input
           type="text"
           value={ inputValues.comment }
           onChange={(e) => handleChange(e)}
           name="comment"
         />
-        <button type="button" onClick={(e) => updateDB(e)}>
-          Submit changes
-        </button>
+        <NegativeContainer>
+          <ContentButton type="button" onClick={(e) => updateDB(e)}>
+            UPDATE
+          </ContentButton>
+        </NegativeContainer>
       </form>
     </React.Fragment>
   );

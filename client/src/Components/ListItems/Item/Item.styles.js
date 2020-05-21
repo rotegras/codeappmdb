@@ -17,8 +17,11 @@ const Title = styled.h3`
   }
 `;
 
+const ButtonContainer = styled.div`
+  margin: ${({ theme }) => theme.margin.halfNegative}; 
+  margin-top: ${({ theme }) => theme.margin.normal}; 
+  display: flex;
+`;
 
-export {
-  Wrapper,
-  Title,
-};
+
+export { Wrapper, Title, ButtonContainer };
