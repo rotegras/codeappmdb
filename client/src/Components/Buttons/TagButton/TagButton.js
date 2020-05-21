@@ -11,6 +11,7 @@ function TagButton({ name, total, setActiveTag }) {
   return(
     <Wrapper>
       <Inner
+        to={`/search/${name}`}
         onClick={onTagClick}
         value={name}
       >

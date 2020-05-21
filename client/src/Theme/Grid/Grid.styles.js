@@ -34,6 +34,11 @@ const Col = styled.div`
   width: 100%;
 `;
 
+const Negative = styled.div`
+  margin: 1rem -.5rem;
+`;
+
+
 const Col2 = styled(Col)`
   width: 16.667%;
 `;
@@ -55,7 +60,7 @@ const Col12 = styled(Col)`
 `;
 
 export {
-  Content, Container, Row, Col, Col2, Col3, Col4, Col6, Col12,
+  Content, Container, Row, Col, Negative, 
 };
 
 Row.propTypes = {

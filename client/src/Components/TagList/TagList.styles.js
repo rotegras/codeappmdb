@@ -2,12 +2,11 @@ import styled from 'styled-components';
 
 
 const Wrapper = styled.div`
+  align-text: left;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  flex-grow: 0;
-  flex-wrap: wrap;
-  margin: ${(props) => props.theme.margin.tagListWrapper};
+  margin: ${(props) => props.theme.margin.halfNegative};
 `;
 
 

@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import TagList from '../TagList';
-import { Input } from './SearchByTag.styles';
+import { Input } from '../../Theme/Forms';
 
 
 function SearchByTag({ data }) {
-  const [inputValue, setInputValue] = useState('');
+  const { slug } = useParams();
+  const [inputValue, setInputValue] = useState(slug);
   const [matchingTags, filterTags] = useState([]);
 
   const listTags = useMemo(() => {
@@ -28,7 +30,7 @@ function SearchByTag({ data }) {
     });
 
     return tagList;
-  }, [data]);
+  }, [data, slug]);
 
   const changeInput = (e) => {
     const { value } = e.target;
@@ -50,6 +52,10 @@ function SearchByTag({ data }) {
     searchInTagList();
   }, [inputValue, listTags]);
 
+  useEffect(() => {
+    setInputValue(slug);
+  }, [slug]);
+
 
   return (
     <React.Fragment>
@@ -57,6 +63,7 @@ function SearchByTag({ data }) {
       <Input
         type="text"
         onChange={(e) => changeInput(e)}
+        value={inputValue}
       />
       <TagList matchingTags={matchingTags} />
     </React.Fragment>

@@ -1,16 +1,10 @@
 import React from 'react';
+import { Content, Container, Row, Col, Negative } from '../Theme/Grid';
+import { Input, TextArea } from '../Theme/Forms';
+import TagButton from '../Components/Buttons/TagButton';
+import ContentButton from '../Components/Buttons/ContentButton';
 import {
-  Content,
-  Container,
-  Row,
-  Col,
-} from '../Components/Layout/Layout';
-import {
-  ColorBlack,
-  ColorWhite,
-  ColorLightGray,
-  ColorAccentLight,
-  ColorAccentDark,
+  ColorBlack, ColorWhite, ColorLightGray, ColorAccentLight, ColorAccentDark
 } from '../Theme/ColoredRectangle';
 
 export default function ThemeView() {
@@ -23,7 +17,7 @@ export default function ThemeView() {
           </h1>
         </Row>
         <Row>
-          <Col>
+          <Col cols="12">
             <h3>
               Typography
             </h3>
@@ -34,13 +28,36 @@ export default function ThemeView() {
             <h5>h5</h5>
             <h6>h6</h6>
           </Col>
-          <Col>
+          <Col cols="12">
           <h3>
             Elements
           </h3>
             <button>Button</button>
+            <Negative>
+              <h4>
+                Tag Button
+              </h4>
+              <TagButton
+                name='BUTTON NAME'
+                total="32"
+              />
+            </Negative>
+            <Negative>
+              <h4>
+                Content Button
+              </h4>
+              <ContentButton>
+                CONTENT BUTTON
+              </ContentButton>
+            </Negative>
+            <Negative>
+              <Input />
+            </Negative>
+            <Negative>
+              <TextArea />
+            </Negative>
           </Col>
-          <Col>
+          <Col cols="12">
           <h3>
             Colors
           </h3>

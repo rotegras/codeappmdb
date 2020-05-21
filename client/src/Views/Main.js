@@ -5,6 +5,8 @@ import SearchByTag from '../Components/Search';
 import TagDisplay from '../Components/Search/TagDisplay';
 import UpdateForm from '../Components/Forms/UpdateForm';
 import StickyWrapper from './Main.styles';
+import { useParams } from 'react-router-dom';
+
 import {
   Content, Container, Row, Col,
 } from '../Theme/Grid';
@@ -12,6 +14,7 @@ import { connect } from 'react-redux';
 
 
 function Main({ loading, itemIdToUpdate }) {
+  const { slug } = useParams();
   return (
     <Content>
       <Container>

@@ -1,23 +1,24 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Row, Col } from '../../Theme/Grid';
 import Item from './Item';
 
 
 function ListItems({ data, activeTag }) {
+  const { slug } = useParams();
 
   const displayData = useMemo(() => {
     const result = [];
     data.map((item) => {
-      if (item.tags.indexOf(activeTag) > -1) {
+      if (item.tags.indexOf(slug) > -1) {
         result.push(item);
       }
       return null;
     })
     return result;
-    // setDisplayData(result);
-  }, [data, activeTag]);
+  }, [data, slug]);
 
   return (
     <Row direction="column">
@@ -38,13 +39,11 @@ function ListItems({ data, activeTag }) {
 const mapStateToProps = (state) => {
   return {
     data: state.data,
-    activeTag: state.activeTag,
   }
 }
 
 ListItems.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-  activeTag: PropTypes.string.isRequired,
 }
 
 

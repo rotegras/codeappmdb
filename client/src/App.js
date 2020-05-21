@@ -50,7 +50,7 @@ function App({
       <Router>
         <Header />
         <Switch>
-          <Route exact path="/">
+          <Route path="/search/:slug">
             <Main loading={loading} />
           </Route>
           <Route path="/add">

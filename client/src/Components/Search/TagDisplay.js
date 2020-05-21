@@ -1,12 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types'
 
 
 function TagDisplay({ activeTag }) {
+  const { slug } = useParams();
+
   return (
     <div>
-    >_  { activeTag }
+    >_  { slug }
     </div>
   );
 }
