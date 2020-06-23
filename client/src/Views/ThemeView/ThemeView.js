@@ -3,6 +3,7 @@ import { Content, Container, Row, Col, Negative } from '../../Theme/Grid';
 import { Input, TextArea } from '../../Theme/Forms';
 import TagButton from '../../Components/Buttons/TagButton';
 import ContentButton from '../../Components/Buttons/ContentButton';
+import constants from '../../Constants';
 import {
   ColorBlack, ColorWhite, ColorLightGray, ColorAccentLight, ColorAccentDark
 } from '../../Theme/ColoredRectangle';
@@ -17,6 +18,10 @@ export default function ThemeView() {
           </h1>
         </Row>
         <Row>
+          <Col cols="12">
+            <h3>Grid</h3>
+            <p>{constants.gridText}</p>
+          </Col>
           <Col cols="12">
             <h3>
               Typography
