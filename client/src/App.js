@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router, Redirect, Route, Switch
+} from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Header from './Components/Header/Header';
@@ -50,6 +52,9 @@ function App({
       <Router>
         <Header />
         <Switch>
+          <Route path="/" exact>
+            <Redirect to="/search/search" />
+          </Route>
           <Route path="/search/:slug">
             <Main loading={loading} />
           </Route>

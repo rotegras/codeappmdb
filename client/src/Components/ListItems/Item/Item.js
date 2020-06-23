@@ -59,7 +59,7 @@ function Item({ data, item, setFocusItem, setLoading, setItemIdToUpdate }) {
 
         <ContentButton
           type="info"
-          onClick={(e) => handleUpdate(e)}
+          onClick={() => handleUpdate()}
         >
           EDIT
         </ContentButton>

@@ -39,30 +39,6 @@ const Negative = styled.div`
 `;
 
 
-const Col2 = styled(Col)`
-  width: 16.667%;
-`;
-
-const Col3 = styled(Col)`
-  width: 25%;
-`;
-
-const Col4 = styled(Col)`
-  width: 33.333%;
-`;
-
-const Col6 = styled(Col)`
-  width: 50%;
-`;
-
-const Col12 = styled(Col)`
-  width: 100%;
-`;
-
-export {
-  Content, Container, Row, Col, Negative, 
-};
-
 Row.propTypes = {
   direction: PropTypes.string.isRequired,
 };
@@ -77,4 +53,9 @@ Col.propTypes = {
 
 Col.defaultProps = {
   cols: 60,
+};
+
+
+export {
+  Content, Container, Row, Col, Negative, 
 };

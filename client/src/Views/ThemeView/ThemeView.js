@@ -1,11 +1,11 @@
 import React from 'react';
-import { Content, Container, Row, Col, Negative } from '../Theme/Grid';
-import { Input, TextArea } from '../Theme/Forms';
-import TagButton from '../Components/Buttons/TagButton';
-import ContentButton from '../Components/Buttons/ContentButton';
+import { Content, Container, Row, Col, Negative } from '../../Theme/Grid';
+import { Input, TextArea } from '../../Theme/Forms';
+import TagButton from '../../Components/Buttons/TagButton';
+import ContentButton from '../../Components/Buttons/ContentButton';
 import {
   ColorBlack, ColorWhite, ColorLightGray, ColorAccentLight, ColorAccentDark
-} from '../Theme/ColoredRectangle';
+} from '../../Theme/ColoredRectangle';
 
 export default function ThemeView() {
   return (

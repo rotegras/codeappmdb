@@ -11,7 +11,7 @@ const Inner = styled(Link)`
   background-color: ${({ theme}) => theme.colors.accentDark};
   color: ${({ theme}) => theme.colors.white};
   font-size: ${({ theme}) => theme.fontSize.small};
-  padding: ${({ theme }) => theme.padding.normal};
+  padding: ${({ theme }) => theme.padding.halfNormal};
   width: 100%;
   border-radius: .25rem;
   border: ${({ theme}) => theme.borderRadius.normal};

@@ -7,4 +7,4 @@ const StickyWrapper = styled.div`
 `;
 
 
-export default StickyWrapper;
+export { StickyWrapper };

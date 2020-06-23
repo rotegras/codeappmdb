@@ -12,22 +12,23 @@ function FocusedItem({ focusItem }) {
     return result;
   };
 
+  const { name, code, tags, comment } = focusItem;
 
   return (
     <ItemWrapper>
       <ItemTitle>
-        {focusItem.name}
+        {name}
       </ItemTitle>
       <ItemSticky>
         <ItemCode>
-          {focusItem.code}
+          {code}
         </ItemCode>
       </ItemSticky>
 
-      { focusItem.tags && <TagList matchingTags={normalizeTags(focusItem.tags)} /> }
+      { tags && <TagList matchingTags={normalizeTags(tags)} /> }
 
       <div>
-        {focusItem.comment}
+        {comment}
       </div>
     </ItemWrapper>
   );

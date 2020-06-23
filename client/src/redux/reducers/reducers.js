@@ -12,7 +12,7 @@ const initialState = {
   activeTag: '',
   focusItem: '',
   loading: true,
-  itemIdToUpdate: {},
+  itemIdToUpdate: '',
 };
 
 

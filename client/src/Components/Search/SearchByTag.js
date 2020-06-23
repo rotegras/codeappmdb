@@ -16,7 +16,6 @@ function SearchByTag({ data }) {
       singleTags = [];
 
     data.forEach((item) => {
-      // console.log(item.tags);
       item.tags.forEach((tag) => {
         if (singleTags.indexOf(tag.trim()) === -1) {
           const tagEntry = { name: tag.trim(), total: 1 }

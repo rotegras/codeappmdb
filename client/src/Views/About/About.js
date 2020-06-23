@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from '../Theme/Grid';
+import { Container, Row, Col } from '../../Theme/Grid';
 
 export default function About() {
   return (
