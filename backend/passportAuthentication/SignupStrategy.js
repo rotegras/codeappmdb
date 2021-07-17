@@ -1,24 +1,46 @@
 const Strategy = require('passport-local').Strategy;
 const User = require('../models/users');
-
-
+const bcryptjs = require('bcryptjs');
+const salt = bcryptjs.genSaltSync(10);
 
 const SignupStrategy = new Strategy(
-  function(username, password, done) {
-    const user = username;
-    console.log('passport strategy');
-    
-    
-    // User.findOne({ username: username }, function (err, user) {
-    // if (err) { return done(err); }
-    // if (!user) { return done(null, false); }
-    // if (!user.verifyPassword(password)) { return done(null, false); }
-    // return done(null, user);
-    // });
+  {
+    passReqToCallback: true,
+    // usernamefield: 'email'
+  },
+  function(req, username, password, done) {
+    // another version could be
+    // function(req, email, password, done) {
+    // when passing email as usernamefield, but then return usermail as email
+    // in postman response
 
+    const email = req.body.email;
+
+    User.findOne({email}).lean().exec((err, user) => {
+            if (err) {
+                return done(err, null);
+            }
+            if (user) {
+                return done('User already exists', null);
+            }
+
+            const encryptedPassword = bcryptjs.hashSync(password, salt);
+            let newUser = new User({
+              email,
+              password: encryptedPassword,
+            });
+
+            newUser.save((error, inserted) => {
+                if (error) {
+                    return done(error, null);
+                }
+                delete inserted.password;
+                return done(null, inserted);
+            });
+        });
   }
 );
-  
-  
+
+
 module.exports = SignupStrategy;
-// export default SignupStrategy;  
+// export default SignupStrategy;
