@@ -8,7 +8,7 @@ const dbRoute = process.env.MONGO_DB_CONNECTION;
 const API_PORT = 3001;
 const app = express();
 const router = express.Router();
-// const usersRouter = require('./routes/usersRouter');
+const usersRouter = require('./routes/usersRouter');
 const dataRouter = require('./routes/dataRouter');
 console.log(process.env.MONGO_DB_CONNECTION);
 
@@ -41,6 +41,7 @@ app.use(logger("dev"));
 // app.use(passport.session());
 
 app.use('/api', dataRouter);
+app.use('/authentication', usersRouter);
 // router.use('/api', router);
 // router.use('/api', router);
 // router.use('/api/authentication', usersRouter);
