@@ -10,6 +10,8 @@ import ThemeView from './Views/ThemeView';
 import Main from './Views/Main';
 import About from './Views/About';
 import AddContent from './Views/AddContent';
+import Login from './Components/Authentication/Login';
+import Signup from './Components/Authentication/Signup';
 
 import {
   getData, setLoading,
@@ -52,8 +54,14 @@ function App({
       <Router>
         <Header />
         <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
           <Route path="/" exact>
-            <Redirect to="/search/search" />
+            <Redirect to="/login" />
+          </Route>
+          <Route path="/signup">
+            <Signup />
           </Route>
           <Route path="/search/:slug">
             <Main loading={loading} />
