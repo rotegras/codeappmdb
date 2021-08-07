@@ -3,6 +3,7 @@ const User = require('../models/users');
 const bcryptjs = require('bcryptjs');
 const salt = bcryptjs.genSaltSync(10);
 
+
 const SignupStrategy = new Strategy(
   {
     passReqToCallback: true,
@@ -17,30 +18,32 @@ const SignupStrategy = new Strategy(
     const email = req.body.email;
 
     User.findOne({email}).lean().exec((err, user) => {
-            if (err) {
-                return done(err, null);
-            }
-            if (user) {
-                return done('User already exists', null);
-            }
+      console.log('User: ', user);
+      if (err) {
+        return done(err, null);
+      }
+      if (user) {
+        return done('User already exists', null);
+      }
 
-            const encryptedPassword = bcryptjs.hashSync(password, salt);
-            let newUser = new User({
-              email,
-              password: encryptedPassword,
-            });
+      const encryptedPassword = bcryptjs.hashSync(password, salt);
 
-            newUser.save((error, inserted) => {
-                if (error) {
-                    return done(error, null);
-                }
-                delete inserted.password;
-                return done(null, inserted);
-            });
-        });
+      let newUser = new User({
+        email,
+        password: encryptedPassword,
+        username,
+      });
+
+      newUser.save((error, inserted) => {
+        if (error) {
+          return done(error, null);
+        }
+        delete inserted.password;
+        return done(null, inserted);
+      });
+    });
   }
 );
 
 
 module.exports = SignupStrategy;
-// export default SignupStrategy;

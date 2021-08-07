@@ -13,7 +13,7 @@ const LoginStrategy = new Strategy(
     const email = req.body.email;
 
     User.findOne({email}).lean().exec((err, user) => {
-      console.log(user);
+      console.log('User: ', user);
       if (err) {
         return done(err, null);
       }
