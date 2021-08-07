@@ -22,6 +22,7 @@ const Row = styled.div`
   justify-content: flex-start;
   margin: 0 - ${({ theme }) => theme.padding.normal};
   width: 100%;
+  flex: 1;
 `;
 
 const Col = styled.div`
@@ -31,7 +32,6 @@ const Col = styled.div`
   align-items: flex-start;
   padding: ${({ theme }) => theme.padding.normal};
   width: ${(props) => `${1 / 60 * props.cols * 100}%`};
-  width: 100%;
 `;
 
 const Negative = styled.div`
@@ -57,5 +57,5 @@ Col.defaultProps = {
 
 
 export {
-  Content, Container, Row, Col, Negative, 
+  Content, Container, Row, Col, Negative,
 };

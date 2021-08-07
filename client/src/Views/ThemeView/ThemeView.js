@@ -11,7 +11,7 @@ import {
 export default function ThemeView() {
   return (
     <Content>
-      <Container>
+      <Container style={{marginTop: '6rem'}}>
         <Row>
           <h1>
             Theme

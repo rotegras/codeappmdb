@@ -6,18 +6,19 @@ import TagDisplay from '../../Components/Search/TagDisplay';
 import UpdateForm from '../../Components/Forms/UpdateForm';
 import { StickyWrapper } from './Main.styles';
 
-import {
-  Content, Container, Row, Col,
-} from '../../Theme/Grid';
+// import {
+//   Content, Container, Row, Col,
+// } from '../../Theme/Grid';
+import * as G from '../../Theme/Grid';
 import { connect } from 'react-redux';
 
 
 function Main({ loading, itemIdToUpdate }) {
   return (
-    <Content>
-      <Container>
-        <Row>
-          <Col cols={18}>
+    <G.Content>
+      <G.Container>
+        <G.Row>
+          <G.Col cols={12}>
             <StickyWrapper>
               <TagDisplay />
               <SearchByTag />
@@ -25,21 +26,21 @@ function Main({ loading, itemIdToUpdate }) {
                 loading && `Loading...`
               }
             </StickyWrapper>
-          </Col>
-          <Col cols={24}>
+          </G.Col>
+          <G.Col cols={12}>
             <StickyWrapper>
               <ListItems />
             </StickyWrapper>
-          </Col>
-          <Col cols={30}>
+          </G.Col>
+          <G.Col cols={36}>
             <StickyWrapper>
               { itemIdToUpdate === null && <FocusedItem /> }
               { !itemIdToUpdate === null  && <UpdateForm /> }
             </StickyWrapper>
-          </Col>
-        </Row>
-      </Container>
-    </Content>
+          </G.Col>
+        </G.Row>
+      </G.Container>
+    </G.Content>
   );
 }
 
