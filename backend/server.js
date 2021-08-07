@@ -37,14 +37,11 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(logger("dev"));
-// app.use(passport.initialize());
+app.use(passport.initialize());
 // app.use(passport.session());
 
 app.use('/api', dataRouter);
 app.use('/authentication', usersRouter);
-// router.use('/api', router);
-// router.use('/api', router);
-// router.use('/api/authentication', usersRouter);
 
 
 // launch our backend into a port
