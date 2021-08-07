@@ -9,6 +9,8 @@ export default function Header() {
       <MenuItem to="/add">Add</MenuItem>
       <MenuItem to="/about">About</MenuItem>
       <MenuItem to="/theme">Theme</MenuItem>
+      <MenuItem to="/login">Log in</MenuItem>
+      <MenuItem to="/signup">Sign in</MenuItem>
     </HeaderWrapper>
   );
 }
