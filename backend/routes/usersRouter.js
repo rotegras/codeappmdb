@@ -3,13 +3,14 @@ const router = express.Router();
 const passport = require('../passportAuthentication');
 
 
+// manages the calls on authentication path
 
 router.post('/signup', (req, res, next) => {
   passport.authenticate('local-signup', function (error, user, info) {
     if (error) {
       return res.status(500).json({
         message: 'Oooops, something went wrong',
-        error: error.message || 'Something went wrong'
+        error: error || 'Something went wrong'
       });
     }
 
@@ -22,7 +23,7 @@ router.post('/login', (req, res, next) => {
     if (error) {
       return res.status(500).json({
         message: 'Oooops, something went wrong',
-        error: error.message || 'Something went wrong'
+        error: error || 'Something went wrong'
       });
     }
 
