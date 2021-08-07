@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 
 const ItemWrapper = styled.div`
-  padding: 1rem 0;
+  padding: 4rem 0 1rem;
   margin: 0 1rem 1rem;
   padding-left: 2rem;
   border-left: 1px solid ${({ theme }) => theme.colors.accentDark};
@@ -15,13 +15,13 @@ const ItemSticky = styled.div`
 `;
 
 const ItemTitle = styled.h3`
-  position: absolute;
+  position: relative;
   top: 0;
   margin: 0;
-  margin-left: -10rem;
+  margin-left: 0rem;
   opacity: .2;
   font-weight: 700;
-  font-size: ${({ theme }) => theme.fontSize.superbig};
+  font-size: ${({ theme }) => theme.fontSize.big};
   color: ${({ theme }) => theme.colors.white};
 `;
 
