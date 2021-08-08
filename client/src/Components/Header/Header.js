@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <HeaderWrapper>
       <MenuItem to="/">Home</MenuItem>
-      <MenuItem to="/search">Search</MenuItem>
+      <MenuItem to="/search/_">Search</MenuItem>
       <MenuItem to="/add">Add</MenuItem>
       <MenuItem to="/about">About</MenuItem>
       <MenuItem to="/theme">Theme</MenuItem>
