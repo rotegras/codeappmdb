@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import ProtectedRoute from './Components/ProtectedRoute';
 import Header from './Components/Header/Header';
 import Theme from './Theme/Theme';
 import ThemeView from './Views/ThemeView';
@@ -63,12 +64,12 @@ function App({
           <Route path="/signup">
             <Signup />
           </Route>
-          <Route path="/search/:slug">
+          <ProtectedRoute path="/search/:slug">
             <Main loading={loading} />
-          </Route>
-          <Route path="/add">
+          </ProtectedRoute >
+          <ProtectedRoute path="/add">
             <AddContent />
-          </Route>
+          </ProtectedRoute>
           <Route path="/about">
             <About />
           </Route>

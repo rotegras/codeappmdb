@@ -34,7 +34,8 @@ export default function Login(props) {
       }
     )
       .then((response) => {
-        // history.push('/search/');
+        localStorage.setItem('isAuthenticated', true);
+        history.push('/search/_');
         console.log('Data: ', response)
       }).catch((error) => {
         setErrorMessage(error);
