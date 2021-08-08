@@ -1,5 +1,5 @@
 import React from 'react';
-import { Content, Container, Row, Col, Negative } from '../../Theme/Grid';
+import * as G from '../../Theme/Grid';
 import { Input, TextArea } from '../../Theme/Forms';
 import TagButton from '../../Components/Buttons/TagButton';
 import ContentButton from '../../Components/Buttons/ContentButton';
@@ -10,19 +10,19 @@ import {
 
 export default function ThemeView() {
   return (
-    <Content>
-      <Container style={{marginTop: '6rem'}}>
-        <Row>
+    <G.Content>
+      <G.Container style={{marginTop: '6rem'}}>
+        <G.Row>
           <h1>
             Theme
           </h1>
-        </Row>
-        <Row>
-          <Col cols="12">
+        </G.Row>
+        <G.Row>
+          <G.Col cols={12}>
             <h3>Grid</h3>
             <p>{constants.gridText}</p>
-          </Col>
-          <Col cols="12">
+          </G.Col>
+          <G.Col cols={12}>
             <h3>
               Typography
             </h3>
@@ -32,37 +32,37 @@ export default function ThemeView() {
             <h4>h4</h4>
             <h5>h5</h5>
             <h6>h6</h6>
-          </Col>
-          <Col cols="12">
+          </G.Col>
+          <G.Col cols={12}>
           <h3>
             Elements
           </h3>
             <button>Button</button>
-            <Negative>
+            <G.Negative>
               <h4>
                 Tag Button
               </h4>
               <TagButton
                 name='BUTTON NAME'
-                total="32"
+                total={32}
               />
-            </Negative>
-            <Negative>
+            </G.Negative>
+            <G.Negative>
               <h4>
                 Content Button
               </h4>
               <ContentButton>
                 CONTENT BUTTON
               </ContentButton>
-            </Negative>
-            <Negative>
+            </G.Negative>
+            <G.Negative>
               <Input />
-            </Negative>
-            <Negative>
+            </G.Negative>
+            <G.Negative>
               <TextArea />
-            </Negative>
-          </Col>
-          <Col cols="12">
+            </G.Negative>
+          </G.Col>
+          <G.Col cols={12}>
           <h3>
             Colors
           </h3>
@@ -71,9 +71,9 @@ export default function ThemeView() {
           <ColorLightGray />
           <ColorAccentLight />
           <ColorAccentDark />
-          </Col>
-        </Row>
-      </Container>
-    </Content>
+          </G.Col>
+        </G.Row>
+      </G.Container>
+    </G.Content>
   );
 }
